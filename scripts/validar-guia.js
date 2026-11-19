@@ -50,7 +50,7 @@ if(!app.includes('TELÉFONO PUBLICADO')||!app.includes('phone-number'))fail("Los
 if(!app.includes('document.querySelectorAll("[data-appearance-preset]")'))fail("Los accesos rápidos de lectura no están conectados a la aplicación.");
 if(!app.includes('window.addEventListener("beforeprint", () =>')||!app.includes("updatePrintMeta();")||!app.includes('scope === "all" ? contacts.slice()'))fail("La impresión no prepara metadatos y permite elegir el alcance.");
 if(!app.includes("registration.update()")||!app.includes('"controllerchange"'))fail("Falta comprobación de actualización y recarga coordinada del service worker.");
-if(!sw.includes('const CACHE_NAME = "chanar-a-mano-shell-v12"')||!sw.includes('cache: "reload"')||!sw.includes("if (!response.ok)"))fail("El service worker no garantiza una caché versionada completa.");
+if(!sw.includes('const CACHE_NAME = "chanar-a-mano-shell-v13"')||!sw.includes('cache: "reload"')||!sw.includes("if (!response.ok)"))fail("El service worker no garantiza una caché versionada completa.");
 if(!html.includes('id="mobileWhatsappShare"')||!html.includes('id="mobileSearchButton"'))fail("Faltan acciones rápidas móviles.");
 for(const id of ["favoritesToggle","favoritesCount","clearFavorites"])if(!idSet.has(id))fail("Falta control de lugares guardados: #"+id);
 for(const id of ["printScope","printHeadingTitle","printHeadingIntro","printCoverCount","shareKitWhatsapp","shareCardButton","shareKitCopyButton","shareMessagePreview","printUrl","exportResultsButton","exportFeedback","copyResultsButton"])if(!idSet.has(id))fail("Falta control de impresión/difusión/exportación: #"+id);
@@ -61,12 +61,14 @@ if(!app.includes("createShareCardFile")||!app.includes("navigator.canShare({file
 if(!app.includes('scope === "all" ? contacts.slice()')||!app.includes("Resultados seleccionados"))fail("La impresión no distingue resultados filtrados y guía completa.");
 if(!html.includes("revisá la fuente de cada ficha"))fail("Falta un mensaje de difusión con criterio de verificación.");
 if(!css.includes(".print-cover")||!css.includes(".share-kit")||!css.includes("@page{size:A4 portrait;margin:13mm 14mm 16mm}"))fail("Falta la capa editorial de impresión y difusión.");
-if(!sw.includes('const CACHE_NAME = "chanar-a-mano-shell-v12"'))fail("La caché PWA no fue actualizada a v12.");
+if(!sw.includes('const CACHE_NAME = "chanar-a-mano-shell-v13"'))fail("La caché PWA no fue actualizada a v12.");
 if(!app.includes("chanar-a-mano-favorites-v1")||!app.includes("data-favorite-id")||!app.includes("showFavoritesOnly"))fail("Los favoritos locales no están conectados.");
 if(!app.includes("data-copy-contact-id")||!app.includes("Ficha copiada."))fail("Falta la copia de fichas públicas.");
 if(!html.includes("La lista queda solamente en este dispositivo"))fail("Falta el aviso de privacidad de favoritos.");
 if(!idSet.has("addressOnly")||!idSet.has("clearAllFilters")||!app.includes("matchesAddress"))fail("Falta el filtro de direcciones o el restablecimiento integral.");
-if(!sw.includes('const CACHE_NAME = "chanar-a-mano-shell-v12"'))fail("La caché no fue incrementada para esta versión.");
+if(!sw.includes('const CACHE_NAME = "chanar-a-mano-shell-v13"'))fail("La caché no fue incrementada para esta versión.");
+if(!html.includes('id="gridViewNote"')||!app.includes("const pageSize = 18;"))fail("Falta la cuadrícula informativa o la página ampliada a 18 fichas.");
+if(!css.includes(".contact-grid{grid-template-columns:repeat(3,minmax(0,1fr))")||!css.includes("@media(max-width:560px)"))fail("Falta la cuadrícula adaptable de tres, dos y una columna.");
 
 const marker="window.CHANAR_CONTACTOS =";
 const start=dataSource.indexOf(marker);
