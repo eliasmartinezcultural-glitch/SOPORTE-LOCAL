@@ -1286,3 +1286,149 @@ body[data-theme=high] .contact-card{
   .contact-grid{gap:8px}
   .contact-card{border:1px solid #999!important;box-shadow:none!important}
 }
+
+
+/* UNIVERSO OCARINA · sistema visual de orientación y lectura */
+.site-header{padding-top:43px}
+.header-credit{
+  position:absolute;top:7px;right:24px;z-index:2;
+  margin:0;padding:5px 11px;
+  border:1px solid #d9e2d2;border-radius:999px;
+  background:rgba(255,253,247,.94);
+  color:#526653;font-size:11px;line-height:1.35;
+  letter-spacing:.015em;text-align:right;
+}
+.header-credit strong{color:#294b36;font-weight:900}
+.creation-credit{
+  border-color:#cbd9c5;
+  background:linear-gradient(100deg,#fffefa,#edf4e9);
+  color:#405b45;
+}
+.creation-credit strong{color:#294b36}
+.footer-credit{
+  display:inline-block;margin:12px 0 0;padding:8px 13px;
+  border:1px solid rgba(237,230,204,.28);border-radius:999px;
+  background:rgba(255,255,255,.08);
+  color:#fff8e9;font-size:13px;font-weight:700;
+}
+.footer-credit strong{color:#f2d9a6}
+
+/* Cada rubro tiene un color propio, repetido en borde, etiqueta y fondo.
+   La paleta es suave para orientar sin competir con los datos. */
+.contact-card{
+  border-width:1.5px;
+  border-radius:18px;
+  box-shadow:0 7px 20px rgba(38,62,43,.075),inset 0 1px 0 rgba(255,255,255,.8);
+}
+.contact-card::before{width:7px;opacity:1}
+.contact-card::after{width:145px;height:145px;opacity:.75}
+.contact-card .card-heading{gap:7px;align-items:flex-start}
+.contact-card .category-label{
+  border-width:1px;border-style:solid;
+  border-radius:7px 12px 7px 12px;
+  padding:5px 9px;
+  font-size:11px;letter-spacing:.015em;
+}
+.contact-card .source-type{border-radius:7px;padding:4px 7px}
+.contact-card h4{font-size:18px;line-height:1.25;letter-spacing:-.015em}
+.contact-card .data-row-phone{border-radius:11px}
+.contact-card .contact-verification{border-radius:9px}
+
+/* Instituciones públicas · azul */
+.contact-card.tone-card-municipal{--card-accent:#4776a8;--card-edge:#b8cce0;--card-wash:#edf4fb;--card-ink:#294e73}
+.contact-card.tone-card-municipal::before{background:linear-gradient(180deg,#4776a8,#91b5d8)}
+.contact-card.tone-card-municipal .category-label{background:#e4eff9;border-color:#c2d6e9;color:#294e73}
+.contact-card.tone-card-municipal .data-row-phone{background:linear-gradient(100deg,#edf4fb,#f8fbff);border-color:#d1e0ee}
+/* Comunidad · lavanda */
+.contact-card.tone-card-community{--card-accent:#8870a8;--card-edge:#d1c4e0;--card-wash:#f4eff9;--card-ink:#594474}
+.contact-card.tone-card-community::before{background:linear-gradient(180deg,#8870a8,#c0add8)}
+.contact-card.tone-card-community .category-label{background:#eee7f6;border-color:#d8cbe8;color:#594474}
+.contact-card.tone-card-community .data-row-phone{background:linear-gradient(100deg,#f4eff9,#fcf9ff);border-color:#e1d8ed}
+/* Trabajo y producción · ocre */
+.contact-card.tone-card-work{--card-accent:#ae8140;--card-edge:#e0cfaa;--card-wash:#faf4e8;--card-ink:#70511f}
+.contact-card.tone-card-work::before{background:linear-gradient(180deg,#ae8140,#ddbd79)}
+.contact-card.tone-card-work .category-label{background:#f5ecd9;border-color:#e7d7b7;color:#70511f}
+.contact-card.tone-card-work .data-row-phone{background:linear-gradient(100deg,#faf4e8,#fffdf7);border-color:#eadfc8}
+/* Educación · índigo */
+.contact-card.tone-card-education{--card-accent:#6676ad;--card-edge:#c5cde5;--card-wash:#f0f2fa;--card-ink:#3e4d7c}
+.contact-card.tone-card-education::before{background:linear-gradient(180deg,#6676ad,#a9b4d9)}
+.contact-card.tone-card-education .category-label{background:#e9ecf8;border-color:#cdd4eb;color:#3e4d7c}
+.contact-card.tone-card-education .data-row-phone{background:linear-gradient(100deg,#f0f2fa,#fafbff);border-color:#d9deef}
+/* Salud y cuidados · coral */
+.contact-card.tone-card-health{--card-accent:#bd7377;--card-edge:#e6c4c4;--card-wash:#fbf0ef;--card-ink:#81494d}
+.contact-card.tone-card-health::before{background:linear-gradient(180deg,#bd7377,#e2a9a6)}
+.contact-card.tone-card-health .category-label{background:#f8e8e7;border-color:#e9c9c7;color:#81494d}
+.contact-card.tone-card-health .data-row-phone{background:linear-gradient(100deg,#fbf0ef,#fffafa);border-color:#efd8d6}
+/* Servicios públicos · turquesa */
+.contact-card.tone-card-services{--card-accent:#4e9290;--card-edge:#b9d9d5;--card-wash:#eaf5f3;--card-ink:#285f5d}
+.contact-card.tone-card-services::before{background:linear-gradient(180deg,#4e9290,#8dc5bd)}
+.contact-card.tone-card-services .category-label{background:#e0f0ed;border-color:#c1dfd9;color:#285f5d}
+.contact-card.tone-card-services .data-row-phone{background:linear-gradient(100deg,#eaf5f3,#f8fdfb);border-color:#cde5e0}
+/* Deportes · naranja */
+.contact-card.tone-card-sport{--card-accent:#c17c42;--card-edge:#e7c9aa;--card-wash:#fbf1e8;--card-ink:#805027}
+.contact-card.tone-card-sport::before{background:linear-gradient(180deg,#c17c42,#e4b17d)}
+.contact-card.tone-card-sport .category-label{background:#f8eadb;border-color:#ebd1b7;color:#805027}
+.contact-card.tone-card-sport .data-row-phone{background:linear-gradient(100deg,#fbf1e8,#fffaf5);border-color:#efdbc8}
+/* Cultura · frambuesa */
+.contact-card.tone-card-culture{--card-accent:#a85f82;--card-edge:#e0bfd0;--card-wash:#f9eff4;--card-ink:#713d58}
+.contact-card.tone-card-culture::before{background:linear-gradient(180deg,#a85f82,#d49bb7)}
+.contact-card.tone-card-culture .category-label{background:#f4e5ed;border-color:#e5cad8;color:#713d58}
+.contact-card.tone-card-culture .data-row-phone{background:linear-gradient(100deg,#f9eff4,#fff9fc);border-color:#ecd7e2}
+/* Turismo · cielo */
+.contact-card.tone-card-tourism{--card-accent:#5489a5;--card-edge:#c1d9e5;--card-wash:#edf5f9;--card-ink:#315a70}
+.contact-card.tone-card-tourism::before{background:linear-gradient(180deg,#5489a5,#9bc4d6)}
+.contact-card.tone-card-tourism .category-label{background:#e5f0f6;border-color:#c8dce8;color:#315a70}
+.contact-card.tone-card-tourism .data-row-phone{background:linear-gradient(100deg,#edf5f9,#f9fcff);border-color:#d5e5ed}
+/* Comercios · verde manzana */
+.contact-card.tone-card-commerce{--card-accent:#78924c;--card-edge:#d0dcb8;--card-wash:#f1f5e8;--card-ink:#4c612c}
+.contact-card.tone-card-commerce::before{background:linear-gradient(180deg,#78924c,#b4c985)}
+.contact-card.tone-card-commerce .category-label{background:#eaf0dc;border-color:#d6e1bd;color:#4c612c}
+.contact-card.tone-card-commerce .data-row-phone{background:linear-gradient(100deg,#f1f5e8,#fbfdf6);border-color:#dfe8cd}
+
+/* El color acompaña a la categoría, pero el nombre del tema siempre permanece visible. */
+.contact-card[class*="tone-card-"]{border-color:var(--card-edge,#cbd9c5);background:linear-gradient(145deg,#fffefa 0%,var(--card-wash,#f8faf5) 100%)}
+.contact-card[class*="tone-card-"]::before{background:linear-gradient(180deg,var(--card-accent,#66805a),rgba(255,255,255,.55))}
+.contact-card[class*="tone-card-"] .category-label{color:var(--card-ink,#315640)}
+.contact-card[class*="tone-card-"]:hover{border-color:var(--card-accent,#66805a);box-shadow:0 13px 28px rgba(38,62,43,.12)}
+
+/* Contraste alto conserva contornos negros; modo noche usa tonos diferenciados y legibles. */
+body[data-theme=night] .header-credit{background:#304333;border-color:#71866d;color:#e7f0e2}
+body[data-theme=night] .header-credit strong{color:#fff}
+body[data-theme=night] .creation-credit{background:#344a37;border-color:#5a7255;color:#e3ebdf}
+body[data-theme=night] .footer-credit{background:rgba(255,255,255,.1);border-color:#657d62;color:#f8f4e9}
+body[data-theme=night] .contact-card[class*="tone-card-"]{background:linear-gradient(145deg,#2d3d31,#26362b);border-color:var(--night-edge,#61765d)}
+body[data-theme=night] .contact-card[class*="tone-card-"] .category-label{background:var(--night-label,#3b5140);border-color:var(--night-edge,#61765d);color:var(--night-ink,#eff5eb)}
+body[data-theme=night] .contact-card[class*="tone-card-"] .data-row-phone{background:#344638;border-color:#5a7057}
+body[data-theme=night] .contact-card.tone-card-municipal{--night-edge:#6685a7;--night-label:#344b65;--night-ink:#e3effb}
+body[data-theme=night] .contact-card.tone-card-community{--night-edge:#8b78a8;--night-label:#493c5c;--night-ink:#f0e8fa}
+body[data-theme=night] .contact-card.tone-card-work{--night-edge:#a88a54;--night-label:#55462d;--night-ink:#f8edda}
+body[data-theme=night] .contact-card.tone-card-education{--night-edge:#7888bd;--night-label:#394466;--night-ink:#e8edff}
+body[data-theme=night] .contact-card.tone-card-health{--night-edge:#b77b7d;--night-label:#593a3d;--night-ink:#ffe9e8}
+body[data-theme=night] .contact-card.tone-card-services{--night-edge:#5eaaa2;--night-label:#2f514e;--night-ink:#e1f8f4}
+body[data-theme=night] .contact-card.tone-card-sport{--night-edge:#c18b5c;--night-label:#5c422e;--night-ink:#fff0df}
+body[data-theme=night] .contact-card.tone-card-culture{--night-edge:#b77b9a;--night-label:#593c4e;--night-ink:#ffeaf5}
+body[data-theme=night] .contact-card.tone-card-tourism{--night-edge:#6c9eb8;--night-label:#344f60;--night-ink:#e5f5ff}
+body[data-theme=night] .contact-card.tone-card-commerce{--night-edge:#91a96a;--night-label:#465337;--night-ink:#f0f8df}
+body[data-theme=high] .header-credit,body[data-theme=high] .creation-credit,body[data-theme=high] .footer-credit{background:#fff!important;border:2px solid #000!important;color:#000!important}
+body[data-theme=high] .header-credit strong,body[data-theme=high] .creation-credit strong,body[data-theme=high] .footer-credit strong{color:#000!important}
+body[data-theme=high] .contact-card[class*="tone-card-"]{background:#fff!important;border:3px solid #000!important;box-shadow:none!important}
+body[data-theme=high] .contact-card[class*="tone-card-"]::before{background:#000!important}
+body[data-theme=high] .contact-card[class*="tone-card-"] .category-label{background:#fff!important;border:2px solid #000!important;color:#000!important}
+@media(max-width:760px){
+ .site-header{padding:43px 16px 14px;flex-wrap:wrap}
+ .header-credit{right:16px;max-width:calc(100% - 32px);font-size:10px}
+ .header-actions{width:100%;justify-content:flex-start}
+ .contact-card .card-heading{flex-wrap:wrap}
+}
+@media(max-width:420px){
+ .site-header{padding-top:47px}
+ .header-credit{top:6px;right:12px;left:12px;max-width:none;text-align:center}
+ .header-actions .button{flex:1 1 auto}
+ .contact-card h4{font-size:17px}
+}
+@media print{
+ .site-header{padding-top:12px}
+ .header-credit{position:static;margin-left:auto;border:0;background:transparent;color:#222}
+ .contact-card[class*="tone-card-"]{background:#fff!important;border:1px solid #888!important;box-shadow:none!important}
+ .contact-card[class*="tone-card-"]::before{background:#777!important}
+}
