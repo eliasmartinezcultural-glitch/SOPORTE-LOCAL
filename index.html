@@ -4,10 +4,10 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#f7f6f0">
-  <meta name="description" content="Guía comunitaria gratuita e independiente de San Patricio del Chañar. Buscá instituciones, salud, educación, servicios, comercios y espacios de la comunidad.">
+  <meta name="description" content="Chañar a Mano: agenda ciudadana gratuita de San Patricio del Chañar. Encontrá instituciones, salud, educación, servicios, comercios y teléfonos útiles.">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Chañar a Mano | Guía comunitaria">
-  <meta property="og:description" content="Información útil de San Patricio del Chañar, reunida en una guía sencilla, gratuita y para compartir.">
+  <meta property="og:description" content="Una agenda sencilla, gratuita y local para encontrar teléfonos, instituciones, servicios y comercios de San Patricio del Chañar.">
   <meta name="color-scheme" content="light dark">
   <title>Chañar a Mano | Guía comunitaria</title>
   <link rel="stylesheet" href="styles.css">
@@ -39,8 +39,8 @@
         <div class="welcome-text">
           <p class="creation-credit">Una creación de <strong>Ocarina Producciones</strong><span>· Elías Martínez</span></p>
           <p class="eyebrow">SAN PATRICIO DEL CHAÑAR · NEUQUÉN</p>
-          <h1 id="welcomeTitle">Lo que necesitás, <span>más cerca.</span></h1>
-          <p class="welcome-copy">Una guía sencilla para encontrar información de nuestro pueblo: instituciones, salud, escuelas, servicios, trabajo y espacios de la comunidad.</p>
+          <h1 id="welcomeTitle">Nuestro Chañar, <span>más a mano.</span></h1>
+          <p class="welcome-copy">Una agenda hecha desde el pueblo para encontrar datos de todos los días: instituciones, salud, escuelas, comercios, servicios y lugares de nuestra comunidad.</p>
           <p class="welcome-promise">Gratis para consultar, imprimir y compartir. Sin registrarte.</p>
         </div>
         <figure class="welcome-photo">
@@ -76,7 +76,7 @@
           <span>temas para explorar</span>
         </article>
       </div>
-      <p class="highlights-footnote"><span aria-hidden="true">♡</span> Gratuita, sin registro y pensada para compartir.</p>
+      <p class="highlights-footnote"><span aria-hidden="true">♡</span> Entre el río, las chacras y nuestra gente: una guía local, abierta y gratuita.</p>
     </section>
 
     <section class="directory-section" id="directorio" aria-labelledby="directoryTitle">
@@ -100,7 +100,21 @@
         <input id="searchInput" type="search" placeholder="Ej.: hospital, agua, escuela, farmacia…" autocomplete="off" enterkeyhint="search" aria-describedby="searchHelp">
         <button id="clearSearch" class="clear-search" type="button" aria-label="Borrar búsqueda" hidden>×</button>
       </form>
-      <p class="search-hint" id="searchHelp">Probá con palabras cotidianas, nombres, direcciones o números. La búsqueda se hace en esta guía, sin enviar tus datos.</p>
+      <p class="search-hint" id="searchHelp">Escribí como lo dirías en una charla: hospital, farmacia, escuela, luz, trámite, comercio o un número de teléfono.</p>
+      <div class="quick-searches" aria-label="Búsquedas rápidas">
+        <span class="quick-search-label">BUSCAR RÁPIDO</span>
+        <div class="quick-search-list">
+          <button class="quick-chip" type="button" data-query="hospital">Hospital</button>
+          <button class="quick-chip" type="button" data-query="farmacia">Farmacias</button>
+          <button class="quick-chip" type="button" data-query="escuela">Escuelas</button>
+          <button class="quick-chip" type="button" data-query="comercios">Comercios</button>
+          <button class="quick-chip" type="button" data-query="telefonos">Teléfonos</button>
+        </div>
+      </div>
+      <label class="phone-filter" for="phoneOnly">
+        <input id="phoneOnly" type="checkbox">
+        <span>Mostrar solamente fichas que tienen un teléfono publicado</span>
+      </label>
 
     <section class="notice" aria-label="Importante">
       <span class="notice-icon" aria-hidden="true">i</span>
@@ -110,10 +124,10 @@
       </div>
     </section>
 
-      <details class="topic-panel" id="topicPanel">
+      <details class="topic-panel" id="topicPanel" open>
         <summary>
           <span class="topic-summary-title">Explorar por tema</span>
-          <span class="topic-summary-help">Si preferís, elegí una categoría</span>
+          <span class="topic-summary-help">Elegí el tema que necesitás</span>
           <span class="topic-chevron" aria-hidden="true">⌄</span>
         </summary>
         <nav class="filters" id="filters" aria-label="Filtrar por tema"></nav>
