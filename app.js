@@ -62,9 +62,14 @@
     empty.hidden = visible.length !== 0;
     grid.hidden = visible.length === 0;
     clear.hidden = !search.value;
-    filters.querySelectorAll("button").forEach(button =>
-      button.setAttribute("aria-pressed", String(button.dataset.category === activeCategory))
-    );
+    filters.querySelectorAll("button").forEach(button => {
+      const category = categoryMap.find(item => item.key === button.dataset.category);
+      const total = button.dataset.category === "Todos"
+        ? contacts.length
+        : contacts.filter(contact => contact.categoria === button.dataset.category).length;
+      button.textContent = (category?.label || button.dataset.category) + " (" + total + ")";
+      button.setAttribute("aria-pressed", String(button.dataset.category === activeCategory));
+    });
   }
 
   filters.addEventListener("click", event => {
