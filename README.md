@@ -24,9 +24,11 @@ Historias, personas y territorio.
 - Teléfonos y correos visibles como texto de referencia, sin enlaces de llamada ni de envío de mensajes.
 - Fuentes visibles en cada ficha.
 - Compartir la agenda e imprimir/guardar la consulta como PDF.
-- Diseño adaptable con prioridad de uso en celulares.
+- Diseño sencillo, con textos cotidianos, botones grandes y prioridad de lectura en celulares.
+- Categorías resumidas en seis opciones fáciles de reconocer.
+- Versión imprimible A4 de una sola columna, con letra grande y fichas separadas.
 - Impresión A4 optimizada: fichas sin cortes, teléfonos legibles, fuentes y fecha de consulta.
-- Cartel de colaboración voluntaria con botón para copiar el alias.
+- Colaboración voluntaria discreta y secundaria, sin condicionar el acceso.
 
 ## Criterios editoriales
 - Se priorizan fuentes oficiales y directorios institucionales.
@@ -40,6 +42,7 @@ Historias, personas y territorio.
 - No se debe compartir información personal o sensible sin verificar previamente al destinatario.
 - La agenda no es un servicio de emergencias ni reemplaza la atención oficial, profesional o presencial.
 - No se incorporan botones de llamada, WhatsApp, correo ni acciones que impulsen el contacto automático.
+- Se priorizan instrucciones cortas, una acción principal por zona y controles visibles sin desplazamiento horizontal.
 
 ## Fuentes principales
 - Municipalidad de San Patricio del Chañar: https://sanpatricio.gob.ar/
@@ -53,7 +56,7 @@ Historias, personas y territorio.
 - `index.html`: estructura de la agenda y cartel de colaboración.
 - `styles.css`: identidad visual adaptable, accesibilidad, rendimiento e impresión A4.
 - `datos.js`: datos separados de la interfaz, con tipo de fuente.
-- `app.js`: búsqueda, filtros, fuentes, compartir la guía, copiar alias e imprimir.
+- `app.js`: búsqueda simple, seis temas, fuentes, compartir la guía, copiar alias e imprimir.
 
 ## Identidad
 **CHÁÑAR A MANO** · La comunidad, conectada.  
