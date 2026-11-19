@@ -447,3 +447,7 @@ body{background:radial-gradient(ellipse at 8% 5%,rgba(244,204,125,.20),transpare
 .directory-total{padding:5px 11px;border:1px solid #e6d3a9;border-radius:999px;background:linear-gradient(110deg,#fff1cb,#f4e5d0);color:#76522a;font-weight:800;box-shadow:0 2px 8px rgba(118,82,42,.07)}
 .directory-total b{width:25px;height:25px;background:#b97843;color:#fff;font-size:12px;border-radius:8px}
 @media(max-width:560px){.directory-total{width:max-content;max-width:100%;padding:5px 9px}}
+
+.directory-phone-total{padding:5px 11px;border:1px solid #c7ded1;border-radius:999px;background:linear-gradient(110deg,#e0f0e5,#e5eff0);color:#315e49;font-size:12px;font-weight:800}
+.directory-phone-total b{width:25px;height:25px;background:#4c8061;color:#fff;font-size:12px;border-radius:8px}
+@media(max-width:560px){.directory-phone-total{width:max-content;max-width:100%;padding:5px 9px}}
