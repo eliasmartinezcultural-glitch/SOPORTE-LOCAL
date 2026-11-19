@@ -459,9 +459,12 @@
     resultsTitle.textContent = search.value.trim() ? "Resultados de tu búsqueda" : "Información disponible";
     empty.hidden = visible.length !== 0;
     grid.hidden = visible.length === 0;
-    if (visible.length === 0 && showFavoritesOnly) {
+    if (visible.length === 0 && showFavoritesOnly && favoriteIds.size === 0) {
       empty.querySelector("h3").textContent = "Todavía no guardaste lugares.";
       empty.querySelector("p").textContent = "Volvé a todos los temas y tocá “Guardar lugar” en las fichas que quieras tener a mano.";
+    } else if (visible.length === 0 && showFavoritesOnly) {
+      empty.querySelector("h3").textContent = "No hay lugares guardados que coincidan.";
+      empty.querySelector("p").textContent = "Probá quitar la búsqueda o algún filtro para ver tus lugares guardados.";
     } else if (visible.length === 0 && addressOnly?.checked) {
       empty.querySelector("h3").textContent = "No hay direcciones en esta selección.";
       empty.querySelector("p").textContent = "Probá quitar este filtro o elegir otro tema.";
