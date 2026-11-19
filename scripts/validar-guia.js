@@ -54,6 +54,7 @@ if(!sw.includes('const CACHE_NAME = "chanar-a-mano-shell-v9"')||!sw.includes('ca
 if(!html.includes('id="mobileWhatsappShare"')||!html.includes('id="mobileSearchButton"'))fail("Faltan acciones rápidas móviles.");
 for(const id of ["favoritesToggle","favoritesCount","clearFavorites"])if(!idSet.has(id))fail("Falta control de lugares guardados: #"+id);
 for(const id of ["printScope","printHeadingTitle","printHeadingIntro","printCoverCount","shareKitWhatsapp","shareCardButton","shareKitCopyButton","shareMessagePreview","printUrl"])if(!idSet.has(id))fail("Falta control de impresión/difusión: #"+id);
+if(!idSet.has("directoryIntro"))fail("Falta la introducción adaptable a impresión.");
 if(!app.includes("createShareCardFile")||!app.includes("navigator.canShare({ files: [file] })")||!app.includes("chanar-a-mano-compartir.png"))fail("La tarjeta gráfica no tiene un flujo de exportación y uso compartido.");
 if(!app.includes('scope === "all" ? contacts.slice()')||!app.includes("Resultados seleccionados"))fail("La impresión no distingue resultados filtrados y guía completa.");
 if(!html.includes("revisá la fuente de cada ficha"))fail("Falta un mensaje de difusión con criterio de verificación.");
