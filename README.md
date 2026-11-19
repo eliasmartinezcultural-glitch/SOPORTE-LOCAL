@@ -28,17 +28,20 @@ Historias, personas y territorio.
 
 ## Contenido y funciones
 - Fichas de instituciones, organizaciones y servicios.
-- Categorías y buscador.
-- Teléfonos y correos visibles como texto de referencia, sin enlaces de llamada ni de envío de mensajes.
-- Fuentes visibles en cada ficha.
-- Compartir la agenda e imprimir/guardar la consulta como PDF.
-- Diseño sencillo, con textos cotidianos, botones grandes y prioridad de lectura en celulares.
-- Categorías resumidas en seis opciones fáciles de reconocer, con cantidad de fichas por tema.
-- Cartel de colaboración voluntaria que explica el propósito, identifica al titular y mantiene el acceso gratuito.
-- Alias disponible también en la versión impresa, sin depender de un botón o conexión.
-- Versión imprimible A4 de una sola columna, con letra grande y fichas separadas.
-- Impresión A4 optimizada: fichas sin cortes, teléfonos legibles, fuentes y fecha de consulta.
-- Colaboración voluntaria discreta y secundaria, sin condicionar el acceso.
+- Buscador que ignora diferencias entre mayúsculas, minúsculas y tildes.
+- Búsqueda por nombre, categoría, descripción, teléfono y correo.
+- Seis temas visibles con cantidad de fichas por categoría.
+- Orden alfabético de los resultados.
+- Teléfonos y correos como texto seleccionable, sin enlaces de llamada ni de envío de mensajes.
+- Fuente y tipo de procedencia identificados en cada ficha.
+- Compartir la guía mediante las opciones disponibles en el dispositivo o copiar el enlace.
+- Copiar el alias de colaboración sin abrir aplicaciones de pago.
+- Impresión A4 de los resultados visibles, en una columna, con fuentes, fecha de consulta y alias voluntario.
+- Diseño adaptable a celulares, tabletas y computadoras, con controles grandes y foco de teclado visible.
+- Preferencia por movimiento reducido respetada.
+- Sin registro de usuarios ni formularios para consultar la guía.
+- Mensajes de ayuda para búsquedas sin resultados y fallos de carga.
+- Colaboración voluntaria explicada con claridad, sin condicionar el acceso.
 
 ## Criterios editoriales
 - Se priorizan fuentes oficiales y directorios institucionales.
