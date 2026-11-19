@@ -11,7 +11,7 @@
     "supportAlias","printMeta","printButton","whatsappShare","shareButton",
     "copyShareButton","mobileSearchButton","mobileWhatsappShare","appStatus",
     "favoritesToggle","favoritesCount","clearFavorites","addressOnly","clearAllFilters",
-    "printScope","printHeadingTitle","printHeadingIntro","printCoverCount","shareKitWhatsapp","shareCardButton","shareKitCopyButton","shareMessagePreview","printUrl"
+    "printScope","printHeadingTitle","printHeadingIntro","printCoverCount","shareKitWhatsapp","shareCardButton","shareKitCopyButton","shareMessagePreview","printUrl", "directoryIntro"
   ];
   const missingIds = requiredIds.filter(id => !$(id));
   if (missingIds.length) {
@@ -902,10 +902,10 @@
     const objectUrl = URL.createObjectURL(svgBlob);
     try {
       const picture = new Image();
-      picture.src = objectUrl;
       await new Promise((resolve, reject) => {
         picture.onload = resolve;
         picture.onerror = () => reject(new Error("No se pudo preparar la tarjeta gráfica."));
+        picture.src = objectUrl;
       });
       const canvas = document.createElement("canvas");
       canvas.width = 1200; canvas.height = 630;
@@ -932,7 +932,7 @@
         const link = document.createElement("a");
         link.href = downloadUrl; link.download = file.name;
         document.body.appendChild(link); link.click(); link.remove();
-        URL.revokeObjectURL(downloadUrl);
+        window.setTimeout(() => URL.revokeObjectURL(downloadUrl), 1500);
         try { await copyText(whatsappMessage()); } catch (_) {}
         shareFeedback.textContent = "La tarjeta se descargó y el mensaje quedó preparado. En WhatsApp, adjuntá la imagen y pegá el enlace.";
       }
