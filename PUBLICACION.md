@@ -51,3 +51,20 @@ La validación no comprueba que un teléfono siga vigente, que una institución 
 ## Estado inicial de esta configuración
 
 La automatización de validación se incorpora en esta rama. La fuente efectiva de GitHub Pages y la publicación final deben confirmarse en los ajustes del repositorio; no se cambia la configuración de Pages desde esta rama.
+
+
+## Revisión documental de contactos
+
+La guía distingue entre un dato publicado por una fuente oficial, una agenda provincial, un directorio institucional y una referencia secundaria. Esa clasificación indica la procedencia, no garantiza que el teléfono responda ni reemplaza una confirmación directa.
+
+Cada ficha con teléfono o correo debe conservar un estado de respaldo visible. Los números repetidos entre instituciones y los datos que aparecen distintos en fuentes diferentes deben quedar señalados como pendientes, sin elegir arbitrariamente cuál es correcto.
+
+Antes de publicar una corrección:
+1. Consultar primero la página oficial del organismo o establecimiento.
+2. Comparar con directorios provinciales o institucionales cuando no exista página propia.
+3. Si hay discrepancias, conservar el dato de la fuente oficial y mostrar una advertencia hasta obtener confirmación directa.
+4. No sumar números encontrados únicamente en resultados de mapas o directorios comerciales como si fueran contactos confirmados.
+5. Registrar fecha y fuente consultada en el historial de revisión del proyecto.
+6. No considerar una dirección de mapa como prueba de teléfono, horario o funcionamiento.
+
+La validación automática comprueba que cada contacto tenga una clasificación documental; no realiza llamadas ni certifica que una línea esté activa.
