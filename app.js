@@ -21,22 +21,19 @@
 
   let activeCategory = "Todos";
   let fontScale = 1;
+  const phoneOnly = $("phoneOnly");
 
   const categoryMap = [
-    { label: "Ver todo", key: "Todos", terms: [] },
-    { label: "Municipio", key: "Organismos públicos", terms: ["municipalidad", "organismo", "gobierno", "publico", "publica"] },
-    { label: "Comunidad", key: "Comunidad", terms: ["parroquia", "religion", "culto", "organizacion"] },
-    { label: "Trabajo y producción", key: "Trabajo y producción", terms: ["empleo", "produccion", "productores", "rural", "renatre", "agro"] },
-    { label: "Educación", key: "Educación", terms: ["escuela", "colegio", "educacion", "formacion", "estudio", "jardin"] },
-    { label: "Salud y cuidados", key: "Salud y cuidados", terms: ["hospital", "salud", "ninez", "cuidados", "farmacia", "veterinaria"] },
-    { label: "Servicios públicos", key: "Servicios públicos", terms: ["epen", "energia", "electricidad", "servicios"] },
-    { label: "Deportes", key: "Deportes y recreación", terms: ["deporte", "club", "polideportivo", "estadio", "recreacion"] },
-    { label: "Cultura y comunidad", key: "Cultura y comunidad", terms: ["cultura", "biblioteca", "centro cultural", "plaza", "balneario"] },
-    { label: "Turismo y gastronomía", key: "Turismo y gastronomía", terms: ["turismo", "gastronomia", "restaurante", "comer", "alojamiento", "hotel", "visitas"] },
-    { label: "Turismo y alojamiento", key: "Turismo y alojamiento", terms: ["alojamiento", "hotel", "hosteria", "hospedaje"] },
-    { label: "Turismo y producción", key: "Turismo y producción", terms: ["bodega", "visitas", "establecimiento"] },
-    { label: "Comercios y servicios", key: "Comercios y servicios", terms: ["comercio", "panaderia", "ferreteria", "corralon", "negocio"] },
-    { label: "Educación y cuidados", key: "Educación y cuidados", terms: ["cdi", "infantil", "cuidados"] }
+    { label: "Ver todo", key: "Todos", keys: [], terms: [] },
+    { label: "Municipio", key: "Municipio", keys: ["Organismos públicos"], terms: ["municipalidad", "organismo", "gobierno", "publico", "publica"] },
+    { label: "Comunidad y cultura", key: "Comunidad", keys: ["Comunidad", "Cultura y comunidad"], terms: ["parroquia", "religion", "culto", "organizacion", "cultura", "biblioteca", "centro cultural", "plaza", "balneario"] },
+    { label: "Trabajo y producción", key: "Trabajo", keys: ["Trabajo y producción", "Turismo y producción"], terms: ["empleo", "produccion", "productores", "rural", "renatre", "agro", "bodega", "establecimiento"] },
+    { label: "Educación", key: "Educación", keys: ["Educación", "Educación y cuidados"], terms: ["escuela", "colegio", "educacion", "formacion", "estudio", "jardin", "cdi", "infantil"] },
+    { label: "Salud y cuidados", key: "Salud", keys: ["Salud y cuidados"], terms: ["hospital", "salud", "ninez", "cuidados", "farmacia", "veterinaria", "odontologia", "consultorio"] },
+    { label: "Servicios públicos", key: "Servicios", keys: ["Servicios públicos"], terms: ["epen", "energia", "electricidad", "servicios"] },
+    { label: "Deportes y recreación", key: "Deportes", keys: ["Deportes y recreación"], terms: ["deporte", "deportes", "club", "polideportivo", "estadio", "recreacion"] },
+    { label: "Turismo y gastronomía", key: "Turismo", keys: ["Turismo y gastronomía", "Turismo y alojamiento"], terms: ["turismo", "gastronomia", "restaurante", "comer", "alojamiento", "hotel", "visitas", "hosteria", "hospedaje"] },
+    { label: "Comercios y servicios", key: "Comercios", keys: ["Comercios y servicios"], terms: ["comercio", "comercios", "panaderia", "ferreteria", "corralon", "negocio", "taller", "peluqueria", "gomeria"] }
   ];
 
   function escapeHtml(value) {
@@ -86,13 +83,13 @@
   }
 
   function categoryLabel(key) {
-    return categoryMap.find(item => item.key === key)?.label || key || "Otros";
+    return categoryMap.find(item => item.keys.includes(key))?.label || key || "Otros";
   }
 
   function searchText(contact) {
     const phoneText = (contact.telefonos || [])
       .flatMap(phone => [phone.numero, phone.uso]);
-    const aliases = categoryMap.find(item => item.key === contact.categoria)?.terms || [];
+    const aliases = categoryMap.find(item => item.keys.includes(contact.categoria))?.terms || [];
     return normalize([
       contact.nombre, contact.categoria, contact.descripcion, contact.correo,
       contact.fuenteNombre, contact.fuenteTipo, contact.direccion, ...phoneText, ...aliases
@@ -102,9 +99,12 @@
   function visibleContacts() {
     const terms = normalize(search.value).split(" ").filter(Boolean);
     return contacts.filter(contact => {
-      const matchesCategory = activeCategory === "Todos" || contact.categoria === activeCategory;
+      const selectedGroup = categoryMap.find(item => item.key === activeCategory);
+      const matchesCategory = activeCategory === "Todos" || Boolean(selectedGroup?.keys.includes(contact.categoria));
+      const hasPhone = (contact.telefonos || []).length > 0;
+      const matchesPhone = !phoneOnly?.checked || hasPhone;
       const text = searchText(contact);
-      return matchesCategory && terms.every(term => text.includes(term));
+      return matchesCategory && matchesPhone && terms.every(term => text.includes(term));
     }).sort((a, b) => String(a.nombre || "").localeCompare(String(b.nombre || ""), "es-AR"));
   }
 
@@ -154,7 +154,7 @@
     filters.innerHTML = categoryMap.map(item => {
       const total = item.key === "Todos"
         ? contacts.length
-        : contacts.filter(contact => contact.categoria === item.key).length;
+        : contacts.filter(contact => item.keys.includes(contact.categoria)).length;
       return `<button class="filter-button" type="button" data-category="${escapeHtml(item.key)}"
         aria-pressed="${item.key === activeCategory}">
         <span>${escapeHtml(item.label)}</span><span class="filter-count">${total}</span>
@@ -174,7 +174,9 @@
     grid.hidden = visible.length === 0;
     clear.hidden = !search.value;
     document.querySelectorAll(".quick-chip").forEach(button => {
-      button.setAttribute("aria-pressed", String(normalize(search.value) === normalize(button.dataset.query)));
+      const isCategory = button.dataset.category && button.dataset.category === activeCategory;
+      const isSearch = button.dataset.query && normalize(search.value) === normalize(button.dataset.query);
+      button.setAttribute("aria-pressed", String(Boolean(isCategory || isSearch)));
     });
     filters.querySelectorAll("button[data-category]").forEach(button => {
       button.setAttribute("aria-pressed", String(button.dataset.category === activeCategory));
@@ -184,6 +186,7 @@
   function resetGuide() {
     activeCategory = "Todos";
     search.value = "";
+    if (phoneOnly) phoneOnly.checked = false;
     render();
   }
 
@@ -196,9 +199,10 @@
   });
 
   search.addEventListener("input", render);
+  phoneOnly?.addEventListener("change", render);
   document.querySelectorAll(".quick-chip").forEach(button => {
     button.addEventListener("click", () => {
-      activeCategory = "Todos";
+      activeCategory = button.dataset.category || "Todos";
       search.value = button.dataset.query || "";
       render();
       $("resultsTitle").scrollIntoView({ behavior: "smooth", block: "start" });
