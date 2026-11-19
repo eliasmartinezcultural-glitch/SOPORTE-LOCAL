@@ -8,11 +8,19 @@ Chañar a Mano es una agenda comunitaria independiente, abierta y de acceso libr
 
 No es una publicación oficial ni un servicio pago. La consulta, el uso y el compartir la agenda no dependen de realizar aportes.
 
-## Colaboración voluntaria
-La agenda incluye un mecanismo de colaboración voluntaria para quienes deseen ayudar a sostener su continuidad:
+## Colaboración voluntaria y transparencia
+La agenda es gratuita. Quien quiera y pueda colaborar encontrará un alias a nombre de Elías Martínez.
+
+El aporte acompaña el trabajo independiente de búsqueda, organización, revisión de fuentes, actualización y mantenimiento de la guía realizado por Ocarina Producciones.
+
 - Alias: `ocarina.guitarra`
-- Titular: Elías Martínez
-- La colaboración es voluntaria y nunca condiciona el acceso a la agenda.
+- Titular de la cuenta: Elías Martínez
+- No es obligatorio ni condiciona el acceso.
+- No hace falta registrarse ni dejar datos para consultar, imprimir o compartir.
+- El aporte se realiza a una persona y no a una institución pública.
+- No se presenta como pago por un servicio.
+
+La guía no promete resultados específicos por cada aporte ni atribuye importes a costos concretos que no hayan sido documentados.
 
 ## Créditos
 **Agenda comunitaria creada por Ocarina Producciones.**  
@@ -25,7 +33,9 @@ Historias, personas y territorio.
 - Fuentes visibles en cada ficha.
 - Compartir la agenda e imprimir/guardar la consulta como PDF.
 - Diseño sencillo, con textos cotidianos, botones grandes y prioridad de lectura en celulares.
-- Categorías resumidas en seis opciones fáciles de reconocer.
+- Categorías resumidas en seis opciones fáciles de reconocer, con cantidad de fichas por tema.
+- Cartel de colaboración voluntaria que explica el propósito, identifica al titular y mantiene el acceso gratuito.
+- Alias disponible también en la versión impresa, sin depender de un botón o conexión.
 - Versión imprimible A4 de una sola columna, con letra grande y fichas separadas.
 - Impresión A4 optimizada: fichas sin cortes, teléfonos legibles, fuentes y fecha de consulta.
 - Colaboración voluntaria discreta y secundaria, sin condicionar el acceso.
