@@ -1445,4 +1445,101 @@ window.CHANAR_CONTACTOS = [
     "fuenteTipo": "mapa",
     "estadoContacto": "referencia-secundaria"
   }
+,
+  {
+    "id": "lt-electricidad",
+    "nombre": "LT Electricidad",
+    "categoria": "Comercios y servicios",
+    "descripcion": "Servicio local de electricidad y venta de materiales eléctricos. Dirección y teléfono publicados en una ficha de ubicación; confirmar alcance del servicio y vigencia del contacto.",
+    "direccion": "Los Álamos y Mutisia, barrio Jardín, San Patricio del Chañar, Neuquén, Argentina",
+    "telefonos": [
+      {
+        "uso": "Teléfono publicado en ficha de ubicación · verificar",
+        "numero": "0299 585-2082"
+      }
+    ],
+    "fuente": "https://www.google.com/maps/search/?api=1&query=LT%20Electricidad%2C%20San%20Patricio%20del%20Cha%C3%B1ar%2C%20Neuqu%C3%A9n%2C%20Argentina",
+    "fuenteNombre": "Ficha pública de ubicación · referencia no oficial",
+    "fuenteTipo": "mapa",
+    "estadoContacto": "referencia-secundaria"
+  },
+  {
+    "id": "torneria-zuniga",
+    "nombre": "Tornería Zúñiga",
+    "categoria": "Comercios y servicios",
+    "descripcion": "Tornería y taller metalmecánico local. Dirección y teléfono publicados en una ficha de ubicación; confirmar trabajos disponibles y vigencia del contacto.",
+    "direccion": "Complejo El Chocón, Arroyo Covunco y El Chocón, San Patricio del Chañar, Neuquén, Argentina",
+    "telefonos": [
+      {
+        "uso": "Teléfono publicado en ficha de ubicación · verificar",
+        "numero": "0299 573-8540"
+      }
+    ],
+    "fuente": "https://www.google.com/maps/search/?api=1&query=Torner%C3%ADa%20Z%C3%BA%C3%B1iga%2C%20San%20Patricio%20del%20Cha%C3%B1ar%2C%20Neuqu%C3%A9n%2C%20Argentina",
+    "fuenteNombre": "Ficha pública de ubicación · referencia no oficial",
+    "fuenteTipo": "mapa",
+    "estadoContacto": "referencia-secundaria"
+  },
+  {
+    "id": "saurus-restaurante",
+    "nombre": "Saurus Restaurante · Familia Schroeder",
+    "categoria": "Turismo y gastronomía",
+    "descripcion": "Restaurante ubicado en el predio de Bodega Familia Schroeder. Teléfono publicado en una ficha de ubicación; confirmar reservas, horarios y vigencia antes de concurrir.",
+    "direccion": "Calle 7, San Patricio del Chañar, Neuquén, Argentina",
+    "telefonos": [
+      {
+        "uso": "Teléfono publicado en ficha de ubicación · verificar",
+        "numero": "0299 605-8028"
+      }
+    ],
+    "fuente": "https://www.google.com/maps/search/?api=1&query=Saurus%20Restaurante%20en%20Bodega%20Familia%20Schroeder%2C%20San%20Patricio%20del%20Cha%C3%B1ar%2C%20Neuqu%C3%A9n%2C%20Argentina",
+    "fuenteNombre": "Ficha pública de ubicación · referencia no oficial",
+    "fuenteTipo": "mapa",
+    "estadoContacto": "referencia-secundaria"
+  },
+  {
+    "id": "malma-restaurante",
+    "nombre": "Restaurante Malma",
+    "categoria": "Turismo y gastronomía",
+    "descripcion": "Propuesta gastronómica ubicada en el predio de Bodega Malma. Teléfono publicado en una ficha de ubicación; confirmar horarios, reservas y vigencia del contacto.",
+    "direccion": "Ruta Provincial 7 y Calle 15, San Patricio del Chañar, Neuquén, Argentina",
+    "telefonos": [
+      {
+        "uso": "Teléfono publicado en ficha de ubicación · verificar",
+        "numero": "0299 409-3654"
+      }
+    ],
+    "fuente": "https://www.google.com/maps/search/?api=1&query=Restaurante%20Malma%2C%20San%20Patricio%20del%20Cha%C3%B1ar%2C%20Neuqu%C3%A9n%2C%20Argentina",
+    "fuenteNombre": "Ficha pública de ubicación · referencia no oficial",
+    "fuenteTipo": "mapa",
+    "estadoContacto": "referencia-secundaria"
+  },
+  {
+    "id": "malma-aldea-terrunio",
+    "nombre": "Malma · Aldea de Terruño by Haiku",
+    "categoria": "Turismo y alojamiento",
+    "descripcion": "Alojamiento ubicado dentro del predio de Bodega Malma. Teléfono publicado en una ficha de ubicación; confirmar disponibilidad y vigencia del contacto.",
+    "direccion": "Bodega Malma, Ruta Provincial 7 km 14,5, San Patricio del Chañar, Neuquén, Argentina",
+    "telefonos": [
+      {
+        "uso": "Teléfono publicado en ficha de ubicación · verificar",
+        "numero": "0299 527-8251"
+      }
+    ],
+    "fuente": "https://www.google.com/maps/search/?api=1&query=Malma%20Aldea%20de%20Terru%C3%B1o%20by%20Haiku%2C%20San%20Patricio%20del%20Cha%C3%B1ar%2C%20Neuqu%C3%A9n%2C%20Argentina",
+    "fuenteNombre": "Ficha pública de ubicación · referencia no oficial",
+    "fuenteTipo": "mapa",
+    "estadoContacto": "referencia-secundaria"
+  },
+  {
+    "id": "servicio-tecnico-joaco",
+    "nombre": "Servicio Técnico Joaco",
+    "categoria": "Comercios y servicios",
+    "descripcion": "Servicio técnico identificado en una ficha pública de ubicación. No se encontró un teléfono publicado en el resultado consultado; confirmar actividad, especialidad y contacto antes de concurrir.",
+    "direccion": "Calle 139, San Patricio del Chañar, Neuquén, Argentina",
+    "fuente": "https://www.google.com/maps/search/?api=1&query=Servicio%20t%C3%A9cnico%20Joaco%2C%20San%20Patricio%20del%20Cha%C3%B1ar%2C%20Neuqu%C3%A9n%2C%20Argentina",
+    "fuenteNombre": "Ficha pública de ubicación · referencia no oficial",
+    "fuenteTipo": "mapa",
+    "estadoContacto": "referencia-secundaria"
+  }
 ];
