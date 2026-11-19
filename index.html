@@ -4,16 +4,16 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#f7f6f0">
-  <meta name="description" content="Guía comunitaria gratuita de San Patricio del Chañar. Información de instituciones, salud, educación, trabajo y comunidad con fuentes para consultar.">
+  <meta name="description" content="Guía comunitaria gratuita de San Patricio del Chañar. Buscá instituciones, salud, educación, servicios y comercios.">
   <meta name="color-scheme" content="light">
-  <title>Chañar a Mano | Guía comunitaria de San Patricio del Chañar</title>
+  <title>Chañar a Mano | Guía comunitaria</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <a class="skip-link" href="#contenido">Ir directamente a la guía</a>
+  <a class="skip-link" href="#directorio">Ir al buscador</a>
 
   <header class="site-header">
-    <a class="brand" href="#inicio" aria-label="Chañar a Mano, ir al inicio">
+    <a class="brand" href="#inicio" aria-label="Chañar a Mano, inicio">
       <span class="brand-mark" aria-hidden="true">Ch</span>
       <span class="brand-text">
         <strong>CHÁÑAR A MANO</strong>
@@ -21,48 +21,31 @@
       </span>
     </a>
     <div class="header-actions">
-      <button class="button button-outline" id="shareButton" type="button">
-        <span aria-hidden="true">↗</span> Compartir
-      </button>
+      <button class="button button-outline" id="shareButton" type="button">Compartir</button>
     </div>
   </header>
 
   <main id="contenido">
     <section class="welcome" id="inicio" aria-labelledby="welcomeTitle">
       <p class="eyebrow">SAN PATRICIO DEL CHAÑAR · NEUQUÉN</p>
-      <h1 id="welcomeTitle">La información local,<br><span>más cerca.</span></h1>
-      <p class="welcome-copy">Una guía gratuita para encontrar instituciones, salud, escuelas, trabajo y organizaciones de nuestra comunidad.</p>
-      <a class="button button-primary welcome-button" href="#directorio">Consultar la guía <span aria-hidden="true">↓</span></a>
-      <a class="welcome-secondary" href="#como-usar">Cómo usar esta guía</a>
-      <div class="welcome-note" aria-label="Características de la guía">
-        <span class="directory-total"><b id="totalContactCount">75</b> fichas locales</span>
-        <span class="directory-phone-total"><b id="totalPhoneCount">60</b> con teléfono referenciado</span>
-        <span><b aria-hidden="true">✓</b> Gratis para consultar</span>
-        <span><b aria-hidden="true">✓</b> Sin registrarse</span>
-        <span><b aria-hidden="true">✓</b> También para imprimir</span>
-      </div>
+      <h1 id="welcomeTitle">Encontrá información <span>de tu comunidad.</span></h1>
+      <p class="welcome-copy">Instituciones, salud, escuelas, servicios, trabajo y lugares de nuestra localidad. Gratis, sin registrarte.</p>
     </section>
 
-<section class="notice" aria-labelledby="noticeTitle">
+    <section class="notice" aria-label="Importante">
       <span class="notice-icon" aria-hidden="true">i</span>
       <div>
-        <h2 id="noticeTitle">Antes de usar un dato</h2>
-        <p>Los datos pueden cambiar. Cada ficha indica de dónde salió la información: revisá esa fuente antes de usar un teléfono o concurrir a un lugar. Esta guía no realiza llamadas, mensajes ni trámites y no es un servicio de emergencias.</p>
+        <h2>Antes de usar un dato</h2>
+        <p>La información puede cambiar. Revisá siempre la fuente de cada ficha. Los teléfonos son referencias, no una confirmación de vigencia. Esta guía no es oficial ni un servicio de emergencias.</p>
       </div>
     </section>
 
-<section class="directory-section" id="directorio" aria-labelledby="directoryTitle">
-      <div class="print-heading" aria-hidden="true">
-        <strong>CHÁÑAR A MANO</strong>
-        <span>Guía comunitaria · San Patricio del Chañar, Neuquén</span>
-        <small id="printMeta">Consulta de la guía · Ocarina Producciones</small>
-      </div>
-
+    <section class="directory-section" id="directorio" aria-labelledby="directoryTitle">
       <div class="section-heading">
         <div>
-          <p class="eyebrow">GUÍA DE CONSULTA</p>
-          <h2 id="directoryTitle">¿Qué necesitás encontrar?</h2>
-          <p class="section-intro">Podés escribir una palabra o tocar uno de los temas. No hace falta completar formularios.</p>
+          <p class="eyebrow">GUÍA GRATUITA</p>
+          <h2 id="directoryTitle">¿Qué estás buscando?</h2>
+          <p class="section-intro">Escribí una palabra o elegí un tema. También podés buscar por nombre, teléfono o dirección.</p>
         </div>
         <p class="result-count" id="resultCount" aria-live="polite" aria-atomic="true"></p>
       </div>
@@ -70,124 +53,73 @@
       <form class="search-form" id="searchForm" role="search" novalidate>
         <label class="sr-only" for="searchInput">Buscar en la guía</label>
         <span class="search-icon" aria-hidden="true">⌕</span>
-        <input id="searchInput" type="search" placeholder="Por ejemplo: hospital, escuela…" autocomplete="off" enterkeyhint="search" aria-describedby="searchHint">
-        <button id="clearSearch" class="clear-search" type="button" aria-label="Borrar lo escrito" hidden>×</button>
+        <input id="searchInput" type="search" placeholder="Ej.: hospital, escuela, farmacia…" autocomplete="off" enterkeyhint="search">
+        <button id="clearSearch" class="clear-search" type="button" aria-label="Borrar búsqueda" hidden>×</button>
       </form>
-      <p class="search-hint" id="searchHint">Escribí una palabra o elegí un acceso rápido. También podés buscar por nombre, tema, teléfono, correo o ubicación.</p>
 
-      <div class="quick-search" aria-label="Búsquedas rápidas">
-        <span class="quick-search-title">Para encontrar rápido</span>
-        <div class="quick-search-list">
-          <button class="quick-chip" type="button" data-category="Salud">Salud</button>
-          <button class="quick-chip" type="button" data-category="Educación">Escuelas y formación</button>
-          <button class="quick-chip" type="button" data-category="Turismo">Comer y salir</button>
-          <button class="quick-chip" type="button" data-category="Municipio">Municipio</button>
-          <button class="quick-chip" type="button" data-category="Comercios">Comercios</button>
-          <button class="quick-chip" type="button" data-category="Deportes">Deportes</button>
-          <button class="quick-chip" type="button" data-category="Comunidad">Cultura y comunidad</button>
-          <button class="quick-chip" type="button" data-category="Servicios">Servicios públicos</button>
-        </div>
-      </div>
-
-      <label class="phone-only-toggle" for="phoneOnly">
-        <input id="phoneOnly" type="checkbox">
-        <span class="phone-toggle-box" aria-hidden="true"></span>
-        <span>Mostrar solamente fichas con teléfono</span>
-      </label>
-
-      <div class="reading-tools" aria-label="Ajustes de lectura">
-        <span>¿La letra se ve pequeña?</span>
+      <div class="reading-tools" aria-label="Tamaño del texto">
+        <span>¿Letra pequeña?</span>
         <div class="reading-actions">
-          <button type="button" id="fontDown" aria-label="Achicar el texto">A−</button>
-          <button type="button" id="fontReset" aria-label="Restablecer el tamaño del texto">A</button>
-          <button type="button" id="fontUp" aria-label="Agrandar el texto">A+</button>
+          <button type="button" id="fontDown" aria-label="Achicar texto">A−</button>
+          <button type="button" id="fontReset" aria-label="Restablecer texto">A</button>
+          <button type="button" id="fontUp" aria-label="Agrandar texto">A+</button>
         </div>
       </div>
 
       <div class="filter-heading">
-        <h3>Elegí un tema</h3>
+        <h3>Temas</h3>
         <button id="showAllButton" class="text-button" type="button">Ver todo</button>
       </div>
-      <nav class="filters" id="filters" aria-label="Temas de la guía"></nav>
+      <nav class="filters" id="filters" aria-label="Filtrar por tema"></nav>
 
       <div class="results-heading">
         <h3 id="resultsTitle">Información disponible</h3>
         <span id="resultsContext">Todos los temas</span>
       </div>
-      <div class="contact-grid" id="contactGrid" aria-live="polite" aria-label="Resultados de la guía"></div>
+      <div class="contact-grid" id="contactGrid" aria-live="polite" aria-label="Fichas encontradas"></div>
       <nav class="pagination" id="pagination" aria-label="Páginas de resultados" hidden>
         <button class="page-button" id="previousPage" type="button" disabled>← Anterior</button>
         <span class="page-status" id="pageStatus" aria-live="polite">Página 1</span>
         <button class="page-button" id="nextPage" type="button">Siguiente →</button>
       </nav>
-      <p class="results-end-note" id="resultsEndNote">Estás viendo toda la información disponible para esta búsqueda.</p>
 
       <div class="empty-state" id="emptyState" hidden>
         <span class="empty-icon" aria-hidden="true">⌕</span>
         <h3>No encontramos ese dato.</h3>
-        <p>Probá con una palabra más corta o volvé a ver todos los temas.</p>
+        <p>Probá con otra palabra o volvé a ver todos los temas.</p>
         <button class="button button-secondary" id="resetFilters" type="button">Mostrar toda la guía</button>
       </div>
-      <p class="directory-footnote">Cada ficha indica su fuente. “Referencia en mapas” no significa que el teléfono o el horario estén confirmados.</p>
+      <p class="directory-footnote">Cada ficha muestra su procedencia. “Referencia en mapas” no confirma por sí sola un teléfono ni un horario.</p>
+      <button class="button button-primary print-action" id="printButton" type="button">Imprimir o guardar como PDF</button>
     </section>
 
-    <section class="contribute-section" aria-labelledby="supportTitle">
-      <div class="support-heading">
-        <p class="support-kicker">UNA AYUDA VOLUNTARIA</p>
-        <h2 id="supportTitle">¿Te resultó útil esta guía?</h2>
-        <p>Si querés y podés, tu colaboración ayuda a sostener el trabajo independiente que hay detrás de CHÁÑAR A MANO.</p>
+    <section class="support-mini" aria-label="Colaboración voluntaria">
+      <div>
+        <strong>¿Querés ayudar a sostener la guía?</strong>
+        <p>La colaboración es voluntaria. Consultar y compartir siempre es gratis.</p>
+        <span>Alias: <b id="supportAlias">ocarina.guitarra</b> · Titular: Elías Martínez</span>
       </div>
-      <div class="support-details">
-        <h3>¿Qué trabajo ayuda a sostener?</h3>
-        <p>Buscar información pública, ordenar los datos, revisar sus fuentes, preparar las fichas y mantener la guía sencilla para consultar e imprimir. Es un trabajo de Ocarina Producciones.</p>
-      </div>
-      <div class="alias-card">
-        <div class="alias-copy">
-          <span>ALIAS PARA COLABORAR</span>
-          <strong id="supportAlias">ocarina.guitarra</strong>
-          <small>Titular de la cuenta: Elías Martínez</small>
-        </div>
-        <button class="button button-copy" id="copyAliasButton" type="button">Copiar alias</button>
-      </div>
+      <button class="button button-copy" id="copyAliasButton" type="button">Copiar alias</button>
       <p class="support-feedback" id="copyFeedback" role="status" aria-live="polite"></p>
-      <p class="support-promise">Colaborar es completamente opcional. La consulta, la impresión y el uso de la guía son gratuitos. No necesitás pagar, registrarte ni dejar tus datos. El aporte se realiza a nombre de Elías Martínez, no a una institución pública y no es el pago por un servicio.</p>
-    </section>
-
-    <section class="print-panel" aria-labelledby="printTitle">
-      <div class="print-symbol" aria-hidden="true">▤</div>
-      <div class="print-copy">
-        <h2 id="printTitle">¿Preferís tenerla en papel?</h2>
-        <p>Podés imprimir los resultados que estás viendo o guardarlos como PDF. La versión impresa usa una columna, letras claras y muestra las fuentes.</p>
-      </div>
-      <button class="button button-primary" id="printButton" type="button">Imprimir / Guardar PDF</button>
     </section>
     <p class="share-feedback" id="shareFeedback" role="status" aria-live="polite"></p>
   </main>
 
   <footer class="site-footer">
     <div class="footer-main">
-      <div>
-        <strong>CHÁÑAR A MANO</strong>
-        <span>Guía comunitaria independiente y gratuita.</span>
-      </div>
+      <div><strong>CHÁÑAR A MANO</strong><span>Guía comunitaria independiente y gratuita.</span></div>
       <p>San Patricio del Chañar · Neuquén</p>
     </div>
-    <div class="footer-rule"></div>
     <p class="footer-credit">Creada por <strong>Ocarina Producciones</strong> · Historias, personas y territorio.</p>
-    <p class="footer-disclaimer">Esta guía no representa oficialmente a las instituciones. Los datos pueden cambiar y deben verificarse en sus fuentes. No reemplaza la atención oficial, profesional o presencial ni es un servicio de emergencias.</p>
+    <p class="footer-disclaimer">Esta guía no representa oficialmente a las instituciones. Los datos pueden cambiar y deben verificarse en sus fuentes. No reemplaza la atención oficial, profesional o presencial.</p>
   </footer>
 
   <section class="print-support" aria-label="Colaboración voluntaria">
-    <strong>¿Querés ayudar a sostener esta guía gratuita?</strong>
-    <span>Colaboración voluntaria para el trabajo independiente de Ocarina Producciones.</span>
-    <b>Alias: ocarina.guitarra</b>
-    <span>Titular: Elías Martínez · No es obligatorio.</span>
+    <strong>Colaboración voluntaria para sostener esta guía gratuita.</strong>
+    <span>Alias: ocarina.guitarra · Titular: Elías Martínez · No es obligatorio.</span>
   </section>
 
-  <noscript>
-    <div class="noscript-message">Para usar el buscador y los temas de esta guía necesitás habilitar JavaScript en tu navegador.</div>
-  </noscript>
-
+  <noscript><div class="noscript-message">Para buscar y filtrar la guía necesitás habilitar JavaScript.</div></noscript>
   <script src="datos.js"></script>
   <script src="app.js"></script>
 </body>
