@@ -54,7 +54,7 @@ if (start < 0) {
   if (Array.isArray(contacts)) {
     if (contacts.length === 0) fail("El directorio no puede publicarse vacío.");
     const seen = new Set();
-    const allowedSourceTypes = new Set(["oficial", "agenda", "institucional", "mapa"]);
+    const allowedSourceTypes = new Set(["oficial", "agenda", "institucional", "mapa", "secundaria"]);
     for (const [index, item] of contacts.entries()) {
       const label = "Ficha " + (index + 1);
       if (!item.id || !item.nombre || !item.categoria) fail(label + ": faltan id, nombre o categoría.");
@@ -65,6 +65,10 @@ if (start < 0) {
       }
       if (!allowedSourceTypes.has(item.fuenteTipo)) fail(label + ": fuenteTipo ausente o no reconocido.");
       if (item.telefonos && !Array.isArray(item.telefonos)) fail(label + ": telefonos debe ser una lista.");
+      const hasPublicContact = (item.telefonos || []).length > 0 || Boolean(item.correo);
+      const allowedContactStates = new Set(["publicado-fuente-oficial", "publicado-agenda-provincial", "publicado-directorio-institucional", "referencia-secundaria", "dato-duplicado-pendiente"]);
+      if (hasPublicContact && !allowedContactStates.has(item.estadoContacto)) fail(label + ": falta un estado de respaldo del contacto válido.");
+      if (!hasPublicContact && item.estadoContacto) fail(label + ": no debe declarar estado de contacto si no publica teléfono ni correo.");
     }
     console.log("Fichas verificadas:", contacts.length);
   } else {
