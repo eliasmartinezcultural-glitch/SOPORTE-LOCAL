@@ -1,6 +1,7 @@
 /* CHÁÑAR A MANO · Datos públicos reunidos para consulta.
    fuenteTipo diferencia sitios oficiales de agendas/directorios institucionales.
    estadoContacto identifica el respaldo documental, no certifica que una línea siga activa.
+   Las fichas de directorios externos se muestran como referencias secundarias pendientes de confirmación.
    La presencia de una ficha no implica aval de la institución. */
 window.CHANAR_CONTACTOS = [
   {
@@ -1197,5 +1198,183 @@ window.CHANAR_CONTACTOS = [
     "fuenteNombre": "Búsqueda en mapas · referencia no oficial",
     "fuenteTipo": "mapa",
     "estadoContacto": "referencia-secundaria"
+  },
+  {
+    "id": "comisaria-13-directorio",
+    "nombre": "Comisaría N.º 13",
+    "categoria": "Organismos públicos",
+    "descripcion": "Dependencia policial de la localidad. El teléfono y la ubicación aparecen en un directorio externo; confirmar vigencia y canal adecuado antes de utilizarlo.",
+    "direccion": "Pilmaiquén s/n, San Patricio del Chañar, Neuquén, Argentina",
+    "telefonos": [
+      {
+        "uso": "Teléfono publicado en directorio externo · verificar",
+        "numero": "0299 485-5236"
+      }
+    ],
+    "fuente": "https://www.guiavacamuerta.com/buscador/?q=SAN",
+    "fuenteNombre": "Guía Vaca Muerta · directorio externo",
+    "fuenteTipo": "secundaria",
+    "estadoContacto": "referencia-secundaria"
+  },
+  {
+    "id": "concejo-deliberante",
+    "nombre": "Concejo Deliberante",
+    "categoria": "Organismos públicos",
+    "descripcion": "Órgano legislativo local. El teléfono y la ubicación aparecen en un directorio externo; confirmar atención y vigencia antes de concurrir.",
+    "direccion": "Quili Malal s/n, San Patricio del Chañar, Neuquén, Argentina",
+    "telefonos": [
+      {
+        "uso": "Teléfono publicado en directorio externo · verificar",
+        "numero": "0299 485-5373"
+      }
+    ],
+    "fuente": "https://www.guiavacamuerta.com/buscador/?q=SAN",
+    "fuenteNombre": "Guía Vaca Muerta · directorio externo",
+    "fuenteTipo": "secundaria",
+    "estadoContacto": "referencia-secundaria"
+  },
+  {
+    "id": "contralor-licencias",
+    "nombre": "Contralor Urbano · Licencias de conducir",
+    "categoria": "Organismos públicos",
+    "descripcion": "El directorio externo publica un mismo contacto para Contralor Urbano y Licencias de conducir. Confirmar qué sector atiende, requisitos y horario antes de ir.",
+    "direccion": "Ruca Choroi y Río Neuquén, Parque Industrial, San Patricio del Chañar, Neuquén, Argentina",
+    "telefonos": [
+      {
+        "uso": "Teléfono publicado en directorio externo · verificar",
+        "numero": "0299 487-9532"
+      }
+    ],
+    "fuente": "https://www.guiavacamuerta.com/buscador/?q=SAN",
+    "fuenteNombre": "Guía Vaca Muerta · directorio externo",
+    "fuenteTipo": "secundaria",
+    "estadoContacto": "referencia-secundaria"
+  },
+  {
+    "id": "radio-municipal-879",
+    "nombre": "Radio Municipal Chañar FM 87.9 MHz",
+    "categoria": "Cultura y comunidad",
+    "descripcion": "Emisora local identificada en un directorio externo. Confirmar que el número siga correspondiendo a la radio antes de utilizarlo.",
+    "telefonos": [
+      {
+        "uso": "Teléfono publicado en directorio externo · verificar",
+        "numero": "0299 423-7448"
+      }
+    ],
+    "fuente": "https://www.guiavacamuerta.com/buscador/?q=SAN",
+    "fuenteNombre": "Guía Vaca Muerta · directorio externo",
+    "fuenteTipo": "secundaria",
+    "estadoContacto": "referencia-secundaria"
+  },
+  {
+    "id": "con-aire-de-campo",
+    "nombre": "Con Aire de Campo",
+    "categoria": "Turismo y gastronomía",
+    "descripcion": "Emprendimiento local identificado en un directorio externo. Confirmar actividad, ubicación exacta y atención antes de acercarse.",
+    "direccion": "Picada 6 Sur, San Patricio del Chañar, Neuquén, Argentina",
+    "telefonos": [
+      {
+        "uso": "Teléfono publicado en directorio externo · verificar",
+        "numero": "0299 630-5937"
+      }
+    ],
+    "fuente": "https://www.guiavacamuerta.com/buscador/?q=SAN",
+    "fuenteNombre": "Guía Vaca Muerta · directorio externo",
+    "fuenteTipo": "secundaria",
+    "estadoContacto": "referencia-secundaria"
+  },
+  {
+    "id": "parador-la-5ta",
+    "nombre": "Parador La 5ta",
+    "categoria": "Turismo y gastronomía",
+    "descripcion": "Parador identificado en un directorio externo sobre Ruta Provincial 7. Confirmar horarios, servicios y ubicación exacta antes de viajar.",
+    "direccion": "Ruta Provincial 7, Picada 12, San Patricio del Chañar, Neuquén, Argentina",
+    "telefonos": [
+      {
+        "uso": "Teléfono publicado en directorio externo · verificar",
+        "numero": "0299 515-3665"
+      }
+    ],
+    "fuente": "https://www.guiavacamuerta.com/buscador/?q=SAN",
+    "fuenteNombre": "Guía Vaca Muerta · directorio externo",
+    "fuenteTipo": "secundaria",
+    "estadoContacto": "referencia-secundaria"
+  },
+  {
+    "id": "patagonia-services",
+    "nombre": "Patagonia Services",
+    "categoria": "Comercios y servicios",
+    "descripcion": "Prestador de servicios con domicilio publicado en un directorio externo. Confirmar actividad, disponibilidad y vigencia del teléfono.",
+    "direccion": "Alerce 616, San Patricio del Chañar, Neuquén, Argentina",
+    "telefonos": [
+      {
+        "uso": "Teléfono publicado en directorio externo · verificar",
+        "numero": "0299 516-5953"
+      }
+    ],
+    "fuente": "https://www.guiavacamuerta.com/buscador/?q=SAN",
+    "fuenteNombre": "Guía Vaca Muerta · directorio externo",
+    "fuenteTipo": "secundaria",
+    "estadoContacto": "referencia-secundaria"
+  },
+  {
+    "id": "distribuidora-emerson",
+    "nombre": "Distribuidora Emerson",
+    "categoria": "Comercios y servicios",
+    "descripcion": "Distribuidora local identificada en un directorio externo. Confirmar rubros, dirección y vigencia del teléfono antes de realizar una consulta.",
+    "direccion": "Manzana 7 · Calle 2 · Lote 1, San Patricio del Chañar, Neuquén, Argentina",
+    "telefonos": [
+      {
+        "uso": "Teléfono publicado en directorio externo · verificar",
+        "numero": "0299 605-0258"
+      }
+    ],
+    "fuente": "https://www.guiavacamuerta.com/buscador/?q=SAN",
+    "fuenteNombre": "Guía Vaca Muerta · directorio externo",
+    "fuenteTipo": "secundaria",
+    "estadoContacto": "referencia-secundaria"
+  },
+  {
+    "id": "quiroga-refrigeracion",
+    "nombre": "Quiroga Refrigeración",
+    "categoria": "Comercios y servicios",
+    "descripcion": "Servicio de refrigeración identificado en un directorio externo. La ficha consultada no informa una dirección local precisa; confirmar zona de atención y vigencia del teléfono.",
+    "telefonos": [
+      {
+        "uso": "Teléfono publicado en directorio externo · verificar",
+        "numero": "0299 532-8615"
+      }
+    ],
+    "fuente": "https://www.guiavacamuerta.com/buscador/?q=SAN",
+    "fuenteNombre": "Guía Vaca Muerta · directorio externo",
+    "fuenteTipo": "secundaria",
+    "estadoContacto": "referencia-secundaria"
+  },
+  {
+    "id": "reales-maria-parra-seguros",
+    "nombre": "Reales María Parra · Seguros",
+    "categoria": "Comercios y servicios",
+    "descripcion": "Servicio de seguros identificado en un directorio externo. Confirmar dirección, compañía representada y vigencia del teléfono antes de contratar.",
+    "direccion": "Amancay 10, San Patricio del Chañar, Neuquén, Argentina",
+    "telefonos": [
+      {
+        "uso": "Teléfono publicado en directorio externo · verificar",
+        "numero": "0299 485-5193"
+      }
+    ],
+    "fuente": "https://www.guiavacamuerta.com/buscador/?q=SAN",
+    "fuenteNombre": "Guía Vaca Muerta · directorio externo",
+    "fuenteTipo": "secundaria",
+    "estadoContacto": "referencia-secundaria"
+  },
+  {
+    "id": "h2o-system-lavanderia",
+    "nombre": "H2O System · Lavandería Industrial",
+    "categoria": "Comercios y servicios",
+    "descripcion": "Servicio de lavandería industrial identificado en un directorio externo. La ficha consultada no publica un teléfono; confirmar actividad y contacto antes de acercarse.",
+    "direccion": "Complejo El Chocón s/n · Barrio Industrial · Manzana 8 · Lote 7, San Patricio del Chañar, Neuquén, Argentina",
+    "fuente": "https://www.guiavacamuerta.com/buscador/?q=SAN",
+    "fuenteNombre": "Guía Vaca Muerta · directorio externo",
+    "fuenteTipo": "secundaria"
   }
 ];
