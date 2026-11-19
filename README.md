@@ -14,6 +14,15 @@ Reúne información pública de instituciones, servicios, organizaciones, espaci
 
 La página está pensada para celulares, lectura sencilla, controles grandes y personas con poca experiencia digital. La bienvenida identifica claramente la creación de Ocarina Producciones y presenta una fotografía del Balneario Municipal publicada en la sección Nuestra Ciudad del sitio de la Municipalidad. La atribución está visible junto a la imagen; la autorización específica de reutilización debe confirmarse con el titular antes de considerar cerrada la cuestión de derechos. Incluye un panel de ajustes con tamaño de letra ampliable hasta el 200%, brillo, contraste y tres modos de color (natural, alto contraste y nocturno), además de impresión y guardado como PDF. La búsqueda se realiza sobre los datos incluidos en la página, sin registro ni envío de la consulta. Los ajustes visuales se guardan localmente en el dispositivo. El encabezado ofrece acceso directo para compartir por WhatsApp; también se conserva el menú de compartir del dispositivo y la opción de copiar el enlace.
 
+
+La página ahora prioriza el buscador al entrar: los temas se despliegan solo si la persona quiere explorar por categoría, la procedencia completa de cada ficha se abre bajo demanda y los ajustes de pantalla quedan después del directorio para no retrasar la consulta.
+
+
+## Identidad visual y experiencia de lectura
+La presentación utiliza una paleta cálida inspirada en papel, vegetación y tonos de tierra, con acentos diferenciados para reconocer visualmente los temas. Las fichas tienen una jerarquía clara: categoría, nombre, descripción, datos disponibles y procedencia desplegable. Se reforzaron los espacios, bordes, sombras suaves y estados de interacción sin convertir la guía en una interfaz recargada. La portada identifica la autoría de Ocarina Producciones y conserva una referencia visual local. Los modos nocturno y de alto contraste contemplan los nuevos detalles; la impresión elimina adornos que dificulten la lectura en papel.
+
+La capa estética no modifica la estructura de las fichas ni el contenido de `datos.js`. Los efectos de movimiento se limitan a dispositivos que admiten interacción por puntero y respetan la preferencia de movimiento reducido.
+
 ## Criterios de información y seguridad
 - La guía no es oficial y no representa a las instituciones.
 - Cada ficha identifica el tipo de fuente disponible.
@@ -61,6 +70,11 @@ Antes de anunciar la guía como versión estable, completar estas comprobaciones
 - Confirmar la autorización de reutilización de la fotografía de portada o reemplazarla por una imagen propia/autorizada.
 
 La revisión del código no sustituye estas pruebas en navegadores y dispositivos reales. La guía debe seguir mostrando que los datos son referencias sujetas a cambios.
+
+
+## Publicación y mantenimiento
+
+El procedimiento para guardar, revisar, publicar y recuperar cambios está documentado en [PUBLICACION.md](PUBLICACION.md). La validación automática se ejecuta al subir cambios y al abrir Pull Requests hacia `main`.
 
 ## Fuentes de referencia
 - Municipalidad de San Patricio del Chañar: https://sanpatricio.gob.ar/

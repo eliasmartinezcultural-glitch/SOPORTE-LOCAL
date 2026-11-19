@@ -1,5 +1,6 @@
 /* CHÁÑAR A MANO · Datos públicos reunidos para consulta.
    fuenteTipo diferencia sitios oficiales de agendas/directorios institucionales.
+   estadoContacto identifica el respaldo documental, no certifica que una línea siga activa.
    La presencia de una ficha no implica aval de la institución. */
 window.CHANAR_CONTACTOS = [
   {
@@ -15,7 +16,8 @@ window.CHANAR_CONTACTOS = [
     ],
     "fuente": "https://sanpatricio.gob.ar/sec-administracion",
     "fuenteNombre": "Municipalidad de San Patricio del Chañar",
-    "fuenteTipo": "oficial"
+    "fuenteTipo": "oficial",
+    "estadoContacto": "publicado-fuente-oficial"
   },
   {
     "id": "municipio-mesa",
@@ -30,7 +32,8 @@ window.CHANAR_CONTACTOS = [
     ],
     "fuente": "https://sanpatricio.gob.ar/sec-administracion",
     "fuenteNombre": "Municipalidad de San Patricio del Chañar",
-    "fuenteTipo": "oficial"
+    "fuenteTipo": "oficial",
+    "estadoContacto": "publicado-fuente-oficial"
   },
   {
     "id": "municipio-recaudaciones",
@@ -46,7 +49,8 @@ window.CHANAR_CONTACTOS = [
     "correo": "recaudaciones@sanpatricio.gob.ar",
     "fuente": "https://sanpatricio.gob.ar/sec-administracion",
     "fuenteNombre": "Municipalidad de San Patricio del Chañar",
-    "fuenteTipo": "oficial"
+    "fuenteTipo": "oficial",
+    "estadoContacto": "publicado-fuente-oficial"
   },
   {
     "id": "municipio-compras",
@@ -62,7 +66,8 @@ window.CHANAR_CONTACTOS = [
     "correo": "compras@sanpatricio.gob.ar",
     "fuente": "https://sanpatricio.gob.ar/sec-administracion",
     "fuenteNombre": "Municipalidad de San Patricio del Chañar",
-    "fuenteTipo": "oficial"
+    "fuenteTipo": "oficial",
+    "estadoContacto": "publicado-fuente-oficial"
   },
   {
     "id": "religion-culto",
@@ -78,7 +83,8 @@ window.CHANAR_CONTACTOS = [
     "correo": "religionyculto@sanpatricio.gob.ar",
     "fuente": "https://sanpatricio.gob.ar/religion",
     "fuenteNombre": "Municipalidad de San Patricio del Chañar",
-    "fuenteTipo": "oficial"
+    "fuenteTipo": "oficial",
+    "estadoContacto": "publicado-fuente-oficial"
   },
   {
     "id": "seguridad",
@@ -101,7 +107,8 @@ window.CHANAR_CONTACTOS = [
     ],
     "fuente": "https://sanpatricio.gob.ar/sec-ciudadana",
     "fuenteNombre": "Municipalidad de San Patricio del Chañar",
-    "fuenteTipo": "oficial"
+    "fuenteTipo": "oficial",
+    "estadoContacto": "publicado-fuente-oficial"
   },
   {
     "id": "infraestructura",
@@ -117,7 +124,8 @@ window.CHANAR_CONTACTOS = [
     "correo": "sec.oysp@sanpatricio.gob.ar",
     "fuente": "https://sanpatricio.gob.ar/sec-cordinacion",
     "fuenteNombre": "Municipalidad de San Patricio del Chañar",
-    "fuenteTipo": "oficial"
+    "fuenteTipo": "oficial",
+    "estadoContacto": "publicado-fuente-oficial"
   },
   {
     "id": "desarrollo-economico",
@@ -133,7 +141,8 @@ window.CHANAR_CONTACTOS = [
     "correo": "desarrollo.economico@sanpatricio.gob.ar",
     "fuente": "https://sanpatricio.gob.ar/desarrollo-economico",
     "fuenteNombre": "Municipalidad de San Patricio del Chañar",
-    "fuenteTipo": "oficial"
+    "fuenteTipo": "oficial",
+    "estadoContacto": "publicado-fuente-oficial"
   },
   {
     "id": "juzgado-faltas",
@@ -149,7 +158,8 @@ window.CHANAR_CONTACTOS = [
     "correo": "descargos.juzgadodefaltas@sanpatricio.gob.ar",
     "fuente": "https://sanpatricio.gob.ar/faltas",
     "fuenteNombre": "Municipalidad de San Patricio del Chañar",
-    "fuenteTipo": "oficial"
+    "fuenteTipo": "oficial",
+    "estadoContacto": "publicado-fuente-oficial"
   },
   {
     "id": "renatre-ber",
@@ -168,7 +178,8 @@ window.CHANAR_CONTACTOS = [
     ],
     "fuente": "https://www.renatre.org.ar/delegaciones/neuquen/",
     "fuenteNombre": "RENATRE · Delegación Neuquén",
-    "fuenteTipo": "oficial"
+    "fuenteTipo": "oficial",
+    "estadoContacto": "publicado-fuente-oficial"
   },
   {
     "id": "hospital",
@@ -183,7 +194,8 @@ window.CHANAR_CONTACTOS = [
     ],
     "fuente": "https://copronaf.neuquen.gob.ar/agenda-de-recursos/",
     "fuenteNombre": "Agenda de Recursos · Co.Pro.NAF Neuquén",
-    "fuenteTipo": "agenda"
+    "fuenteTipo": "agenda",
+    "estadoContacto": "publicado-agenda-provincial"
   },
   {
     "id": "cpem31",
@@ -198,7 +210,8 @@ window.CHANAR_CONTACTOS = [
     ],
     "fuente": "https://copronaf.neuquen.gob.ar/agenda-de-recursos/",
     "fuenteNombre": "Agenda de Recursos · Co.Pro.NAF Neuquén",
-    "fuenteTipo": "agenda"
+    "fuenteTipo": "agenda",
+    "estadoContacto": "publicado-agenda-provincial"
   },
   {
     "id": "escuela-especial19",
@@ -213,7 +226,8 @@ window.CHANAR_CONTACTOS = [
     ],
     "fuente": "https://copronaf.neuquen.gob.ar/agenda-de-recursos/",
     "fuenteNombre": "Agenda de Recursos · Co.Pro.NAF Neuquén",
-    "fuenteTipo": "agenda"
+    "fuenteTipo": "agenda",
+    "estadoContacto": "publicado-agenda-provincial"
   },
   {
     "id": "escuela191",
@@ -228,7 +242,8 @@ window.CHANAR_CONTACTOS = [
     ],
     "fuente": "https://copronaf.neuquen.gob.ar/agenda-de-recursos/",
     "fuenteNombre": "Agenda de Recursos · Co.Pro.NAF Neuquén",
-    "fuenteTipo": "agenda"
+    "fuenteTipo": "agenda",
+    "estadoContacto": "publicado-agenda-provincial"
   },
   {
     "id": "escuela273",
@@ -243,22 +258,25 @@ window.CHANAR_CONTACTOS = [
     ],
     "fuente": "https://copronaf.neuquen.gob.ar/agenda-de-recursos/",
     "fuenteNombre": "Agenda de Recursos · Co.Pro.NAF Neuquén",
-    "fuenteTipo": "agenda"
+    "fuenteTipo": "agenda",
+    "estadoContacto": "publicado-agenda-provincial"
   },
   {
     "id": "cfp2",
     "nombre": "Centro de Formación Profesional Agropecuario N.º 2",
     "categoria": "Educación",
-    "descripcion": "Formación profesional vinculada al ámbito agropecuario.",
+    "descripcion": "Centro de formación profesional agropecuaria. Dirección y teléfono publicados por el Ministerio de Educación de Neuquén.",
     "telefonos": [
       {
-        "uso": "Teléfono publicado en agenda provincial",
-        "numero": "0299 485-5103"
+        "uso": "Teléfono publicado por Educación de Neuquén",
+        "numero": "0299 676-949"
       }
     ],
-    "fuente": "https://copronaf.neuquen.gob.ar/agenda-de-recursos/",
-    "fuenteNombre": "Agenda de Recursos · Co.Pro.NAF Neuquén",
-    "fuenteTipo": "agenda"
+    "fuente": "https://www.neuquen.edu.ar/_trayectos_formativos_partial/",
+    "fuenteNombre": "Ministerio de Educación de Neuquén · Centro de Formación Profesional Agropecuario N.º 2",
+    "fuenteTipo": "oficial",
+    "direccion": "Gasparri y Alerces, San Patricio del Chañar, Neuquén, Argentina",
+    "estadoContacto": "publicado-fuente-oficial"
   },
   {
     "id": "cepa56",
@@ -273,7 +291,8 @@ window.CHANAR_CONTACTOS = [
     ],
     "fuente": "https://copronaf.neuquen.gob.ar/agenda-de-recursos/",
     "fuenteNombre": "Agenda de Recursos · Co.Pro.NAF Neuquén",
-    "fuenteTipo": "agenda"
+    "fuenteTipo": "agenda",
+    "estadoContacto": "dato-duplicado-pendiente"
   },
   {
     "id": "area-ninez",
@@ -288,7 +307,8 @@ window.CHANAR_CONTACTOS = [
     ],
     "fuente": "https://copronaf.neuquen.gob.ar/agenda-de-recursos/",
     "fuenteNombre": "Agenda de Recursos · Co.Pro.NAF Neuquén",
-    "fuenteTipo": "agenda"
+    "fuenteTipo": "agenda",
+    "estadoContacto": "publicado-agenda-provincial"
   },
   {
     "id": "registro-civil",
@@ -304,7 +324,8 @@ window.CHANAR_CONTACTOS = [
     "correo": "ofdigital.sanpatricio@gmail.com",
     "fuente": "https://registrocivil.neuquen.gob.ar/oficinas/",
     "fuenteNombre": "Dirección Provincial de Registro Civil",
-    "fuenteTipo": "oficial"
+    "fuenteTipo": "oficial",
+    "estadoContacto": "publicado-fuente-oficial"
   },
   {
     "id": "parroquia",
@@ -320,7 +341,8 @@ window.CHANAR_CONTACTOS = [
     "correo": "pquiasanpatricionqn@gmail.com",
     "fuente": "https://www.diocesisneuquen.org.ar/",
     "fuenteNombre": "Diócesis de Neuquén",
-    "fuenteTipo": "institucional"
+    "fuenteTipo": "institucional",
+    "estadoContacto": "publicado-directorio-institucional"
   },
   {
     "id": "camara-productores",
@@ -336,7 +358,8 @@ window.CHANAR_CONTACTOS = [
     "correo": "federicosacheri@gmail.com",
     "fuente": "https://www.redcame.org.ar/entidades-asociadas/78/asociadas",
     "fuenteNombre": "CAME · Entidades asociadas",
-    "fuenteTipo": "institucional"
+    "fuenteTipo": "institucional",
+    "estadoContacto": "publicado-directorio-institucional"
   },
   {
     "id": "escuela-342",
@@ -351,7 +374,8 @@ window.CHANAR_CONTACTOS = [
     ],
     "fuente": "https://copronaf.neuquen.gob.ar/agenda-de-recursos/",
     "fuenteNombre": "Agenda de Recursos · Co.Pro.NAF Neuquén",
-    "fuenteTipo": "oficial"
+    "fuenteTipo": "agenda",
+    "estadoContacto": "dato-duplicado-pendiente"
   },
   {
     "id": "jardin-41",
@@ -366,7 +390,8 @@ window.CHANAR_CONTACTOS = [
     ],
     "fuente": "https://copronaf.neuquen.gob.ar/agenda-de-recursos/",
     "fuenteNombre": "Agenda de Recursos · Co.Pro.NAF Neuquén",
-    "fuenteTipo": "oficial"
+    "fuenteTipo": "agenda",
+    "estadoContacto": "publicado-agenda-provincial"
   },
   {
     "id": "cef-10",
@@ -381,8 +406,9 @@ window.CHANAR_CONTACTOS = [
     ],
     "correo": "cef010@neuquen.gov.ar",
     "fuente": "https://escuela.club/argentina/escuela-centro-de-educacion-fisica-10/",
-    "fuenteNombre": "Ficha educativa · CUE 580098900",
-    "fuenteTipo": "oficial"
+    "fuenteNombre": "Directorio educativo de terceros · CUE 580098900",
+    "fuenteTipo": "secundaria",
+    "estadoContacto": "referencia-secundaria"
   },
   {
     "id": "epea-3",
@@ -397,7 +423,8 @@ window.CHANAR_CONTACTOS = [
     ],
     "fuente": "https://copronaf.neuquen.gob.ar/agenda-de-recursos/",
     "fuenteNombre": "Agenda de Recursos · Co.Pro.NAF Neuquén",
-    "fuenteTipo": "oficial"
+    "fuenteTipo": "agenda",
+    "estadoContacto": "publicado-agenda-provincial"
   },
   {
     "id": "epen",
@@ -421,7 +448,8 @@ window.CHANAR_CONTACTOS = [
     "correo": "poses@epen.gov.ar",
     "fuente": "https://www.epen.gov.ar/index.php/contactos-comerciales/",
     "fuenteNombre": "EPEN · Contactos comerciales",
-    "fuenteTipo": "oficial"
+    "fuenteTipo": "oficial",
+    "estadoContacto": "publicado-fuente-oficial"
   },
   {
     "id": "deportes-municipal",
@@ -437,7 +465,8 @@ window.CHANAR_CONTACTOS = [
     "correo": "deportes@sanpatricio.gob.ar",
     "fuente": "https://sanpatricio.gob.ar/deportes",
     "fuenteNombre": "Municipalidad de San Patricio del Chañar",
-    "fuenteTipo": "oficial"
+    "fuenteTipo": "oficial",
+    "estadoContacto": "publicado-fuente-oficial"
   },
   {
     "id": "cultura-municipal",
@@ -447,8 +476,9 @@ window.CHANAR_CONTACTOS = [
     "telefonos": [],
     "correo": "cultura@sanpatricio.gob.ar",
     "fuente": "https://www.cutralcoalinstante.com/2025/07/31/abrieron-las-inscripciones-para-el-preselectivo-tremn-tahuen-en-centenario-y-chanar/",
-    "fuenteNombre": "Convocatoria cultural · Tremn Tahuen 2025",
-    "fuenteTipo": "oficial"
+    "fuenteNombre": "Publicación periodística · Convocatoria Tremn Tahuen 2025",
+    "fuenteTipo": "secundaria",
+    "estadoContacto": "referencia-secundaria"
   },
   {
     "id": "delorean",
@@ -463,7 +493,8 @@ window.CHANAR_CONTACTOS = [
     ],
     "fuente": "https://sanpatricio.gob.ar/gastronomicos",
     "fuenteNombre": "Municipalidad · Espacios gastronómicos",
-    "fuenteTipo": "oficial"
+    "fuenteTipo": "oficial",
+    "estadoContacto": "publicado-fuente-oficial"
   },
   {
     "id": "augusta",
@@ -478,7 +509,8 @@ window.CHANAR_CONTACTOS = [
     ],
     "fuente": "https://sanpatricio.gob.ar/gastronomicos",
     "fuenteNombre": "Municipalidad · Espacios gastronómicos",
-    "fuenteTipo": "oficial"
+    "fuenteTipo": "oficial",
+    "estadoContacto": "conflicto-entre-fuentes"
   },
   {
     "id": "heidi",
@@ -493,7 +525,8 @@ window.CHANAR_CONTACTOS = [
     ],
     "fuente": "https://sanpatricio.gob.ar/gastronomicos",
     "fuenteNombre": "Municipalidad · Espacios gastronómicos",
-    "fuenteTipo": "oficial"
+    "fuenteTipo": "oficial",
+    "estadoContacto": "publicado-fuente-oficial"
   },
   {
     "id": "picada-11",
@@ -508,7 +541,8 @@ window.CHANAR_CONTACTOS = [
     ],
     "fuente": "https://sanpatricio.gob.ar/gastronomicos",
     "fuenteNombre": "Municipalidad · Espacios gastronómicos",
-    "fuenteTipo": "oficial"
+    "fuenteTipo": "oficial",
+    "estadoContacto": "publicado-fuente-oficial"
   },
   {
     "id": "hotel-don-pedro",
@@ -524,7 +558,8 @@ window.CHANAR_CONTACTOS = [
     "correo": "hoteldonpedrochanar@gmail.com",
     "fuente": "https://sanpatricio.gob.ar/dormir",
     "fuenteNombre": "Municipalidad · Dónde dormir",
-    "fuenteTipo": "oficial"
+    "fuenteTipo": "oficial",
+    "estadoContacto": "publicado-fuente-oficial"
   },
   {
     "id": "complejo-uno",
@@ -540,7 +575,8 @@ window.CHANAR_CONTACTOS = [
     "correo": "adm.complejo.vacamuerta@gmail.com",
     "fuente": "https://sanpatricio.gob.ar/dormir",
     "fuenteNombre": "Municipalidad · Dónde dormir",
-    "fuenteTipo": "oficial"
+    "fuenteTipo": "oficial",
+    "estadoContacto": "conflicto-entre-fuentes"
   },
   {
     "id": "hosteria-chanar",
@@ -555,7 +591,8 @@ window.CHANAR_CONTACTOS = [
     ],
     "fuente": "https://sanpatricio.gob.ar/dormir",
     "fuenteNombre": "Municipalidad · Dónde dormir",
-    "fuenteTipo": "oficial"
+    "fuenteTipo": "oficial",
+    "estadoContacto": "publicado-fuente-oficial"
   },
   {
     "id": "ruca-laf",
@@ -572,18 +609,19 @@ window.CHANAR_CONTACTOS = [
     "id": "bodega-schroeder",
     "nombre": "Bodega Familia Schroeder",
     "categoria": "Turismo y producción",
-    "descripcion": "Bodega con propuesta de visitas y gastronomía, identificada en el portal turístico municipal.",
+    "descripcion": "Bodega y visitas guiadas. El sitio oficial publica este teléfono para consultas de turismo y reservas.",
     "telefonos": [
       {
-        "uso": "Contacto de bodega y turismo",
-        "numero": "0299 454-8920"
+        "uso": "Turismo · visitas guiadas",
+        "numero": "0299 489-9600"
       }
     ],
-    "fuente": "https://familiaschroeder.com/arg/bodega/",
-    "fuenteNombre": "Bodega Familia Schroeder · Sitio oficial",
+    "fuente": "https://familiaschroeder.com/arg/saurus_garden/",
+    "fuenteNombre": "Familia Schroeder · Sitio oficial",
     "fuenteTipo": "oficial",
     "direccion": "Calle 7 Norte, San Patricio del Chañar, Neuquén, Argentina",
-    "correo": "turismo@familiaschroeder.com"
+    "correo": "turismo@familiaschroeder.com",
+    "estadoContacto": "publicado-fuente-oficial"
   },
   {
     "id": "bodega-malma",
@@ -604,7 +642,8 @@ window.CHANAR_CONTACTOS = [
     "fuenteNombre": "Bodega Malma · Sitio oficial",
     "fuenteTipo": "oficial",
     "direccion": "Ruta Provincial 7 y Calle 15, San Patricio del Chañar, Neuquén, Argentina",
-    "correo": "visitas@bodegamalma.com"
+    "correo": "visitas@bodegamalma.com",
+    "estadoContacto": "publicado-fuente-oficial"
   },
   {
     "id": "bodega-fin-mundo",
@@ -621,7 +660,8 @@ window.CHANAR_CONTACTOS = [
     "fuenteNombre": "Turismo Neuquén",
     "fuenteTipo": "oficial",
     "direccion": "Ruta Provincial 8, Km 9, Chacra 77, San Patricio del Chañar, Neuquén, Argentina",
-    "correo": "turismo@bdfm.com.ar"
+    "correo": "turismo@bdfm.com.ar",
+    "estadoContacto": "conflicto-entre-fuentes"
   },
   {
     "id": "bodega-secreto",
@@ -633,7 +673,8 @@ window.CHANAR_CONTACTOS = [
     "fuenteNombre": "Bodega Secreto Patagónico · Sitio oficial",
     "fuenteTipo": "oficial",
     "direccion": "Picada 4,5, San Patricio del Chañar, Neuquén, Argentina",
-    "correo": "ventas@secretopatagonico.com"
+    "correo": "ventas@secretopatagonico.com",
+    "estadoContacto": "publicado-fuente-oficial"
   },
   {
     "id": "bodega-patritri",
@@ -670,7 +711,8 @@ window.CHANAR_CONTACTOS = [
     ],
     "fuente": "https://sanpatricio.gob.ar/quehacer",
     "fuenteNombre": "Municipalidad · Qué hacer",
-    "fuenteTipo": "oficial"
+    "fuenteTipo": "oficial",
+    "estadoContacto": "publicado-fuente-oficial"
   },
   {
     "id": "establecimiento-lara",
@@ -752,7 +794,8 @@ window.CHANAR_CONTACTOS = [
     ],
     "fuente": "https://www.google.com/maps/search/?api=1&query=Biblioteca%20Popular%20San%20Patricio%20del%20Cha%C3%B1ar%2C%20San%20Patricio%20del%20Cha%C3%B1ar%2C%20Neuqu%C3%A9n%2C%20Argentina",
     "fuenteNombre": "Búsqueda en mapas · referencia no oficial",
-    "fuenteTipo": "mapa"
+    "fuenteTipo": "mapa",
+    "estadoContacto": "referencia-secundaria"
   },
   {
     "id": "campus-educativo",
@@ -768,7 +811,8 @@ window.CHANAR_CONTACTOS = [
     ],
     "fuente": "https://www.google.com/maps/search/?api=1&query=Campus%20Educativo%20Tecnol%C3%B3gico%2C%20de%20Investigaci%C3%B3n%20e%20Innovaci%C3%B3n%2C%20San%20Patricio%20del%20Cha%C3%B1ar%2C%20Neuqu%C3%A9n%2C%20Argentina",
     "fuenteNombre": "Búsqueda en mapas · referencia no oficial",
-    "fuenteTipo": "mapa"
+    "fuenteTipo": "mapa",
+    "estadoContacto": "referencia-secundaria"
   },
   {
     "id": "cdi-amiguitos",
@@ -806,7 +850,8 @@ window.CHANAR_CONTACTOS = [
     ],
     "fuente": "https://www.google.com/maps/search/?api=1&query=Panader%C3%ADa%20La%20Baguette%2C%20San%20Patricio%20del%20Cha%C3%B1ar%2C%20Neuqu%C3%A9n%2C%20Argentina",
     "fuenteNombre": "Búsqueda en mapas · referencia no oficial",
-    "fuenteTipo": "mapa"
+    "fuenteTipo": "mapa",
+    "estadoContacto": "referencia-secundaria"
   },
   {
     "id": "rico-pan",
@@ -833,7 +878,8 @@ window.CHANAR_CONTACTOS = [
     ],
     "fuente": "https://www.google.com/maps/search/?api=1&query=Corral%C3%B3n%20Pitty%2C%20San%20Patricio%20del%20Cha%C3%B1ar%2C%20Neuqu%C3%A9n%2C%20Argentina",
     "fuenteNombre": "Búsqueda en mapas · referencia no oficial",
-    "fuenteTipo": "mapa"
+    "fuenteTipo": "mapa",
+    "estadoContacto": "referencia-secundaria"
   },
   {
     "id": "farmacia-global",
@@ -849,7 +895,8 @@ window.CHANAR_CONTACTOS = [
     ],
     "fuente": "https://www.google.com/maps/search/?api=1&query=Farmacia%20y%20Perfumer%C3%ADa%20Global%2C%20San%20Patricio%20del%20Cha%C3%B1ar%2C%20Neuqu%C3%A9n%2C%20Argentina",
     "fuenteNombre": "Búsqueda en mapas · referencia no oficial",
-    "fuenteTipo": "mapa"
+    "fuenteTipo": "mapa",
+    "estadoContacto": "referencia-secundaria"
   },
   {
     "id": "veterinaria-kibo",
@@ -865,7 +912,8 @@ window.CHANAR_CONTACTOS = [
     ],
     "fuente": "https://www.google.com/maps/search/?api=1&query=Veterinaria%20Kibo%2C%20San%20Patricio%20del%20Cha%C3%B1ar%2C%20Neuqu%C3%A9n%2C%20Argentina",
     "fuenteNombre": "Búsqueda en mapas · referencia no oficial",
-    "fuenteTipo": "mapa"
+    "fuenteTipo": "mapa",
+    "estadoContacto": "referencia-secundaria"
   },
   {
     "id": "ferreteria-san-francisco",
@@ -881,7 +929,8 @@ window.CHANAR_CONTACTOS = [
     ],
     "fuente": "https://www.google.com/maps/search/?api=1&query=Ferreter%C3%ADa%20San%20Francisco%2C%20San%20Patricio%20del%20Cha%C3%B1ar%2C%20Neuqu%C3%A9n%2C%20Argentina",
     "fuenteNombre": "Búsqueda en mapas · referencia no oficial",
-    "fuenteTipo": "mapa"
+    "fuenteTipo": "mapa",
+    "estadoContacto": "referencia-secundaria"
   },
   {
     "id": "la-anonima",
@@ -908,7 +957,8 @@ window.CHANAR_CONTACTOS = [
     ],
     "fuente": "https://www.google.com/maps/search/?api=1&query=Gomer%C3%ADa%20Omar%2C%20San%20Patricio%20del%20Cha%C3%B1ar%2C%20Neuqu%C3%A9n%2C%20Argentina",
     "fuenteNombre": "Búsqueda en mapas · referencia no oficial",
-    "fuenteTipo": "mapa"
+    "fuenteTipo": "mapa",
+    "estadoContacto": "referencia-secundaria"
   },
   {
     "id": "mecanica-matias",
@@ -924,7 +974,8 @@ window.CHANAR_CONTACTOS = [
     ],
     "fuente": "https://www.google.com/maps/search/?api=1&query=Mec%C3%A1nica%20Mat%C3%ADas%2C%20San%20Patricio%20del%20Cha%C3%B1ar%2C%20Neuqu%C3%A9n%2C%20Argentina",
     "fuenteNombre": "Búsqueda en mapas · referencia no oficial",
-    "fuenteTipo": "mapa"
+    "fuenteTipo": "mapa",
+    "estadoContacto": "referencia-secundaria"
   },
   {
     "id": "iriarte-service",
@@ -940,7 +991,8 @@ window.CHANAR_CONTACTOS = [
     ],
     "fuente": "https://www.google.com/maps/search/?api=1&query=Iriarte%20Service%20del%20Automotor%2C%20San%20Patricio%20del%20Cha%C3%B1ar%2C%20Neuqu%C3%A9n%2C%20Argentina",
     "fuenteNombre": "Búsqueda en mapas · referencia no oficial",
-    "fuenteTipo": "mapa"
+    "fuenteTipo": "mapa",
+    "estadoContacto": "referencia-secundaria"
   },
   {
     "id": "mecanica-lp",
@@ -956,7 +1008,8 @@ window.CHANAR_CONTACTOS = [
     ],
     "fuente": "https://www.google.com/maps/search/?api=1&query=Mec%C3%A1nica%20LP%2C%20San%20Patricio%20del%20Cha%C3%B1ar%2C%20Neuqu%C3%A9n%2C%20Argentina",
     "fuenteNombre": "Búsqueda en mapas · referencia no oficial",
-    "fuenteTipo": "mapa"
+    "fuenteTipo": "mapa",
+    "estadoContacto": "referencia-secundaria"
   },
   {
     "id": "mecanica-omar",
@@ -972,7 +1025,8 @@ window.CHANAR_CONTACTOS = [
     ],
     "fuente": "https://www.google.com/maps/search/?api=1&query=Mec%C3%A1nica%20Omar%2C%20San%20Patricio%20del%20Cha%C3%B1ar%2C%20Neuqu%C3%A9n%2C%20Argentina",
     "fuenteNombre": "Búsqueda en mapas · referencia no oficial",
-    "fuenteTipo": "mapa"
+    "fuenteTipo": "mapa",
+    "estadoContacto": "referencia-secundaria"
   },
   {
     "id": "flavia-estilista",
@@ -988,7 +1042,8 @@ window.CHANAR_CONTACTOS = [
     ],
     "fuente": "https://www.google.com/maps/search/?api=1&query=Flavia%20Mart%C3%ADnez%20Estilista%2C%20San%20Patricio%20del%20Cha%C3%B1ar%2C%20Neuqu%C3%A9n%2C%20Argentina",
     "fuenteNombre": "Búsqueda en mapas · referencia no oficial",
-    "fuenteTipo": "mapa"
+    "fuenteTipo": "mapa",
+    "estadoContacto": "referencia-secundaria"
   },
   {
     "id": "barba-negra",
@@ -1004,7 +1059,8 @@ window.CHANAR_CONTACTOS = [
     ],
     "fuente": "https://www.google.com/maps/search/?api=1&query=Barber%C3%ADa%20Barba%20Negra%2C%20San%20Patricio%20del%20Cha%C3%B1ar%2C%20Neuqu%C3%A9n%2C%20Argentina",
     "fuenteNombre": "Búsqueda en mapas · referencia no oficial",
-    "fuenteTipo": "mapa"
+    "fuenteTipo": "mapa",
+    "estadoContacto": "referencia-secundaria"
   },
   {
     "id": "el-punto-grafica",
@@ -1020,7 +1076,8 @@ window.CHANAR_CONTACTOS = [
     ],
     "fuente": "https://www.google.com/maps/search/?api=1&query=El%20Punto%20Gr%C3%A1fica%2C%20San%20Patricio%20del%20Cha%C3%B1ar%2C%20Neuqu%C3%A9n%2C%20Argentina",
     "fuenteNombre": "Búsqueda en mapas · referencia no oficial",
-    "fuenteTipo": "mapa"
+    "fuenteTipo": "mapa",
+    "estadoContacto": "referencia-secundaria"
   },
   {
     "id": "peluqueria-roxy",
@@ -1036,7 +1093,8 @@ window.CHANAR_CONTACTOS = [
     ],
     "fuente": "https://www.google.com/maps/search/?api=1&query=Peluquer%C3%ADa%20Roxy%20%C2%B7%20Estilista%20y%20asesora%20de%20imagen%2C%20San%20Patricio%20del%20Cha%C3%B1ar%2C%20Neuqu%C3%A9n%2C%20Argentina",
     "fuenteNombre": "Búsqueda en mapas · referencia no oficial",
-    "fuenteTipo": "mapa"
+    "fuenteTipo": "mapa",
+    "estadoContacto": "referencia-secundaria"
   },
   {
     "id": "peluqueria-ginahu",
@@ -1052,7 +1110,8 @@ window.CHANAR_CONTACTOS = [
     ],
     "fuente": "https://www.google.com/maps/search/?api=1&query=Peluquer%C3%ADa%20GINAHU%2C%20San%20Patricio%20del%20Cha%C3%B1ar%2C%20Neuqu%C3%A9n%2C%20Argentina",
     "fuenteNombre": "Búsqueda en mapas · referencia no oficial",
-    "fuenteTipo": "mapa"
+    "fuenteTipo": "mapa",
+    "estadoContacto": "referencia-secundaria"
   },
   {
     "id": "consultorios-durbano",
@@ -1068,7 +1127,8 @@ window.CHANAR_CONTACTOS = [
     ],
     "fuente": "https://www.google.com/maps/search/?api=1&query=Consultorios%20Durbano%2C%20San%20Patricio%20del%20Cha%C3%B1ar%2C%20Neuqu%C3%A9n%2C%20Argentina",
     "fuenteNombre": "Búsqueda en mapas · referencia no oficial",
-    "fuenteTipo": "mapa"
+    "fuenteTipo": "mapa",
+    "estadoContacto": "referencia-secundaria"
   },
   {
     "id": "odontologia-espinoza",
@@ -1084,7 +1144,8 @@ window.CHANAR_CONTACTOS = [
     ],
     "fuente": "https://www.google.com/maps/search/?api=1&query=Consultorio%20Odontol%C3%B3gico%20%C2%B7%20Dra.%20Susana%20Espinoza%2C%20San%20Patricio%20del%20Cha%C3%B1ar%2C%20Neuqu%C3%A9n%2C%20Argentina",
     "fuenteNombre": "Búsqueda en mapas · referencia no oficial",
-    "fuenteTipo": "mapa"
+    "fuenteTipo": "mapa",
+    "estadoContacto": "referencia-secundaria"
   },
   {
     "id": "corralon-pitty-6",
@@ -1100,7 +1161,8 @@ window.CHANAR_CONTACTOS = [
     ],
     "fuente": "https://www.google.com/maps/search/?api=1&query=Corral%C3%B3n%20Pitty%206%2C%20San%20Patricio%20del%20Cha%C3%B1ar%2C%20Neuqu%C3%A9n%2C%20Argentina",
     "fuenteNombre": "Búsqueda en mapas · referencia no oficial",
-    "fuenteTipo": "mapa"
+    "fuenteTipo": "mapa",
+    "estadoContacto": "referencia-secundaria"
   },
   {
     "id": "super-jazmin-5",
@@ -1116,7 +1178,8 @@ window.CHANAR_CONTACTOS = [
     ],
     "fuente": "https://www.google.com/maps/search/?api=1&query=Supermercado%20Jazm%C3%ADn%205%2C%20San%20Patricio%20del%20Cha%C3%B1ar%2C%20Neuqu%C3%A9n%2C%20Argentina",
     "fuenteNombre": "Búsqueda en mapas · referencia no oficial",
-    "fuenteTipo": "mapa"
+    "fuenteTipo": "mapa",
+    "estadoContacto": "referencia-secundaria"
   },
   {
     "id": "mini-shopping",
@@ -1132,6 +1195,7 @@ window.CHANAR_CONTACTOS = [
     ],
     "fuente": "https://www.google.com/maps/search/?api=1&query=Mini%20Shopping%20Center%2C%20San%20Patricio%20del%20Cha%C3%B1ar%2C%20Neuqu%C3%A9n%2C%20Argentina",
     "fuenteNombre": "Búsqueda en mapas · referencia no oficial",
-    "fuenteTipo": "mapa"
+    "fuenteTipo": "mapa",
+    "estadoContacto": "referencia-secundaria"
   }
 ];

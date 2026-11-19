@@ -26,7 +26,7 @@
   const phoneOnly = $("phoneOnly");
 
   const categoryMap = [
-    { label: "Ver todo", key: "Todos", keys: [], terms: [] },
+    { label: "Todos los temas", key: "Todos", keys: [], terms: [] },
     { label: "Municipio", key: "Municipio", keys: ["Organismos públicos"], terms: ["municipalidad", "organismo", "gobierno", "publico", "publica"] },
     { label: "Comunidad y cultura", key: "Comunidad", keys: ["Comunidad", "Cultura y comunidad"], terms: ["parroquia", "religion", "culto", "organizacion", "cultura", "biblioteca", "centro cultural", "plaza", "balneario"] },
     { label: "Trabajo y producción", key: "Trabajo", keys: ["Trabajo y producción"], terms: ["empleo", "produccion", "productores", "rural", "renatre", "agro", "bodega", "establecimiento"] },
@@ -56,18 +56,33 @@
 
   function sourceInfo(contact) {
     if (contact.fuenteTipo === "agenda") {
-      return { label: "Directorio provincial", note: "Dato publicado en una agenda provincial." };
+      return { label: "Agenda provincial", note: "Dato publicado en una agenda provincial; no confirma que la línea siga activa ni que el contacto continúe vigente." };
     }
     if (contact.fuenteTipo === "institucional") {
-      return { label: "Directorio institucional", note: "Dato publicado por una entidad o directorio institucional." };
+      return { label: "Directorio institucional", note: "Dato publicado por una entidad o directorio institucional; la vigencia del contacto debe confirmarse." };
     }
     if (contact.fuenteTipo === "mapa") {
       return { label: "Referencia en mapas", note: "El enlace abre una búsqueda por nombre en mapas; no confirma por sí solo teléfono, horario ni vigencia del establecimiento." };
     }
+    if (contact.fuenteTipo === "secundaria") {
+      return { label: "Publicación de terceros", note: "Dato tomado de una publicación o directorio ajeno a la institución; confirmá antes de utilizarlo." };
+    }
     if (contact.fuenteTipo === "oficial") {
-      return { label: "Sitio oficial", note: "Dato publicado en un sitio oficial." };
+      return { label: "Sitio oficial", note: "Dato publicado por el organismo o establecimiento en una fuente oficial. No significa que la línea haya sido probada mediante una llamada." };
     }
     return { label: "Fuente indicada", note: "Procedencia declarada en esta ficha; revisá el sitio de origen." };
+  }
+
+  function contactStatusInfo(contact) {
+    const states = {
+      "publicado-fuente-oficial": ["Publicado por fuente oficial", "La institución publica este dato; la línea no fue comprobada mediante llamada."],
+      "publicado-agenda-provincial": ["Publicado en agenda provincial", "La agenda provincial publica este dato; conviene confirmar su vigencia."],
+      "publicado-directorio-institucional": ["Publicado en directorio institucional", "El directorio publica este dato; conviene confirmar su vigencia."],
+      "referencia-secundaria": ["Referencia de terceros", "El dato no está respaldado aquí por una fuente oficial directa; confirmalo antes de usarlo."],
+      "dato-duplicado-pendiente": ["Dato repetido · pendiente de confirmar", "El mismo número aparece en otra ficha. No lo tomes como confirmado hasta consultar a ambas instituciones."],
+      "conflicto-entre-fuentes": ["Hay números distintos publicados", "Una fuente oficial y otra publicación consultada muestran teléfonos diferentes. Se conserva el número de la fuente oficial, pero conviene confirmarlo antes de usarlo."]
+    };
+    return states[contact.estadoContacto] || null;
   }
 
   function safeSource(value) {
@@ -191,7 +206,39 @@
     transporte: ["transporte", "colectivo"],
     agua: ["agua"],
     discapacidad: ["discapacidad", "inclusion"],
-    inclusion: ["inclusion", "discapacidad"]
+    inclusion: ["inclusion", "discapacidad"],
+    futbol: ["futbol", "deportes", "club", "estadio", "polideportivo"],
+    cancha: ["cancha", "deportes", "club", "estadio", "polideportivo"],
+    gimnasio: ["gimnasio", "deportes", "polideportivo", "centro de educacion fisica"],
+    entrenamiento: ["entrenamiento", "deportes", "club", "centro de educacion fisica"],
+    vino: ["vino", "bodega"],
+    vinedo: ["vinedo", "bodega", "produccion"],
+    degustacion: ["degustacion", "bodega", "turismo"],
+    comer: ["comer", "restaurante", "gastronomia"],
+    comida: ["comida", "restaurante", "gastronomia", "helados"],
+    almuerzo: ["almuerzo", "restaurante", "gastronomia"],
+    cena: ["cena", "restaurante", "gastronomia"],
+    helado: ["helado", "helados"],
+    helados: ["helado", "helados"],
+    dormir: ["dormir", "hospedaje", "alojamiento", "hotel", "hosteria"],
+    noche: ["noche", "hospedaje", "alojamiento", "hotel"],
+    comprar: ["comprar", "comercio", "supermercado", "panaderia", "ferreteria"],
+    compras: ["compras", "comercio", "supermercado", "panaderia", "ferreteria"],
+    supermercado: ["supermercado", "comercio"],
+    almacen: ["almacen", "comercio", "supermercado"],
+    pan: ["pan", "panaderia"],
+    herramientas: ["herramientas", "ferreteria"],
+    materiales: ["materiales", "corralon", "ferreteria"],
+    auto: ["auto", "mecanica", "taller", "gomeria"],
+    automovil: ["automovil", "mecanica", "taller", "gomeria"],
+    mecanico: ["mecanico", "mecanica", "taller"],
+    vehiculo: ["vehiculo", "mecanica", "taller", "gomeria"],
+    corte: ["corte", "peluqueria", "barberia"],
+    pelo: ["pelo", "peluqueria", "barberia"],
+    barbero: ["barbero", "barberia", "peluqueria"],
+    ninos: ["ninos", "ninez", "infantil", "escuela"],
+    infancia: ["infancia", "ninez", "infantil", "desarrollo infantil"],
+    guarderia: ["guarderia", "desarrollo infantil", "jardin", "infantil"]
   };
 
   function matchingTerms(term) {
@@ -219,19 +266,19 @@
 
   function card(contact) {
     const phones = (contact.telefonos || []).map(phone => `
-      <div class="data-row">
+      <div class="data-row data-row-phone">
         <span class="data-label">${escapeHtml(contact.fuenteTipo === "mapa" ? "Teléfono referenciado · verificar" : (phone.uso || "Teléfono"))}</span>
         <span class="data-value" aria-label="Número publicado como referencia">${escapeHtml(phone.numero)}</span>
       </div>`).join("");
 
     const address = contact.direccion ? `
-      <div class="data-row"><span class="data-label">Ubicación</span><span class="data-value data-address">${escapeHtml(contact.direccion)}</span></div>` : "";
+      <div class="data-row data-row-address"><span class="data-label">Ubicación</span><span class="data-value data-address">${escapeHtml(contact.direccion)}</span></div>` : "";
 
     const mapUrl = contact.direccion ? "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent(contact.direccion) : "";
     const mapLink = mapUrl ? `<a class="map-location-link" href="${escapeHtml(mapUrl)}" target="_blank" rel="noopener noreferrer">Ver ubicación aproximada en mapas ↗</a>` : "";
 
     const email = contact.correo ? `
-      <div class="data-row">
+      <div class="data-row data-row-email">
         <span class="data-label">Correo publicado</span>
         <span class="data-value data-email">${escapeHtml(contact.correo)}</span>
       </div>` : "";
@@ -246,16 +293,23 @@
       : `<span class="card-source-unavailable">Fuente web no disponible en esta ficha.</span>`;
 
     return `
-      <article class="contact-card tone-card-${escapeHtml(categoryTone(contact.categoria))}">
+      <article class="contact-card tone-card-${escapeHtml(categoryTone(contact.categoria))} status-${escapeHtml(contact.estadoContacto || "sin-contacto")}">
         <div class="card-heading">
           <span class="category-label tone-${escapeHtml(categoryTone(contact.categoria))}">${escapeHtml(categoryLabel(contact.categoria))}</span>
-          <span class="source-type">${escapeHtml(source.label)}</span>
+          <span class="source-type source-type-${escapeHtml(contact.fuenteTipo || "sin-fuente")}">${escapeHtml(source.label)}</span>
         </div>
         <h4>${escapeHtml(contact.nombre)}</h4>
         <p class="contact-description">${escapeHtml(contact.descripcion)}</p>
         ${phones || address || email ? `<div class="data-list">${phones}${address}${email}</div>` : `<p class="no-contact-data">No se encontró un teléfono público para esta ficha. Consultá su fuente.</p>`}
+        ${contactStatusInfo(contact) ? `<p class="contact-verification"><strong>${escapeHtml(contactStatusInfo(contact)[0])}.</strong> ${escapeHtml(contactStatusInfo(contact)[1])}</p>` : ""}
         ${mapLink}
-        <div class="source-block"><p class="source-note">${escapeHtml(source.note)} Los datos pueden cambiar.</p>${sourceName}${sourceLink}</div>
+        <details class="source-details">
+          <summary>Ver fuente y procedencia</summary>
+          <div class="source-details-content">
+            <p class="source-note">${escapeHtml(source.note)} Los datos pueden cambiar.</p>
+            ${sourceName}${sourceLink}
+          </div>
+        </details>
       </article>`;
   }
 
@@ -322,8 +376,10 @@
     if (!button) return;
     activeCategory = button.dataset.category;
     currentPage = 1;
+    const topicPanel = $("topicPanel");
+    if (topicPanel) topicPanel.open = false;
     render();
-    $("directoryTitle").scrollIntoView({ behavior: "smooth", block: "start" });
+    $("resultsTitle").scrollIntoView({ behavior: "smooth", block: "start" });
   });
 
   search.addEventListener("input", () => { currentPage = 1; render(); });
@@ -456,7 +512,6 @@
     render();
     search.focus();
   });
-  $("showAllButton").addEventListener("click", resetGuide);
   $("resetFilters").addEventListener("click", () => {
     resetGuide();
     search.focus();
