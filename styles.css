@@ -462,3 +462,12 @@ body[data-theme=high] .saved-toggle[aria-pressed=true],body[data-theme=high] .ca
 @media print{
   .saved-tools,.saved-help,.how-to-use,.card-actions{display:none!important}
 }
+
+.address-filter{display:flex;align-items:center;gap:10px;width:fit-content;margin:9px 0;padding:8px 12px;border:1px solid #dce4d8;border-radius:10px;background:#fffefa;font-size:14px;font-weight:700}
+.address-filter input{width:20px;height:20px;accent-color:#365b3e}
+.clear-all-filters{min-height:44px;padding:9px 13px;border:1px solid #cbd6c8;border-radius:10px;background:#fff;color:#46584a;font-weight:800;cursor:pointer}
+@media(max-width:560px){.address-filter{min-height:48px;width:100%;font-size:14px}.clear-all-filters{width:100%;min-height:48px}}
+body.easy-reading .address-filter,body.easy-reading .clear-all-filters{min-height:54px;font-size:16px}
+body[data-theme=night] .address-filter,body[data-theme=night] .clear-all-filters{background:#314735;border-color:#647d64;color:#f4f7f0}
+body[data-theme=high] .address-filter,body[data-theme=high] .clear-all-filters{background:#fff!important;border:2px solid #000!important;color:#000!important}
+@media print{.address-filter,.clear-all-filters{display:none!important}}
