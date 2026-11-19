@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="es-AR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f2eee3">
+  <meta name="description" content="Guía práctica de contactos públicos e instituciones de San Patricio del Chañar, Neuquén.">
+  <title>Chañar a Mano | Guía local</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#" aria-label="Chañar a Mano, inicio">
+      <span class="brand-mark" aria-hidden="true">⌂</span>
+      <span><strong>CHÁÑAR A MANO</strong><small>Una guía útil de nuestra localidad</small></span>
+    </a>
+    <button class="button button-light" id="shareButton" type="button">Compartir</button>
+  </header>
+
+  <main>
+    <section class="intro">
+      <p class="eyebrow">SAN PATRICIO DEL CHAÑAR · NEUQUÉN</p>
+      <h1>Lo que necesitás,<br><em>a mano.</em></h1>
+      <p class="intro-copy">Contactos de instituciones y servicios locales, reunidos en una guía simple para consultar desde el celular o la computadora.</p>
+      <div class="search-wrap">
+        <label class="sr-only" for="searchInput">Buscar en la guía</label>
+        <span aria-hidden="true">⌕</span>
+        <input id="searchInput" type="search" placeholder="¿Qué estás buscando?" autocomplete="off">
+        <button id="clearSearch" type="button" aria-label="Borrar búsqueda" hidden>×</button>
+      </div>
+      <p class="search-hint">Probá con: salud, trabajo rural, municipalidad, educación…</p>
+    </section>
+
+    <section class="directory-section" aria-labelledby="directoryTitle">
+      <div class="section-heading">
+        <div><p class="eyebrow">DIRECTORIO LOCAL</p><h2 id="directoryTitle">Encontrá un contacto</h2></div>
+        <span class="result-count" id="resultCount" aria-live="polite"></span>
+      </div>
+      <nav class="filters" id="filters" aria-label="Filtrar por categoría"></nav>
+      <div class="contact-grid" id="contactGrid"></div>
+      <div class="empty-state" id="emptyState" hidden>
+        <span aria-hidden="true">⌕</span><strong>No encontramos ese contacto.</strong>
+        <p>Probá con otra palabra o elegí una categoría.</p>
+        <button class="button button-light" id="resetFilters" type="button">Ver todos</button>
+      </div>
+    </section>
+
+    <section class="help-note">
+      <span class="note-icon" aria-hidden="true">✳</span>
+      <div><h2>Una guía para tener cerca</h2><p>Reunimos números institucionales publicados para facilitar la búsqueda. Los horarios, la atención y los teléfonos pueden cambiar: si un contacto no responde, consultá la fuente oficial.</p></div>
+    </section>
+
+    <section class="print-panel">
+      <div><p class="eyebrow">TAMBIÉN EN PAPEL</p><h2>Guardala o imprimila</h2><p>Podés imprimir esta guía o guardarla como PDF desde tu dispositivo.</p></div>
+      <button class="button button-dark" id="printButton" type="button">Imprimir / Guardar PDF</button>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-brand"><strong>CHÁÑAR A MANO</strong><span>Una guía local de Ocarina Producciones</span></div>
+    <p>Información pública · San Patricio del Chañar</p>
+    <p class="footer-small">Las instituciones son responsables de sus canales de atención. Esta guía facilita el acceso a información publicada y no reemplaza los canales oficiales.</p>
+  </footer>
+  <script src="datos.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
