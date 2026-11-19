@@ -358,6 +358,7 @@
   document.addEventListener("keydown", event => {
     if (event.key === "Escape" && document.activeElement === search && search.value) {
       search.value = "";
+      currentPage = 1;
       render();
     }
   });
