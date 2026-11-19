@@ -56,18 +56,32 @@
 
   function sourceInfo(contact) {
     if (contact.fuenteTipo === "agenda") {
-      return { label: "Directorio provincial", note: "Dato publicado en una agenda provincial." };
+      return { label: "Agenda provincial", note: "Dato publicado en una agenda provincial; no confirma que la línea siga activa ni que el contacto continúe vigente." };
     }
     if (contact.fuenteTipo === "institucional") {
-      return { label: "Directorio institucional", note: "Dato publicado por una entidad o directorio institucional." };
+      return { label: "Directorio institucional", note: "Dato publicado por una entidad o directorio institucional; la vigencia del contacto debe confirmarse." };
     }
     if (contact.fuenteTipo === "mapa") {
       return { label: "Referencia en mapas", note: "El enlace abre una búsqueda por nombre en mapas; no confirma por sí solo teléfono, horario ni vigencia del establecimiento." };
     }
+    if (contact.fuenteTipo === "secundaria") {
+      return { label: "Publicación de terceros", note: "Dato tomado de una publicación o directorio ajeno a la institución; confirmá antes de utilizarlo." };
+    }
     if (contact.fuenteTipo === "oficial") {
-      return { label: "Sitio oficial", note: "Dato publicado en un sitio oficial." };
+      return { label: "Sitio oficial", note: "Dato publicado por el organismo o establecimiento en una fuente oficial. No significa que la línea haya sido probada mediante una llamada." };
     }
     return { label: "Fuente indicada", note: "Procedencia declarada en esta ficha; revisá el sitio de origen." };
+  }
+
+  function contactStatusInfo(contact) {
+    const states = {
+      "publicado-fuente-oficial": ["Publicado por fuente oficial", "La institución publica este dato; la línea no fue comprobada mediante llamada."],
+      "publicado-agenda-provincial": ["Publicado en agenda provincial", "La agenda provincial publica este dato; conviene confirmar su vigencia."],
+      "publicado-directorio-institucional": ["Publicado en directorio institucional", "El directorio publica este dato; conviene confirmar su vigencia."],
+      "referencia-secundaria": ["Referencia de terceros", "El dato no está respaldado aquí por una fuente oficial directa; confirmalo antes de usarlo."],
+      "dato-duplicado-pendiente": ["Dato repetido · pendiente de confirmar", "El mismo número aparece en otra ficha. No lo tomes como confirmado hasta consultar a ambas instituciones."]
+    };
+    return states[contact.estadoContacto] || null;
   }
 
   function safeSource(value) {
@@ -286,6 +300,7 @@
         <h4>${escapeHtml(contact.nombre)}</h4>
         <p class="contact-description">${escapeHtml(contact.descripcion)}</p>
         ${phones || address || email ? `<div class="data-list">${phones}${address}${email}</div>` : `<p class="no-contact-data">No se encontró un teléfono público para esta ficha. Consultá su fuente.</p>`}
+        ${contactStatusInfo(contact) ? `<p class="contact-verification"><strong>${escapeHtml(contactStatusInfo(contact)[0])}.</strong> ${escapeHtml(contactStatusInfo(contact)[1])}</p>` : ""}
         ${mapLink}
         <details class="source-details">
           <summary>Ver fuente y procedencia</summary>
