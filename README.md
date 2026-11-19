@@ -163,3 +163,8 @@ Se incorporó una capa de presentación CSS editorial con identidad cromática v
 ## Claridad de tarjetas · 19 de noviembre de 2026
 
 Cada ficha del directorio ahora tiene un contorno más definido, fondo propio y separación reforzada respecto de las fichas vecinas. El encabezado de cada tarjeta queda visualmente delimitado. El tratamiento se adapta al modo nocturno, al alto contraste y a la impresión. Es un cambio exclusivamente visual: no modifica datos, estructura funcional, filtros ni acciones. Caché PWA v18.
+
+
+## Identidad visual y créditos · 19 de noviembre de 2026
+
+La interfaz incorpora una paleta diferenciada por rubro para que las fichas se reconozcan rápidamente: instituciones, comunidad, producción, educación, salud, servicios, deportes, cultura, turismo y comercios. Los colores se aplican con fondos suaves, bordes y etiquetas, manteniendo contraste reforzado en modo nocturno, alto contraste e impresión. Se unificó el crédito visible de cabecera, bienvenida, pie de página, impresión, exportaciones y tarjeta compartida con la fórmula: **Un desarrollo de Universo Ocarina - Elías Martínez**. La caché PWA se actualizó a v19. No se alteraron datos, filtros ni acciones del directorio.
