@@ -99,15 +99,15 @@
     ["escuela", "escuelas", "educacion", "colegio", "colegios", "jardin", "jardines", "formacion"],
     ["municipalidad", "municipalidades", "municipio", "municipios", "municipal"],
     ["deporte", "deportes", "recreacion", "club", "clubes"],
-    ["cultura", "biblioteca", "bibliotecas", "centro cultural", "centros culturales"],
-    ["comercio", "comercios", "negocio", "negocios", "local"],
+    ["cultura", "biblioteca", "bibliotecas", "centro", "centros", "cultural", "culturales"],
+    ["comercio", "comercios", "negocio", "negocios", "local", "locales", "panaderia", "panaderias", "ferreteria", "ferreterias", "corralon", "corralones", "taller", "talleres", "gomeria", "gomerias", "peluqueria", "peluquerias"],
     ["turismo", "alojamiento", "alojamientos", "hotel", "hoteles", "hospedaje", "hosteria", "gastronomia", "restaurante", "restaurantes", "bodega", "bodegas", "visitas"],
     ["trabajo", "empleo", "produccion", "productores", "agro"],
     ["energia", "electricidad", "luz", "epen"],
     ["farmacia", "farmacias", "veterinaria", "veterinarias", "odontologia", "consultorio", "consultorios"]
   ];
 
-  const stopWords = new Set(["de", "del", "la", "el", "los", "las", "y", "en", "para", "por", "un", "una"]);
+  const stopWords = new Set(["de", "del", "la", "el", "los", "las", "y", "en", "para", "por", "un", "una", "a", "con", "que", "mi", "me", "al"]);
 
   function matchingTerms(term) {
     return synonymGroups.find(group => group.includes(term)) || [term];
