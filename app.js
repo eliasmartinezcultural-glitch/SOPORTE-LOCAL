@@ -21,9 +21,17 @@
     { label: "Ver todo", key: "Todos", terms: [] },
     { label: "Municipio", key: "Organismos públicos", terms: ["municipalidad", "organismo", "gobierno", "publico", "publica"] },
     { label: "Comunidad", key: "Comunidad", terms: ["parroquia", "religion", "culto", "organizacion"] },
-    { label: "Trabajo", key: "Trabajo y producción", terms: ["empleo", "produccion", "productores", "rural", "renatre"] },
-    { label: "Educación", key: "Educación", terms: ["escuela", "colegio", "educacion", "formacion", "estudio"] },
-    { label: "Salud", key: "Salud y cuidados", terms: ["hospital", "salud", "ninez", "cuidados"] }
+    { label: "Trabajo y producción", key: "Trabajo y producción", terms: ["empleo", "produccion", "productores", "rural", "renatre", "agro"] },
+    { label: "Educación", key: "Educación", terms: ["escuela", "colegio", "educacion", "formacion", "estudio", "jardin"] },
+    { label: "Salud y cuidados", key: "Salud y cuidados", terms: ["hospital", "salud", "ninez", "cuidados", "farmacia", "veterinaria"] },
+    { label: "Servicios públicos", key: "Servicios públicos", terms: ["epen", "energia", "electricidad", "servicios"] },
+    { label: "Deportes", key: "Deportes y recreación", terms: ["deporte", "club", "polideportivo", "estadio", "recreacion"] },
+    { label: "Cultura y comunidad", key: "Cultura y comunidad", terms: ["cultura", "biblioteca", "centro cultural", "plaza", "balneario"] },
+    { label: "Turismo y gastronomía", key: "Turismo y gastronomía", terms: ["turismo", "gastronomia", "restaurante", "comer", "alojamiento", "hotel", "visitas"] },
+    { label: "Turismo y alojamiento", key: "Turismo y alojamiento", terms: ["alojamiento", "hotel", "hosteria", "hospedaje"] },
+    { label: "Turismo y producción", key: "Turismo y producción", terms: ["bodega", "visitas", "establecimiento"] },
+    { label: "Comercios y servicios", key: "Comercios y servicios", terms: ["comercio", "panaderia", "ferreteria", "corralon", "negocio"] },
+    { label: "Educación y cuidados", key: "Educación y cuidados", terms: ["cdi", "infantil", "cuidados"] }
   ];
 
   function escapeHtml(value) {
@@ -49,6 +57,9 @@
     if (contact.fuenteTipo === "institucional") {
       return { label: "Directorio institucional", note: "Dato publicado por una entidad o directorio institucional." };
     }
+    if (contact.fuenteTipo === "mapa") {
+      return { label: "Ficha de ubicación", note: "Datos de una ficha pública de mapas; verificá dirección y vigencia antes de concurrir." };
+    }
     if (contact.fuenteTipo === "oficial") {
       return { label: "Sitio oficial", note: "Dato publicado en un sitio oficial." };
     }
@@ -64,6 +75,11 @@
     }
   }
 
+  function categoryTone(key) {
+    const tones = {"Organismos públicos":"municipal","Comunidad":"community","Trabajo y producción":"work","Educación":"education","Salud y cuidados":"health","Servicios públicos":"services","Deportes y recreación":"sport","Cultura y comunidad":"culture","Turismo y gastronomía":"tourism","Turismo y alojamiento":"tourism","Turismo y producción":"work","Comercios y servicios":"commerce","Educación y cuidados":"education"};
+    return tones[key] || "community";
+  }
+
   function categoryLabel(key) {
     return categoryMap.find(item => item.key === key)?.label || key || "Otros";
   }
@@ -74,7 +90,7 @@
     const aliases = categoryMap.find(item => item.key === contact.categoria)?.terms || [];
     return normalize([
       contact.nombre, contact.categoria, contact.descripcion, contact.correo,
-      contact.fuenteNombre, contact.fuenteTipo, ...phoneText, ...aliases
+      contact.fuenteNombre, contact.fuenteTipo, contact.direccion, ...phoneText, ...aliases
     ].join(" ")) + " " + normalize([contact.nombre, contact.categoria, contact.descripcion, contact.correo, ...phoneText].join(" ")).replace(/[^0-9]/g, "");
   }
 
@@ -94,6 +110,9 @@
         <span class="data-value" aria-label="Número publicado como referencia">${escapeHtml(phone.numero)}</span>
       </div>`).join("");
 
+    const address = contact.direccion ? `
+      <div class="data-row"><span class="data-label">Ubicación</span><span class="data-value data-address">${escapeHtml(contact.direccion)}</span></div>` : "";
+
     const email = contact.correo ? `
       <div class="data-row">
         <span class="data-label">Correo publicado</span>
@@ -105,19 +124,19 @@
     const sourceName = contact.fuenteNombre ? `<span class="source-publisher">${escapeHtml(contact.fuenteNombre)}</span>` : "";
     const sourceLink = sourceUrl
       ? `<a class="card-source" href="${escapeHtml(sourceUrl)}" target="_blank" rel="noopener noreferrer" aria-label="Consultar fuente: ${escapeHtml(contact.fuenteNombre || source.label)}">
-          <span>Ver dónde se publicó</span><span aria-hidden="true">↗</span>
+          <span>${contact.fuenteTipo === "mapa" ? "Ver ficha de ubicación" : "Ver dónde se publicó"}</span><span aria-hidden="true">↗</span>
         </a>`
       : `<span class="card-source-unavailable">Fuente web no disponible en esta ficha.</span>`;
 
     return `
-      <article class="contact-card">
+      <article class="contact-card tone-card-${escapeHtml(categoryTone(contact.categoria))}">
         <div class="card-heading">
-          <span class="category-label">${escapeHtml(categoryLabel(contact.categoria))}</span>
+          <span class="category-label tone-${escapeHtml(categoryTone(contact.categoria))}">${escapeHtml(categoryLabel(contact.categoria))}</span>
           <span class="source-type">${escapeHtml(source.label)}</span>
         </div>
         <h4>${escapeHtml(contact.nombre)}</h4>
         <p class="contact-description">${escapeHtml(contact.descripcion)}</p>
-        ${phones || email ? `<div class="data-list">${phones}${email}</div>` : `<p class="no-contact-data">Esta ficha no contiene un teléfono o correo publicado.</p>`}
+        ${phones || address || email ? `<div class="data-list">${phones}${address}${email}</div>` : `<p class="no-contact-data">No se encontró un teléfono público para esta ficha. Consultá su fuente.</p>`}
         <div class="source-block"><p class="source-note">${escapeHtml(source.note)} Los datos pueden cambiar.</p>${sourceName}${sourceLink}</div>
       </article>`;
   }
