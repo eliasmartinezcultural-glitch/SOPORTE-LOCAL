@@ -223,3 +223,8 @@ Capa de diseño CSS exclusivamente: identidad editorial vegetal/terracota, fondo
 ## Separación visual de fichas · 19 de noviembre de 2026
 
 Se reforzó el contorno de cada tarjeta del directorio, con fondo individual y mayor espacio entre fichas para evitar que una se confunda con la de al lado. El encabezado de cada tarjeta tiene una división propia. Los estilos contemplan modo natural, nocturno, alto contraste e impresión. No se modificaron datos ni comportamiento. Caché del shell actualizada a v18.
+
+
+## Identidad visual y créditos · 19 de noviembre de 2026
+
+Se aplicó una identidad cromática diferenciada a las tarjetas según su rubro, con colores suaves y repetidos en el borde, la etiqueta de categoría y los bloques de datos. Se reforzó la lectura de cabecera, buscador, filtros, avisos, resultados, herramientas y pie de página. La paleta se adapta a modo nocturno, alto contraste y papel. El crédito se unificó en cabecera superior derecha, bienvenida, pie, impresión, exportaciones y tarjeta compartida: **Un desarrollo de Universo Ocarina - Elías Martínez**. Caché PWA v19. Sin cambios en los datos ni en la lógica de búsqueda, filtros, guardados o acciones.
