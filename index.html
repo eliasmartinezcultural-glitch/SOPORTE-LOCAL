@@ -3,13 +3,25 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#f7f6f0">
+  <meta name="theme-color" content="#f5f2e8">
+  <meta name="application-name" content="Chañar a Mano">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="Chañar a Mano">
   <meta name="description" content="Chañar a Mano: agenda ciudadana gratuita de San Patricio del Chañar. Encontrá instituciones, salud, educación, servicios, comercios y teléfonos útiles.">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Chañar a Mano | Guía comunitaria">
-  <meta property="og:description" content="Una agenda sencilla, gratuita y local para encontrar teléfonos, instituciones, servicios y comercios de San Patricio del Chañar.">
+  <meta property="og:description" content="Una agenda sencilla, gratuita y local para encontrar teléfonos, instituciones, servicios y comercios de San Patricio del Chañar. Compartila con tu familia y vecinos.">
+  <meta property="og:image" content="https://sanpatricio.gob.ar/assets/images/municipio/Balneario-Municipal.JPG">
+  <meta property="og:image:alt" content="Balneario Municipal de San Patricio del Chañar, junto al río y los árboles.">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Chañar a Mano | Agenda local">
+  <meta name="twitter:description" content="Información útil de San Patricio del Chañar, gratuita y fácil de consultar.">
+  <meta name="twitter:image" content="https://sanpatricio.gob.ar/assets/images/municipio/Balneario-Municipal.JPG">
   <meta name="color-scheme" content="light dark">
   <title>Chañar a Mano | Guía comunitaria</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="marca-chanar.svg" type="image/svg+xml">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -28,8 +40,14 @@
         <span aria-hidden="true">↗</span> WhatsApp
       </a>
       <button class="button button-outline" id="shareButton" type="button">Más opciones</button>
+      <button class="button button-outline copy-share-button" id="copyShareButton" type="button">Copiar mensaje</button>
     </div>
   </header>
+
+  <nav class="mobile-action-bar" aria-label="Acciones rápidas">
+    <button class="mobile-action mobile-search-action" id="mobileSearchButton" type="button">⌕ Buscar un dato</button>
+    <a class="mobile-action mobile-whatsapp-action" id="mobileWhatsappShare" href="#" target="_blank" rel="noopener noreferrer">↗ Compartir por WhatsApp</a>
+  </nav>
 
 
 
@@ -50,6 +68,8 @@
       </div>
     </section>
 
+    <p class="app-status" id="appStatus" role="status" aria-live="polite" hidden></p>
+
     <section class="guide-highlights" aria-label="Características de la guía">
       <div class="highlights-heading">
         <span class="highlights-stamp" aria-hidden="true">CH</span>
@@ -62,12 +82,12 @@
       <div class="highlights-stats">
         <article class="highlight-stat highlight-stat-green">
           <span class="highlight-icon" aria-hidden="true">▤</span>
-          <strong id="totalContactCount">75</strong>
+          <strong id="totalContactCount">90</strong>
           <span>fichas para consultar</span>
         </article>
         <article class="highlight-stat highlight-stat-clay">
           <span class="highlight-icon" aria-hidden="true">⌕</span>
-          <strong id="totalPhoneCount">60</strong>
+          <strong id="totalPhoneCount">74</strong>
           <span>fichas con teléfono publicado</span>
         </article>
         <article class="highlight-stat highlight-stat-gold">
@@ -155,6 +175,7 @@
       </div>
       <p class="directory-footnote">Cada ficha muestra su procedencia. “Referencia en mapas” no confirma por sí sola un teléfono ni un horario.</p>
       <button class="button button-primary print-action" id="printButton" type="button">Imprimir o guardar como PDF</button>
+      <p class="share-invitation">¿Le puede servir a alguien de tu familia o del barrio? Compartile esta agenda.</p>
     </section>
 
   <details class="appearance-panel" id="appearancePanel">
