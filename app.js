@@ -554,6 +554,35 @@
     if (announce) saveAppearance();
   }
 
+  function applyAppearancePreset(preset) {
+    if (preset === "readable") {
+      applyBrightness(100, false);
+      applyContrast(115, false);
+      applyTheme("natural", false);
+      applyFontScale(1.4);
+      if (appearanceStatus) appearanceStatus.textContent = "Vista de letra grande activada.";
+    } else if (preset === "night") {
+      applyBrightness(90, false);
+      applyContrast(110, false);
+      applyTheme("night", false);
+      applyFontScale(1.15);
+      if (appearanceStatus) appearanceStatus.textContent = "Modo noche activado.";
+    } else if (preset === "contrast") {
+      applyBrightness(100, false);
+      applyContrast(115, false);
+      applyTheme("high", false);
+      applyFontScale(1.15);
+      if (appearanceStatus) appearanceStatus.textContent = "Alto contraste activado.";
+    } else {
+      return;
+    }
+    saveAppearance();
+  }
+
+  document.querySelectorAll("[data-appearance-preset]").forEach(button => {
+    button.addEventListener("click", () => applyAppearancePreset(button.dataset.appearancePreset));
+  });
+
   document.querySelectorAll("[data-theme-choice]").forEach(button => {
     button.addEventListener("click", () => applyTheme(button.dataset.themeChoice));
   });
@@ -642,18 +671,40 @@
     }
   });
 
-  function updatePrintMeta() {
-    const total = visibleContacts().length;
+  function updatePrintMeta(total = visibleContacts().length) {
     const date = new Intl.DateTimeFormat("es-AR", { dateStyle: "long" }).format(new Date());
+    const selected = [];
+    if (activeCategory !== "Todos") selected.push(activeCategory);
+    if (search.value.trim()) selected.push("Búsqueda: " + search.value.trim());
+    if (phoneOnly?.checked) selected.push("solo fichas con teléfono");
+    const selection = selected.length ? " · " + selected.join(" · ") : " · Todos los temas";
     $("printMeta").textContent = total + (total === 1 ? " ficha" : " fichas")
-      + " · Consulta realizada el " + date + " · Ocarina Producciones";
+      + " · " + date + selection + " · Ocarina Producciones";
+  }
+
+  let printPrepared = false;
+  function preparePrint() {
+    if (printPrepared) return;
+    const allVisible = visibleContacts();
+    printPrepared = true;
+    grid.innerHTML = allVisible.map(card).join("");
+    grid.hidden = allVisible.length === 0;
+    $("pagination").hidden = true;
+    updatePrintMeta(allVisible.length);
+  }
+
+  function restoreAfterPrint() {
+    if (!printPrepared) return;
+    printPrepared = false;
+    render();
   }
 
   $("printButton").addEventListener("click", () => {
     updatePrintMeta();
     window.print();
   });
-  window.addEventListener("beforeprint", updatePrintMeta);
+  window.addEventListener("beforeprint", preparePrint);
+  window.addEventListener("afterprint", restoreAfterPrint);
 
   function guideUrl() {
     const url = new URL(window.location.href);
