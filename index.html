@@ -3,13 +3,22 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#f7f6f0">
-  <meta name="description" content="Guía comunitaria gratuita e independiente de San Patricio del Chañar. Buscá instituciones, salud, educación, servicios, comercios y espacios de la comunidad.">
+  <meta name="theme-color" content="#f5f2e8">
+  <meta name="application-name" content="Chañar a Mano">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="Chañar a Mano">
+  <meta name="description" content="Chañar a Mano: agenda ciudadana gratuita de San Patricio del Chañar. Encontrá instituciones, salud, educación, servicios, comercios y teléfonos útiles.">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Chañar a Mano | Guía comunitaria">
-  <meta property="og:description" content="Información útil de San Patricio del Chañar, reunida en una guía sencilla, gratuita y para compartir.">
+  <meta property="og:description" content="Una agenda sencilla, gratuita y local para encontrar teléfonos, instituciones, servicios y comercios de San Patricio del Chañar. Compartila con tu familia y vecinos.">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Chañar a Mano | Agenda local">
+  <meta name="twitter:description" content="Información útil de San Patricio del Chañar, gratuita y fácil de consultar.">
   <meta name="color-scheme" content="light dark">
   <title>Chañar a Mano | Guía comunitaria</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="marca-chanar.svg" type="image/svg+xml">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -28,8 +37,14 @@
         <span aria-hidden="true">↗</span> WhatsApp
       </a>
       <button class="button button-outline" id="shareButton" type="button">Más opciones</button>
+      <button class="button button-outline copy-share-button" id="copyShareButton" type="button">Copiar mensaje</button>
     </div>
   </header>
+
+  <nav class="mobile-action-bar" aria-label="Acciones rápidas">
+    <button class="mobile-action mobile-search-action" id="mobileSearchButton" type="button">⌕ Buscar un dato</button>
+    <a class="mobile-action mobile-whatsapp-action" id="mobileWhatsappShare" href="#" target="_blank" rel="noopener noreferrer">↗ Compartir por WhatsApp</a>
+  </nav>
 
 
 
@@ -39,110 +54,28 @@
         <div class="welcome-text">
           <p class="creation-credit">Una creación de <strong>Ocarina Producciones</strong><span>· Elías Martínez</span></p>
           <p class="eyebrow">SAN PATRICIO DEL CHAÑAR · NEUQUÉN</p>
-          <h1 id="welcomeTitle">Lo que necesitás, <span>más cerca.</span></h1>
-          <p class="welcome-copy">Una guía sencilla para encontrar información de nuestro pueblo: instituciones, salud, escuelas, servicios, trabajo y espacios de la comunidad.</p>
+          <h1 id="welcomeTitle">Nuestro Chañar, <span>más a mano.</span></h1>
+          <p class="welcome-copy">Una agenda hecha desde el pueblo para encontrar datos de todos los días: instituciones, salud, escuelas, comercios, servicios y lugares de nuestra comunidad.</p>
           <p class="welcome-promise">Gratis para consultar, imprimir y compartir. Sin registrarte.</p>
         </div>
-        <figure class="welcome-photo">
-          <img src="https://sanpatricio.gob.ar/assets/images/municipio/Balneario-Municipal.JPG" alt="Vista del Balneario Municipal de San Patricio del Chañar, junto al río y rodeado de árboles." loading="eager" fetchpriority="high">
-          <figcaption>Un lugar para encontrarnos: Balneario Municipal. <a href="https://sanpatricio.gob.ar/nuestra" target="_blank" rel="noopener noreferrer">Foto publicada por la Municipalidad ↗</a></figcaption>
-        </figure>
-      </div>
+     </div>
     </section>
 
-    <section class="guide-highlights" aria-label="Características de la guía">
-      <div class="highlights-heading">
-        <span class="highlights-stamp" aria-hidden="true">CH</span>
-        <div>
-          <p class="eyebrow">UNA GUÍA PARA EL DÍA A DÍA</p>
-          <h2>El Chañar, más a mano.</h2>
-          <p>Información reunida para orientarnos, encontrarnos y resolver cosas cotidianas.</p>
-        </div>
-      </div>
-      <div class="highlights-stats">
-        <article class="highlight-stat highlight-stat-green">
-          <span class="highlight-icon" aria-hidden="true">▤</span>
-          <strong id="totalContactCount">75</strong>
-          <span>fichas para consultar</span>
-        </article>
-        <article class="highlight-stat highlight-stat-clay">
-          <span class="highlight-icon" aria-hidden="true">⌕</span>
-          <strong id="totalPhoneCount">60</strong>
-          <span>fichas con teléfono publicado</span>
-        </article>
-        <article class="highlight-stat highlight-stat-gold">
-          <span class="highlight-icon" aria-hidden="true">✳</span>
-          <strong>9</strong>
-          <span>temas para explorar</span>
-        </article>
-      </div>
-      <p class="highlights-footnote"><span aria-hidden="true">♡</span> Gratuita, sin registro y pensada para compartir.</p>
-    </section>
+    <p class="app-status" id="appStatus" role="status" aria-live="polite" hidden></p>
 
-    <section class="directory-section" id="directorio" aria-labelledby="directoryTitle">
-      <div class="print-heading" aria-hidden="true">
-        <strong>CHÁÑAR A MANO</strong>
-        <span>Guía comunitaria · San Patricio del Chañar, Neuquén</span>
-        <small id="printMeta">Consulta de la guía · Ocarina Producciones</small>
-      </div>
-      <div class="section-heading">
-        <div>
-          <p class="eyebrow">GUÍA GRATUITA</p>
-          <h2 id="directoryTitle">¿Qué estás buscando?</h2>
-          <p class="section-intro">Escribí una palabra o elegí un tema. También podés buscar por nombre, teléfono o dirección.</p>
-        </div>
-        <p class="result-count" id="resultCount" aria-live="polite" aria-atomic="true"></p>
-      </div>
-
-      <form class="search-form" id="searchForm" role="search" novalidate>
-        <label class="sr-only" for="searchInput">Buscar en la guía</label>
-        <span class="search-icon" aria-hidden="true">⌕</span>
-        <input id="searchInput" type="search" placeholder="Ej.: hospital, agua, escuela, farmacia…" autocomplete="off" enterkeyhint="search" aria-describedby="searchHelp">
-        <button id="clearSearch" class="clear-search" type="button" aria-label="Borrar búsqueda" hidden>×</button>
-      </form>
-      <p class="search-hint" id="searchHelp">Probá con palabras cotidianas, nombres, direcciones o números. La búsqueda se hace en esta guía, sin enviar tus datos.</p>
-
-    <section class="notice" aria-label="Importante">
-      <span class="notice-icon" aria-hidden="true">i</span>
-      <div>
-        <h2>Antes de usar un dato</h2>
-        <p>La información puede cambiar. Revisá siempre la fuente de cada ficha. Los teléfonos son referencias, no una confirmación de vigencia. Esta guía no es oficial ni un servicio de emergencias.</p>
+    <section class="appearance-presets appearance-quick" aria-labelledby="appearancePresetsTitle">
+      <h2 id="appearancePresetsTitle">Elegí cómo leer</h2>
+      <p>Un solo toque cambia el tamaño y los colores. Podés volver atrás cuando quieras.</p>
+      <div class="appearance-preset-actions">
+        <button type="button" data-appearance-preset="elderly">LETRA GRANDE · RECOMENDADO</button>
+        <button type="button" data-appearance-preset="night">MODO NOCHE</button>
+        <button type="button" data-appearance-preset="contrast">ALTO CONTRASTE</button>
       </div>
     </section>
-
-      <details class="topic-panel" id="topicPanel">
-        <summary>
-          <span class="topic-summary-title">Explorar por tema</span>
-          <span class="topic-summary-help">Si preferís, elegí una categoría</span>
-          <span class="topic-chevron" aria-hidden="true">⌄</span>
-        </summary>
-        <nav class="filters" id="filters" aria-label="Filtrar por tema"></nav>
-      </details>
-
-      <div class="results-heading">
-        <h3 id="resultsTitle">Información disponible</h3>
-        <span id="resultsContext">Todos los temas</span>
-      </div>
-      <div class="contact-grid" id="contactGrid" aria-live="off" aria-label="Fichas encontradas"></div>
-      <nav class="pagination" id="pagination" aria-label="Páginas de resultados" hidden>
-        <button class="page-button" id="previousPage" type="button" disabled>← Anterior</button>
-        <span class="page-status" id="pageStatus" aria-live="polite">Página 1</span>
-        <button class="page-button" id="nextPage" type="button">Siguiente →</button>
-      </nav>
-
-      <div class="empty-state" id="emptyState" hidden>
-        <span class="empty-icon" aria-hidden="true">⌕</span>
-        <h3>No encontramos ese dato.</h3>
-        <p>Probá con otra palabra o volvé a ver todos los temas.</p>
-        <button class="button button-secondary" id="resetFilters" type="button">Mostrar toda la guía</button>
-      </div>
-      <p class="directory-footnote">Cada ficha muestra su procedencia. “Referencia en mapas” no confirma por sí sola un teléfono ni un horario.</p>
-      <button class="button button-primary print-action" id="printButton" type="button">Imprimir o guardar como PDF</button>
-    </section>
-
   <details class="appearance-panel" id="appearancePanel">
     <summary><span class="appearance-icon" aria-hidden="true">◐</span><span><strong>Ajustes de lectura y pantalla</strong><small>Letra · brillo · contraste · colores</small></span><span class="appearance-chevron" aria-hidden="true">⌄</span></summary>
     <div class="appearance-content">
+
       <div class="appearance-grid">
         <section class="appearance-control" aria-labelledby="fontControlTitle">
           <h2 id="fontControlTitle">Tamaño de letra</h2>
@@ -178,6 +111,140 @@
     </div>
   </details>
 
+    <section class="directory-section" id="directorio" aria-labelledby="directoryTitle">
+      <div class="print-heading" aria-hidden="true">
+        <div class="print-brand-line"><span class="print-brand-mark">Ch</span><span><strong>CHÁÑAR A MANO</strong><small>GUÍA COMUNITARIA · SAN PATRICIO DEL CHAÑAR · NEUQUÉN</small></span></div>
+        <h2 id="printHeadingTitle">Guía práctica de consulta</h2>
+        <p id="printHeadingIntro">Instituciones, salud, educación, servicios y lugares de nuestra comunidad.</p>
+        <small id="printMeta">Consulta de la guía · Ocarina Producciones</small>
+      </div>
+      <div class="print-cover" id="printCover">
+        <div class="print-cover-lead"><strong>Una guía útil para tener a mano.</strong><span>Consultá los datos publicados y revisá siempre la procedencia antes de utilizarlos.</span></div>
+        <div class="print-cover-facts">
+          <div><strong id="printCoverCount">90</strong><span>fichas disponibles en la guía</span></div>
+          <div><strong>GRATIS</strong><span>para consultar, imprimir y compartir</span></div>
+          <div><strong>SIN REGISTRO</strong><span>no necesitás crear una cuenta</span></div>
+        </div>
+        <p class="print-cover-note">Importante: los teléfonos y direcciones son referencias documentales. Pueden cambiar y no se garantiza que las líneas estén activas. Consultá la fuente indicada en cada ficha. Esta guía es independiente y no es un servicio de emergencias.</p>
+      </div>
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">GUÍA GRATUITA</p>
+          <h2 id="directoryTitle">¿Qué estás buscando?</h2>
+          <p class="section-intro" id="directoryIntro">Buscá el lugar o servicio que necesitás. Los teléfonos y direcciones se muestran bien grandes.</p>
+        </div>
+        <p class="result-count" id="resultCount" aria-live="polite" aria-atomic="true"></p>
+      </div>
+
+      <form class="search-form" id="searchForm" role="search" novalidate>
+        <label class="sr-only" for="searchInput">Buscar en la guía</label>
+        <span class="search-icon" aria-hidden="true">⌕</span>
+        <input id="searchInput" type="search" placeholder="Ejemplo: hospital, farmacia, escuela" autocomplete="off" enterkeyhint="search" aria-describedby="searchHelp">
+        <button id="clearSearch" class="clear-search" type="button" aria-label="Borrar búsqueda" hidden>×</button>
+      </form>
+      <p class="search-hint" id="searchHelp">Escribí una palabra. Por ejemplo: hospital, farmacia, escuela o un teléfono.</p>
+      <details class="how-to-use">
+        <summary>¿Cómo se usa esta guía?</summary>
+        <ol>
+          <li>Escribí lo que necesitás o tocá una búsqueda rápida.</li>
+          <li>Leé el teléfono o la dirección publicados en la ficha.</li>
+          <li>Abrí la fuente para revisar de dónde salió el dato y si sigue vigente.</li>
+        </ol>
+        <p>No hacemos llamadas ni enviamos tus búsquedas. Los datos son referencias y pueden cambiar.</p>
+      </details>
+      <div class="quick-searches" aria-label="Búsquedas rápidas">
+        <span class="quick-search-label">TOCÁ UNA OPCIÓN PARA BUSCAR</span>
+        <div class="quick-search-list">
+          <button class="quick-chip" type="button" data-query="hospital">Hospital</button>
+          <button class="quick-chip" type="button" data-query="farmacia">Farmacias</button>
+          <button class="quick-chip" type="button" data-query="escuela">Escuelas</button>
+          <button class="quick-chip" type="button" data-query="comercios">Comercios</button>
+          <button class="quick-chip" type="button" data-query="banco">Banco</button>
+          <button class="quick-chip" type="button" data-query="correo">Correo</button>
+          <button class="quick-chip" type="button" data-query="juzgado">Juzgado de Paz</button>
+          <button class="quick-chip" type="button" data-query="telefonos">Teléfonos</button>
+        </div>
+      </div>
+      <label class="phone-filter" for="phoneOnly">
+        <input id="phoneOnly" type="checkbox">
+        <span>Mostrar solo lugares con teléfono</span>
+      </label>
+      <div class="saved-tools" aria-label="Lugares guardados">
+        <button class="saved-toggle" id="favoritesToggle" type="button" aria-pressed="false">☆ Ver mis lugares guardados</button>
+        <span class="saved-count" id="favoritesCount" aria-live="polite">0 guardados</span>
+        <button class="saved-clear" id="clearFavorites" type="button" disabled>Vaciar guardados</button>
+        <button class="clear-all-filters" id="clearAllFilters" type="button">Quitar todos los filtros</button>
+      </div>
+      <label class="address-filter" for="addressOnly">
+        <input id="addressOnly" type="checkbox">
+        <span>Mostrar solo lugares con dirección</span>
+      </label>
+      <p class="saved-help">Podés guardar lugares para encontrarlos rápido. La lista queda solamente en este dispositivo; no se envía a ningún sitio.</p>
+
+    <section class="notice" aria-label="Importante">
+      <span class="notice-icon" aria-hidden="true">i</span>
+      <div>
+        <h2>Un dato importante</h2>
+        <p>Los teléfonos y direcciones pueden cambiar. Si un número no responde, consultá la fuente indicada. Esta guía es independiente y no reemplaza a emergencias.</p>
+      </div>
+    </section>
+
+      <details class="topic-panel" id="topicPanel">
+        <summary>
+          <span class="topic-summary-title">Explorar por tema</span>
+          <span class="topic-summary-help">Elegí el tema que necesitás</span>
+          <span class="topic-chevron" aria-hidden="true">⌄</span>
+        </summary>
+        <nav class="filters" id="filters" aria-label="Filtrar por tema"></nav>
+      </details>
+
+      <div class="results-heading">
+        <h3 id="resultsTitle">Información disponible</h3>
+        <span id="resultsContext">Todos los temas</span>
+      </div>
+      <div class="contact-grid" id="contactGrid" aria-live="off" aria-label="Fichas encontradas"></div>
+      <nav class="pagination" id="pagination" aria-label="Páginas de resultados" hidden>
+        <button class="page-button" id="previousPage" type="button" disabled>← Anterior</button>
+        <span class="page-status" id="pageStatus" aria-live="polite">Página 1</span>
+        <button class="page-button" id="nextPage" type="button">Siguiente →</button>
+      </nav>
+
+      <div class="empty-state" id="emptyState" hidden>
+        <span class="empty-icon" aria-hidden="true">⌕</span>
+        <h3>No encontramos ese dato.</h3>
+        <p>Probá con otra palabra o volvé a ver todos los temas.</p>
+        <button class="button button-secondary" id="resetFilters" type="button">Mostrar toda la guía</button>
+      </div>
+      <p class="directory-footnote">Cada ficha muestra su procedencia. “Referencia en mapas” no confirma por sí sola un teléfono ni un horario.</p>
+      <div class="print-controls">
+        <label for="printScope">Qué querés imprimir
+          <select id="printScope">
+            <option value="filtered">Solo los resultados que estoy viendo</option>
+            <option value="all">La guía completa</option>
+          </select>
+        </label>
+        <button class="button button-primary print-action" id="printButton" type="button">Imprimir o guardar como PDF</button>
+      </div>
+      <p class="print-help">La impresión incluye todas las fichas del resultado elegido, aunque estén en varias páginas. Podés guardar el documento como PDF.</p>
+      <section class="share-kit" aria-labelledby="shareKitTitle">
+        <div class="share-kit-copy">
+          <p class="eyebrow">PARA COMPARTIR</p>
+          <h3 id="shareKitTitle">Una guía útil también se pasa de mano en mano.</h3>
+          <p>Mandá un mensaje corto y claro. Si querés, acompañalo con una tarjeta gráfica de la guía.</p>
+          <blockquote id="shareMessagePreview">Te comparto CHÁÑAR A MANO: una guía comunitaria gratuita de San Patricio del Chañar. Reúne datos útiles para consultar, imprimir y compartir. Los datos pueden cambiar; revisá la fuente de cada ficha.</blockquote>
+        </div>
+        <div class="share-kit-actions">
+          <a class="button button-whatsapp share-kit-whatsapp" id="shareKitWhatsapp" href="#" target="_blank" rel="noopener noreferrer">Compartir mensaje por WhatsApp</a>
+          <button class="button button-outline" id="shareCardButton" type="button">Compartir tarjeta gráfica</button>
+          <button class="button button-outline" id="shareKitCopyButton" type="button">Copiar mensaje y enlace</button>
+        </div>
+        <p class="share-kit-note">En celulares compatibles se abre el menú para adjuntar la imagen. En otros equipos se descarga la tarjeta para que puedas adjuntarla manualmente en WhatsApp.</p>
+      </section>
+      <p class="share-invitation">Compartí la guía con tu familia, vecinos, instituciones y organizaciones de la localidad.</p>
+    </section>
+
+
+
     <section class="support-mini support-card" aria-labelledby="supportTitle">
       <div class="support-topline"><span class="support-mark" aria-hidden="true">♥</span><span>APORTE VOLUNTARIO · NUNCA OBLIGATORIO</span></div>
       <div class="support-copy">
@@ -209,9 +276,11 @@
     <p class="footer-disclaimer">Esta guía no representa oficialmente a las instituciones. Los datos pueden cambiar y deben verificarse en sus fuentes. No reemplaza la atención oficial, profesional o presencial.</p>
   </footer>
 
-  <section class="print-support" aria-label="Colaboración voluntaria">
-    <strong>CHÁÑAR A MANO · Guía comunitaria gratuita</strong>
-    <span>Creada por Ocarina Producciones · Colaboración voluntaria: ocarina.guitarra · Titular: Elías Martínez.</span>
+  <section class="print-support" aria-label="Créditos y aclaración">
+    <strong>CHÁÑAR A MANO · Guía comunitaria independiente y gratuita</strong>
+    <span>Idea, diseño y desarrollo: Ocarina Producciones · Creada por Elías Martínez · Historias, personas y territorio.</span>
+    <span>Los datos pueden cambiar. Revisá la fuente de cada ficha. No representa oficialmente a las instituciones ni reemplaza la atención oficial o de emergencias.</span>
+    <small id="printUrl"></small>
   </section>
 
   <noscript><div class="noscript-message">Para buscar y filtrar la guía necesitás habilitar JavaScript.</div></noscript>

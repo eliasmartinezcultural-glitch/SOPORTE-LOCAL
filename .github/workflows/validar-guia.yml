@@ -9,20 +9,26 @@ on:
 permissions:
   contents: read
 
+concurrency:
+  group: validar-chanar-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   validar:
-    name: Revisar archivos antes de publicar
+    name: Revisar estructura, datos y publicación
     runs-on: ubuntu-latest
+    timeout-minutes: 5
     steps:
       - name: Descargar el repositorio
         uses: actions/checkout@v4
       - name: Preparar Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 22
       - name: Comprobar sintaxis JavaScript
         run: |
           node --check app.js
           node --check datos.js
-      - name: Validar estructura y datos
+          node --check sw.js
+      - name: Validar estructura, contactos y PWA
         run: node scripts/validar-guia.js
