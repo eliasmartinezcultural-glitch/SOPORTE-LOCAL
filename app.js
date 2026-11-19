@@ -496,6 +496,7 @@
 
   function applyFontScale(next) {
     fontScale = Math.max(1, Math.min(2, Math.round(next * 100) / 100));
+    document.body.classList.toggle("easy-reading", fontScale >= 1.25);
     document.documentElement.style.setProperty("--reading-scale", String(fontScale));
     $("fontDown").disabled = fontScale <= 1;
     $("fontUp").disabled = fontScale >= 2;
@@ -514,7 +515,7 @@
 
   function saveAppearance() {
     try {
-      localStorage.setItem("chanar-a-mano-appearance", JSON.stringify({
+      localStorage.setItem("chanar-a-mano-appearance-v2", JSON.stringify({
         brightness: Number(brightnessControl.value),
         contrast: Number(contrastControl.value),
         theme: document.body.dataset.theme || "natural",
@@ -604,26 +605,30 @@
   $("resetAppearance").addEventListener("click", resetAppearance);
 
   try {
-    const saved = JSON.parse(localStorage.getItem("chanar-a-mano-appearance") || "null");
+    const currentSaved = localStorage.getItem("chanar-a-mano-appearance-v2");
+    const legacySaved = currentSaved ? null : localStorage.getItem("chanar-a-mano-appearance");
+    const saved = JSON.parse(currentSaved || legacySaved || "null");
     if (saved && typeof saved === "object") {
       applyBrightness(saved.brightness, false);
       applyContrast(saved.contrast, false);
       applyTheme(saved.theme, false);
-      if (Number.isFinite(Number(saved.font))) applyFontScale(Math.max(1.25, Number(saved.font)));
-      document.body.classList.add("easy-reading");
+      const savedFont = Number(saved.font);
+      // En la primera migración damos una base legible; luego respetamos la elección de la persona.
+      applyFontScale(currentSaved
+        ? (Number.isFinite(savedFont) ? savedFont : 1.25)
+        : (Number.isFinite(savedFont) ? Math.max(1.25, savedFont) : 1.25));
     } else {
       applyBrightness(100, false);
-      applyContrast(100, false);
+      applyContrast(110, false);
       applyTheme("natural", false);
       applyFontScale(1.25);
-      document.body.classList.add("easy-reading");
     }
+    saveAppearance();
   } catch (_) {
     applyBrightness(100, false);
-    applyContrast(100, false);
+    applyContrast(110, false);
     applyTheme("natural", false);
     applyFontScale(1.25);
-    document.body.classList.add("easy-reading");
   }
   $("searchForm").addEventListener("submit", event => event.preventDefault());
   clear.addEventListener("click", () => {
