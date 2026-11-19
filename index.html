@@ -113,9 +113,19 @@
 
     <section class="directory-section" id="directorio" aria-labelledby="directoryTitle">
       <div class="print-heading" aria-hidden="true">
-        <strong>CHÁÑAR A MANO</strong>
-        <span>Guía comunitaria · San Patricio del Chañar, Neuquén</span>
+        <div class="print-brand-line"><span class="print-brand-mark">Ch</span><span><strong>CHÁÑAR A MANO</strong><small>GUÍA COMUNITARIA · SAN PATRICIO DEL CHAÑAR · NEUQUÉN</small></span></div>
+        <h2 id="printHeadingTitle">Guía práctica de consulta</h2>
+        <p id="printHeadingIntro">Instituciones, salud, educación, servicios y lugares de nuestra comunidad.</p>
         <small id="printMeta">Consulta de la guía · Ocarina Producciones</small>
+      </div>
+      <div class="print-cover" id="printCover">
+        <div class="print-cover-lead"><strong>Una guía útil para tener a mano.</strong><span>Consultá los datos publicados y revisá siempre la procedencia antes de utilizarlos.</span></div>
+        <div class="print-cover-facts">
+          <div><strong id="printCoverCount">90</strong><span>fichas disponibles en la guía</span></div>
+          <div><strong>GRATIS</strong><span>para consultar, imprimir y compartir</span></div>
+          <div><strong>SIN REGISTRO</strong><span>no necesitás crear una cuenta</span></div>
+        </div>
+        <p class="print-cover-note">Importante: los teléfonos y direcciones son referencias documentales. Pueden cambiar y no se garantiza que las líneas estén activas. Consultá la fuente indicada en cada ficha. Esta guía es independiente y no es un servicio de emergencias.</p>
       </div>
       <div class="section-heading">
         <div>
@@ -206,8 +216,31 @@
         <button class="button button-secondary" id="resetFilters" type="button">Mostrar toda la guía</button>
       </div>
       <p class="directory-footnote">Cada ficha muestra su procedencia. “Referencia en mapas” no confirma por sí sola un teléfono ni un horario.</p>
-      <button class="button button-primary print-action" id="printButton" type="button">Imprimir o guardar como PDF</button>
-      <p class="share-invitation">¿Le puede servir a alguien de tu familia o del barrio? Compartile esta agenda.</p>
+      <div class="print-controls">
+        <label for="printScope">Qué querés imprimir
+          <select id="printScope">
+            <option value="filtered">Solo los resultados que estoy viendo</option>
+            <option value="all">La guía completa</option>
+          </select>
+        </label>
+        <button class="button button-primary print-action" id="printButton" type="button">Imprimir o guardar como PDF</button>
+      </div>
+      <p class="print-help">La impresión incluye todas las fichas del resultado elegido, aunque estén en varias páginas. Podés guardar el documento como PDF.</p>
+      <section class="share-kit" aria-labelledby="shareKitTitle">
+        <div class="share-kit-copy">
+          <p class="eyebrow">PARA COMPARTIR</p>
+          <h3 id="shareKitTitle">Una guía útil también se pasa de mano en mano.</h3>
+          <p>Mandá un mensaje corto y claro. Si querés, acompañalo con una tarjeta gráfica de la guía.</p>
+          <blockquote id="shareMessagePreview">Te comparto CHÁÑAR A MANO: una guía comunitaria gratuita de San Patricio del Chañar. Reúne datos útiles para consultar, imprimir y compartir. Los datos pueden cambiar; revisá la fuente de cada ficha.</blockquote>
+        </div>
+        <div class="share-kit-actions">
+          <a class="button button-whatsapp share-kit-whatsapp" id="shareKitWhatsapp" href="#" target="_blank" rel="noopener noreferrer">Compartir mensaje por WhatsApp</a>
+          <button class="button button-outline" id="shareCardButton" type="button">Compartir tarjeta gráfica</button>
+          <button class="button button-outline" id="shareKitCopyButton" type="button">Copiar mensaje y enlace</button>
+        </div>
+        <p class="share-kit-note">En celulares compatibles se abre el menú para adjuntar la imagen. En otros equipos se descarga la tarjeta para que puedas adjuntarla manualmente en WhatsApp.</p>
+      </section>
+      <p class="share-invitation">Compartí la guía con tu familia, vecinos, instituciones y organizaciones de la localidad.</p>
     </section>
 
 
@@ -243,9 +276,11 @@
     <p class="footer-disclaimer">Esta guía no representa oficialmente a las instituciones. Los datos pueden cambiar y deben verificarse en sus fuentes. No reemplaza la atención oficial, profesional o presencial.</p>
   </footer>
 
-  <section class="print-support" aria-label="Colaboración voluntaria">
-    <strong>CHÁÑAR A MANO · Guía comunitaria gratuita</strong>
-    <span>Creada por Ocarina Producciones · Colaboración voluntaria: ocarina.guitarra · Titular: Elías Martínez.</span>
+  <section class="print-support" aria-label="Créditos y aclaración">
+    <strong>CHÁÑAR A MANO · Guía comunitaria independiente y gratuita</strong>
+    <span>Idea, diseño y desarrollo: Ocarina Producciones · Creada por Elías Martínez · Historias, personas y territorio.</span>
+    <span>Los datos pueden cambiar. Revisá la fuente de cada ficha. No representa oficialmente a las instituciones ni reemplaza la atención oficial o de emergencias.</span>
+    <small id="printUrl"></small>
   </section>
 
   <noscript><div class="noscript-message">Para buscar y filtrar la guía necesitás habilitar JavaScript.</div></noscript>
