@@ -328,6 +328,8 @@
     if (!button) return;
     activeCategory = button.dataset.category;
     currentPage = 1;
+    const topicPanel = $("topicPanel");
+    if (topicPanel) topicPanel.open = false;
     render();
     $("resultsTitle").scrollIntoView({ behavior: "smooth", block: "start" });
   });
