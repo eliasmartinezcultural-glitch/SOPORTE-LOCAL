@@ -56,8 +56,8 @@
           <p class="creation-credit">Un desarrollo de <strong>Universo Ocarina</strong><span>- Elías Martínez</span></p>
           <p class="eyebrow">SAN PATRICIO DEL CHAÑAR · NEUQUÉN</p>
           <h1 id="welcomeTitle">Nuestro Chañar, <span>más a mano.</span></h1>
-          <p class="welcome-copy">Una agenda hecha desde el pueblo para encontrar datos de todos los días: instituciones, salud, escuelas, comercios, servicios y lugares de nuestra comunidad.</p>
-          <p class="welcome-promise">Gratis para consultar, imprimir y compartir. Sin registrarte.</p>
+          <p class="welcome-copy">Encontrá teléfonos, direcciones y datos útiles de San Patricio del Chañar.</p>
+          <p class="welcome-promise">Gratis · Sin registro · Fácil de consultar</p>
         </div>
      </div>
     </section>
@@ -131,8 +131,8 @@
       <div class="section-heading">
         <div>
           <p class="eyebrow">GUÍA GRATUITA</p>
-          <h2 id="directoryTitle">¿Qué estás buscando?</h2>
-          <p class="section-intro" id="directoryIntro">Buscá el lugar o servicio que necesitás. Los teléfonos y direcciones se muestran bien grandes.</p>
+          <h2 id="directoryTitle">Buscá lo que necesitás</h2>
+          <p class="section-intro" id="directoryIntro">Escribí un nombre, un rubro o un teléfono.</p>
         </div>
         <p class="result-count" id="resultCount" aria-live="polite" aria-atomic="true"></p>
       </div>
@@ -143,18 +143,18 @@
         <input id="searchInput" type="search" placeholder="Ejemplo: hospital, farmacia, escuela" autocomplete="off" enterkeyhint="search" aria-describedby="searchHelp">
         <button id="clearSearch" class="clear-search" type="button" aria-label="Borrar búsqueda" hidden>×</button>
       </form>
-      <p class="search-hint" id="searchHelp">Escribí una palabra. Por ejemplo: hospital, farmacia, escuela o un teléfono. En computadora también podés presionar / para ir al buscador.</p>
+      <p class="search-hint" id="searchHelp">Ejemplos: hospital, farmacia o escuela.</p>
       <details class="how-to-use">
         <summary>¿Cómo se usa esta guía?</summary>
         <ol>
-          <li>Escribí lo que necesitás o tocá una búsqueda rápida.</li>
-          <li>Leé el teléfono o la dirección publicados en la ficha.</li>
-          <li>Abrí la fuente para revisar de dónde salió el dato y si sigue vigente.</li>
+          <li>Escribí lo que buscás o tocá una opción.</li>
+          <li>Encontrá el teléfono o la dirección.</li>
+          <li>Revisá la fuente: los datos pueden cambiar.</li>
         </ol>
-        <p>No hacemos llamadas ni enviamos tus búsquedas. Los datos son referencias y pueden cambiar.</p>
+        <p>Tus búsquedas no se envían. Los datos pueden cambiar.</p>
       </details>
       <div class="quick-searches" aria-label="Búsquedas rápidas">
-        <span class="quick-search-label">TOCÁ UNA OPCIÓN PARA BUSCAR</span>
+        <span class="quick-search-label">BUSCÁ RÁPIDO</span>
         <div class="quick-search-list">
           <button class="quick-chip" type="button" data-query="hospital">Hospital</button>
           <button class="quick-chip" type="button" data-query="farmacia">Farmacias</button>
@@ -168,25 +168,25 @@
       </div>
       <label class="phone-filter" for="phoneOnly">
         <input id="phoneOnly" type="checkbox">
-        <span>Mostrar solo lugares con teléfono</span>
+        <span>Solo lugares con teléfono</span>
       </label>
       <div class="saved-tools" aria-label="Lugares guardados">
-        <button class="saved-toggle" id="favoritesToggle" type="button" aria-pressed="false">☆ Ver mis lugares guardados</button>
+        <button class="saved-toggle" id="favoritesToggle" type="button" aria-pressed="false">☆ Lugares guardados</button>
         <span class="saved-count" id="favoritesCount" aria-live="polite">0 guardados</span>
         <button class="saved-clear" id="clearFavorites" type="button" disabled>Vaciar guardados</button>
-        <button class="clear-all-filters" id="clearAllFilters" type="button">Quitar todos los filtros</button>
+        <button class="clear-all-filters" id="clearAllFilters" type="button">Limpiar búsqueda</button>
       </div>
       <label class="address-filter" for="addressOnly">
         <input id="addressOnly" type="checkbox">
-        <span>Mostrar solo lugares con dirección</span>
+        <span>Solo lugares con dirección</span>
       </label>
       <p class="saved-help">Podés guardar lugares para encontrarlos rápido. La lista queda solamente en este dispositivo; no se envía a ningún sitio.</p>
 
     <section class="notice" aria-label="Importante">
       <span class="notice-icon" aria-hidden="true">i</span>
       <div>
-        <h2>Un dato importante</h2>
-        <p>Los teléfonos y direcciones pueden cambiar. Si un número no responde, consultá la fuente indicada. Esta guía es independiente y no reemplaza a emergencias.</p>
+        <h2>Importante</h2>
+        <p>Los datos pueden cambiar. Revisá siempre la fuente. Esta guía no reemplaza a los servicios de emergencia.</p>
       </div>
     </section>
 
@@ -200,10 +200,10 @@
       </details>
 
       <div class="results-heading">
-        <h3 id="resultsTitle">Información disponible</h3>
+        <h3 id="resultsTitle">Resultados</h3>
         <span id="resultsContext">Todos los temas</span>
       </div>
-      <p class="grid-view-note" id="gridViewNote">Vista en cuadrícula: tres columnas en pantallas grandes, dos en pantallas medianas y una en celulares para conservar la lectura.</p>
+      <p class="grid-view-note" id="gridViewNote"></p>
       <div class="contact-grid" id="contactGrid" aria-live="off" aria-label="Fichas encontradas"></div>
       <nav class="pagination" id="pagination" aria-label="Páginas de resultados" hidden>
         <button class="page-button" id="previousPage" type="button" disabled>← Anterior</button>
@@ -219,17 +219,17 @@
       </div>
       <p class="directory-footnote">Cada ficha muestra su procedencia. “Referencia en mapas” no confirma por sí sola un teléfono ni un horario.</p>
       <div class="print-controls">
-        <label for="printScope">Qué querés imprimir
+        <label for="printScope">Imprimir
           <select id="printScope">
             <option value="filtered">Solo los resultados que estoy viendo</option>
             <option value="all">La guía completa</option>
           </select>
         </label>
-        <button class="button button-primary print-action" id="printButton" type="button">Imprimir o guardar como PDF</button>
+        <button class="button button-primary print-action" id="printButton" type="button">Imprimir / Guardar PDF</button>
         <button class="button button-outline export-action" id="exportResultsButton" type="button">Descargar listado (CSV)</button>
         <button class="button button-outline export-action" id="copyResultsButton" type="button">Copiar resultados</button>
       </div>
-      <p class="print-help">La impresión incluye todas las fichas del resultado elegido, aunque estén en varias páginas. Podés guardar el documento como PDF.</p>
+      <p class="print-help">La impresión incluye todos los resultados elegidos. También podés guardarlos como PDF.</p>
       <p class="export-feedback" id="exportFeedback" role="status" aria-live="polite">También podés descargar los resultados para abrirlos en una planilla. Se exporta la selección completa, no solo la página visible.</p>
       <section class="share-kit" aria-labelledby="shareKitTitle">
         <div class="share-kit-copy">
