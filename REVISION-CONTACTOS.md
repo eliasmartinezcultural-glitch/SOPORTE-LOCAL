@@ -71,3 +71,45 @@ Se conservó el teléfono publicado por la fuente oficial y se dejó una adverte
 La revisión web permite comprobar que una fuente publica un dato; no permite comprobar que alguien atienda el teléfono, que el correo siga activo o que el número continúe asignado a la misma institución. Para certificar eso hace falta una confirmación directa de cada entidad o comercio y registrar la fecha de esa confirmación.
 
 Hasta completar esa etapa, la guía debe conservar las advertencias de procedencia y no anunciar que todos los contactos están verificados.
+
+
+---
+
+## Ampliación del directorio · 19 de noviembre de 2026
+
+Se incorporaron **11 fichas nuevas** a la agenda principal. Diez incluyen un teléfono publicado en un directorio externo y una ficha (H2O System) aporta una referencia de ubicación sin teléfono publicado.
+
+### Nuevas fichas incorporadas
+
+| Ficha | Rubro | Información añadida | Procedencia |
+|---|---|---|---|
+| Comisaría N.º 13 | Instituciones públicas | Teléfono y ubicación | Directorio externo |
+| Concejo Deliberante | Instituciones públicas | Teléfono y ubicación | Directorio externo |
+| Contralor Urbano · Licencias de conducir | Instituciones públicas | Teléfono y ubicación | Directorio externo |
+| Radio Municipal Chañar FM 87.9 MHz | Cultura y comunidad | Teléfono | Directorio externo |
+| Con Aire de Campo | Turismo y gastronomía | Teléfono y referencia de zona | Directorio externo |
+| Parador La 5ta | Turismo y gastronomía | Teléfono y ubicación de referencia | Directorio externo |
+| Patagonia Services | Comercios y servicios | Teléfono y dirección | Directorio externo |
+| Distribuidora Emerson | Comercios y servicios | Teléfono y dirección | Directorio externo |
+| Quiroga Refrigeración | Comercios y servicios | Teléfono | Directorio externo |
+| Reales María Parra · Seguros | Comercios y servicios | Teléfono y dirección | Directorio externo |
+| H2O System · Lavandería Industrial | Comercios y servicios | Dirección de referencia, sin teléfono publicado | Directorio externo |
+
+**Fuente común:** Guía Vaca Muerta, consulta de directorio para San Patricio del Chañar: https://www.guiavacamuerta.com/buscador/?q=SAN
+
+### Cómo se muestran estos datos
+
+- Los diez teléfonos nuevos están clasificados como **referencias secundarias**.
+- La etiqueta de la ficha advierte que el dato procede de un directorio externo y debe confirmarse.
+- No se agregaron correos ocultos, horarios no visibles ni datos deducidos.
+- La ficha de H2O System no inventa un teléfono.
+- Los números no se presentan como líneas probadas ni como contactos oficiales.
+- La Comisaría se incluye como referencia de directorio; no se la presenta como canal de emergencias.
+
+### Conteo resultante
+
+- **86 fichas** en total.
+- **70 fichas** con al menos un teléfono publicado.
+- Las diez fichas con teléfono recién incorporadas requieren confirmación directa.
+
+El conteo refleja datos cargados en la agenda, no una certificación de vigencia. La revisión documental anterior de las 75 fichas permanece como registro histórico del primer corte.
