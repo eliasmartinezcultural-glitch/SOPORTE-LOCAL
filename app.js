@@ -703,7 +703,10 @@
     updatePrintMeta();
     window.print();
   });
-  window.addEventListener("beforeprint", preparePrint);
+  window.addEventListener("beforeprint", () => {
+    updatePrintMeta();
+    preparePrint();
+  });
   window.addEventListener("afterprint", restoreAfterPrint);
 
   function guideUrl() {
@@ -791,7 +794,16 @@
 
   if ("serviceWorker" in navigator && window.isSecureContext) {
     window.addEventListener("load", () => {
+      const hadController = Boolean(navigator.serviceWorker.controller);
+      if (hadController) {
+        navigator.serviceWorker.addEventListener("controllerchange", () => {
+          // El documento actual conserva el JS/CSS anterior: recargar una sola vez
+          // cuando el service worker nuevo toma el control evita mezclar versiones.
+          window.location.reload();
+        }, { once: true });
+      }
       navigator.serviceWorker.register(new URL("./sw.js", document.baseURI).toString())
+        .then(registration => registration.update().catch(() => {}))
         .catch(error => console.warn("No se pudo activar el modo sin conexión:", error));
     }, { once: true });
   }
