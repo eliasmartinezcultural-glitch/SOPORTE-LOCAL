@@ -258,7 +258,18 @@
     parador: ["parador", "comer", "gastronomia"],
     campo: ["campo", "rural", "turismo"],
     servicio: ["servicio", "servicios", "comercio"],
-    servicios: ["servicio", "servicios", "comercio"]
+    servicios: ["servicio", "servicios", "comercio"],
+    banco: ["banco", "bancos", "cajero", "bpn"],
+    bancos: ["banco", "bancos", "cajero", "bpn"],
+    bpn: ["bpn", "banco"],
+    cajero: ["cajero", "banco", "extraccion"],
+    correo: ["correo", "postal", "paqueteria"],
+    postal: ["postal", "correo"],
+    paqueteria: ["paqueteria", "correo"],
+    issn: ["issn", "obra social", "jubilacion", "prevision"],
+    jubilacion: ["jubilacion", "issn", "prevision"],
+    juzgado: ["juzgado", "paz", "faltas"],
+    paz: ["paz", "juzgado"]
   };
 
   function matchingTerms(term) {
