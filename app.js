@@ -654,7 +654,7 @@
   }
 
   function whatsappMessage() {
-    return "Te comparto Chañar a Mano, una agenda gratuita con teléfonos e información útil de San Patricio del Chañar. Podés consultarla y compartirla con quien la necesite: " + guideUrl();
+    return "Te comparto Chañar a Mano, una agenda comunitaria gratuita de San Patricio del Chañar, creada por Ocarina Producciones. Reúne teléfonos y datos útiles para consultar y compartir: " + guideUrl();
   }
 
   function whatsappUrl() {
@@ -711,13 +711,17 @@
   });
 
   function updateConnectionStatus() {
+    appStatus.classList.remove("app-status-offline");
     if (!navigator.onLine) {
       appStatus.hidden = false;
       appStatus.classList.add("app-status-offline");
       appStatus.textContent = "Estás sin conexión. Podés consultar la guía guardada en este dispositivo; los enlaces externos necesitan internet.";
-    } else if (appStatus.classList.contains("app-status-offline")) {
+    } else if (contacts.length !== rawContacts.length) {
+      appStatus.hidden = false;
+      appStatus.classList.add("app-status-warning");
+      appStatus.textContent = "Algunas fichas no se pudieron cargar porque sus datos necesitan revisión. La información restante sigue disponible.";
+    } else {
       appStatus.hidden = true;
-      appStatus.classList.remove("app-status-offline");
       appStatus.textContent = "";
     }
   }
