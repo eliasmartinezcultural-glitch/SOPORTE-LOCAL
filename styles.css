@@ -471,3 +471,68 @@ body.easy-reading .address-filter,body.easy-reading .clear-all-filters{min-heigh
 body[data-theme=night] .address-filter,body[data-theme=night] .clear-all-filters{background:#314735;border-color:#647d64;color:#f4f7f0}
 body[data-theme=high] .address-filter,body[data-theme=high] .clear-all-filters{background:#fff!important;border:2px solid #000!important;color:#000!important}
 @media print{.address-filter,.clear-all-filters{display:none!important}}
+
+
+/* Sistema editorial de salida y difusión · revisión 2026 */
+.print-heading,.print-cover{display:none}
+.print-controls{display:flex;align-items:end;gap:14px;flex-wrap:wrap;margin:18px 0 8px;padding:16px 18px;background:#f0f3eb;border:1px solid #d5dfd1;border-radius:14px}
+.print-controls label{display:grid;gap:6px;color:#304b3a;font-size:14px;font-weight:800}
+.print-controls select{min-height:48px;min-width:min(100%,290px);padding:10px 38px 10px 12px;border:1px solid #b8c9b4;border-radius:9px;background:#fff;color:#26372e;font:inherit}
+.print-controls .print-action{min-height:50px}
+.print-help{margin:0 0 22px;color:#5a675d;font-size:13px;line-height:1.5}
+.share-kit{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(230px,.8fr);gap:20px;align-items:center;margin:22px 0;padding:22px;border:1px solid #d5dfd1;border-radius:18px;background:linear-gradient(135deg,#fffefa,#edf2e9);box-shadow:0 8px 28px rgba(39,61,43,.06)}
+.share-kit-copy .eyebrow{margin-bottom:7px}
+.share-kit-copy h3{margin:0;color:#304b3a;font:700 clamp(22px,3vw,29px)/1.15 Georgia,serif}
+.share-kit-copy>p:not(.eyebrow){margin:9px 0;color:#58665b;line-height:1.5}
+.share-kit-copy blockquote{margin:12px 0 0;padding:12px 15px;border-left:4px solid #9b6547;background:#fff;color:#36463a;font-size:14px;line-height:1.55}
+.share-kit-actions{display:grid;gap:9px}
+.share-kit-actions .button{width:100%;min-height:50px;text-align:center}
+.share-kit-note{grid-column:1/-1;margin:0;color:#657167;font-size:12px;line-height:1.5}
+@media(max-width:650px){
+ .print-controls{display:grid;grid-template-columns:1fr;padding:14px}
+ .print-controls select{width:100%}
+ .share-kit{grid-template-columns:1fr;padding:17px;gap:14px}
+ .share-kit-note{grid-column:auto}
+}
+body.easy-reading .print-controls label,body.easy-reading .print-help,body.easy-reading .share-kit-copy>p{font-size:16px}
+body.easy-reading .print-controls select,body.easy-reading .share-kit-actions .button{min-height:58px;font-size:16px}
+body[data-theme=night] .print-controls,body[data-theme=night] .share-kit{background:#26372b;border-color:#536754}
+body[data-theme=night] .print-controls label,body[data-theme=night] .share-kit-copy h3{color:#eef4e9}
+body[data-theme=night] .print-help,body[data-theme=night] .share-kit-copy>p,body[data-theme=night] .share-kit-note{color:#d4dfd1}
+body[data-theme=night] .share-kit-copy blockquote{background:#314735;color:#f4f7f0}
+body[data-theme=night] .print-controls select{background:#314735;color:#f4f7f0;border-color:#647d64}
+body[data-theme=high] .print-controls,body[data-theme=high] .share-kit{background:#fff!important;border:2px solid #000!important}
+body[data-theme=high] .print-controls label,body[data-theme=high] .share-kit-copy h3,body[data-theme=high] .share-kit-copy>p,body[data-theme=high] .share-kit-note{color:#000!important}
+body[data-theme=high] .share-kit-copy blockquote{background:#fff!important;color:#000!important;border-left:5px solid #000}
+@media print{
+ @page{size:A4 portrait;margin:13mm 14mm 16mm}
+ .print-heading{display:block!important;margin:0 0 4mm!important;padding:0 0 3mm!important;border-bottom:1.2pt solid #304b3a!important}
+ .print-brand-line{display:flex;align-items:center;gap:3mm;margin-bottom:3mm}
+ .print-brand-mark{display:grid;place-items:center;width:11mm;height:11mm;border-radius:3mm;background:#304b3a;color:#fff;font:700 14pt Georgia,serif}
+ .print-brand-line strong{display:block;font:700 15pt Georgia,serif;letter-spacing:.06em;color:#304b3a!important}
+ .print-brand-line small{display:block;margin-top:1mm;font:700 6.5pt Arial,sans-serif;letter-spacing:.08em;color:#555!important}
+ .print-heading h2{margin:2mm 0 1mm!important;font:700 16pt Georgia,serif;color:#26372e!important}
+ .print-heading p{margin:0 0 2mm!important;font:8.5pt Arial,sans-serif;color:#465449!important}
+ .print-heading>small{font:7pt Arial,sans-serif;color:#555!important}
+ .print-cover{display:block!important;margin:0 0 4mm!important;padding:3mm 3.5mm!important;border:1pt solid #cbd7c8!important;border-radius:2mm;background:#f5f7f1!important;break-inside:avoid!important}
+ .print-cover-lead{display:flex;flex-direction:column;gap:1mm;margin-bottom:2.5mm}
+ .print-cover-lead strong{font:700 10pt Georgia,serif;color:#304b3a!important}
+ .print-cover-lead span{font:8pt Arial,sans-serif;color:#38483c!important}
+ .print-cover-facts{display:grid;grid-template-columns:repeat(3,1fr);gap:2mm;margin:2mm 0}
+ .print-cover-facts>div{display:flex;flex-direction:column;gap:.5mm;padding:2mm;background:#fff!important;border:1px solid #d9dfd4!important;border-radius:1.5mm}
+ .print-cover-facts strong{font:700 9pt Arial,sans-serif;color:#304b3a!important}
+ .print-cover-facts span{font:7pt Arial,sans-serif;color:#4f5e52!important}
+ .print-cover-note{margin:2mm 0 0!important;padding-top:2mm;border-top:.5pt solid #d1d8ce;font:7pt/1.35 Arial,sans-serif;color:#4c554d!important}
+ .print-controls,.print-help,.share-kit,.share-invitation{display:none!important}
+ .print-support{display:flex!important;flex-direction:column;gap:1mm!important;margin:4mm 0 0!important;padding:2.5mm 3mm!important;background:#f5f7f1!important;border:1px solid #cbd7c8!important;color:#222!important;break-inside:avoid!important}
+ .print-support strong{font:700 8pt Arial,sans-serif!important;color:#304b3a!important}
+ .print-support span{font:7pt Arial,sans-serif!important;color:#333!important}
+ .print-support small{font:6.5pt Arial,sans-serif!important;color:#555!important;overflow-wrap:anywhere}
+ .notice{margin:2mm 0!important}
+ .contact-grid{gap:0!important}
+ .contact-card{padding:2.8mm 0!important}
+ .card-actions{display:none!important}
+ .contact-card h4{font-size:11pt!important}
+ .data-row-phone .data-value{font-size:14pt!important}
+ .source-details-content{display:block!important}
+}
