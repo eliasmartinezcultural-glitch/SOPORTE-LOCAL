@@ -17,6 +17,12 @@ La página está pensada para celulares, lectura sencilla, controles grandes y p
 
 La página ahora prioriza el buscador al entrar: los temas se despliegan solo si la persona quiere explorar por categoría, la procedencia completa de cada ficha se abre bajo demanda y los ajustes de pantalla quedan después del directorio para no retrasar la consulta.
 
+
+## Identidad visual y experiencia de lectura
+La presentación utiliza una paleta cálida inspirada en papel, vegetación y tonos de tierra, con acentos diferenciados para reconocer visualmente los temas. Las fichas tienen una jerarquía clara: categoría, nombre, descripción, datos disponibles y procedencia desplegable. Se reforzaron los espacios, bordes, sombras suaves y estados de interacción sin convertir la guía en una interfaz recargada. La portada identifica la autoría de Ocarina Producciones y conserva una referencia visual local. Los modos nocturno y de alto contraste contemplan los nuevos detalles; la impresión elimina adornos que dificulten la lectura en papel.
+
+La capa estética no modifica la estructura de las fichas ni el contenido de `datos.js`. Los efectos de movimiento se limitan a dispositivos que admiten interacción por puntero y respetan la preferencia de movimiento reducido.
+
 ## Criterios de información y seguridad
 - La guía no es oficial y no representa a las instituciones.
 - Cada ficha identifica el tipo de fuente disponible.
