@@ -332,14 +332,14 @@
   });
 
   function applyFontScale(next) {
-    fontScale = Math.max(1, Math.min(1.25, Math.round(next * 100) / 100));
+    fontScale = Math.max(1, Math.min(1.5, Math.round(next * 100) / 100));
     document.documentElement.style.setProperty("--reading-scale", String(fontScale));
     $("fontDown").disabled = fontScale <= 1;
-    $("fontUp").disabled = fontScale >= 1.25;
+    $("fontUp").disabled = fontScale >= 1.5;
     $("fontReset").setAttribute("aria-label", "Tamaño de texto actual: " + Math.round(fontScale * 100) + " por ciento. Restablecer");
   }
-  $("fontDown").addEventListener("click", () => applyFontScale(fontScale - 0.05));
-  $("fontUp").addEventListener("click", () => applyFontScale(fontScale + 0.05));
+  $("fontDown").addEventListener("click", () => applyFontScale(fontScale - 0.1));
+  $("fontUp").addEventListener("click", () => applyFontScale(fontScale + 0.1));
   $("fontReset").addEventListener("click", () => applyFontScale(1));
   applyFontScale(1);
   $("searchForm").addEventListener("submit", event => event.preventDefault());
