@@ -335,3 +335,151 @@ body{background:linear-gradient(180deg,#f7f5ed 0%,#f1f3e9 42%,#f7f5ed 100%);colo
   .responsible-use{break-inside:avoid;background:#eef1eb!important;border:1px solid #aeb9a8!important}
   .contact-caution{background:#f3f1e9!important}
 }
+
+
+/* Rediseño simple: lectura amable, acciones reducidas y lenguaje cotidiano */
+body{background:#f7f6f0;color:#26372e;font-family:Arial,Helvetica,sans-serif}
+.site-header{max-width:1000px;padding:18px 22px}
+.brand-mark{width:42px;height:42px;font-family:Georgia,serif}
+.brand strong{font-size:16px;letter-spacing:.08em}
+.brand small{font-size:12px}
+.hero.simple-hero{max-width:1000px;min-height:0;display:block;padding:24px 22px 28px}
+.simple-hero .hero-copy{padding:0}
+.simple-hero .eyebrow{font-size:11px;letter-spacing:.08em}
+.simple-hero h1{font:700 clamp(34px,5vw,48px)/1.08 Arial,Helvetica,sans-serif;letter-spacing:-.035em;color:#294b39}
+.simple-hero h1 em{font-style:normal;color:#a85f43}
+.simple-hero .hero-lead{font-size:18px;line-height:1.5;max-width:680px;margin:12px 0}
+.simple-hero .hero-link{font-size:15px;min-height:46px}
+.simple-notice{max-width:956px;margin:0 auto 24px;padding:15px 18px;grid-template-columns:32px minmax(0,1fr);gap:12px;border-radius:10px}
+.simple-notice .responsible-mark{width:30px;height:30px;font:700 18px Arial,sans-serif}
+.simple-notice h2{font:700 17px/1.25 Arial,sans-serif}
+.simple-notice p:not(.eyebrow){font-size:13px;line-height:1.5;margin:5px 0 0}
+.directory-section{max-width:1000px;padding:8px 22px 35px}
+.section-heading{margin-bottom:16px}
+.section-heading .eyebrow{font-size:10px;letter-spacing:.08em}
+.section-heading h2{font:700 clamp(25px,4vw,32px)/1.15 Arial,Helvetica,sans-serif}
+.section-intro{font-size:15px;line-height:1.5}
+.search-wrap{height:64px;max-width:none;border:2px solid #aab9a6;border-radius:10px;box-shadow:none;padding:0 16px}
+.search-wrap>span{font-size:25px}
+.search-wrap input{font-size:18px}
+.search-wrap input::placeholder{font-size:16px;color:#697568}
+.search-wrap button{font-size:28px;min-width:40px;min-height:40px}
+.filter-help{font-size:14px;font-weight:700;margin:18px 0 8px;color:#405344}
+.filters{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin:0 0 18px}
+.filter-button{min-height:48px;border:1.5px solid #c8d2c4;border-radius:9px;background:#fffefa;color:#304b3a;font-size:14px;font-weight:700;padding:10px 12px}
+.filter-button[aria-pressed=true]{background:#304b3a;border-color:#304b3a;color:#fff}
+.contact-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.contact-card{min-height:0;padding:17px;border:1px solid #d8dfd4;border-radius:10px;box-shadow:none;background:#fff}
+.contact-card:before{display:none}
+.category-label{font-size:11px;letter-spacing:.03em;padding:4px 7px;margin:0 0 5px;align-self:flex-start}
+.contact-card h3{font:700 19px/1.25 Arial,Helvetica,sans-serif;margin:5px 0 7px}
+.contact-description{font-size:14px;line-height:1.5;margin:0 0 10px}
+.phone-list{gap:7px;margin-top:7px}
+.phone-row{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;padding-top:8px;border-top:1px solid #e5e9e2}
+.phone-purpose{font-size:13px;line-height:1.4;color:#58665a}
+.contact-value{max-width:65%;font-size:15px;line-height:1.4;padding:0;color:#243d2d}
+.contact-email{font-size:13px}
+.card-source{font-size:13px;line-height:1.4;min-height:42px;margin-top:12px;color:#315b43}
+.empty-state{padding:28px 16px;background:#fff;border:1px solid #d8dfd4;border-radius:10px}
+.empty-state strong{font-size:20px}
+.empty-state p{font-size:15px}
+.empty-state .button{font-size:15px;min-height:48px}
+.contribute-simple{max-width:956px;margin:0 auto 22px;padding:14px 18px;background:#eef1e9;border:1px solid #dce4d8;border-radius:10px}
+.contribute-simple summary{font-size:14px;font-weight:700;color:#304b3a;cursor:pointer;min-height:38px;display:flex;align-items:center}
+.contribute-simple>p{font-size:13px;line-height:1.5;margin:8px 0;color:#4e5b50}
+.simple-alias{margin:10px 0 0;padding:10px 12px;background:#fff;border:1px solid #d9e0d6;max-width:500px}
+.simple-alias small{font-size:10px;letter-spacing:.08em;color:#536c54}
+.simple-alias strong{font:700 19px Arial,Helvetica,sans-serif;color:#304b3a}
+.simple-alias span{font-size:12px;color:#59665a}
+.simple-alias .button{min-height:44px;font-size:13px;margin:0}
+.contribute-simple .support-feedback{font-size:12px;min-height:0!important}
+.print-panel{max-width:956px;margin:0 auto 28px;padding:16px 18px;border-radius:10px;background:#eef1e9;align-items:center}
+.print-panel h2{font:700 18px Arial,Helvetica,sans-serif}
+.print-panel p{font-size:13px;line-height:1.5}
+.print-panel .button{min-height:48px;font-size:14px;white-space:nowrap}
+.site-footer{padding:22px max(22px,calc((100% - 956px)/2));background:#ecefe8}
+.footer-main,.footer-bottom{align-items:flex-start}
+.footer-brand strong{font-size:13px;letter-spacing:.08em}
+.footer-brand span,.footer-main>p,.footer-bottom,.site-footer .footer-small{font-size:11px;line-height:1.5}
+.mobile-dock{display:none!important}
+body{padding-bottom:0!important}
+@media(max-width:700px){
+  .site-header{padding:13px 16px;align-items:center}
+  .brand{gap:8px}
+  .brand-mark{width:36px;height:36px;flex:0 0 36px}
+  .brand strong{font-size:13px}
+  .brand small{font-size:10px;line-height:1.25}
+  .site-header .button{min-height:44px;padding:9px 11px;font-size:12px}
+  .hero.simple-hero{padding:20px 17px 22px}
+  .simple-hero h1{font-size:35px}
+  .simple-hero .hero-lead{font-size:16px}
+  .simple-notice{margin:0 14px 20px;padding:13px 13px;grid-template-columns:26px minmax(0,1fr);gap:9px}
+  .simple-notice .responsible-mark{width:25px;height:25px}
+  .simple-notice h2{font-size:16px}
+  .simple-notice p:not(.eyebrow){font-size:12px;line-height:1.5}
+  .directory-section{padding:6px 14px 25px}
+  .section-heading h2{font-size:27px}
+  .section-intro{font-size:14px}
+  .search-wrap{height:62px;padding:0 12px}
+  .search-wrap input{font-size:17px}
+  .search-wrap input::placeholder{font-size:14px}
+  .filter-help{font-size:14px;margin:15px 0 8px}
+  .filters{grid-template-columns:repeat(2,minmax(0,1fr));gap:7px}
+  .filter-button{min-height:48px;font-size:14px;padding:9px 8px}
+  .contact-grid{grid-template-columns:1fr;gap:10px}
+  .contact-card{padding:16px;border-radius:10px}
+  .contact-card h3{font-size:19px}
+  .contact-description{font-size:14px}
+  .phone-purpose{font-size:12px}
+  .contact-value{font-size:15px;max-width:68%}
+  .contact-email{font-size:12px}
+  .card-source{font-size:13px;min-height:44px}
+  .contribute-simple{margin:0 14px 20px;padding:12px 14px}
+  .print-panel{margin:0 14px 22px;display:block;padding:15px}
+  .print-panel .button{width:100%;margin-top:12px}
+  .site-footer{padding:20px 16px}
+  .footer-main,.footer-bottom{display:block}
+  .footer-main>p{margin:8px 0 0}
+  .footer-bottom span{display:block;margin-top:5px}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+/* Versión imprimible: una columna, letra grande y lectura sin adornos */
+@page{size:A4 portrait;margin:14mm 15mm 16mm}
+@media print{
+  html,body{background:#fff!important;color:#111!important;font:11pt/1.4 Arial,Helvetica,sans-serif!important}
+  body{padding:0!important}
+  .skip-link,.site-header .button,.hero,.search-wrap,.filter-help,.filters,.contribute-simple,.print-panel,.site-footer{display:none!important}
+  .site-header{max-width:none!important;padding:0 0 5mm!important;border-bottom:1.2pt solid #304b3a}
+  .brand-mark{display:none!important}
+  .brand strong{font-size:17pt!important;letter-spacing:.06em!important;color:#243d2d!important}
+  .brand small{font-size:9pt!important;color:#333!important}
+  .simple-notice{display:grid!important;max-width:none!important;margin:5mm 0!important;padding:3mm 4mm!important;grid-template-columns:7mm 1fr!important;gap:3mm!important;background:#f2f4ef!important;border:1pt solid #bfcbb9!important;break-inside:avoid}
+  .simple-notice .responsible-mark{width:6mm!important;height:6mm!important;font-size:11pt!important}
+  .simple-notice h2{font-size:11pt!important}
+  .simple-notice p:not(.eyebrow){font-size:9pt!important}
+  .directory-section{max-width:none!important;margin:0!important;padding:3mm 0 0!important}
+  .print-heading{display:flex!important;flex-direction:column!important;gap:1mm!important;margin:0 0 4mm!important;padding:0 0 3mm!important;border-bottom:.7pt solid #bbb}
+  .print-heading strong{font:700 15pt Georgia,serif!important;color:#243d2d!important}
+  .print-heading span{font-size:9pt!important;color:#333!important}
+  .print-heading small{font-size:8pt!important;color:#444!important}
+  .section-heading{display:block!important;margin:0 0 4mm!important}
+  .section-heading .eyebrow{font-size:8pt!important;margin:0 0 1mm!important}
+  .section-heading h2{font:700 15pt Arial,Helvetica,sans-serif!important;color:#111!important}
+  .section-intro{font-size:9pt!important;color:#333!important;margin:1mm 0 0!important}
+  .result-count{display:none!important}
+  .contact-grid{display:grid!important;grid-template-columns:1fr!important;gap:3mm!important}
+  .contact-card{display:block!important;min-width:0!important;padding:3mm 0!important;border:0!important;border-bottom:.6pt solid #c8c8c8!important;border-radius:0!important;background:#fff!important;box-shadow:none!important;break-inside:avoid!important;page-break-inside:avoid!important}
+  .category-label{display:inline-block!important;font-size:8pt!important;color:#444!important;background:none!important;padding:0!important;margin:0 0 1mm!important}
+  .contact-card h3{font:700 12pt/1.25 Arial,Helvetica,sans-serif!important;color:#111!important;margin:1mm 0!important}
+  .contact-description{font-size:10pt!important;line-height:1.35!important;color:#222!important;margin:0 0 1.5mm!important}
+  .phone-list{gap:1mm!important}
+  .phone-row{padding-top:1mm!important;border-top:.4pt solid #ddd!important}
+  .phone-purpose{font-size:9pt!important;color:#333!important}
+  .contact-value{font-size:10.5pt!important;max-width:68%!important;color:#111!important;padding:0!important}
+  .contact-email{font-size:9.5pt!important}
+  .card-source{display:block!important;min-height:0!important;margin-top:1.5mm!important;font-size:8.5pt!important;line-height:1.25!important;color:#222!important;text-decoration:underline!important;overflow-wrap:anywhere!important}
+  .card-source::after{content:" (" attr(href) ")"!important;font-size:7.5pt!important;color:#444!important}
+  .empty-state:not([hidden]){display:block!important;padding:8mm!important;text-align:center!important}
+  a[href]:after{content:none}
+}
