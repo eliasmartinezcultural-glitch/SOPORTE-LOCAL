@@ -158,3 +158,8 @@ La interfaz móvil incorpora una barra fija inferior con acceso al buscador y a 
 ## Dirección de arte visual · noviembre de 2026
 
 Se incorporó una capa de presentación CSS editorial con identidad cromática vegetal y tierra, fondos atmosféricos suaves, superficies y tarjetas con profundidad moderada, jerarquía tipográfica, detalles ornamentales no interactivos y estados visuales de botones y filtros. Se añadieron variantes de color para modo nocturno y alto contraste. No se modificaron HTML, JavaScript, datos, estructura de fichas, filtros ni acciones. La caché del shell se actualiza a v17 para entregar la hoja de estilos renovada.
+
+
+## Claridad de tarjetas · 19 de noviembre de 2026
+
+Cada ficha del directorio ahora tiene un contorno más definido, fondo propio y separación reforzada respecto de las fichas vecinas. El encabezado de cada tarjeta queda visualmente delimitado. El tratamiento se adapta al modo nocturno, al alto contraste y a la impresión. Es un cambio exclusivamente visual: no modifica datos, estructura funcional, filtros ni acciones. Caché PWA v18.
