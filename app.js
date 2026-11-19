@@ -422,18 +422,6 @@
     whatsappShare.href = "https://wa.me/?text=" + encodeURIComponent(whatsappMessage());
   }
 
-  const copyLinkButton = $("copyLinkButton");
-  if (copyLinkButton) {
-    copyLinkButton.addEventListener("click", async () => {
-      try {
-        await copyText(guideUrl());
-        shareFeedback.textContent = "Enlace copiado. Ya podés pegarlo en WhatsApp o donde quieras.";
-      } catch (_) {
-        shareFeedback.textContent = "No se pudo copiar automáticamente. Copiá el enlace desde la barra del navegador.";
-      }
-    });
-  }
-
   $("shareButton").addEventListener("click", async () => {
     const shareData = {
       title: "CHÁÑAR A MANO",
