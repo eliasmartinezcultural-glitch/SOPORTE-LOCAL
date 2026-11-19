@@ -26,7 +26,7 @@
   const phoneOnly = $("phoneOnly");
 
   const categoryMap = [
-    { label: "Ver todo", key: "Todos", keys: [], terms: [] },
+    { label: "Todos los temas", key: "Todos", keys: [], terms: [] },
     { label: "Municipio", key: "Municipio", keys: ["Organismos públicos"], terms: ["municipalidad", "organismo", "gobierno", "publico", "publica"] },
     { label: "Comunidad y cultura", key: "Comunidad", keys: ["Comunidad", "Cultura y comunidad"], terms: ["parroquia", "religion", "culto", "organizacion", "cultura", "biblioteca", "centro cultural", "plaza", "balneario"] },
     { label: "Trabajo y producción", key: "Trabajo", keys: ["Trabajo y producción"], terms: ["empleo", "produccion", "productores", "rural", "renatre", "agro", "bodega", "establecimiento"] },
@@ -255,7 +255,13 @@
         <p class="contact-description">${escapeHtml(contact.descripcion)}</p>
         ${phones || address || email ? `<div class="data-list">${phones}${address}${email}</div>` : `<p class="no-contact-data">No se encontró un teléfono público para esta ficha. Consultá su fuente.</p>`}
         ${mapLink}
-        <div class="source-block"><p class="source-note">${escapeHtml(source.note)} Los datos pueden cambiar.</p>${sourceName}${sourceLink}</div>
+        <details class="source-details">
+          <summary>Ver fuente y procedencia</summary>
+          <div class="source-details-content">
+            <p class="source-note">${escapeHtml(source.note)} Los datos pueden cambiar.</p>
+            ${sourceName}${sourceLink}
+          </div>
+        </details>
       </article>`;
   }
 
@@ -323,7 +329,7 @@
     activeCategory = button.dataset.category;
     currentPage = 1;
     render();
-    $("directoryTitle").scrollIntoView({ behavior: "smooth", block: "start" });
+    $("resultsTitle").scrollIntoView({ behavior: "smooth", block: "start" });
   });
 
   search.addEventListener("input", () => { currentPage = 1; render(); });
