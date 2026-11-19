@@ -176,9 +176,6 @@
 
   const stopWords = new Set(["de", "del", "la", "el", "los", "las", "y", "en", "para", "por", "un", "una", "a", "con", "que", "mi", "me", "al"]);
 
-  function matchingTerms(term) {
-    return synonymGroups.find(group => group.includes(term)) || [term];
-  }
   function termMatches(contact, text, term) {
     if (term === "telefono" || term === "telefonos") return (contact.telefonos || []).length > 0;
     return matchingTerms(term).some(candidate => text.includes(candidate));
