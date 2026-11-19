@@ -1,6 +1,6 @@
 /* CHÁÑAR A MANO · Datos públicos reunidos para consulta.
    fuenteTipo diferencia sitios oficiales de agendas/directorios institucionales.
-   estadoContacto identifica el tipo de respaldo de la publicación; no certifica que una línea siga activa.
+   estadoContacto identifica el respaldo documental, no certifica que una línea siga activa.
    La presencia de una ficha no implica aval de la institución. */
 window.CHANAR_CONTACTOS = [
   {
@@ -510,7 +510,7 @@ window.CHANAR_CONTACTOS = [
     "fuente": "https://sanpatricio.gob.ar/gastronomicos",
     "fuenteNombre": "Municipalidad · Espacios gastronómicos",
     "fuenteTipo": "oficial",
-    "estadoContacto": "publicado-fuente-oficial"
+    "estadoContacto": "conflicto-entre-fuentes"
   },
   {
     "id": "heidi",
@@ -576,7 +576,7 @@ window.CHANAR_CONTACTOS = [
     "fuente": "https://sanpatricio.gob.ar/dormir",
     "fuenteNombre": "Municipalidad · Dónde dormir",
     "fuenteTipo": "oficial",
-    "estadoContacto": "publicado-fuente-oficial"
+    "estadoContacto": "conflicto-entre-fuentes"
   },
   {
     "id": "hosteria-chanar",
@@ -621,7 +621,7 @@ window.CHANAR_CONTACTOS = [
     "fuenteTipo": "oficial",
     "direccion": "Calle 7 Norte, San Patricio del Chañar, Neuquén, Argentina",
     "correo": "turismo@familiaschroeder.com",
-    "estadoContacto": "publicado-fuente-oficial"
+    "estadoContacto": "conflicto-entre-fuentes"
   },
   {
     "id": "bodega-malma",
@@ -661,7 +661,7 @@ window.CHANAR_CONTACTOS = [
     "fuenteTipo": "oficial",
     "direccion": "Ruta Provincial 8, Km 9, Chacra 77, San Patricio del Chañar, Neuquén, Argentina",
     "correo": "turismo@bdfm.com.ar",
-    "estadoContacto": "publicado-fuente-oficial"
+    "estadoContacto": "conflicto-entre-fuentes"
   },
   {
     "id": "bodega-secreto",
