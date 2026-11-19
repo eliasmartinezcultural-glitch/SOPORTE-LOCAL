@@ -10,7 +10,7 @@
     "contrastValue","resetAppearance","searchForm","resetFilters","copyAliasButton",
     "supportAlias","printMeta","printButton","whatsappShare","shareButton",
     "copyShareButton","mobileSearchButton","mobileWhatsappShare","appStatus",
-    "favoritesToggle","favoritesCount","clearFavorites"
+    "favoritesToggle","favoritesCount","clearFavorites","addressOnly","clearAllFilters"
   ];
   const missingIds = requiredIds.filter(id => !$(id));
   if (missingIds.length) {
@@ -65,6 +65,7 @@
   const pageSize = 12;
   let fontScale = 1;
   const phoneOnly = $("phoneOnly");
+  const addressOnly = $("addressOnly");
   let showFavoritesOnly = false;
   const favoritesStorageKey = "chanar-a-mano-favorites-v1";
   let favoriteIds = new Set();
@@ -179,7 +180,7 @@
     const phoneText = (contact.telefonos || []).flatMap(phone => [phone.numero, phone.uso]);
     return normalize([
       contact.nombre, contact.categoria, contact.descripcion, contact.correo,
-      contact.direccion, (contact.telefonos || []).length ? "teléfono teléfonos contacto" : "", ...phoneText
+      contact.direccion, contact.fuenteNombre, contact.fuenteTipo, contact.estadoContacto, (contact.telefonos || []).length ? "teléfono teléfonos contacto" : "", ...phoneText
     ].join(" ")) + " " + normalize(phoneText.join(" ")).replace(/[^0-9]/g, "");
   }
 
@@ -362,9 +363,10 @@
       const matchesCategory = activeCategory === "Todos" || Boolean(selectedGroup?.keys.includes(contact.categoria));
       const hasPhone = (contact.telefonos || []).length > 0;
       const matchesPhone = !phoneOnly?.checked || hasPhone;
+      const matchesAddress = !addressOnly?.checked || Boolean(contact.direccion);
       const matchesFavorite = !showFavoritesOnly || favoriteIds.has(contact.id);
       const text = searchText(contact);
-      return matchesCategory && matchesPhone && matchesFavorite && terms.every(term => termMatches(contact, text, term));
+      return matchesCategory && matchesPhone && matchesAddress && matchesFavorite && terms.every(term => termMatches(contact, text, term));
     }).sort((a, b) => String(a.nombre || "").localeCompare(String(b.nombre || ""), "es-AR"));
   }
 
@@ -452,7 +454,7 @@
     $("pageStatus").textContent = "Página " + currentPage + " de " + pageCount;
     const endNote = $("resultsEndNote");
     if (endNote) endNote.hidden = visible.length === 0;
-    resultsContext.textContent = (activeCategory === "Todos" ? "Todos los temas" : categoryMap.find(item => item.key === activeCategory)?.label || activeCategory) + (phoneOnly?.checked ? " · Solo con teléfono" : "") + (showFavoritesOnly ? " · Solo guardados" : "");
+    resultsContext.textContent = (activeCategory === "Todos" ? "Todos los temas" : categoryMap.find(item => item.key === activeCategory)?.label || activeCategory) + (phoneOnly?.checked ? " · Solo con teléfono" : "") + (showFavoritesOnly ? " · Solo guardados" : "") + (addressOnly?.checked ? " · Solo con dirección" : "");
     updateFavoritesControls();
     resultsTitle.textContent = search.value.trim() ? "Resultados de tu búsqueda" : "Información disponible";
     empty.hidden = visible.length !== 0;
@@ -460,6 +462,9 @@
     if (visible.length === 0 && showFavoritesOnly) {
       empty.querySelector("h3").textContent = "Todavía no guardaste lugares.";
       empty.querySelector("p").textContent = "Volvé a todos los temas y tocá “Guardar lugar” en las fichas que quieras tener a mano.";
+    } else if (visible.length === 0 && addressOnly?.checked) {
+      empty.querySelector("h3").textContent = "No hay direcciones en esta selección.";
+      empty.querySelector("p").textContent = "Probá quitar este filtro o elegir otro tema.";
     } else if (visible.length === 0 && phoneOnly?.checked) {
       empty.querySelector("h3").textContent = "No hay fichas con teléfono en esta selección.";
       empty.querySelector("p").textContent = "Probá quitar ese filtro o elegir otro tema.";
@@ -490,6 +495,7 @@
     activeCategory = "Todos";
     search.value = "";
     if (phoneOnly) phoneOnly.checked = false;
+    if (addressOnly) addressOnly.checked = false;
     showFavoritesOnly = false;
     render();
   }
@@ -556,6 +562,8 @@
     }
   });
   phoneOnly?.addEventListener("change", () => { currentPage = 1; render(); });
+  addressOnly?.addEventListener("change", () => { currentPage = 1; render(); });
+  $("clearAllFilters").addEventListener("click", resetGuide);
   $("previousPage").addEventListener("click", () => {
     if (currentPage > 1) {
       currentPage--;
@@ -775,6 +783,7 @@
     if (activeCategory !== "Todos") selected.push(activeCategory);
     if (search.value.trim()) selected.push("Búsqueda: " + search.value.trim());
     if (phoneOnly?.checked) selected.push("solo fichas con teléfono");
+    if (addressOnly?.checked) selected.push("solo fichas con dirección");
     const selection = selected.length ? " · " + selected.join(" · ") : " · Todos los temas";
     $("printMeta").textContent = total + (total === 1 ? " ficha" : " fichas")
       + " · " + date + selection + " · Ocarina Producciones";
