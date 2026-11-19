@@ -9,7 +9,8 @@
     "brightnessControl","contrastControl","appearanceStatus","brightnessValue",
     "contrastValue","resetAppearance","searchForm","resetFilters","copyAliasButton",
     "supportAlias","printMeta","printButton","whatsappShare","shareButton",
-    "copyShareButton","mobileSearchButton","mobileWhatsappShare","appStatus"
+    "copyShareButton","mobileSearchButton","mobileWhatsappShare","appStatus",
+    "favoritesToggle","favoritesCount","clearFavorites"
   ];
   const missingIds = requiredIds.filter(id => !$(id));
   if (missingIds.length) {
@@ -64,6 +65,37 @@
   const pageSize = 12;
   let fontScale = 1;
   const phoneOnly = $("phoneOnly");
+  let showFavoritesOnly = false;
+  const favoritesStorageKey = "chanar-a-mano-favorites-v1";
+  let favoriteIds = new Set();
+  try {
+    const storedFavorites = JSON.parse(localStorage.getItem(favoritesStorageKey) || "[]");
+    if (Array.isArray(storedFavorites)) {
+      favoriteIds = new Set(storedFavorites.filter(id => typeof id === "string" && contacts.some(contact => contact.id === id)));
+    }
+  } catch (_) {
+    favoriteIds = new Set();
+  }
+
+  function saveFavorites() {
+    try {
+      localStorage.setItem(favoritesStorageKey, JSON.stringify([...favoriteIds]));
+      return true;
+    } catch (_) {
+      const status = $("appStatus");
+      status.hidden = false;
+      status.classList.add("app-status-warning");
+      status.textContent = "No se pudieron guardar tus favoritos en este dispositivo. Podés seguir usando la guía normalmente.";
+      return false;
+    }
+  }
+
+  function updateFavoritesControls() {
+    $("favoritesCount").textContent = favoriteIds.size + (favoriteIds.size === 1 ? " lugar guardado" : " lugares guardados");
+    $("favoritesToggle").setAttribute("aria-pressed", String(showFavoritesOnly));
+    $("favoritesToggle").textContent = showFavoritesOnly ? "✓ Mostrando mis lugares guardados" : "☆ Ver mis lugares guardados";
+    $("clearFavorites").disabled = favoriteIds.size === 0;
+  }
 
   const categoryMap = [
     { label: "Todos los temas", key: "Todos", keys: [], terms: [] },
@@ -330,8 +362,9 @@
       const matchesCategory = activeCategory === "Todos" || Boolean(selectedGroup?.keys.includes(contact.categoria));
       const hasPhone = (contact.telefonos || []).length > 0;
       const matchesPhone = !phoneOnly?.checked || hasPhone;
+      const matchesFavorite = !showFavoritesOnly || favoriteIds.has(contact.id);
       const text = searchText(contact);
-      return matchesCategory && matchesPhone && terms.every(term => termMatches(contact, text, term));
+      return matchesCategory && matchesPhone && matchesFavorite && terms.every(term => termMatches(contact, text, term));
     }).sort((a, b) => String(a.nombre || "").localeCompare(String(b.nombre || ""), "es-AR"));
   }
 
@@ -364,13 +397,17 @@
       : `<span class="card-source-unavailable">Fuente web no disponible en esta ficha.</span>`;
 
     return `
-      <article class="contact-card tone-card-${escapeHtml(categoryTone(contact.categoria))} status-${escapeHtml(contact.estadoContacto || "sin-contacto")}">
+      <article data-contact-id="${escapeHtml(contact.id)}" class="contact-card tone-card-${escapeHtml(categoryTone(contact.categoria))} status-${escapeHtml(contact.estadoContacto || "sin-contacto")}">
         <div class="card-heading">
           <span class="category-label tone-${escapeHtml(categoryTone(contact.categoria))}">${escapeHtml(categoryLabel(contact.categoria))}</span>
           <span class="source-type source-type-${escapeHtml(contact.fuenteTipo || "sin-fuente")}">${escapeHtml(source.label)}</span>
         </div>
         <h4>${escapeHtml(contact.nombre)}</h4>
         <p class="contact-description">${escapeHtml(contact.descripcion)}</p>
+        <div class="card-actions">
+          <button class="card-action favorite-action" type="button" data-favorite-id="${escapeHtml(contact.id)}" aria-pressed="${favoriteIds.has(contact.id)}">${favoriteIds.has(contact.id) ? "★ Guardado" : "☆ Guardar lugar"}</button>
+          <button class="card-action copy-card-action" type="button" data-copy-contact-id="${escapeHtml(contact.id)}">Copiar ficha</button>
+        </div>
         ${phones || address || email ? `<div class="data-list">${phones}${address}${email}</div>` : `<p class="no-contact-data">No se encontró un teléfono público para esta ficha. Consultá su fuente.</p>`}
         ${contactStatusInfo(contact) ? `<p class="contact-verification"><strong>${escapeHtml(contactStatusInfo(contact)[0])}.</strong> ${escapeHtml(contactStatusInfo(contact)[1])}</p>` : ""}
         ${mapLink}
@@ -383,6 +420,8 @@
         </details>
       </article>`;
   }
+
+  updateFavoritesControls();
 
   function renderFilters() {
     filters.innerHTML = categoryMap.map(item => {
@@ -413,11 +452,15 @@
     $("pageStatus").textContent = "Página " + currentPage + " de " + pageCount;
     const endNote = $("resultsEndNote");
     if (endNote) endNote.hidden = visible.length === 0;
-    resultsContext.textContent = (activeCategory === "Todos" ? "Todos los temas" : categoryMap.find(item => item.key === activeCategory)?.label || activeCategory) + (phoneOnly?.checked ? " · Solo con teléfono" : "");
+    resultsContext.textContent = (activeCategory === "Todos" ? "Todos los temas" : categoryMap.find(item => item.key === activeCategory)?.label || activeCategory) + (phoneOnly?.checked ? " · Solo con teléfono" : "") + (showFavoritesOnly ? " · Solo guardados" : "");
+    updateFavoritesControls();
     resultsTitle.textContent = search.value.trim() ? "Resultados de tu búsqueda" : "Información disponible";
     empty.hidden = visible.length !== 0;
     grid.hidden = visible.length === 0;
-    if (visible.length === 0 && phoneOnly?.checked) {
+    if (visible.length === 0 && showFavoritesOnly) {
+      empty.querySelector("h3").textContent = "Todavía no guardaste lugares.";
+      empty.querySelector("p").textContent = "Volvé a todos los temas y tocá “Guardar lugar” en las fichas que quieras tener a mano.";
+    } else if (visible.length === 0 && phoneOnly?.checked) {
       empty.querySelector("h3").textContent = "No hay fichas con teléfono en esta selección.";
       empty.querySelector("p").textContent = "Probá quitar ese filtro o elegir otro tema.";
     } else if (visible.length === 0) {
@@ -447,6 +490,7 @@
     activeCategory = "Todos";
     search.value = "";
     if (phoneOnly) phoneOnly.checked = false;
+    showFavoritesOnly = false;
     render();
   }
 
@@ -462,6 +506,55 @@
   });
 
   search.addEventListener("input", () => { currentPage = 1; render(); });
+  $("favoritesToggle").addEventListener("click", () => {
+    showFavoritesOnly = !showFavoritesOnly;
+    currentPage = 1;
+    render();
+    $("resultsTitle").scrollIntoView({ behavior: "smooth", block: "start" });
+  });
+  $("clearFavorites").addEventListener("click", () => {
+    if (!favoriteIds.size) return;
+    if (!window.confirm("¿Querés borrar todos los lugares guardados de este dispositivo?")) return;
+    favoriteIds.clear();
+    showFavoritesOnly = false;
+    saveFavorites();
+    render();
+  });
+  grid.addEventListener("click", async event => {
+    const favoriteButton = event.target.closest("[data-favorite-id]");
+    if (favoriteButton) {
+      const id = favoriteButton.dataset.favoriteId;
+      if (!contacts.some(contact => contact.id === id)) return;
+      if (favoriteIds.has(id)) favoriteIds.delete(id);
+      else favoriteIds.add(id);
+      saveFavorites();
+      render();
+      return;
+    }
+    const copyButton = event.target.closest("[data-copy-contact-id]");
+    if (copyButton) {
+      const contact = contacts.find(item => item.id === copyButton.dataset.copyContactId);
+      if (!contact) return;
+      const lines = [
+        contact.nombre,
+        contact.categoria,
+        contact.descripcion,
+        ...(contact.telefonos || []).map(phone => "Teléfono publicado: " + phone.numero + (phone.uso ? " · " + phone.uso : "")),
+        contact.direccion ? "Dirección: " + contact.direccion : "",
+        contact.correo ? "Correo publicado: " + contact.correo : "",
+        "Fuente: " + (contact.fuenteNombre || "Fuente indicada"),
+        contact.fuente || "",
+        "Dato de referencia: puede cambiar. Revisá la fuente antes de usarlo.",
+        "Chañar a Mano · Ocarina Producciones"
+      ].filter(Boolean);
+      try {
+        await copyText(lines.join("\n"));
+        shareFeedback.textContent = "Ficha copiada. Podés pegarla en una nota o mensaje.";
+      } catch (_) {
+        shareFeedback.textContent = "No se pudo copiar. Podés seleccionar los datos de la ficha manualmente.";
+      }
+    }
+  });
   phoneOnly?.addEventListener("change", () => { currentPage = 1; render(); });
   $("previousPage").addEventListener("click", () => {
     if (currentPage > 1) {
