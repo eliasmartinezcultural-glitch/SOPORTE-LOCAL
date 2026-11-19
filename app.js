@@ -179,6 +179,11 @@
   function matchingTerms(term) {
     return synonymGroups.find(group => group.includes(term)) || [term];
   }
+  function termMatches(contact, text, term) {
+    if (term === "telefono" || term === "telefonos") return (contact.telefonos || []).length > 0;
+    return matchingTerms(term).some(candidate => text.includes(candidate));
+  }
+
   function visibleContacts() {
     const terms = normalize(search.value).split(" ").filter(term => term && !stopWords.has(term));
     return contacts.filter(contact => {
@@ -187,7 +192,7 @@
       const hasPhone = (contact.telefonos || []).length > 0;
       const matchesPhone = !phoneOnly?.checked || hasPhone;
       const text = searchText(contact);
-      return matchesCategory && matchesPhone && terms.every(term => matchingTerms(term).some(candidate => text.includes(candidate)));
+      return matchesCategory && matchesPhone && terms.every(term => termMatches(contact, text, term));
     }).sort((a, b) => String(a.nombre || "").localeCompare(String(b.nombre || ""), "es-AR"));
   }
 
