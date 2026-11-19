@@ -61,7 +61,7 @@
           <p class="welcome-copy">Una agenda hecha desde el pueblo para encontrar datos de todos los días: instituciones, salud, escuelas, comercios, servicios y lugares de nuestra comunidad.</p>
           <p class="welcome-promise">Gratis para consultar, imprimir y compartir. Sin registrarte.</p>
         </div>
-        <figure class="welcome-photo">
+        <figure class="welcome-photo" aria-hidden="true">
           <img src="https://sanpatricio.gob.ar/assets/images/municipio/Balneario-Municipal.JPG" alt="Vista del Balneario Municipal de San Patricio del Chañar, junto al río y rodeado de árboles." loading="eager" fetchpriority="high">
           <figcaption>Un lugar para encontrarnos: Balneario Municipal. <a href="https://sanpatricio.gob.ar/nuestra" target="_blank" rel="noopener noreferrer">Foto publicada por la Municipalidad ↗</a></figcaption>
         </figure>
@@ -70,42 +70,13 @@
 
     <p class="app-status" id="appStatus" role="status" aria-live="polite" hidden></p>
 
-    <section class="guide-highlights" aria-label="Características de la guía">
-      <div class="highlights-heading">
-        <span class="highlights-stamp" aria-hidden="true">CH</span>
-        <div>
-          <p class="eyebrow">UNA GUÍA PARA EL DÍA A DÍA</p>
-          <h2>El Chañar, más a mano.</h2>
-          <p>Información reunida para orientarnos, encontrarnos y resolver cosas cotidianas.</p>
-        </div>
-      </div>
-      <div class="highlights-stats">
-        <article class="highlight-stat highlight-stat-green">
-          <span class="highlight-icon" aria-hidden="true">▤</span>
-          <strong id="totalContactCount">90</strong>
-          <span>fichas para consultar</span>
-        </article>
-        <article class="highlight-stat highlight-stat-clay">
-          <span class="highlight-icon" aria-hidden="true">⌕</span>
-          <strong id="totalPhoneCount">74</strong>
-          <span>fichas con teléfono publicado</span>
-        </article>
-        <article class="highlight-stat highlight-stat-gold">
-          <span class="highlight-icon" aria-hidden="true">✳</span>
-          <strong>9</strong>
-          <span>temas para explorar</span>
-        </article>
-      </div>
-      <p class="highlights-footnote"><span aria-hidden="true">♡</span> Entre el río, las chacras y nuestra gente: una guía local, abierta y gratuita.</p>
-    </section>
-
     <section class="appearance-presets appearance-quick" aria-labelledby="appearancePresetsTitle">
-      <h2 id="appearancePresetsTitle">¿Cómo querés leer la guía?</h2>
-      <p>Elegí una opción con un toque. Podés cambiarla cuando quieras.</p>
+      <h2 id="appearancePresetsTitle">Elegí cómo leer</h2>
+      <p>Un solo toque cambia el tamaño y los colores. Podés volver atrás cuando quieras.</p>
       <div class="appearance-preset-actions">
-        <button type="button" data-appearance-preset="readable">Agrandar letras</button>
-        <button type="button" data-appearance-preset="night">Modo noche</button>
-        <button type="button" data-appearance-preset="contrast">Más contraste</button>
+        <button type="button" data-appearance-preset="elderly">LETRA GRANDE · RECOMENDADO</button>
+        <button type="button" data-appearance-preset="night">MODO NOCHE</button>
+        <button type="button" data-appearance-preset="contrast">ALTO CONTRASTE</button>
       </div>
     </section>
   <details class="appearance-panel" id="appearancePanel">
@@ -157,7 +128,7 @@
         <div>
           <p class="eyebrow">GUÍA GRATUITA</p>
           <h2 id="directoryTitle">¿Qué estás buscando?</h2>
-          <p class="section-intro">Escribí una palabra o elegí un tema. También podés buscar por nombre, teléfono o dirección.</p>
+          <p class="section-intro">Buscá el lugar o servicio que necesitás. Los teléfonos y direcciones se muestran bien grandes.</p>
         </div>
         <p class="result-count" id="resultCount" aria-live="polite" aria-atomic="true"></p>
       </div>
@@ -165,12 +136,12 @@
       <form class="search-form" id="searchForm" role="search" novalidate>
         <label class="sr-only" for="searchInput">Buscar en la guía</label>
         <span class="search-icon" aria-hidden="true">⌕</span>
-        <input id="searchInput" type="search" placeholder="Ej.: hospital, agua, escuela, farmacia…" autocomplete="off" enterkeyhint="search" aria-describedby="searchHelp">
+        <input id="searchInput" type="search" placeholder="Ejemplo: hospital, farmacia, escuela" autocomplete="off" enterkeyhint="search" aria-describedby="searchHelp">
         <button id="clearSearch" class="clear-search" type="button" aria-label="Borrar búsqueda" hidden>×</button>
       </form>
-      <p class="search-hint" id="searchHelp">Escribí como lo dirías en una charla: hospital, farmacia, escuela, luz, trámite, comercio o un número de teléfono.</p>
+      <p class="search-hint" id="searchHelp">Escribí una palabra. Por ejemplo: hospital, farmacia, escuela o un teléfono.</p>
       <div class="quick-searches" aria-label="Búsquedas rápidas">
-        <span class="quick-search-label">BUSCAR RÁPIDO</span>
+        <span class="quick-search-label">TOCÁ UNA OPCIÓN PARA BUSCAR</span>
         <div class="quick-search-list">
           <button class="quick-chip" type="button" data-query="hospital">Hospital</button>
           <button class="quick-chip" type="button" data-query="farmacia">Farmacias</button>
@@ -184,14 +155,14 @@
       </div>
       <label class="phone-filter" for="phoneOnly">
         <input id="phoneOnly" type="checkbox">
-        <span>Mostrar solamente fichas que tienen un teléfono publicado</span>
+        <span>Mostrar solo lugares con teléfono</span>
       </label>
 
     <section class="notice" aria-label="Importante">
       <span class="notice-icon" aria-hidden="true">i</span>
       <div>
-        <h2>Antes de usar un dato</h2>
-        <p>La información puede cambiar. Revisá siempre la fuente de cada ficha. Los teléfonos son referencias, no una confirmación de vigencia. Esta guía no es oficial ni un servicio de emergencias.</p>
+        <h2>Un dato importante</h2>
+        <p>Los teléfonos y direcciones pueden cambiar. Si un número no responde, consultá la fuente indicada. Esta guía es independiente y no reemplaza a emergencias.</p>
       </div>
     </section>
 
