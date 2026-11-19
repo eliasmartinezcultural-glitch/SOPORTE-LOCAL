@@ -2,31 +2,26 @@
 
 ## Regla principal
 
-La rama de trabajo no es la página pública. Los cambios se desarrollan y guardan en una rama separada; la página pública recibe únicamente cambios revisados e incorporados a la rama que GitHub Pages tenga configurada como fuente.
+El proyecto se mantiene en **una sola rama activa: `main`**. Las mejoras ordinarias se guardan directamente allí, con commits pequeños y descriptivos. No se abren ramas de trabajo ni Pull Requests para tareas habituales. La rama congelada `base-estable-2026-11-19` se conserva únicamente como referencia histórica y no se modifica.
 
-## Fuente de publicación prevista
+## Fuente de publicación
 
-Para este repositorio está previsto publicar desde:
-
-- Plataforma: GitHub Pages
-- Método: Deploy from a branch
-- Rama: `main`
-- Carpeta: `/(root)`
-
-**Esta configuración debe comprobarse en GitHub → Settings → Pages.** No se debe dar por hecho que está activa hasta verla allí. Si GitHub Pages utiliza otra rama o carpeta, hay que adaptar este procedimiento a esa fuente real antes de anunciar una publicación.
+La publicación prevista es GitHub Pages desde `main` y la carpeta raíz `/(root)`. La configuración efectiva debe comprobarse en GitHub → Settings → Pages; no se debe afirmar que una actualización está publicada hasta verificar la URL pública.
 
 ## Flujo obligatorio de cada mejora
 
-1. Partir de la rama de trabajo vigente, nunca editar la rama congelada `base-estable-2026-11-19`.
-2. Trabajar en una rama identificable, por ejemplo `publicacion-segura-AAAA-MM-DD`.
-3. Antes de reemplazar un archivo, leer su versión actual y usar su SHA actual.
-4. Guardar cada cambio como commit en GitHub. No considerar guardado un cambio que solo exista en el editor o en una conversación.
-5. Abrir un Pull Request hacia `main`.
-6. Esperar que el control automático **Validar Chañar a Mano** termine correctamente.
-7. Revisar el resumen de archivos modificados y comprobar que `datos.js` no cambió si la tarea no incluía cambios editoriales.
-8. Incorporar el Pull Request a `main` solo después de revisar la vista previa y aprobar el resultado.
-9. Esperar la publicación de GitHub Pages y abrir la URL pública para comprobar que muestra el cambio.
-10. Si la web no refleja el commit incorporado, revisar Settings → Pages y el estado de publicación antes de seguir modificando código.
+1. Leer el archivo actual de `main` y comprobar su SHA antes de editar.
+2. Definir exactamente qué archivos se modificarán y preservar los datos que no formen parte de la tarea.
+3. Guardar directamente en `main` mediante commits descriptivos; no considerar guardado un cambio que solo exista en un editor o conversación.
+4. Ejecutar **Validar Chañar a Mano** y revisar el resultado del commit.
+5. Comprobar el resumen de archivos modificados y verificar que `datos.js` no cambió si la tarea no incluía cambios editoriales.
+6. Esperar la publicación de GitHub Pages y abrir la URL pública para comprobar el cambio.
+7. Si la web no refleja el commit, revisar Settings → Pages, Actions y la caché del navegador antes de seguir modificando código.
+8. No modificar la rama congelada `base-estable-2026-11-19`.
+
+## Exportación de resultados
+
+El botón de descarga genera un CSV local con todas las fichas que coinciden con la búsqueda y los filtros activos, aunque estén distribuidas en varias páginas. Incluye nombre, tema, descripción, teléfonos publicados, uso indicado, estado documental, dirección, correo, fuente y enlace de procedencia. No consulta servicios externos ni transmite la selección. El archivo agrega una marca BOM para facilitar la lectura de caracteres españoles en planillas y neutraliza valores que podrían interpretarse como fórmulas.
 
 ## Qué controla la validación automática
 
