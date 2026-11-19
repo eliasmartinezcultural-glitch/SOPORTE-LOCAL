@@ -14,18 +14,18 @@
   function escapeHtml(value) {
     return String(value ?? "").replace(/[&<>"']/g, char => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[char]));
   }
-  function telHref(number) { return "tel:" + String(number).replace(/[^+0-9]/g, ""); }
   function card(contact) {
     const phones = (contact.telefonos || []).map(phone =>
-      `<div class="phone-row"><span class="phone-purpose">${escapeHtml(phone.uso)}</span><a class="phone-link" href="${telHref(phone.numero)}">${escapeHtml(phone.numero)}</a></div>`
+      `<div class="phone-row"><span class="phone-purpose">${escapeHtml(phone.uso)}</span><span class="contact-value" aria-label="Número publicado, no es un botón de llamada">${escapeHtml(phone.numero)}</span></div>`
     ).join("");
-    const email = contact.correo ? `<div class="phone-row"><span class="phone-purpose">Correo</span><a class="phone-link" href="mailto:${escapeHtml(contact.correo)}">${escapeHtml(contact.correo)}</a></div>` : "";
-    const status = contact.fuenteTipo === "agenda" ? '<span class="status secondary">Agenda provincial</span>' : contact.fuenteTipo === "institucional" ? '<span class="status secondary">Fuente institucional</span>' : '<span class="status">Sitio oficial</span>';
+    const email = contact.correo ? `<div class="phone-row"><span class="phone-purpose">Correo publicado</span><span class="contact-value contact-email" aria-label="Dirección de correo publicada, no es un botón para enviar mensajes">${escapeHtml(contact.correo)}</span></div>` : "";
+    const status = contact.fuenteTipo === "agenda" ? '<span class="status secondary">Origen: agenda provincial</span>' : contact.fuenteTipo === "institucional" ? '<span class="status secondary">Origen: entidad / directorio</span>' : '<span class="status">Origen: sitio oficial</span>';
     return `<article class="contact-card">
       <div class="card-top"><span class="category-label">${escapeHtml(contact.categoria)}</span>${status}</div>
       <h3>${escapeHtml(contact.nombre)}</h3><p class="contact-description">${escapeHtml(contact.descripcion)}</p>
       <div class="phone-list">${phones}${email}</div>
-      <a class="card-source" href="${escapeHtml(contact.fuente)}" target="_blank" rel="noopener noreferrer">Consultar fuente: ${escapeHtml(contact.fuenteNombre || "sitio institucional")}</a>
+      <p class="contact-caution">Dato publicado para orientación. Verificá su vigencia y que corresponda al área antes de utilizarlo.</p>
+      <a class="card-source" href="${escapeHtml(contact.fuente)}" target="_blank" rel="noopener noreferrer">Ver publicación de origen: ${escapeHtml(contact.fuenteNombre || "fuente consultada")}</a>
     </article>`;
   }
   function render() {
