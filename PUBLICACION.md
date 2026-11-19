@@ -107,3 +107,8 @@ La validación ahora revisa:
 - ausencia de enlaces tel:, mailto: y javascript:.
 
 Estos controles reducen errores técnicos, pero no reemplazan pruebas visuales en celulares reales, verificación de teléfonos ni autorización de fotografías.
+
+
+### Regla de actualización de la caché
+
+Cada vez que se modifiquen archivos esenciales (`index.html`, `styles.css`, `datos.js`, `app.js`, el manifiesto o el icono), aumentar el número de versión de `CACHE_NAME` en `sw.js`. Así el navegador instala una caché nueva y elimina la anterior al activar la actualización. No reutilizar el mismo nombre de caché después de cambiar esos archivos.
