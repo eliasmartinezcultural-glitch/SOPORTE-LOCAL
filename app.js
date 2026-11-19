@@ -337,6 +337,8 @@
     $("fontDown").disabled = fontScale <= 1;
     $("fontUp").disabled = fontScale >= 1.5;
     $("fontReset").setAttribute("aria-label", "Tamaño de texto actual: " + Math.round(fontScale * 100) + " por ciento. Restablecer");
+    const fontStatus = $("fontScaleStatus");
+    if (fontStatus) fontStatus.textContent = Math.round(fontScale * 100) + "%";
   }
   $("fontDown").addEventListener("click", () => applyFontScale(fontScale - 0.1));
   $("fontUp").addEventListener("click", () => applyFontScale(fontScale + 0.1));
