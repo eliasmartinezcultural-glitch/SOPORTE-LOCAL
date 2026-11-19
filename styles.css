@@ -1012,3 +1012,8 @@ body[data-theme=high] .search-hint{color:#000!important}
   .data-row{display:flex;flex-direction:row;justify-content:space-between}
   .data-value{max-width:68%;text-align:right}
 }
+
+
+/* Reflow adicional para textos largos y ampliaciones de lectura */
+.data-row{flex-wrap:wrap}
+.data-value{max-width:100%;overflow-wrap:anywhere}
