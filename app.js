@@ -79,7 +79,8 @@
       "publicado-agenda-provincial": ["Publicado en agenda provincial", "La agenda provincial publica este dato; conviene confirmar su vigencia."],
       "publicado-directorio-institucional": ["Publicado en directorio institucional", "El directorio publica este dato; conviene confirmar su vigencia."],
       "referencia-secundaria": ["Referencia de terceros", "El dato no está respaldado aquí por una fuente oficial directa; confirmalo antes de usarlo."],
-      "dato-duplicado-pendiente": ["Dato repetido · pendiente de confirmar", "El mismo número aparece en otra ficha. No lo tomes como confirmado hasta consultar a ambas instituciones."]
+      "dato-duplicado-pendiente": ["Dato repetido · pendiente de confirmar", "El mismo número aparece en otra ficha. No lo tomes como confirmado hasta consultar a ambas instituciones."],
+      "conflicto-entre-fuentes": ["Hay números distintos publicados", "Una fuente oficial y otra publicación consultada muestran teléfonos diferentes. Se conserva el número de la fuente oficial, pero conviene confirmarlo antes de usarlo."]
     };
     return states[contact.estadoContacto] || null;
   }
