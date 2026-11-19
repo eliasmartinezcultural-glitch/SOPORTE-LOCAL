@@ -1,60 +1,91 @@
 "use strict";
-const CACHE_NAME = "chanar-a-mano-shell-v5";
-const CORE_FILES = ["./","./index.html","./styles.css","./datos.js","./app.js","./manifest.webmanifest","./marca-chanar.svg"];
+
+/* Cada versión de la estructura local debe cambiar este identificador. */
+const CACHE_NAME = "chanar-a-mano-shell-v6";
+const CORE_FILES = [
+  "./index.html",
+  "./styles.css",
+  "./datos.js",
+  "./app.js",
+  "./manifest.webmanifest",
+  "./marca-chanar.svg"
+];
+
 self.addEventListener("install", event => {
   event.waitUntil((async () => {
     const cache = await caches.open(CACHE_NAME);
-    await Promise.all(CORE_FILES.map(async path => {
-      try {
-        const response = await fetch(path, { cache: "reload" });
-        if (response && response.ok) await cache.put(path, response);
-      } catch (_) {
-        // Un archivo ausente no debe impedir guardar el resto de la guía.
-      }
+    // La instalación es completa o falla: no activamos una caché incompleta.
+    const responses = await Promise.all(CORE_FILES.map(async path => {
+      const response = await fetch(path, { cache: "reload" });
+      if (!response.ok) throw new Error("No se pudo actualizar el recurso: " + path);
+      return [path, response];
     }));
+    await Promise.all(responses.map(([path, response]) => cache.put(path, response)));
     await self.skipWaiting();
   })());
 });
+
 self.addEventListener("activate", event => {
   event.waitUntil((async () => {
     const names = await caches.keys();
-    await Promise.all(names.filter(name => name.startsWith("chanar-a-mano-shell-") && name !== CACHE_NAME).map(name => caches.delete(name)));
+    await Promise.all(
+      names
+        .filter(name => name.startsWith("chanar-a-mano-shell-") && name !== CACHE_NAME)
+        .map(name => caches.delete(name))
+    );
     await self.clients.claim();
   })());
 });
+
 self.addEventListener("fetch", event => {
   const request = event.request;
   if (request.method !== "GET") return;
+
   const requestUrl = new URL(request.url);
   if (requestUrl.origin !== self.location.origin) return;
+
   if (request.mode === "navigate") {
     event.respondWith((async () => {
       try {
         const response = await fetch(request);
         if (response && response.ok) {
           const cache = await caches.open(CACHE_NAME);
-          await cache.put(new URL("./index.html", self.registration.scope), response.clone());
+          await cache.put("./index.html", response.clone());
         }
         return response;
       } catch (_) {
-        const cached = await caches.match(new URL("./index.html", self.registration.scope));
-        return cached || new Response("Chañar a Mano no está disponible sin conexión todavía. Volvé a conectarte y abrí la guía una vez.", {status:503,headers:{"Content-Type":"text/plain; charset=utf-8"}});
+        const cached = await caches.match("./index.html");
+        return cached || new Response(
+          "Chañar a Mano todavía no está disponible sin conexión. Conectate y abrí la guía una vez.",
+          { status: 503, headers: { "Content-Type": "text/plain; charset=utf-8" } }
+        );
       }
     })());
     return;
   }
-  event.respondWith((async () => {
-    const cached = await caches.match(request);
-    if (cached) return cached;
-    try {
-      const response = await fetch(request);
-      if (response && response.ok) {
-        const cache = await caches.open(CACHE_NAME);
-        await cache.put(request, response.clone());
+
+  // Los archivos de la aplicación se sirven desde la caché versionada.
+  // El service worker nuevo instala todos los recursos antes de activarse.
+  const isCoreAsset = CORE_FILES.some(path => new URL(path, self.registration.scope).href === requestUrl.href);
+  if (isCoreAsset) {
+    event.respondWith((async () => {
+      const cached = await caches.match(request);
+      if (cached) return cached;
+      try {
+        return await fetch(request);
+      } catch (_) {
+        return new Response("", { status: 503, statusText: "Offline" });
       }
-      return response;
+    })());
+    return;
+  }
+
+  event.respondWith((async () => {
+    try {
+      return await fetch(request);
     } catch (_) {
-      return new Response("", {status:503,statusText:"Offline"});
+      const cached = await caches.match(request);
+      return cached || new Response("", { status: 503, statusText: "Offline" });
     }
   })());
 });
