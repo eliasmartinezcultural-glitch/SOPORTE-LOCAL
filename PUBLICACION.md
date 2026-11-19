@@ -166,3 +166,23 @@ La versión reparada queda en la rama de trabajo. Antes de considerarla pública
 5. verificar en Settings → Pages cuál es la rama y carpeta efectivas;
 6. integrar el Pull Request solamente después de esa revisión;
 7. abrir la URL publicada en una ventana privada y confirmar el nuevo contenido y la nueva versión de caché.
+
+
+## Vista fácil prioritaria para personas mayores
+
+La portada fue simplificada para que la consulta empiece antes: se quitaron las estadísticas decorativas y la fotografía que ocupaba espacio antes del directorio. Se mantiene la identidad de Ocarina y la explicación breve del propósito de la guía.
+
+La primera visita activa una base de letra ampliada (125%) y un contraste reforzado. Las preferencias anteriores se migran una sola vez a una nueva clave local; después se respeta el tamaño que cada persona elija.
+
+El acceso **LETRA GRANDE · RECOMENDADO** activa:
+- escala de lectura del 150%;
+- contraste reforzado;
+- tarjetas de una sola columna;
+- teléfonos con tamaño destacado, en su propio bloque;
+- direcciones y advertencias con mayor tamaño y separación.
+
+Los teléfonos siguen siendo texto seleccionable, no enlaces de llamada. La etiqueta aclara que son datos publicados como referencia. Los botones de búsqueda, filtros y acciones se ampliaron para facilitar el uso táctil.
+
+El modo noche y el alto contraste conservan la jerarquía de números y direcciones. La impresión A4 también destaca los teléfonos, conserva advertencias y evita dividir bloques de datos cuando sea posible.
+
+Esta mejora se verificó en el código y en el validador automático; todavía requiere prueba visual en celulares físicos, zoom del navegador y vista previa de impresión.
