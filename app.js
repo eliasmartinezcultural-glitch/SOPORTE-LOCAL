@@ -20,6 +20,8 @@
   if (totalPhoneCount) totalPhoneCount.textContent = String(contacts.filter(contact => (contact.telefonos || []).length > 0).length);
 
   let activeCategory = "Todos";
+  let currentPage = 1;
+  const pageSize = 12;
   let fontScale = 1;
   const phoneOnly = $("phoneOnly");
 
@@ -249,8 +251,18 @@
 
   function render() {
     const visible = visibleContacts();
-    grid.innerHTML = visible.map(card).join("");
-    count.textContent = visible.length + (visible.length === 1 ? " resultado" : " resultados");
+    const pageCount = Math.max(1, Math.ceil(visible.length / pageSize));
+    currentPage = Math.min(currentPage, pageCount);
+    const start = (currentPage - 1) * pageSize;
+    const pageItems = visible.slice(start, start + pageSize);
+    grid.innerHTML = pageItems.map(card).join("");
+    count.textContent = visible.length + (visible.length === 1 ? " resultado" : " resultados")
+      + (visible.length > pageSize ? " · mostrando " + (start + 1) + "–" + Math.min(start + pageSize, visible.length) : "");
+    const pagination = $("pagination");
+    pagination.hidden = visible.length <= pageSize;
+    $("previousPage").disabled = currentPage <= 1;
+    $("nextPage").disabled = currentPage >= pageCount;
+    $("pageStatus").textContent = "Página " + currentPage + " de " + pageCount;
     const endNote = $("resultsEndNote");
     if (endNote) endNote.hidden = visible.length === 0;
     resultsContext.textContent = (activeCategory === "Todos" ? "Todos los temas" : categoryMap.find(item => item.key === activeCategory)?.label || activeCategory) + (phoneOnly?.checked ? " · Solo con teléfono" : "");
@@ -276,6 +288,7 @@
   }
 
   function resetGuide() {
+    currentPage = 1;
     activeCategory = "Todos";
     search.value = "";
     if (phoneOnly) phoneOnly.checked = false;
@@ -286,15 +299,32 @@
     const button = event.target.closest("button[data-category]");
     if (!button) return;
     activeCategory = button.dataset.category;
+    currentPage = 1;
     render();
     $("directoryTitle").scrollIntoView({ behavior: "smooth", block: "start" });
   });
 
-  search.addEventListener("input", render);
-  phoneOnly?.addEventListener("change", render);
+  search.addEventListener("input", () => { currentPage = 1; render(); });
+  phoneOnly?.addEventListener("change", () => { currentPage = 1; render(); });
+  $("previousPage").addEventListener("click", () => {
+    if (currentPage > 1) {
+      currentPage--;
+      render();
+      $("directoryTitle").scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  });
+  $("nextPage").addEventListener("click", () => {
+    const totalPages = Math.ceil(visibleContacts().length / pageSize);
+    if (currentPage < totalPages) {
+      currentPage++;
+      render();
+      $("directoryTitle").scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  });
   document.querySelectorAll(".quick-chip").forEach(button => {
     button.addEventListener("click", () => {
       activeCategory = button.dataset.category || "Todos";
+      currentPage = 1;
       search.value = button.dataset.query || "";
       render();
       $("resultsTitle").scrollIntoView({ behavior: "smooth", block: "start" });
@@ -315,6 +345,7 @@
   $("searchForm").addEventListener("submit", event => event.preventDefault());
   clear.addEventListener("click", () => {
     search.value = "";
+    currentPage = 1;
     render();
     search.focus();
   });
