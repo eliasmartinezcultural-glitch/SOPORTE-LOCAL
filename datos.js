@@ -609,19 +609,19 @@ window.CHANAR_CONTACTOS = [
     "id": "bodega-schroeder",
     "nombre": "Bodega Familia Schroeder",
     "categoria": "Turismo y producción",
-    "descripcion": "Bodega con propuesta de visitas y gastronomía, identificada en el portal turístico municipal.",
+    "descripcion": "Bodega y visitas guiadas. El sitio oficial publica este teléfono para consultas de turismo y reservas.",
     "telefonos": [
       {
-        "uso": "Contacto de bodega y turismo",
-        "numero": "0299 454-8920"
+        "uso": "Turismo · visitas guiadas",
+        "numero": "0299 489-9600"
       }
     ],
-    "fuente": "https://familiaschroeder.com/arg/bodega/",
-    "fuenteNombre": "Bodega Familia Schroeder · Sitio oficial",
+    "fuente": "https://familiaschroeder.com/arg/saurus_garden/",
+    "fuenteNombre": "Familia Schroeder · Sitio oficial",
     "fuenteTipo": "oficial",
     "direccion": "Calle 7 Norte, San Patricio del Chañar, Neuquén, Argentina",
     "correo": "turismo@familiaschroeder.com",
-    "estadoContacto": "conflicto-entre-fuentes"
+    "estadoContacto": "publicado-fuente-oficial"
   },
   {
     "id": "bodega-malma",
