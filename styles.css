@@ -628,3 +628,7 @@ a:focus-visible,button:focus-visible,input:focus-visible{outline:3px solid #8b4e
   html{scroll-behavior:auto}
   *,*::before,*::after{transition:none!important;animation:none!important}
 }
+
+
+.reading-actions output{min-width:48px;color:#405743;font-size:13px;font-weight:800;text-align:center;font-variant-numeric:tabular-nums}
+@media(max-width:560px){.reading-actions output{font-size:12px;min-width:42px}}
