@@ -78,3 +78,13 @@ Historias, personas y territorio.
 ## Identidad
 **CHÁÑAR A MANO** · La comunidad, conectada.  
 **Agenda comunitaria creada por Ocarina Producciones.**
+
+
+## Ampliación del directorio y criterios de procedencia
+
+- El directorio reúne 60 fichas entre instituciones, servicios públicos, educación, salud, cultura, deporte, producción, turismo, gastronomía y comercios.
+- Los teléfonos y correos se publican solo cuando aparecen en una fuente consultada.
+- Las fichas sin teléfono muestran ubicación o referencia de origen, sin inventar canales de contacto.
+- Se diferencia la fuente institucional de las fichas públicas de ubicación en mapas.
+- Los datos comerciales y las ubicaciones deben confirmarse antes de concurrir; las fichas de mapas no sustituyen la confirmación del establecimiento.
+- Las categorías usan una paleta cromática diferenciada, manteniendo contraste, legibilidad y diseño apto para impresión.
