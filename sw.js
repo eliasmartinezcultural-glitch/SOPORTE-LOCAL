@@ -1,7 +1,7 @@
 "use strict";
 
 /* Cada versión de la estructura local debe cambiar este identificador. */
-const CACHE_NAME = "chanar-a-mano-shell-v11";
+const CACHE_NAME = "chanar-a-mano-shell-v12";
 const CORE_FILES = [
   "./index.html",
   "./styles.css",
