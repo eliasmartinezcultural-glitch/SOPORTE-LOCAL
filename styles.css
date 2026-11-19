@@ -466,3 +466,19 @@ body{background:radial-gradient(ellipse at 8% 5%,rgba(244,204,125,.20),transpare
 .data-value{font-variant-numeric:tabular-nums}
 @media(max-width:560px){.phone-only-toggle{width:100%;font-size:13px;margin-bottom:16px}.map-location-link{min-height:42px;width:100%;justify-content:center}}
 @media print{.phone-only-toggle,.map-location-link{display:none!important}}
+
+/* Leyenda de procedencia: ayuda a distinguir la calidad de cada referencia */
+.source-legend{width:min(calc(100% - 48px),992px);margin:0 auto 30px;padding:17px 19px;border:1px solid #d8dfd4;border-radius:13px;background:linear-gradient(115deg,#f3f0e4,#edf2e9 55%,#eef2f4)}
+.source-legend-heading{display:flex;align-items:center;gap:11px;margin-bottom:12px}
+.source-legend-symbol{width:32px;height:32px;flex:0 0 32px;display:grid;place-items:center;border-radius:10px;background:#dce9dd;color:#3d6b4c;font-weight:900}
+.source-legend-heading h2{margin:0;color:#304b3a;font-size:16px}
+.source-legend-heading p{margin:2px 0 0;color:#5d695e;font-size:12px}
+.source-legend-items{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.source-legend-items>div{display:flex;align-items:flex-start;gap:9px;padding:10px;border-radius:9px;background:rgba(255,255,255,.65)}
+.source-legend-items strong,.source-legend-items small{display:block}
+.source-legend-items strong{color:#344c39;font-size:12px}
+.source-legend-items small{margin-top:3px;color:#606d61;font-size:11px;line-height:1.4}
+.legend-dot{width:11px;height:11px;flex:0 0 11px;margin-top:3px;border-radius:50%}
+.legend-official{background:#4f8960}.legend-directory{background:#bd8a42}.legend-maps{background:#6686a3}
+@media(max-width:700px){.source-legend{width:calc(100% - 28px);margin-bottom:23px;padding:14px 12px}.source-legend-items{grid-template-columns:1fr;gap:7px}.source-legend-items>div{padding:8px 9px}}
+@media print{.source-legend{width:100%;margin:3mm 0;padding:2mm;border-radius:0;background:#fff!important}.source-legend-items{grid-template-columns:repeat(3,1fr);gap:1.5mm}.source-legend-items>div{padding:1mm;border:0.4pt solid #bbb}.source-legend-items small{font-size:7pt}}
