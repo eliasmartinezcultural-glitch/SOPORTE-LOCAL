@@ -12,12 +12,9 @@
   <meta property="og:type" content="website">
   <meta property="og:title" content="Chañar a Mano | Guía comunitaria">
   <meta property="og:description" content="Una agenda sencilla, gratuita y local para encontrar teléfonos, instituciones, servicios y comercios de San Patricio del Chañar. Compartila con tu familia y vecinos.">
-  <meta property="og:image" content="https://sanpatricio.gob.ar/assets/images/municipio/Balneario-Municipal.JPG">
-  <meta property="og:image:alt" content="Balneario Municipal de San Patricio del Chañar, junto al río y los árboles.">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Chañar a Mano | Agenda local">
   <meta name="twitter:description" content="Información útil de San Patricio del Chañar, gratuita y fácil de consultar.">
-  <meta name="twitter:image" content="https://sanpatricio.gob.ar/assets/images/municipio/Balneario-Municipal.JPG">
   <meta name="color-scheme" content="light dark">
   <title>Chañar a Mano | Guía comunitaria</title>
   <link rel="manifest" href="manifest.webmanifest">
@@ -136,6 +133,15 @@
         <button id="clearSearch" class="clear-search" type="button" aria-label="Borrar búsqueda" hidden>×</button>
       </form>
       <p class="search-hint" id="searchHelp">Escribí una palabra. Por ejemplo: hospital, farmacia, escuela o un teléfono.</p>
+      <details class="how-to-use">
+        <summary>¿Cómo se usa esta guía?</summary>
+        <ol>
+          <li>Escribí lo que necesitás o tocá una búsqueda rápida.</li>
+          <li>Leé el teléfono o la dirección publicados en la ficha.</li>
+          <li>Abrí la fuente para revisar de dónde salió el dato y si sigue vigente.</li>
+        </ol>
+        <p>No hacemos llamadas ni enviamos tus búsquedas. Los datos son referencias y pueden cambiar.</p>
+      </details>
       <div class="quick-searches" aria-label="Búsquedas rápidas">
         <span class="quick-search-label">TOCÁ UNA OPCIÓN PARA BUSCAR</span>
         <div class="quick-search-list">
@@ -153,6 +159,12 @@
         <input id="phoneOnly" type="checkbox">
         <span>Mostrar solo lugares con teléfono</span>
       </label>
+      <div class="saved-tools" aria-label="Lugares guardados">
+        <button class="saved-toggle" id="favoritesToggle" type="button" aria-pressed="false">☆ Ver mis lugares guardados</button>
+        <span class="saved-count" id="favoritesCount" aria-live="polite">0 guardados</span>
+        <button class="saved-clear" id="clearFavorites" type="button" disabled>Vaciar guardados</button>
+      </div>
+      <p class="saved-help">Podés guardar lugares para encontrarlos rápido. La lista queda solamente en este dispositivo; no se envía a ningún sitio.</p>
 
     <section class="notice" aria-label="Importante">
       <span class="notice-icon" aria-hidden="true">i</span>
@@ -162,7 +174,7 @@
       </div>
     </section>
 
-      <details class="topic-panel" id="topicPanel" open>
+      <details class="topic-panel" id="topicPanel">
         <summary>
           <span class="topic-summary-title">Explorar por tema</span>
           <span class="topic-summary-help">Elegí el tema que necesitás</span>
