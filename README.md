@@ -21,7 +21,7 @@ Historias, personas y territorio.
 ## Contenido y funciones
 - Fichas de instituciones, organizaciones y servicios.
 - Categorías y buscador.
-- Enlaces telefónicos y de correo desde dispositivos compatibles.
+- Teléfonos y correos visibles como texto de referencia, sin enlaces de llamada ni de envío de mensajes.
 - Fuentes visibles en cada ficha.
 - Compartir la agenda e imprimir/guardar la consulta como PDF.
 - Diseño adaptable con prioridad de uso en celulares.
@@ -35,7 +35,11 @@ Historias, personas y territorio.
 - No se publican teléfonos personales atribuidos a organismos.
 - No se inventan domicilios, horarios ni canales de atención.
 - La información puede cambiar; se reciben avisos y correcciones comunitarias.
-- La agenda facilita el acceso a información publicada y no reemplaza los canales oficiales.
+- La agenda facilita la consulta de información publicada; no inicia llamadas, mensajes, correos ni trámites en nombre de nadie.
+- Los datos de contacto no se presentan como vigentes o garantizados: la persona debe revisar la fuente y confirmar que el canal corresponda al área.
+- No se debe compartir información personal o sensible sin verificar previamente al destinatario.
+- La agenda no es un servicio de emergencias ni reemplaza la atención oficial, profesional o presencial.
+- No se incorporan botones de llamada, WhatsApp, correo ni acciones que impulsen el contacto automático.
 
 ## Fuentes principales
 - Municipalidad de San Patricio del Chañar: https://sanpatricio.gob.ar/
@@ -49,7 +53,7 @@ Historias, personas y territorio.
 - `index.html`: estructura de la agenda y cartel de colaboración.
 - `styles.css`: identidad visual adaptable, accesibilidad, rendimiento e impresión A4.
 - `datos.js`: datos separados de la interfaz, con tipo de fuente.
-- `app.js`: búsqueda, filtros, enlaces, compartir, copiar alias e imprimir.
+- `app.js`: búsqueda, filtros, fuentes, compartir la guía, copiar alias e imprimir.
 
 ## Identidad
 **CHÁÑAR A MANO** · La comunidad, conectada.  
