@@ -12,7 +12,7 @@ Reúne información pública de instituciones, servicios, organizaciones, espaci
 2. O elegí uno de los temas.
 3. Abrí la fuente de la ficha para revisar el dato antes de usarlo.
 
-La página está pensada para celulares, lectura sencilla, controles grandes y personas con poca experiencia digital. Incluye ajuste de tamaño de letra, impresión y guardado como PDF. El encabezado ofrece acceso directo para compartir por WhatsApp; también se conserva el menú de compartir del dispositivo y la opción de copiar el enlace.
+La página está pensada para celulares, lectura sencilla, controles grandes y personas con poca experiencia digital. Incluye un panel de ajustes con tamaño de letra, brillo, contraste y tres modos de color (natural, alto contraste y nocturno), además de impresión y guardado como PDF. Los ajustes visuales se guardan localmente en el dispositivo. El encabezado ofrece acceso directo para compartir por WhatsApp; también se conserva el menú de compartir del dispositivo y la opción de copiar el enlace.
 
 ## Criterios de información y seguridad
 - La guía no es oficial y no representa a las instituciones.
