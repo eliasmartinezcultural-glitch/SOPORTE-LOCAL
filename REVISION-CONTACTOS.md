@@ -34,7 +34,7 @@
 
 ### Número repetido
 
-El número **0299 485-5307** aparece tanto en la ficha de **C.E.P.A. N.º 56** como en la de **Escuela Primaria N.º 342**. No se eliminó ni se reasignó: ambas fichas quedan marcadas para confirmar con cada establecimiento.
+El número **0299 485-5307** aparece tanto en la ficha de **C.E.P.A. N.º 56** como en la de **Escuela Primaria N.º 342**. Un documento oficial del Ministerio de Educación de Neuquén también publica ese mismo número para ambos establecimientos (listados provinciales consultados: https://www.neuquen.edu.ar/wp-content/uploads/2016/11/Educacion-Jovenes-y-Adultos.pdf y https://www.neuquen.edu.ar/wp-content/uploads/2016/11/Educacion-Primaria.pdf). No se eliminó ni se reasignó: ambas fichas quedan marcadas para confirmar si la línea continúa siendo compartida.
 
 ### Diferencias entre publicaciones
 
