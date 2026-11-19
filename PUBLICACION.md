@@ -205,3 +205,6 @@ Antes de imprimir, se puede seleccionar “Solo los resultados que estoy viendo�
 La difusión ofrece un mensaje corto con el enlace y una tarjeta gráfica generada en el propio dispositivo. En móviles compatibles, el menú nativo permite elegir WhatsApp y adjuntar el PNG. En equipos sin esa capacidad, la imagen se descarga y el mensaje se copia para adjuntarlos manualmente. El botón de WhatsApp solo prepara el texto y enlace; no envía mensajes sin intervención de la persona.
 
 La tarjeta PNG se genera a 1200 × 630 píxeles, no contiene teléfonos institucionales, estadísticas ni afirmaciones de vigencia. El mensaje acompaña el enlace y recuerda revisar la fuente de cada ficha.
+
+
+**Corrección de cuadrícula:** el modo de letra grande ya no fuerza una única columna en escritorio. Conserva dos columnas para mantener legibilidad y se reduce a una sola en pantallas angostas de celular.
