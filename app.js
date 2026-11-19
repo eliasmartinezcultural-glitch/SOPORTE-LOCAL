@@ -11,7 +11,7 @@
     "supportAlias","printMeta","printButton","whatsappShare","shareButton",
     "copyShareButton","mobileSearchButton","mobileWhatsappShare","appStatus",
     "favoritesToggle","favoritesCount","clearFavorites","addressOnly","clearAllFilters",
-    "printScope","printHeadingTitle","printHeadingIntro","printCoverCount","shareKitWhatsapp","shareCardButton","shareKitCopyButton","shareMessagePreview","printUrl", "directoryIntro","exportResultsButton","exportFeedback","copyResultsButton"
+    "printScope","printHeadingTitle","printHeadingIntro","printCoverCount","shareKitWhatsapp","shareSearchButton","shareCardButton","shareKitCopyButton","shareMessagePreview","printUrl", "directoryIntro","exportResultsButton","exportFeedback","copyResultsButton"
   ];
   const missingIds = requiredIds.filter(id => !$(id));
   if (missingIds.length) {
@@ -111,6 +111,20 @@
     { label: "Turismo y gastronomía", key: "Turismo", keys: ["Turismo y gastronomía", "Turismo y alojamiento", "Turismo y producción"], terms: ["turismo", "gastronomia", "restaurante", "comer", "alojamiento", "hotel", "visitas", "hosteria", "hospedaje"] },
     { label: "Comercios y servicios", key: "Comercios", keys: ["Comercios y servicios"], terms: ["comercio", "comercios", "panaderia", "ferreteria", "corralon", "negocio", "taller", "peluqueria", "gomeria"] }
   ];
+
+  // Los enlaces compartidos pueden abrir directamente una búsqueda o un tema.
+  // Los favoritos quedan fuera porque son datos privados guardados en cada dispositivo.
+  try {
+    const sharedParams = new URLSearchParams(window.location.search);
+    const sharedQuery = sharedParams.get("buscar");
+    const sharedCategory = sharedParams.get("tema");
+    if (sharedQuery) search.value = sharedQuery.slice(0, 120);
+    if (sharedCategory && categoryMap.some(item => item.key === sharedCategory)) activeCategory = sharedCategory;
+    phoneOnly.checked = sharedParams.get("telefono") === "1";
+    addressOnly.checked = sharedParams.get("direccion") === "1";
+  } catch (_) {
+    // Una URL mal formada no debe impedir que la guía cargue.
+  }
 
   function escapeHtml(value) {
     return String(value ?? "").replace(/[&<>"']/g, char => ({
@@ -750,6 +764,13 @@
   });
 
   document.addEventListener("keydown", event => {
+    const target = event.target;
+    const isTyping = target && (target.matches("input, textarea, select") || target.isContentEditable);
+    if (event.key === "/" && !event.ctrlKey && !event.metaKey && !event.altKey && !isTyping) {
+      event.preventDefault();
+      search.focus();
+      search.select();
+    }
     if (event.key === "Escape" && document.activeElement === search && search.value) {
       search.value = "";
       currentPage = 1;
@@ -947,6 +968,15 @@
     return url.href;
   }
 
+  function currentSelectionUrl() {
+    const url = new URL(guideUrl());
+    if (search.value.trim()) url.searchParams.set("buscar", search.value.trim().slice(0, 120));
+    if (activeCategory !== "Todos") url.searchParams.set("tema", activeCategory);
+    if (phoneOnly.checked) url.searchParams.set("telefono", "1");
+    if (addressOnly.checked) url.searchParams.set("direccion", "1");
+    return url.href;
+  }
+
   function whatsappMessage() {
     return "Te comparto CHÁÑAR A MANO: una guía comunitaria gratuita de San Patricio del Chañar. Reúne datos útiles para consultar, imprimir y compartir. No requiere registro. Los datos pueden cambiar; revisá la fuente de cada ficha.\n\n" + guideUrl();
   }
@@ -970,6 +1000,29 @@
       shareFeedback.textContent = "No se pudo copiar automáticamente. Usá el botón de WhatsApp.";
     }
   });
+  $("shareSearchButton").addEventListener("click", async () => {
+    const url = currentSelectionUrl();
+    const title = "CHÁÑAR A MANO · Mi búsqueda";
+    const text = "Te comparto esta búsqueda de la guía comunitaria de San Patricio del Chañar. Al abrir el enlace se recuperan la palabra buscada y los filtros de tema, teléfono o dirección. Los lugares guardados no se incluyen porque son privados de cada dispositivo.";
+    try {
+      if (navigator.share) {
+        await navigator.share({ title, text, url });
+        shareFeedback.textContent = "Se abrió el menú para compartir esta búsqueda.";
+      } else {
+        await copyText(text + "\n\n" + url);
+        shareFeedback.textContent = "Enlace de búsqueda copiado. Podés pegarlo en WhatsApp o en otro mensaje.";
+      }
+    } catch (error) {
+      if (error && error.name === "AbortError") return;
+      try {
+        await copyText(text + "\n\n" + url);
+        shareFeedback.textContent = "Enlace de búsqueda copiado. Podés pegarlo en WhatsApp o en otro mensaje.";
+      } catch (_) {
+        shareFeedback.textContent = "No se pudo compartir automáticamente. Copiá este enlace desde la barra del navegador: " + url;
+      }
+    }
+  });
+
   $("shareKitCopyButton").addEventListener("click", async () => {
     try {
       await copyText(whatsappMessage());
