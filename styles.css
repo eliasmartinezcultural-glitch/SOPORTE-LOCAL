@@ -657,3 +657,46 @@ button:focus-visible,a:focus-visible,summary:focus-visible,input:focus-visible,s
  .contact-card{transform:none!important;box-shadow:none!important}
  .site-footer{display:none!important}
 }
+
+
+/* CHÁÑAR A MANO · Cuadrícula legible y mayor densidad de consulta */
+.grid-view-note{margin:0 0 10px;color:#657267;font-size:12px;line-height:1.5}
+.contact-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;align-items:stretch}
+.contact-card{padding:14px 14px 12px;border-radius:14px;box-shadow:0 2px 9px rgba(35,55,40,.045)}
+.contact-card h4{font-size:clamp(17px,1.35vw,20px);line-height:1.23;margin:8px 0 5px;overflow-wrap:anywhere}
+.contact-description{font-size:13px;line-height:1.42;margin-bottom:8px}
+.card-heading{gap:5px}
+.category-label{font-size:10px;padding:4px 7px}
+.source-type{font-size:9px}
+.data-row{gap:7px;padding-top:6px}
+.data-label{font-size:10px;line-height:1.35}
+.data-value{font-size:13px;max-width:72%;line-height:1.35}
+.data-row-phone .data-value{font-size:clamp(15px,1.25vw,18px);letter-spacing:.01em}
+.card-actions{gap:6px}
+.card-action{min-height:38px;padding:7px 8px;font-size:11px}
+.contact-verification{font-size:10px;padding:7px 8px;margin-top:8px}
+.source-details>summary{font-size:11px}
+.map-location-link,.card-source{font-size:11px;min-height:34px}
+@media(max-width:1050px){
+ .contact-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+ .contact-card h4{font-size:19px}
+ .data-row-phone .data-value{font-size:17px}
+}
+@media(max-width:560px){
+ .grid-view-note{font-size:11px}
+ .contact-grid{grid-template-columns:1fr;gap:11px}
+ .contact-card{padding:15px;border-radius:13px}
+ .contact-card h4{font-size:21px}
+ .contact-description{font-size:14px;line-height:1.45}
+ .data-label{font-size:11px}
+ .data-value{font-size:14px}
+ .data-row-phone .data-value{font-size:19px}
+ .card-action{min-height:42px;font-size:12px}
+}
+body.easy-reading .contact-grid{grid-template-columns:1fr!important}
+body.easy-reading .contact-card{padding:19px!important}
+body.easy-reading .contact-card h4{font-size:28px!important}
+body.easy-reading .contact-description{font-size:17px!important}
+body.easy-reading .data-label{font-size:14px!important}
+body.easy-reading .data-value,body.easy-reading .data-row-phone .data-value{font-size:clamp(22px,4vw,30px)!important}
+@media print{.grid-view-note{display:none!important}}
