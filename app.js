@@ -59,11 +59,6 @@
   const copyFeedback = $("copyFeedback");
   const shareFeedback = $("shareFeedback");
 
-  const totalContactCount = $("totalContactCount");
-  if (totalContactCount) totalContactCount.textContent = String(contacts.length);
-  const totalPhoneCount = $("totalPhoneCount");
-  if (totalPhoneCount) totalPhoneCount.textContent = String(contacts.filter(contact => (contact.telefonos || []).length > 0).length);
-
   let activeCategory = "Todos";
   let currentPage = 1;
   const pageSize = 12;
