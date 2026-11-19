@@ -213,3 +213,8 @@ La tarjeta PNG se genera a 1200 × 630 píxeles, no contiene teléfonos instituc
 ## Experiencia móvil reforzada · 19 de noviembre de 2026
 
 Se amplió la adaptación para teléfonos: barra inferior fija con buscador y compartir, respeto por las áreas seguras del dispositivo, encabezado simplificado, accesos de lectura en columna, filtros temáticos en dos columnas, botones táctiles amplios y datos telefónicos en un bloque de lectura independiente. En equipos angostos se apilan los datos secundarios para evitar compresión. La paleta mantiene coherencia en modo natural, nocturno y alto contraste. La caché del shell se incrementa a v16. La validación comprueba la presencia de estos refuerzos de interfaz; las pruebas visuales en dispositivos físicos siguen siendo necesarias.
+
+
+## Segunda pasada visual · 19 de noviembre de 2026
+
+Capa de diseño CSS exclusivamente: identidad editorial vegetal/terracota, fondos y superficies, tarjetas con acentos y profundidad, botones, filtros, jerarquía tipográfica, ornamentación ambiental, y coherencia visual para modo natural, nocturno, alto contraste e impresión. Sin cambios en la estructura funcional, HTML, JavaScript ni contenido de fichas. Shell PWA actualizado a v17.
