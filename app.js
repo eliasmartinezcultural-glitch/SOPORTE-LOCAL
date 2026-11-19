@@ -344,8 +344,8 @@
   function card(contact) {
     const phones = (contact.telefonos || []).map(phone => `
       <div class="data-row data-row-phone">
-        <span class="data-label">${escapeHtml(contact.fuenteTipo === "mapa" ? "Teléfono referenciado · verificar" : (phone.uso || "Teléfono"))}</span>
-        <span class="data-value" aria-label="Número publicado como referencia">${escapeHtml(phone.numero)}</span>
+        <span class="data-label">TELÉFONO PUBLICADO · ${escapeHtml(contact.fuenteTipo === "mapa" ? "REFERENCIA" : (phone.uso || "CONTACTO"))}</span>
+        <span class="data-value phone-number" aria-label="Número publicado como referencia">${escapeHtml(phone.numero)}</span>
       </div>`).join("");
 
     const address = contact.direccion ? `
@@ -503,14 +503,14 @@
     const fontStatus = $("fontScaleStatus");
     if (fontStatus) fontStatus.textContent = Math.round(fontScale * 100) + "%";
   }
-  $("fontDown").addEventListener("click", () => applyFontScale(fontScale - 0.1));
-  $("fontUp").addEventListener("click", () => applyFontScale(fontScale + 0.1));
-  $("fontReset").addEventListener("click", () => applyFontScale(1));
+  $("fontDown").addEventListener("click", () => { applyFontScale(fontScale - 0.1); document.body.classList.toggle("easy-reading", fontScale >= 1.25); saveAppearance(); });
+  $("fontUp").addEventListener("click", () => { applyFontScale(fontScale + 0.1); document.body.classList.add("easy-reading"); saveAppearance(); });
+  $("fontReset").addEventListener("click", () => { applyFontScale(1.25); document.body.classList.add("easy-reading"); saveAppearance(); });
 
   const brightnessControl = $("brightnessControl");
   const contrastControl = $("contrastControl");
   const appearanceStatus = $("appearanceStatus");
-  const appearanceDefaults = { brightness: 100, contrast: 100, theme: "natural", font: 1 };
+  const appearanceDefaults = { brightness: 100, contrast: 110, theme: "natural", font: 1.25 };
 
   function saveAppearance() {
     try {
@@ -555,23 +555,26 @@
   }
 
   function applyAppearancePreset(preset) {
-    if (preset === "readable") {
+    if (preset === "elderly" || preset === "readable") {
       applyBrightness(100, false);
-      applyContrast(115, false);
+      applyContrast(120, false);
       applyTheme("natural", false);
-      applyFontScale(1.4);
-      if (appearanceStatus) appearanceStatus.textContent = "Vista de letra grande activada.";
+      applyFontScale(1.5);
+      document.body.classList.add("easy-reading");
+      if (appearanceStatus) appearanceStatus.textContent = "Vista fácil activada: letras y teléfonos más grandes.";
     } else if (preset === "night") {
       applyBrightness(90, false);
       applyContrast(110, false);
       applyTheme("night", false);
-      applyFontScale(1.15);
+      applyFontScale(1.3);
+      document.body.classList.add("easy-reading");
       if (appearanceStatus) appearanceStatus.textContent = "Modo noche activado.";
     } else if (preset === "contrast") {
       applyBrightness(100, false);
       applyContrast(115, false);
       applyTheme("high", false);
-      applyFontScale(1.15);
+      applyFontScale(1.3);
+      document.body.classList.add("easy-reading");
       if (appearanceStatus) appearanceStatus.textContent = "Alto contraste activado.";
     } else {
       return;
@@ -606,18 +609,21 @@
       applyBrightness(saved.brightness, false);
       applyContrast(saved.contrast, false);
       applyTheme(saved.theme, false);
-      if (Number.isFinite(Number(saved.font))) applyFontScale(Number(saved.font));
+      if (Number.isFinite(Number(saved.font))) applyFontScale(Math.max(1.25, Number(saved.font)));
+      document.body.classList.add("easy-reading");
     } else {
       applyBrightness(100, false);
       applyContrast(100, false);
       applyTheme("natural", false);
-      applyFontScale(1);
+      applyFontScale(1.25);
+      document.body.classList.add("easy-reading");
     }
   } catch (_) {
     applyBrightness(100, false);
     applyContrast(100, false);
     applyTheme("natural", false);
-    applyFontScale(1);
+    applyFontScale(1.25);
+    document.body.classList.add("easy-reading");
   }
   $("searchForm").addEventListener("submit", event => event.preventDefault());
   clear.addEventListener("click", () => {
