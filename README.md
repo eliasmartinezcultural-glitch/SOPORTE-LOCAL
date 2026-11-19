@@ -148,3 +148,8 @@ Se incorporaron seis fichas locales nuevas: LT Electricidad, Tornería Zúñiga,
 
 
 En modo de letra grande, el directorio conserva dos columnas en pantallas medianas y grandes y una sola en celulares angostos; el tamaño de letra ya no anula la cuadrícula en escritorio.
+
+
+## Experiencia móvil reforzada · noviembre de 2026
+
+La interfaz móvil incorpora una barra fija inferior con acceso al buscador y a compartir, respetando el área segura de los teléfonos. Se simplifica el encabezado, se reorganizan los filtros en dos columnas y se amplían las áreas táctiles. Las fichas muestran los teléfonos en un bloque propio y legible, y en pantallas muy angostas los datos secundarios se apilan para evitar textos comprimidos. Los ajustes de lectura se presentan en una columna para facilitar su uso. La paleta refuerza los tonos vegetales y tierra; los accesos móviles también se adaptan al modo nocturno y al alto contraste. Estas reglas no alteran el contenido ni la clasificación documental de las fichas.
