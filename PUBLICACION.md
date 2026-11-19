@@ -193,3 +193,8 @@ Esta mejora se verificó en el código y en el validador automático; todavía r
 La guía puede guardar fichas favoritas y copiar el contenido de una ficha. Los favoritos se almacenan exclusivamente en el navegador del dispositivo mediante almacenamiento local; no hay cuenta, sincronización ni transmisión al servidor. Si la persona borra los datos del navegador, también pierde los favoritos. La copia incluye siempre la fuente y una advertencia de que el dato puede cambiar. Ninguna de estas acciones crea enlaces automáticos de llamada, correo o mensajería.
 
 La caché del shell se incrementa a v8 cuando se actualizan HTML, CSS o JavaScript. Tras publicar, comprobar que el navegador descargue la nueva versión y que una segunda visita permita consultar la guía sin conexión.
+
+
+## Filtro de direcciones
+
+El filtro “Mostrar solo lugares con dirección” se combina con la búsqueda, la categoría, el filtro de teléfono y los favoritos. “Quitar todos los filtros” restablece la consulta actual sin eliminar los favoritos almacenados. La impresión conserva el conjunto resultante y registra los filtros aplicados.
