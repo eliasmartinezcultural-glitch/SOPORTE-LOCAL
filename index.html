@@ -3,63 +3,98 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#f2eee3">
-  <meta name="description" content="Guía práctica de contactos públicos e instituciones de San Patricio del Chañar, Neuquén.">
-  <title>Chañar a Mano | Guía local</title>
+  <meta name="theme-color" content="#f4f0e7">
+  <meta name="description" content="Chañar a Mano: guía local, clara y cuidada de instituciones, servicios y organizaciones de San Patricio del Chañar.">
+  <title>Chañar a Mano — Guía local de San Patricio del Chañar</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <div class="topline"><span>UNA GUÍA LOCAL · SAN PATRICIO DEL CHAÑAR</span><span>EDICIÓN DIGITAL</span></div>
   <header class="site-header">
     <a class="brand" href="#" aria-label="Chañar a Mano, inicio">
-      <span class="brand-mark" aria-hidden="true">⌂</span>
-      <span><strong>CHÁÑAR A MANO</strong><small>Una guía útil de nuestra localidad</small></span>
+      <span class="brand-mark" aria-hidden="true">cm</span>
+      <span><strong>CHÁÑAR A MANO</strong><small>Información útil, cerca tuyo.</small></span>
     </a>
-    <button class="button button-light" id="shareButton" type="button">Compartir</button>
+    <button class="button button-outline" id="shareButton" type="button"><span aria-hidden="true">↗</span> Compartir guía</button>
   </header>
 
   <main>
-    <section class="intro">
-      <p class="eyebrow">SAN PATRICIO DEL CHAÑAR · NEUQUÉN</p>
-      <h1>Lo que necesitás,<br><em>a mano.</em></h1>
-      <p class="intro-copy">Contactos de instituciones y servicios locales, reunidos en una guía simple para consultar desde el celular o la computadora.</p>
-      <div class="search-wrap">
-        <label class="sr-only" for="searchInput">Buscar en la guía</label>
-        <span aria-hidden="true">⌕</span>
-        <input id="searchInput" type="search" placeholder="¿Qué estás buscando?" autocomplete="off">
-        <button id="clearSearch" type="button" aria-label="Borrar búsqueda" hidden>×</button>
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="eyebrow-dot"></span> SAN PATRICIO DEL CHAÑAR · NEUQUÉN</p>
+        <h1>Lo que necesitás,<br><em>más cerca.</em></h1>
+        <p class="hero-lead">Una guía práctica para encontrar instituciones, servicios y espacios de nuestra comunidad. Clara, ordenada y siempre a mano.</p>
+        <a class="hero-link" href="#directorio">Explorar la guía <span aria-hidden="true">↓</span></a>
       </div>
-      <p class="search-hint">Probá con: salud, trabajo rural, municipalidad, educación…</p>
+      <div class="hero-art" aria-label="Ilustración decorativa de paisaje rural">
+        <div class="sun"></div><div class="hill hill-back"></div><div class="hill hill-front"></div>
+        <div class="field-line line-one"></div><div class="field-line line-two"></div>
+        <div class="plant plant-one"><i></i><i></i><i></i></div>
+        <div class="plant plant-two"><i></i><i></i><i></i></div>
+        <span class="art-caption">NUESTRA TIERRA · NUESTRA GENTE</span>
+      </div>
     </section>
 
-    <section class="directory-section" aria-labelledby="directoryTitle">
+    <section class="trust-strip" aria-label="Características de la guía">
+      <div><span class="trust-icon">⌕</span><span><strong>Fácil de buscar</strong><small>Encontrá por nombre o tema</small></span></div>
+      <div><span class="trust-icon">↗</span><span><strong>Contacto directo</strong><small>Llamá o escribí desde el celular</small></span></div>
+      <div><span class="trust-icon">▤</span><span><strong>Fuentes visibles</strong><small>Consultá de dónde sale el dato</small></span></div>
+    </section>
+
+    <section class="directory-section" id="directorio" aria-labelledby="directoryTitle">
       <div class="section-heading">
-        <div><p class="eyebrow">DIRECTORIO LOCAL</p><h2 id="directoryTitle">Encontrá un contacto</h2></div>
+        <div><p class="eyebrow">CONSULTA GRATUITA</p><h2 id="directoryTitle">Encontrá lo que buscás</h2><p class="section-intro">Elegí una categoría o escribí una palabra. Tocá un teléfono para llamar.</p></div>
         <span class="result-count" id="resultCount" aria-live="polite"></span>
+      </div>
+      <div class="search-wrap">
+        <span aria-hidden="true">⌕</span>
+        <label class="sr-only" for="searchInput">Buscar en la guía</label>
+        <input id="searchInput" type="search" placeholder="Ej.: hospital, escuela, trabajo rural…" autocomplete="off">
+        <button id="clearSearch" type="button" aria-label="Borrar búsqueda" hidden>×</button>
       </div>
       <nav class="filters" id="filters" aria-label="Filtrar por categoría"></nav>
       <div class="contact-grid" id="contactGrid"></div>
       <div class="empty-state" id="emptyState" hidden>
         <span aria-hidden="true">⌕</span><strong>No encontramos ese contacto.</strong>
-        <p>Probá con otra palabra o elegí una categoría.</p>
-        <button class="button button-light" id="resetFilters" type="button">Ver todos</button>
+        <p>Probá con otra palabra o elegí una categoría diferente.</p>
+        <button class="button button-soft" id="resetFilters" type="button">Ver todos</button>
       </div>
     </section>
 
-    <section class="help-note">
-      <span class="note-icon" aria-hidden="true">✳</span>
-      <div><h2>Una guía para tener cerca</h2><p>Reunimos números institucionales publicados para facilitar la búsqueda. Los horarios, la atención y los teléfonos pueden cambiar: si un contacto no responde, consultá la fuente oficial.</p></div>
+    <section class="editorial-note">
+      <span class="note-seal">✳</span>
+      <div><p class="eyebrow">UN TRABAJO DE REUNIÓN Y CUIDADO</p><h2>Información local, presentada con claridad.</h2><p>Reunimos datos publicados por organismos e instituciones para que sea más sencillo encontrarlos. Cada ficha indica su fuente y el tipo de referencia disponible. Los teléfonos y horarios pueden cambiar: ante cualquier duda, confirmá con la institución.</p></div>
+    </section>
+
+    <section class="edition-card" aria-labelledby="editionTitle">
+      <div class="edition-copy">
+        <p class="eyebrow">PARA GUARDAR · COMPARTIR · IMPRIMIR</p>
+        <span class="edition-kicker">CHÁÑAR A MANO / EDICIÓN AMPLIADA</span>
+        <h2 id="editionTitle">Toda la guía.<br><em>En un solo lugar.</em></h2>
+        <p>Estamos preparando una edición PDF más completa, con más organizaciones, categorías, datos de referencia e índice para consultar sin depender de la conexión.</p>
+        <div class="edition-meta"><span>PDF descargable</span><span>Formato A4</span><span>Lectura sencilla</span></div>
+        <div class="edition-price"><small>PRECIO PREVISTO DE LANZAMIENTO</small><strong>$2.500 <span>ARS</span></strong></div>
+        <a class="button button-cream" href="https://www.instagram.com/ocarina_producciones.spch/" target="_blank" rel="noopener noreferrer">Seguir el lanzamiento <span aria-hidden="true">↗</span></a>
+        <p class="edition-status">Edición ampliada en preparación · La compra se habilitará cuando el PDF esté terminado.</p>
+      </div>
+      <div class="edition-visual">
+        <div class="paper-sheet"><div class="paper-top">OCARINA PRODUCCIONES <span>GUÍA LOCAL</span></div><div class="paper-title">CHÁÑAR<br><i>A MANO</i></div><div class="paper-rule"></div><div class="paper-lines"><b></b><b></b><b></b><b></b></div><div class="paper-bottom">SAN PATRICIO DEL CHAÑAR<br>NEUQUÉN · ARGENTINA</div></div>
+        <span class="edition-stamp">EDICIÓN<br>AMPLIADA</span>
+      </div>
     </section>
 
     <section class="print-panel">
-      <div><p class="eyebrow">TAMBIÉN EN PAPEL</p><h2>Guardala o imprimila</h2><p>Podés imprimir esta guía o guardarla como PDF desde tu dispositivo.</p></div>
+      <div><p class="eyebrow">TAMBIÉN EN PAPEL</p><h2>Guardá esta guía</h2><p>Podés imprimir la consulta gratuita o guardarla como PDF desde tu dispositivo.</p></div>
       <button class="button button-dark" id="printButton" type="button">Imprimir / Guardar PDF</button>
     </section>
   </main>
 
   <footer class="site-footer">
-    <div class="footer-brand"><strong>CHÁÑAR A MANO</strong><span>Una guía local de Ocarina Producciones</span></div>
-    <p>Información pública · San Patricio del Chañar</p>
-    <p class="footer-small">Las instituciones son responsables de sus canales de atención. Esta guía facilita el acceso a información publicada y no reemplaza los canales oficiales.</p>
+    <div class="footer-main"><div class="footer-brand"><strong>CHÁÑAR A MANO</strong><span>Una guía local de Ocarina Producciones</span></div><p>San Patricio del Chañar · Neuquén</p></div>
+    <div class="footer-bottom"><span>Información pública reunida con criterio editorial.</span><span>Ocarina Producciones · Historias, personas y territorio.</span></div>
+    <p class="footer-small">Esta publicación es independiente y no representa oficialmente a los organismos mencionados. Las instituciones son responsables de sus canales de atención. La guía facilita el acceso a información publicada y no reemplaza los canales oficiales.</p>
   </footer>
   <script src="datos.js"></script>
   <script src="app.js"></script>
