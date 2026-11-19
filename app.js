@@ -24,21 +24,30 @@
   }
   const rawContacts = Array.isArray(window.CHANAR_CONTACTOS) ? window.CHANAR_CONTACTOS : [];
   const seenContactIds = new Set();
+  let invalidPhoneEntries = 0;
   const contacts = rawContacts.filter(contact => {
     if (!contact || typeof contact !== "object" || typeof contact.id !== "string"
       || !contact.id.trim() || typeof contact.nombre !== "string" || !contact.nombre.trim()
-      || typeof contact.categoria !== "string" || !contact.categoria.trim()
-      || !Array.isArray(contact.telefonos || [])) return false;
+      || typeof contact.categoria !== "string" || !contact.categoria.trim()) return false;
     if (seenContactIds.has(contact.id)) return false;
     seenContactIds.add(contact.id);
     return true;
+  }).map(contact => {
+    const rawPhones = Array.isArray(contact.telefonos) ? contact.telefonos : [];
+    const safePhones = rawPhones.filter(phone => {
+      const valid = phone && typeof phone.numero === "string" && phone.numero.trim().length > 0;
+      if (!valid) invalidPhoneEntries++;
+      return valid;
+    });
+    return { ...contact, telefonos: safePhones };
   });
+  const hasDataWarnings = contacts.length !== rawContacts.length || invalidPhoneEntries > 0;
   const appStatus = $("appStatus");
-  if (contacts.length !== rawContacts.length) {
+  if (hasDataWarnings) {
     appStatus.hidden = false;
-    appStatus.textContent = "Algunas fichas no se pudieron cargar porque sus datos necesitan revisión. La información restante sigue disponible.";
+    appStatus.textContent = "Algunas fichas o teléfonos no se pudieron cargar porque sus datos necesitan revisión. La información restante sigue disponible.";
     appStatus.classList.add("app-status-warning");
-    console.warn("Chañar a Mano: fichas omitidas por datos incompletos:", rawContacts.length - contacts.length);
+    console.warn("Chañar a Mano: fichas omitidas:", rawContacts.length - contacts.length, "| teléfonos omitidos:", invalidPhoneEntries);
   }
   const grid = $("contactGrid");
   const filters = $("filters");
@@ -716,7 +725,7 @@
       appStatus.hidden = false;
       appStatus.classList.add("app-status-offline");
       appStatus.textContent = "Estás sin conexión. Podés consultar la guía guardada en este dispositivo; los enlaces externos necesitan internet.";
-    } else if (contacts.length !== rawContacts.length) {
+    } else if (hasDataWarnings) {
       appStatus.hidden = false;
       appStatus.classList.add("app-status-warning");
       appStatus.textContent = "Algunas fichas no se pudieron cargar porque sus datos necesitan revisión. La información restante sigue disponible.";
