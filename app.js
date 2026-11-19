@@ -1,8 +1,45 @@
 (() => {
   "use strict";
 
-  const contacts = Array.isArray(window.CHANAR_CONTACTOS) ? window.CHANAR_CONTACTOS : [];
   const $ = (id) => document.getElementById(id);
+  const requiredIds = [
+    "contactGrid","filters","searchInput","clearSearch","resultCount","emptyState",
+    "resultsContext","resultsTitle","copyFeedback","shareFeedback","totalContactCount",
+    "totalPhoneCount","phoneOnly","pagination","previousPage","nextPage","pageStatus",
+    "topicPanel","directoryTitle","fontDown","fontUp","fontReset","fontScaleStatus",
+    "brightnessControl","contrastControl","appearanceStatus","brightnessValue",
+    "contrastValue","resetAppearance","searchForm","resetFilters","copyAliasButton",
+    "supportAlias","printMeta","printButton","whatsappShare","shareButton",
+    "copyShareButton","mobileSearchButton","mobileWhatsappShare","appStatus"
+  ];
+  const missingIds = requiredIds.filter(id => !$(id));
+  if (missingIds.length) {
+    const alert = document.createElement("p");
+    alert.className = "app-status app-status-error";
+    alert.setAttribute("role", "alert");
+    alert.textContent = "La guía encontró un problema al iniciar. Recargá la página; si continúa, avisá a Ocarina Producciones.";
+    document.body.prepend(alert);
+    console.error("Chañar a Mano: faltan elementos esenciales:", missingIds);
+    return;
+  }
+  const rawContacts = Array.isArray(window.CHANAR_CONTACTOS) ? window.CHANAR_CONTACTOS : [];
+  const seenContactIds = new Set();
+  const contacts = rawContacts.filter(contact => {
+    if (!contact || typeof contact !== "object" || typeof contact.id !== "string"
+      || !contact.id.trim() || typeof contact.nombre !== "string" || !contact.nombre.trim()
+      || typeof contact.categoria !== "string" || !contact.categoria.trim()
+      || !Array.isArray(contact.telefonos || [])) return false;
+    if (seenContactIds.has(contact.id)) return false;
+    seenContactIds.add(contact.id);
+    return true;
+  });
+  const appStatus = $("appStatus");
+  if (contacts.length !== rawContacts.length) {
+    appStatus.hidden = false;
+    appStatus.textContent = "Algunas fichas no se pudieron cargar porque sus datos necesitan revisión. La información restante sigue disponible.";
+    appStatus.classList.add("app-status-warning");
+    console.warn("Chañar a Mano: fichas omitidas por datos incompletos:", rawContacts.length - contacts.length);
+  }
   const grid = $("contactGrid");
   const filters = $("filters");
   const search = $("searchInput");
@@ -88,7 +125,7 @@
   function safeSource(value) {
     try {
       const url = new URL(String(value || ""));
-      return ["https:", "http:"].includes(url.protocol) ? url.href : "";
+      return url.protocol === "https:" ? url.href : "";
     } catch (_) {
       return "";
     }
@@ -357,6 +394,7 @@
   }
 
   function render() {
+    try {
     const visible = visibleContacts();
     const pageCount = Math.max(1, Math.ceil(visible.length / pageSize));
     currentPage = Math.min(currentPage, pageCount);
@@ -392,6 +430,13 @@
     filters.querySelectorAll("button[data-category]").forEach(button => {
       button.setAttribute("aria-pressed", String(button.dataset.category === activeCategory));
     });
+    } catch (error) {
+      console.error("Chañar a Mano: error al actualizar la agenda:", error);
+      grid.hidden = true;
+      appStatus.hidden = false;
+      appStatus.classList.add("app-status-error");
+      appStatus.textContent = "No pudimos mostrar esta consulta. Probá borrar la búsqueda o recargar la página.";
+    }
   }
 
   function resetGuide() {
@@ -609,37 +654,89 @@
   }
 
   function whatsappMessage() {
-    return "Te comparto CHÁÑAR A MANO: una guía comunitaria gratuita de San Patricio del Chañar. Reúne referencias de instituciones, salud, educación, servicios y comercios. Es independiente; revisá siempre la fuente y la vigencia de cada dato. " + guideUrl();
+    return "Te comparto Chañar a Mano, una agenda gratuita con teléfonos e información útil de San Patricio del Chañar. Podés consultarla y compartirla con quien la necesite: " + guideUrl();
+  }
+
+  function whatsappUrl() {
+    return "https://wa.me/?text=" + encodeURIComponent(whatsappMessage());
   }
 
   const whatsappShare = $("whatsappShare");
-  if (whatsappShare) {
-    whatsappShare.href = "https://wa.me/?text=" + encodeURIComponent(whatsappMessage());
-  }
+  const mobileWhatsappShare = $("mobileWhatsappShare");
+  if (whatsappShare) whatsappShare.href = whatsappUrl();
+  if (mobileWhatsappShare) mobileWhatsappShare.href = whatsappUrl();
 
-  $("shareButton").addEventListener("click", async () => {
+  $("copyShareButton").addEventListener("click", async () => {
+    try {
+      await copyText(whatsappMessage());
+      shareFeedback.textContent = "Mensaje copiado. Pegalo en WhatsApp y enviá el enlace.";
+    } catch (_) {
+      shareFeedback.textContent = "No se pudo copiar automáticamente. Usá el botón de WhatsApp.";
+    }
+  });
+
+  async function shareGuide() {
     const shareData = {
       title: "CHÁÑAR A MANO",
-      text: "Guía comunitaria gratuita de San Patricio del Chañar.",
+      text: "Agenda comunitaria gratuita de San Patricio del Chañar.",
       url: guideUrl()
     };
     shareFeedback.textContent = "";
     try {
-      if (navigator.share) {
+      if (navigator.share && (!navigator.canShare || navigator.canShare(shareData))) {
         await navigator.share(shareData);
-        shareFeedback.textContent = "Gracias por compartir la guía.";
+        shareFeedback.textContent = "Se abrió el menú para compartir. Elegí WhatsApp u otra aplicación.";
       } else {
-        await copyText(guideUrl());
-        shareFeedback.textContent = "Enlace copiado. Ya podés compartir la guía.";
+        await copyText(whatsappMessage());
+        shareFeedback.textContent = "Mensaje y enlace copiados. Ya podés pegarlos en WhatsApp.";
       }
     } catch (error) {
-      if (error && error.name === "AbortError") return;
-      shareFeedback.textContent = "No se pudo abrir el menú para compartir. Podés usar el botón de WhatsApp o copiar el enlace.";
+      if (error && error.name === "AbortError") {
+        shareFeedback.textContent = "No se compartió. Podés intentarlo cuando quieras.";
+        return;
+      }
+      try {
+        await copyText(whatsappMessage());
+        shareFeedback.textContent = "No se pudo abrir el menú. El mensaje quedó copiado para compartirlo manualmente.";
+      } catch (_) {
+        shareFeedback.textContent = "No se pudo compartir automáticamente. Usá el botón de WhatsApp.";
+      }
     }
+  }
+
+  $("shareButton").addEventListener("click", shareGuide);
+  $("mobileSearchButton").addEventListener("click", () => {
+    $("directoryTitle").scrollIntoView({ behavior: "smooth", block: "start" });
+    search.focus({ preventScroll: true });
   });
+
+  function updateConnectionStatus() {
+    if (!navigator.onLine) {
+      appStatus.hidden = false;
+      appStatus.classList.add("app-status-offline");
+      appStatus.textContent = "Estás sin conexión. Podés consultar la guía guardada en este dispositivo; los enlaces externos necesitan internet.";
+    } else if (appStatus.classList.contains("app-status-offline")) {
+      appStatus.hidden = true;
+      appStatus.classList.remove("app-status-offline");
+      appStatus.textContent = "";
+    }
+  }
+  window.addEventListener("online", updateConnectionStatus);
+  window.addEventListener("offline", updateConnectionStatus);
+  updateConnectionStatus();
+
+  if ("serviceWorker" in navigator && window.isSecureContext) {
+    window.addEventListener("load", () => {
+      navigator.serviceWorker.register(new URL("./sw.js", document.baseURI).toString())
+        .catch(error => console.warn("No se pudo activar el modo sin conexión:", error));
+    }, { once: true });
+  }
 
   if (!contacts.length) {
     grid.hidden = true;
+    appStatus.hidden = false;
+    appStatus.classList.add("app-status-error");
+    appStatus.textContent = "La agenda no pudo cargar sus fichas. Recargá la página más tarde.";
     empty.hidden = false;
     empty.querySelector("h3").textContent = "La guía no pudo cargar los datos.";
     empty.querySelector("p").textContent = "Volvé a cargar la página más tarde.";
