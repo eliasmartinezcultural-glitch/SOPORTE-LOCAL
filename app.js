@@ -404,6 +404,9 @@
   function applyTheme(theme, announce = true) {
     const safeTheme = ["natural", "high", "night"].includes(theme) ? theme : "natural";
     document.body.dataset.theme = safeTheme;
+    document.documentElement.style.colorScheme = safeTheme === "night" ? "dark" : "light";
+    const themeMeta = document.querySelector('meta[name="theme-color"]');
+    if (themeMeta) themeMeta.content = safeTheme === "night" ? "#17221b" : safeTheme === "high" ? "#ffffff" : "#f7f6f0";
     document.querySelectorAll("[data-theme-choice]").forEach(button => {
       button.setAttribute("aria-pressed", String(button.dataset.themeChoice === safeTheme));
     });
