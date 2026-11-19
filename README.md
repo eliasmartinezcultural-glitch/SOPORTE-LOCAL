@@ -14,6 +14,9 @@ Reúne información pública de instituciones, servicios, organizaciones, espaci
 
 La página está pensada para celulares, lectura sencilla, controles grandes y personas con poca experiencia digital. La bienvenida identifica claramente la creación de Ocarina Producciones y presenta una fotografía del Balneario Municipal publicada en la sección Nuestra Ciudad del sitio de la Municipalidad. La atribución está visible junto a la imagen; la autorización específica de reutilización debe confirmarse con el titular antes de considerar cerrada la cuestión de derechos. Incluye un panel de ajustes con tamaño de letra ampliable hasta el 200%, brillo, contraste y tres modos de color (natural, alto contraste y nocturno), además de impresión y guardado como PDF. La búsqueda se realiza sobre los datos incluidos en la página, sin registro ni envío de la consulta. Los ajustes visuales se guardan localmente en el dispositivo. El encabezado ofrece acceso directo para compartir por WhatsApp; también se conserva el menú de compartir del dispositivo y la opción de copiar el enlace.
 
+
+La página ahora prioriza el buscador al entrar: los temas se despliegan solo si la persona quiere explorar por categoría, la procedencia completa de cada ficha se abre bajo demanda y los ajustes de pantalla quedan después del directorio para no retrasar la consulta.
+
 ## Criterios de información y seguridad
 - La guía no es oficial y no representa a las instituciones.
 - Cada ficha identifica el tipo de fuente disponible.
