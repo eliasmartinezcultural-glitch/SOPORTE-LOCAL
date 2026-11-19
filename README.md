@@ -94,9 +94,9 @@ Consultar `PUBLICACION.md` antes de publicar. La validación automática no cert
 
 ## Actualización y caché
 
-La caché local del service worker utiliza la versión `chanar-a-mano-shell-v7`. La instalación guarda los archivos esenciales como conjunto y no activa una versión incompleta. Cuando una actualización toma el control de una pestaña ya abierta, se recarga el documento para no mezclar recursos de versiones distintas. Esto no publica cambios por sí solo: la web pública depende de la rama y carpeta configuradas en GitHub Pages.
+La caché local del service worker utiliza la versión `chanar-a-mano-shell-v8`. La instalación guarda los archivos esenciales como conjunto y no activa una versión incompleta. Cuando una actualización toma el control de una pestaña ya abierta, se recarga el documento para no mezclar recursos de versiones distintas. Esto no publica cambios por sí solo: la web pública depende de la rama y carpeta configuradas en GitHub Pages.
 
-La versión de trabajo actual está en `agenda-local-2026-11-19`. No debe confundirse con la rama pública ni con la rama congelada. Ver [PUBLICACION.md](PUBLICACION.md) antes de integrar cambios.
+La revisión integral se desarrolla en una rama separada a partir del commit 7901235; no se modifica la rama congelada. No debe confundirse con la rama pública ni con la rama congelada. Ver [PUBLICACION.md](PUBLICACION.md) antes de integrar cambios.
 
 
 ## Diseño centrado en personas mayores
@@ -107,3 +107,15 @@ La versión de trabajo actual está en `agenda-local-2026-11-19`. No debe confun
 - Los botones principales y filtros tienen áreas táctiles amplias y rótulos explícitos.
 - El modo noche y el alto contraste mantienen la jerarquía de teléfonos, direcciones y advertencias.
 - La impresión A4 mantiene los teléfonos en un tamaño destacado y evita dividir bloques de datos entre páginas.
+
+
+## Herramientas personales incorporadas en la revisión integral
+
+- **Lugares guardados:** cada persona puede marcar fichas favoritas y consultar solo esa selección. Se guardan únicamente los identificadores de las fichas en el navegador del dispositivo; no se crea una cuenta ni se envían datos.
+- **Copiar ficha:** permite copiar el nombre, descripción, teléfonos y dirección publicados, correo si existe, fuente y advertencia de vigencia. No inicia llamadas, correos ni conversaciones.
+- **Ayuda de uso:** explica en tres pasos cómo buscar, leer y revisar la procedencia.
+- **Privacidad:** la guía no transmite búsquedas ni favoritos a un servidor. Borrar los datos del navegador también borra la lista local.
+- **Lectura:** se mantienen letra grande, modo noche, alto contraste, filtros por tema, búsquedas rápidas, paginación e impresión A4.
+- **Actualización sin conexión:** el identificador de caché pasa a chanar-a-mano-shell-v8 para que el navegador pueda instalar el conjunto nuevo de archivos.
+
+La revisión no cambia datos.js: conserva las 90 fichas y sus advertencias documentales. No se agregan teléfonos ni se los declara confirmados. Se retiró la fotografía municipal de los metadatos de vista previa mientras no exista autorización específica de reutilización.
