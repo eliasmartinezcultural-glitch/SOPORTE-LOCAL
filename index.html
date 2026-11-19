@@ -10,46 +10,29 @@
 </head>
 <body>
   <a class="skip-link" href="#contenido">Saltar al contenido</a>
-  <div class="topline"><span>AGENDA COMUNITARIA · SAN PATRICIO DEL CHAÑAR</span><span>ACCESO LIBRE</span></div>
   <header class="site-header">
     <a class="brand" href="#" aria-label="Chañar a Mano, inicio">
       <span class="brand-mark" aria-hidden="true">cm</span>
-      <span><strong>CHÁÑAR A MANO</strong><small>La comunidad, conectada.</small></span>
+      <span><strong>CHÁÑAR A MANO</strong><small>Guía comunitaria de San Patricio del Chañar</small></span>
     </a>
-    <button class="button button-outline" id="shareButton" type="button"><span aria-hidden="true">↗</span> Compartir guía</button>
+    <button class="button button-outline" id="shareButton" type="button">Compartir guía</button>
   </header>
 
   <main id="contenido">
-    <section class="hero">
+    <section class="hero simple-hero">
       <div class="hero-copy">
-        <p class="eyebrow"><span class="eyebrow-dot"></span> SAN PATRICIO DEL CHAÑAR · NEUQUÉN</p>
-        <h1>Lo que necesitás,<br><em>más cerca.</em></h1>
-        <p class="hero-lead">Una agenda comunitaria para encontrar instituciones, servicios, organizaciones y espacios de nuestra localidad. Información reunida para compartir, consultar y mantener cerca.</p>
-        <a class="hero-link" href="#directorio">Explorar la guía <span aria-hidden="true">↓</span></a>
-      </div>
-      <div class="hero-art" aria-label="Ilustración decorativa de paisaje rural">
-        <div class="sun"></div><div class="hill hill-back"></div><div class="hill hill-front"></div>
-        <div class="field-line line-one"></div><div class="field-line line-two"></div>
-        <div class="plant plant-one"><i></i><i></i><i></i></div>
-        <div class="plant plant-two"><i></i><i></i><i></i></div>
-        <span class="art-caption">NUESTRA TIERRA · NUESTRA GENTE</span>
+        <p class="eyebrow">SAN PATRICIO DEL CHAÑAR · NEUQUÉN</p>
+        <h1>Encontrá información <em>útil.</em></h1>
+        <p class="hero-lead">Una guía sencilla de instituciones, escuelas, salud y organizaciones de nuestra localidad.</p>
+        <a class="hero-link" href="#directorio">Ver la guía <span aria-hidden="true">↓</span></a>
       </div>
     </section>
 
-    <section class="trust-strip" aria-label="Características de la guía">
-      <div><span class="trust-icon">⌕</span><span><strong>Fácil de buscar</strong><small>Encontrá por nombre o tema</small></span></div>
-      <div><span class="trust-icon">◎</span><span><strong>Consulta responsable</strong><small>Leé y verificá antes de actuar</small></span></div>
-      <div><span class="trust-icon">▤</span><span><strong>Origen identificable</strong><small>Revisá la publicación de referencia</small></span></div>
-    </section>
-
-    <section class="responsible-use" aria-labelledby="responsibleTitle">
-      <div class="responsible-mark" aria-hidden="true">i</div>
+    <section class="responsible-use simple-notice" aria-labelledby="responsibleTitle">
+      <div class="responsible-mark" aria-hidden="true">!</div>
       <div>
-        <p class="eyebrow">REGLA DE USO · INFORMACIÓN, NO INTERMEDIACIÓN</p>
-        <h2 id="responsibleTitle">Antes de comunicarte, verificá.</h2>
-        <p>Esta guía no inicia llamadas, mensajes, correos ni trámites. Los teléfonos y correos se muestran como datos de referencia publicados en las fuentes indicadas; no garantizamos que sigan vigentes, que sean atendidos o que correspondan al área buscada.</p>
-        <p class="responsible-strong">Leé la ficha, consultá la fuente y decidí por tu cuenta si corresponde usar ese dato. No compartas información personal o sensible sin verificar quién la recibe.</p>
-        <p class="responsible-emergency">No es un servicio de emergencias ni reemplaza la atención oficial, profesional o presencial.</p>
+        <h2 id="responsibleTitle">Un dato importante</h2>
+        <p>Los teléfonos y correos son referencias tomadas de las fuentes indicadas. Pueden cambiar. Revisá la fuente antes de usarlos. Esta guía no llama, no envía mensajes y no es un servicio de emergencias.</p>
       </div>
     </section>
 
@@ -60,64 +43,45 @@
         <small id="printMeta">Guía de contactos · Ocarina Producciones</small>
       </div>
       <div class="section-heading">
-        <div><p class="eyebrow">AGENDA ABIERTA · ACCESO LIBRE</p><h2 id="directoryTitle">La comunidad tiene lugar</h2><p class="section-intro">Buscá por nombre o tema. Cada ficha identifica la procedencia del dato para que puedas evaluarlo antes de utilizarlo.</p></div>
+        <div><p class="eyebrow">GUÍA DE CONSULTA</p><h2 id="directoryTitle">¿Qué necesitás encontrar?</h2><p class="section-intro">Escribí una palabra o elegí un tema. No hace falta completar todo.</p></div>
         <span class="result-count" id="resultCount" aria-live="polite"></span>
       </div>
       <div class="search-wrap">
         <span aria-hidden="true">⌕</span>
-        <label class="sr-only" for="searchInput">Buscar en la guía</label>
-        <input id="searchInput" type="search" placeholder="Ej.: hospital, escuela, trabajo rural…" autocomplete="off">
+        <label class="sr-only" for="searchInput">Escribí qué estás buscando</label>
+        <input id="searchInput" type="search" placeholder="Ejemplo: hospital o escuela" autocomplete="off">
         <button id="clearSearch" type="button" aria-label="Borrar búsqueda" hidden>×</button>
       </div>
-      <nav class="filters" id="filters" aria-label="Filtrar por categoría"></nav>
+      <p class="filter-help">O elegí un tema:</p>
+      <nav class="filters" id="filters" aria-label="Elegir un tema"></nav>
       <div class="contact-grid" id="contactGrid"></div>
       <div class="empty-state" id="emptyState" hidden>
         <span aria-hidden="true">⌕</span><strong>No encontramos ese contacto.</strong>
-        <p>Probá con otra palabra o elegí una categoría diferente.</p>
+        <p>Probá con otra palabra o elegí “Ver todo”.</p>
         <button class="button button-soft" id="resetFilters" type="button">Ver todos</button>
       </div>
     </section>
 
-    <section class="editorial-note">
-      <span class="note-seal">✳</span>
-      <div><p class="eyebrow">UNA HERRAMIENTA COMUNITARIA</p><h2>Una agenda hecha para encontrarnos.</h2><p>Esta agenda reúne información pública de instituciones, organizaciones y espacios de la comunidad de San Patricio del Chañar. Es un proyecto independiente, abierto y en construcción. Cada aporte ayuda a mejorarla: sugerí un contacto, avisá si un dato cambió o compartila con alguien a quien pueda servirle.</p></div>
-    </section>
-
-    <section class="community-support" aria-labelledby="supportTitle">
-      <div class="support-decoration" aria-hidden="true"><span>✳</span><span>✳</span><span>✳</span></div>
-      <div class="support-copy">
-        <p class="eyebrow">UN PROYECTO INDEPENDIENTE · ABIERTO A LA COMUNIDAD</p>
-        <h2 id="supportTitle">Esta agenda la hacemos <em>entre todos.</em></h2>
-        <p>Chañar a Mano es una iniciativa comunitaria de acceso libre. Si te resulta útil y querés ayudar a sostener su crecimiento, podés realizar una colaboración voluntaria.</p>
-        <p class="support-promise">Colaborar es completamente voluntario. No es un requisito para consultar, usar ni compartir la agenda. El acceso es libre para todos.</p>
-        <div class="support-alias">
-          <div><small>ALIAS PARA COLABORAR</small><strong id="supportAlias">ocarina.guitarra</strong><span>A nombre de Elías Martínez</span></div>
-          <button class="button button-cream" id="copyAliasButton" type="button">Copiar alias <span aria-hidden="true">⧉</span></button>
-        </div>
-        <p class="support-feedback" id="copyFeedback" role="status" aria-live="polite"></p>
+    <details class="contribute-simple">
+      <summary>¿Querés colaborar con esta guía?</summary>
+      <p>La consulta es gratuita. Si querés, podés hacer una colaboración voluntaria. No es obligatoria.</p>
+      <div class="support-alias simple-alias">
+        <div><small>ALIAS</small><strong id="supportAlias">ocarina.guitarra</strong><span>A nombre de Elías Martínez</span></div>
+        <button class="button button-cream" id="copyAliasButton" type="button">Copiar alias</button>
       </div>
-      <div class="support-art" aria-hidden="true">
-        <div class="support-sun"></div><div class="support-hill support-hill-a"></div><div class="support-hill support-hill-b"></div>
-        <div class="support-card-note"><span>GRACIAS</span><strong>por hacer<br>comunidad.</strong><small>OCARINA PRODUCCIONES</small></div>
-        <span class="support-art-caption">UN APORTE · MUCHAS VOCES</span>
-      </div>
-    </section>
+      <p class="support-feedback" id="copyFeedback" role="status" aria-live="polite"></p>
+    </details>
 
     <section class="print-panel">
-      <div><p class="eyebrow">TAMBIÉN EN PAPEL</p><h2>Guardá esta guía</h2><p>Imprimí las fichas que estás viendo o guardalas como PDF. La búsqueda y los filtros se respetan en el papel. En la impresión se priorizan los teléfonos, los datos y sus fuentes, sin elementos decorativos.</p></div>
+      <div><h2>También podés imprimir esta guía</h2><p>Se imprimirán los resultados que estás viendo, con letras claras y las fuentes de cada ficha.</p></div>
       <button class="button button-dark" id="printButton" type="button">Imprimir / Guardar PDF</button>
     </section>
-    <nav class="mobile-dock" aria-label="Accesos rápidos" id="mobileDock">
-      <button type="button" id="dockSearch"><span aria-hidden="true">⌕</span><small>Buscar</small></button>
-      <button type="button" id="dockAll"><span aria-hidden="true">▦</span><small>Ver todos</small></button>
-      <button type="button" id="dockPrint"><span aria-hidden="true">▤</span><small>Imprimir</small></button>
-    </nav>
   </main>
 
   <footer class="site-footer">
     <div class="footer-main"><div class="footer-brand"><strong>CHÁÑAR A MANO</strong><span>Agenda comunitaria creada por Ocarina Producciones</span></div><p>San Patricio del Chañar · Neuquén</p></div>
     <div class="footer-bottom"><span>Agenda comunitaria de acceso libre.</span><span>Creada por Ocarina Producciones · Historias, personas y territorio.</span></div>
-    <p class="footer-small">Chañar a Mano es una agenda comunitaria independiente creada por Ocarina Producciones. No representa oficialmente a las instituciones mencionadas, no verifica en tiempo real la atención de sus canales y no inicia comunicaciones en nombre de quienes consultan. La información puede cambiar; revisá siempre la fuente antes de utilizar un dato. No es un servicio de emergencias.</p>
+    <p class="footer-small">Guía independiente y gratuita, creada por Ocarina Producciones. No representa oficialmente a las instituciones ni reemplaza sus canales de atención. Los datos pueden cambiar; consultá siempre la fuente. No es un servicio de emergencias.</p>
   </footer>
   <script src="datos.js"></script>
   <script src="app.js"></script>
