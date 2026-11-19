@@ -94,7 +94,7 @@ Consultar `PUBLICACION.md` antes de publicar. La validación automática no cert
 
 ## Actualización y caché
 
-La caché local del service worker utiliza la versión `chanar-a-mano-shell-v14`. La instalación guarda los archivos esenciales como conjunto y no activa una versión incompleta. Cuando una actualización toma el control de una pestaña ya abierta, se recarga el documento para no mezclar recursos de versiones distintas. Esto no publica cambios por sí solo: la web pública depende de la rama y carpeta configuradas en GitHub Pages.
+La caché local del service worker utiliza la versión `chanar-a-mano-shell-v15`. La instalación guarda los archivos esenciales como conjunto y no activa una versión incompleta. Cuando una actualización toma el control de una pestaña ya abierta, se recarga el documento para no mezclar recursos de versiones distintas. Esto no publica cambios por sí solo: la web pública depende de la rama y carpeta configuradas en GitHub Pages.
 
 La revisión integral se desarrolla en una rama separada a partir del commit 7901235; no se modifica la rama congelada. No debe confundirse con la rama pública ni con la rama congelada. Ver [PUBLICACION.md](PUBLICACION.md) antes de integrar cambios.
 
@@ -116,7 +116,7 @@ La revisión integral se desarrolla en una rama separada a partir del commit 790
 - **Ayuda de uso:** explica en tres pasos cómo buscar, leer y revisar la procedencia.
 - **Privacidad:** la guía no transmite búsquedas ni favoritos a un servidor. Borrar los datos del navegador también borra la lista local.
 - **Lectura:** se mantienen letra grande, modo noche, alto contraste, filtros por tema, búsquedas rápidas, paginación e impresión A4.
-- **Actualización sin conexión:** el identificador de caché pasa a chanar-a-mano-shell-v14 para que el navegador pueda instalar el conjunto nuevo de archivos.
+- **Actualización sin conexión:** el identificador de caché pasa a chanar-a-mano-shell-v15 para que el navegador pueda instalar el conjunto nuevo de archivos.
 
 El corte actual contiene **96 fichas**, de las cuales **79 publican al menos un teléfono** (85 números en total). En las dos ampliaciones documentadas se incorporaron 15 fichas: 11 procedentes de un directorio externo y cuatro de referencias públicas de ubicación; 14 de esas fichas incluyen un teléfono y una aporta solo una dirección de referencia. Estos 14 teléfonos nuevos siguen clasificados como referencias secundarias pendientes de confirmación directa. La revisión integral sí incluye cambios en `datos.js`; no se modificaron ni se deben presentar esos contactos como confirmados. Se retiró la fotografía municipal de los metadatos de vista previa mientras no exista autorización específica de reutilización.
 
@@ -139,9 +139,12 @@ Además de buscar por palabra, categoría, teléfono y favoritos, ahora se puede
 
 ## Cuadrícula de consulta
 
-La portada del directorio presenta hasta 18 fichas por página. La cuadrícula adapta la cantidad de columnas al ancho disponible: tres en pantallas amplias, dos en pantallas medianas y una en celulares. La lectura fácil fuerza una columna y amplía tipografía y teléfonos. La versión de caché local se identifica como `chanar-a-mano-shell-v14`.
+La portada del directorio presenta hasta 18 fichas por página. La cuadrícula adapta la cantidad de columnas al ancho disponible: tres en pantallas amplias, dos en pantallas medianas y una en celulares. La lectura fácil fuerza una columna y amplía tipografía y teléfonos. La versión de caché local se identifica como `chanar-a-mano-shell-v15`.
 
 
 ## Ampliación del directorio (19 de noviembre de 2026)
 
 Se incorporaron seis fichas locales nuevas: LT Electricidad, Tornería Zúñiga, Saurus Restaurante, Restaurante Malma, Malma · Aldea de Terruño by Haiku y Servicio Técnico Joaco. Cinco incluyen teléfonos publicados en fichas públicas de ubicación y una aporta ubicación sin teléfono. Todas se clasifican como referencias secundarias pendientes de confirmación directa; no se presentan como líneas activas ni como datos oficiales.
+
+
+En modo de letra grande, el directorio conserva dos columnas en pantallas medianas y grandes y una sola en celulares angostos; el tamaño de letra ya no anula la cuadrícula en escritorio.
