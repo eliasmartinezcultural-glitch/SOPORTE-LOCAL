@@ -31,8 +31,10 @@ Historias, personas y territorio.
 - Buscador que ignora diferencias entre mayúsculas, minúsculas y tildes, y admite accesos rápidos a temas frecuentes.
 - Accesos directos para Hospital, Escuelas, Municipalidad y Trabajo.
 - Controles para agrandar o reducir el texto de las fichas sin modificar los datos ni guardar preferencias.
-- Búsqueda por nombre, categoría, descripción, teléfono y correo.
-- Seis temas visibles con cantidad de fichas por categoría.
+- Búsqueda por nombre, categoría, descripción, teléfono, correo, ubicación y sinónimos.
+- Filtro opcional para mostrar solamente fichas con teléfono referenciado.
+- Acceso a mapas desde las fichas con dirección, separado del dato de contacto.
+- Nueve grandes temas ciudadanos con cantidades por grupo, para evitar una lista excesivamente fragmentada.
 - Orden alfabético de los resultados.
 - Teléfonos y correos como texto seleccionable, sin enlaces de llamada ni de envío de mensajes.
 - Fuente, tipo de procedencia y nombre de la entidad que publicó el dato identificados en cada ficha.
@@ -82,8 +84,8 @@ Historias, personas y territorio.
 
 ## Ampliación del directorio y criterios de procedencia
 
-- El directorio reúne 75 fichas, de las cuales 60 incluyen al menos un teléfono publicado entre instituciones, servicios públicos, educación, salud, cultura, deporte, producción, turismo, gastronomía y comercios.
-- Los teléfonos y correos se publican solo cuando aparecen en una fuente consultada.
+- El directorio reúne 75 fichas, de las cuales 60 incluyen al menos un teléfono referenciado entre instituciones, servicios públicos, educación, salud, cultura, deporte, producción, turismo, gastronomía y comercios.
+- Los teléfonos y correos se presentan como referencias tomadas de las fuentes identificadas. En fichas basadas en búsquedas de mapas, el número requiere confirmación adicional.
 - Las fichas sin teléfono muestran ubicación o referencia de origen, sin inventar canales de contacto.
 - Se diferencia la fuente institucional de las fichas públicas de ubicación en mapas.
 - Los datos comerciales y las ubicaciones deben confirmarse antes de concurrir; las fichas de mapas no sustituyen la confirmación del establecimiento.
