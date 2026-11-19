@@ -83,6 +83,9 @@
     parts.push("Consulta del " + new Intl.DateTimeFormat("es-AR", {dateStyle:"long"}).format(new Date()));
     document.getElementById("printMeta").textContent = parts.join(" · ") + " · Ocarina Producciones";
   }
+  document.getElementById("dockSearch").addEventListener("click", () => { document.getElementById("directorio").scrollIntoView({behavior:"smooth"}); search.focus({preventScroll:true}); });
+  document.getElementById("dockAll").addEventListener("click", () => { activeCategory = "Todos"; search.value = ""; render(); document.getElementById("directorio").scrollIntoView({behavior:"smooth"}); });
+  document.getElementById("dockPrint").addEventListener("click", () => { updatePrintMeta(); window.print(); });
   document.getElementById("printButton").addEventListener("click", () => {
     updatePrintMeta();
     window.print();
