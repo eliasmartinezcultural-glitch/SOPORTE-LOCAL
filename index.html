@@ -31,6 +31,88 @@
     </div>
   </header>
 
+
+
+  <main id="contenido">
+    <section class="welcome" id="inicio" aria-labelledby="welcomeTitle">
+      <div class="welcome-layout">
+        <div class="welcome-text">
+          <p class="creation-credit">Una creación de <strong>Ocarina Producciones</strong><span>· Elías Martínez</span></p>
+          <p class="eyebrow">SAN PATRICIO DEL CHAÑAR · NEUQUÉN</p>
+          <h1 id="welcomeTitle">Lo que necesitás, <span>más cerca.</span></h1>
+          <p class="welcome-copy">Una guía sencilla para encontrar información de nuestro pueblo: instituciones, salud, escuelas, servicios, trabajo y espacios de la comunidad.</p>
+          <p class="welcome-promise">Gratis para consultar, imprimir y compartir. Sin registrarte.</p>
+        </div>
+        <figure class="welcome-photo">
+          <img src="https://sanpatricio.gob.ar/assets/images/municipio/Balneario-Municipal.JPG" alt="Vista del Balneario Municipal de San Patricio del Chañar, junto al río y rodeado de árboles." loading="eager" fetchpriority="high">
+          <figcaption>Un lugar para encontrarnos: Balneario Municipal. <a href="https://sanpatricio.gob.ar/nuestra" target="_blank" rel="noopener noreferrer">Foto publicada por la Municipalidad ↗</a></figcaption>
+        </figure>
+      </div>
+    </section>
+
+
+
+    <section class="directory-section" id="directorio" aria-labelledby="directoryTitle">
+      <div class="print-heading" aria-hidden="true">
+        <strong>CHÁÑAR A MANO</strong>
+        <span>Guía comunitaria · San Patricio del Chañar, Neuquén</span>
+        <small id="printMeta">Consulta de la guía · Ocarina Producciones</small>
+      </div>
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">GUÍA GRATUITA</p>
+          <h2 id="directoryTitle">¿Qué estás buscando?</h2>
+          <p class="section-intro">Escribí una palabra o elegí un tema. También podés buscar por nombre, teléfono o dirección.</p>
+        </div>
+        <p class="result-count" id="resultCount" aria-live="polite" aria-atomic="true"></p>
+      </div>
+
+      <form class="search-form" id="searchForm" role="search" novalidate>
+        <label class="sr-only" for="searchInput">Buscar en la guía</label>
+        <span class="search-icon" aria-hidden="true">⌕</span>
+        <input id="searchInput" type="search" placeholder="Ej.: hospital, agua, escuela, farmacia…" autocomplete="off" enterkeyhint="search" aria-describedby="searchHelp">
+        <button id="clearSearch" class="clear-search" type="button" aria-label="Borrar búsqueda" hidden>×</button>
+      </form>
+      <p class="search-hint" id="searchHelp">Probá con palabras cotidianas, nombres, direcciones o números. La búsqueda se hace en esta guía, sin enviar tus datos.</p>
+
+    <section class="notice" aria-label="Importante">
+      <span class="notice-icon" aria-hidden="true">i</span>
+      <div>
+        <h2>Antes de usar un dato</h2>
+        <p>La información puede cambiar. Revisá siempre la fuente de cada ficha. Los teléfonos son referencias, no una confirmación de vigencia. Esta guía no es oficial ni un servicio de emergencias.</p>
+      </div>
+    </section>
+
+      <details class="topic-panel" id="topicPanel">
+        <summary>
+          <span class="topic-summary-title">Explorar por tema</span>
+          <span class="topic-summary-help">Si preferís, elegí una categoría</span>
+          <span class="topic-chevron" aria-hidden="true">⌄</span>
+        </summary>
+        <nav class="filters" id="filters" aria-label="Filtrar por tema"></nav>
+      </details>
+
+      <div class="results-heading">
+        <h3 id="resultsTitle">Información disponible</h3>
+        <span id="resultsContext">Todos los temas</span>
+      </div>
+      <div class="contact-grid" id="contactGrid" aria-live="off" aria-label="Fichas encontradas"></div>
+      <nav class="pagination" id="pagination" aria-label="Páginas de resultados" hidden>
+        <button class="page-button" id="previousPage" type="button" disabled>← Anterior</button>
+        <span class="page-status" id="pageStatus" aria-live="polite">Página 1</span>
+        <button class="page-button" id="nextPage" type="button">Siguiente →</button>
+      </nav>
+
+      <div class="empty-state" id="emptyState" hidden>
+        <span class="empty-icon" aria-hidden="true">⌕</span>
+        <h3>No encontramos ese dato.</h3>
+        <p>Probá con otra palabra o volvé a ver todos los temas.</p>
+        <button class="button button-secondary" id="resetFilters" type="button">Mostrar toda la guía</button>
+      </div>
+      <p class="directory-footnote">Cada ficha muestra su procedencia. “Referencia en mapas” no confirma por sí sola un teléfono ni un horario.</p>
+      <button class="button button-primary print-action" id="printButton" type="button">Imprimir o guardar como PDF</button>
+    </section>
+
   <details class="appearance-panel" id="appearancePanel">
     <summary><span class="appearance-icon" aria-hidden="true">◐</span><span><strong>Ajustes de lectura y pantalla</strong><small>Letra · brillo · contraste · colores</small></span><span class="appearance-chevron" aria-hidden="true">⌄</span></summary>
     <div class="appearance-content">
@@ -68,84 +150,6 @@
       <div class="appearance-bottom"><span id="appearanceStatus" role="status" aria-live="polite">Los ajustes se guardan en este dispositivo.</span><button type="button" id="resetAppearance">Restablecer ajustes</button></div>
     </div>
   </details>
-
-  <main id="contenido">
-    <section class="welcome" id="inicio" aria-labelledby="welcomeTitle">
-      <div class="welcome-layout">
-        <div class="welcome-text">
-          <p class="creation-credit">Una creación de <strong>Ocarina Producciones</strong><span>· Elías Martínez</span></p>
-          <p class="eyebrow">SAN PATRICIO DEL CHAÑAR · NEUQUÉN</p>
-          <h1 id="welcomeTitle">Lo que necesitás, <span>más cerca.</span></h1>
-          <p class="welcome-copy">Una guía sencilla para encontrar información de nuestro pueblo: instituciones, salud, escuelas, servicios, trabajo y espacios de la comunidad.</p>
-          <p class="welcome-promise">Gratis para consultar, imprimir y compartir. Sin registrarte.</p>
-        </div>
-        <figure class="welcome-photo">
-          <img src="https://sanpatricio.gob.ar/assets/images/municipio/Balneario-Municipal.JPG" alt="Vista del Balneario Municipal de San Patricio del Chañar, junto al río y rodeado de árboles." loading="eager" fetchpriority="high">
-          <figcaption>Un lugar para encontrarnos: Balneario Municipal. <a href="https://sanpatricio.gob.ar/nuestra" target="_blank" rel="noopener noreferrer">Foto publicada por la Municipalidad ↗</a></figcaption>
-        </figure>
-      </div>
-    </section>
-
-    <section class="notice" aria-label="Importante">
-      <span class="notice-icon" aria-hidden="true">i</span>
-      <div>
-        <h2>Antes de usar un dato</h2>
-        <p>La información puede cambiar. Revisá siempre la fuente de cada ficha. Los teléfonos son referencias, no una confirmación de vigencia. Esta guía no es oficial ni un servicio de emergencias.</p>
-      </div>
-    </section>
-
-    <section class="directory-section" id="directorio" aria-labelledby="directoryTitle">
-      <div class="print-heading" aria-hidden="true">
-        <strong>CHÁÑAR A MANO</strong>
-        <span>Guía comunitaria · San Patricio del Chañar, Neuquén</span>
-        <small id="printMeta">Consulta de la guía · Ocarina Producciones</small>
-      </div>
-      <div class="section-heading">
-        <div>
-          <p class="eyebrow">GUÍA GRATUITA</p>
-          <h2 id="directoryTitle">¿Qué estás buscando?</h2>
-          <p class="section-intro">Escribí una palabra o elegí un tema. También podés buscar por nombre, teléfono o dirección.</p>
-        </div>
-        <p class="result-count" id="resultCount" aria-live="polite" aria-atomic="true"></p>
-      </div>
-
-      <form class="search-form" id="searchForm" role="search" novalidate>
-        <label class="sr-only" for="searchInput">Buscar en la guía</label>
-        <span class="search-icon" aria-hidden="true">⌕</span>
-        <input id="searchInput" type="search" placeholder="Ej.: hospital, agua, escuela, farmacia…" autocomplete="off" enterkeyhint="search" aria-describedby="searchHelp">
-        <button id="clearSearch" class="clear-search" type="button" aria-label="Borrar búsqueda" hidden>×</button>
-      </form>
-      <p class="search-hint" id="searchHelp">Probá con palabras cotidianas, nombres, direcciones o números. La búsqueda se hace en esta guía, sin enviar tus datos.</p>
-
-      <details class="topic-panel" id="topicPanel">
-        <summary>
-          <span class="topic-summary-title">Explorar por tema</span>
-          <span class="topic-summary-help">Si preferís, elegí una categoría</span>
-          <span class="topic-chevron" aria-hidden="true">⌄</span>
-        </summary>
-        <nav class="filters" id="filters" aria-label="Filtrar por tema"></nav>
-      </details>
-
-      <div class="results-heading">
-        <h3 id="resultsTitle">Información disponible</h3>
-        <span id="resultsContext">Todos los temas</span>
-      </div>
-      <div class="contact-grid" id="contactGrid" aria-live="off" aria-label="Fichas encontradas"></div>
-      <nav class="pagination" id="pagination" aria-label="Páginas de resultados" hidden>
-        <button class="page-button" id="previousPage" type="button" disabled>← Anterior</button>
-        <span class="page-status" id="pageStatus" aria-live="polite">Página 1</span>
-        <button class="page-button" id="nextPage" type="button">Siguiente →</button>
-      </nav>
-
-      <div class="empty-state" id="emptyState" hidden>
-        <span class="empty-icon" aria-hidden="true">⌕</span>
-        <h3>No encontramos ese dato.</h3>
-        <p>Probá con otra palabra o volvé a ver todos los temas.</p>
-        <button class="button button-secondary" id="resetFilters" type="button">Mostrar toda la guía</button>
-      </div>
-      <p class="directory-footnote">Cada ficha muestra su procedencia. “Referencia en mapas” no confirma por sí sola un teléfono ni un horario.</p>
-      <button class="button button-primary print-action" id="printButton" type="button">Imprimir o guardar como PDF</button>
-    </section>
 
     <section class="support-mini support-card" aria-labelledby="supportTitle">
       <div class="support-topline"><span class="support-mark" aria-hidden="true">♥</span><span>APORTE VOLUNTARIO · NUNCA OBLIGATORIO</span></div>
