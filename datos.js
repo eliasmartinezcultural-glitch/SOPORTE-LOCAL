@@ -731,18 +731,18 @@ window.CHANAR_CONTACTOS = [
     "id": "polideportivo",
     "nombre": "Polideportivo Municipal Ingeniero Tulio Ferraresso",
     "categoria": "Deportes y recreación",
-    "descripcion": "Espacio deportivo cubierto de uso comunitario.",
+    "descripcion": "Espacio deportivo cubierto de uso comunitario. Verificar el dato antes de utilizarlo.",
     "direccion": "Pilmayquén y Quili Malal, San Patricio del Chañar, Neuquén, Argentina",
     "telefonos": [],
     "fuente": "https://www.google.com/maps/search/?api=1&query=Polideportivo%20Municipal%20Ingeniero%20Tulio%20Ferraresso%2C%20San%20Patricio%20del%20Cha%C3%B1ar%2C%20Neuqu%C3%A9n%2C%20Argentina",
-    "fuenteNombre": "Ficha pública de ubicación · Mapas",
+    "fuenteNombre": "Búsqueda en mapas · referencia no oficial",
     "fuenteTipo": "mapa"
   },
   {
     "id": "biblioteca-popular",
     "nombre": "Biblioteca Popular San Patricio del Chañar",
     "categoria": "Cultura y comunidad",
-    "descripcion": "Biblioteca popular local. Dirección y teléfono referenciados en ficha pública de ubicación; confirmar atención y vigencia.",
+    "descripcion": "Biblioteca popular local. Dirección y teléfono referenciados en búsqueda pública de ubicación; confirmar atención y vigencia. Verificar el dato antes de utilizarlo.",
     "direccion": "Bulevar Maitén, Barrio 76 Viviendas, Casa 48, San Patricio del Chañar, Neuquén, Argentina",
     "telefonos": [
       {
@@ -751,14 +751,14 @@ window.CHANAR_CONTACTOS = [
       }
     ],
     "fuente": "https://www.google.com/maps/search/?api=1&query=Biblioteca%20Popular%20San%20Patricio%20del%20Cha%C3%B1ar%2C%20San%20Patricio%20del%20Cha%C3%B1ar%2C%20Neuqu%C3%A9n%2C%20Argentina",
-    "fuenteNombre": "Ficha pública de ubicación · Mapas",
+    "fuenteNombre": "Búsqueda en mapas · referencia no oficial",
     "fuenteTipo": "mapa"
   },
   {
     "id": "campus-educativo",
     "nombre": "Campus Educativo Tecnológico, de Investigación e Innovación",
     "categoria": "Educación",
-    "descripcion": "Espacio local de formación y actividades educativas. Teléfono y ubicación referenciados en ficha pública de mapas.",
+    "descripcion": "Espacio local de formación y actividades educativas. Teléfono y ubicación referenciados en búsqueda pública de mapas. Verificar el dato antes de utilizarlo.",
     "direccion": "San Patricio del Chañar, Neuquén, Argentina",
     "telefonos": [
       {
@@ -767,36 +767,36 @@ window.CHANAR_CONTACTOS = [
       }
     ],
     "fuente": "https://www.google.com/maps/search/?api=1&query=Campus%20Educativo%20Tecnol%C3%B3gico%2C%20de%20Investigaci%C3%B3n%20e%20Innovaci%C3%B3n%2C%20San%20Patricio%20del%20Cha%C3%B1ar%2C%20Neuqu%C3%A9n%2C%20Argentina",
-    "fuenteNombre": "Ficha pública de ubicación · Mapas",
+    "fuenteNombre": "Búsqueda en mapas · referencia no oficial",
     "fuenteTipo": "mapa"
   },
   {
     "id": "cdi-amiguitos",
     "nombre": "Centro de Desarrollo Infantil Los Amiguitos",
     "categoria": "Educación y cuidados",
-    "descripcion": "Centro de desarrollo infantil identificado en la localidad. No se publica teléfono en la ficha de ubicación consultada.",
+    "descripcion": "Centro de desarrollo infantil identificado en la localidad. No se publica teléfono en la ficha de ubicación consultada. Verificar el dato antes de utilizarlo.",
     "direccion": "San Patricio del Chañar, Neuquén, Argentina",
     "telefonos": [],
     "fuente": "https://www.google.com/maps/search/?api=1&query=Centro%20de%20Desarrollo%20Infantil%20Los%20Amiguitos%2C%20San%20Patricio%20del%20Cha%C3%B1ar%2C%20Neuqu%C3%A9n%2C%20Argentina",
-    "fuenteNombre": "Ficha pública de ubicación · Mapas",
+    "fuenteNombre": "Búsqueda en mapas · referencia no oficial",
     "fuenteTipo": "mapa"
   },
   {
     "id": "club-atletico",
     "nombre": "Club Atlético San Patricio",
     "categoria": "Deportes y recreación",
-    "descripcion": "Institución deportiva local. Dirección referenciada en ficha pública de mapas; confirmar horarios y actividades.",
+    "descripcion": "Institución deportiva local. Dirección referenciada en búsqueda pública de mapas; confirmar horarios y actividades. Verificar el dato antes de utilizarlo.",
     "direccion": "Lago Aluminé, San Patricio del Chañar, Neuquén, Argentina",
     "telefonos": [],
     "fuente": "https://www.google.com/maps/search/?api=1&query=Club%20Atl%C3%A9tico%20San%20Patricio%2C%20San%20Patricio%20del%20Cha%C3%B1ar%2C%20Neuqu%C3%A9n%2C%20Argentina",
-    "fuenteNombre": "Ficha pública de ubicación · Mapas",
+    "fuenteNombre": "Búsqueda en mapas · referencia no oficial",
     "fuenteTipo": "mapa"
   },
   {
     "id": "la-baguette",
     "nombre": "Panadería La Baguette",
     "categoria": "Comercios y servicios",
-    "descripcion": "Panadería local. Ubicación y teléfono referenciados en ficha pública de mapas.",
+    "descripcion": "Panadería local. Ubicación y teléfono referenciados en búsqueda pública de mapas. Verificar el dato antes de utilizarlo.",
     "direccion": "Entre Quili Malal, Cauquén y Chos Malal, San Patricio del Chañar, Neuquén, Argentina",
     "telefonos": [
       {
@@ -805,25 +805,25 @@ window.CHANAR_CONTACTOS = [
       }
     ],
     "fuente": "https://www.google.com/maps/search/?api=1&query=Panader%C3%ADa%20La%20Baguette%2C%20San%20Patricio%20del%20Cha%C3%B1ar%2C%20Neuqu%C3%A9n%2C%20Argentina",
-    "fuenteNombre": "Ficha pública de ubicación · Mapas",
+    "fuenteNombre": "Búsqueda en mapas · referencia no oficial",
     "fuenteTipo": "mapa"
   },
   {
     "id": "rico-pan",
     "nombre": "Panadería Rico Pan",
     "categoria": "Comercios y servicios",
-    "descripcion": "Panadería local. Ubicación referenciada en ficha pública de mapas.",
+    "descripcion": "Panadería local. Ubicación referenciada en búsqueda pública de mapas. Verificar el dato antes de utilizarlo.",
     "direccion": "Araucaria y Mutisia, Manzana 19, San Patricio del Chañar, Neuquén, Argentina",
     "telefonos": [],
     "fuente": "https://www.google.com/maps/search/?api=1&query=Panader%C3%ADa%20Rico%20Pan%2C%20San%20Patricio%20del%20Cha%C3%B1ar%2C%20Neuqu%C3%A9n%2C%20Argentina",
-    "fuenteNombre": "Ficha pública de ubicación · Mapas",
+    "fuenteNombre": "Búsqueda en mapas · referencia no oficial",
     "fuenteTipo": "mapa"
   },
   {
     "id": "corralon-pitty",
     "nombre": "Corralón Pitty",
     "categoria": "Comercios y servicios",
-    "descripcion": "Comercio de materiales para construcción y ferretería. Ubicación y teléfono referenciados en ficha pública de mapas.",
+    "descripcion": "Comercio de materiales para construcción y ferretería. Ubicación y teléfono referenciados en búsqueda pública de mapas. Verificar el dato antes de utilizarlo.",
     "direccion": "Río Neuquén, Manzana G2, Lotes 11 y 12, San Patricio del Chañar, Neuquén, Argentina",
     "telefonos": [
       {
@@ -832,14 +832,14 @@ window.CHANAR_CONTACTOS = [
       }
     ],
     "fuente": "https://www.google.com/maps/search/?api=1&query=Corral%C3%B3n%20Pitty%2C%20San%20Patricio%20del%20Cha%C3%B1ar%2C%20Neuqu%C3%A9n%2C%20Argentina",
-    "fuenteNombre": "Ficha pública de ubicación · Mapas",
+    "fuenteNombre": "Búsqueda en mapas · referencia no oficial",
     "fuenteTipo": "mapa"
   },
   {
     "id": "farmacia-global",
     "nombre": "Farmacia y Perfumería Global",
     "categoria": "Salud y cuidados",
-    "descripcion": "Farmacia y perfumería local. Ubicación y teléfono referenciados en ficha pública de mapas; verificar horarios y turnos por separado.",
+    "descripcion": "Farmacia y perfumería local. Ubicación y teléfono referenciados en búsqueda pública de mapas; verificar horarios y turnos por separado.",
     "direccion": "Villa Pehuenia y Calquín Oeste, San Patricio del Chañar, Neuquén, Argentina",
     "telefonos": [
       {
@@ -848,14 +848,14 @@ window.CHANAR_CONTACTOS = [
       }
     ],
     "fuente": "https://www.google.com/maps/search/?api=1&query=Farmacia%20y%20Perfumer%C3%ADa%20Global%2C%20San%20Patricio%20del%20Cha%C3%B1ar%2C%20Neuqu%C3%A9n%2C%20Argentina",
-    "fuenteNombre": "Ficha pública de ubicación · Mapas",
+    "fuenteNombre": "Búsqueda en mapas · referencia no oficial",
     "fuenteTipo": "mapa"
   },
   {
     "id": "veterinaria-kibo",
     "nombre": "Veterinaria Kibo",
     "categoria": "Salud y cuidados",
-    "descripcion": "Servicio veterinario local. Ubicación y teléfono referenciados en ficha pública de mapas.",
+    "descripcion": "Servicio veterinario local. Ubicación y teléfono referenciados en búsqueda pública de mapas. Verificar el dato antes de utilizarlo.",
     "direccion": "Avenida Malvinas Argentinas 278, San Patricio del Chañar, Neuquén, Argentina",
     "telefonos": [
       {
@@ -864,14 +864,14 @@ window.CHANAR_CONTACTOS = [
       }
     ],
     "fuente": "https://www.google.com/maps/search/?api=1&query=Veterinaria%20Kibo%2C%20San%20Patricio%20del%20Cha%C3%B1ar%2C%20Neuqu%C3%A9n%2C%20Argentina",
-    "fuenteNombre": "Ficha pública de ubicación · Mapas",
+    "fuenteNombre": "Búsqueda en mapas · referencia no oficial",
     "fuenteTipo": "mapa"
   },
   {
     "id": "ferreteria-san-francisco",
     "nombre": "Ferretería San Francisco",
     "categoria": "Comercios y servicios",
-    "descripcion": "Ferretería local. Ubicación y teléfono referenciados en ficha pública de mapas.",
+    "descripcion": "Ferretería local. Ubicación y teléfono referenciados en búsqueda pública de mapas. Verificar el dato antes de utilizarlo.",
     "direccion": "Avenida Lago Espejo y Cerro Chapelco, San Patricio del Chañar, Neuquén, Argentina",
     "telefonos": [
       {
@@ -880,25 +880,25 @@ window.CHANAR_CONTACTOS = [
       }
     ],
     "fuente": "https://www.google.com/maps/search/?api=1&query=Ferreter%C3%ADa%20San%20Francisco%2C%20San%20Patricio%20del%20Cha%C3%B1ar%2C%20Neuqu%C3%A9n%2C%20Argentina",
-    "fuenteNombre": "Ficha pública de ubicación · Mapas",
+    "fuenteNombre": "Búsqueda en mapas · referencia no oficial",
     "fuenteTipo": "mapa"
   },
   {
     "id": "la-anonima",
     "nombre": "La Anónima · Sucursal 357",
     "categoria": "Comercios y servicios",
-    "descripcion": "Supermercado local. Dirección referenciada en ficha pública de mapas; no se publica teléfono en la ficha consultada.",
+    "descripcion": "Supermercado local. Dirección referenciada en búsqueda pública de mapas; no se publica teléfono en la ficha consultada. Verificar el dato antes de utilizarlo.",
     "direccion": "Chos Malal 266, San Patricio del Chañar, Neuquén, Argentina",
     "telefonos": [],
     "fuente": "https://www.google.com/maps/search/?api=1&query=La%20An%C3%B3nima%20%C2%B7%20Sucursal%20357%2C%20San%20Patricio%20del%20Cha%C3%B1ar%2C%20Neuqu%C3%A9n%2C%20Argentina",
-    "fuenteNombre": "Ficha pública de ubicación · Mapas",
+    "fuenteNombre": "Búsqueda en mapas · referencia no oficial",
     "fuenteTipo": "mapa"
   },
   {
     "id": "gomeria-omar",
     "nombre": "Gomería Omar",
     "categoria": "Comercios y servicios",
-    "descripcion": "Gomería y servicio de neumáticos local. Dirección y teléfono referenciados en ficha pública de mapas.",
+    "descripcion": "Gomería y servicio de neumáticos local. Dirección y teléfono referenciados en búsqueda pública de mapas. Verificar el dato antes de utilizarlo.",
     "direccion": "Chos Malal y Michay, San Patricio del Chañar, Neuquén, Argentina",
     "telefonos": [
       {
@@ -907,14 +907,14 @@ window.CHANAR_CONTACTOS = [
       }
     ],
     "fuente": "https://www.google.com/maps/search/?api=1&query=Gomer%C3%ADa%20Omar%2C%20San%20Patricio%20del%20Cha%C3%B1ar%2C%20Neuqu%C3%A9n%2C%20Argentina",
-    "fuenteNombre": "Ficha pública de ubicación · Mapas",
+    "fuenteNombre": "Búsqueda en mapas · referencia no oficial",
     "fuenteTipo": "mapa"
   },
   {
     "id": "mecanica-matias",
     "nombre": "Mecánica Matías",
     "categoria": "Comercios y servicios",
-    "descripcion": "Taller mecánico local. Dirección y teléfono referenciados en ficha pública de mapas.",
+    "descripcion": "Taller mecánico local. Dirección y teléfono referenciados en búsqueda pública de mapas. Verificar el dato antes de utilizarlo.",
     "direccion": "Lago Lacar, Manzana G2, Lote 19, San Patricio del Chañar, Neuquén, Argentina",
     "telefonos": [
       {
@@ -923,14 +923,14 @@ window.CHANAR_CONTACTOS = [
       }
     ],
     "fuente": "https://www.google.com/maps/search/?api=1&query=Mec%C3%A1nica%20Mat%C3%ADas%2C%20San%20Patricio%20del%20Cha%C3%B1ar%2C%20Neuqu%C3%A9n%2C%20Argentina",
-    "fuenteNombre": "Ficha pública de ubicación · Mapas",
+    "fuenteNombre": "Búsqueda en mapas · referencia no oficial",
     "fuenteTipo": "mapa"
   },
   {
     "id": "iriarte-service",
     "nombre": "Iriarte Service del Automotor",
     "categoria": "Comercios y servicios",
-    "descripcion": "Servicio local de mecánica y mantenimiento automotor. Dirección y teléfono referenciados en ficha pública de mapas.",
+    "descripcion": "Servicio local de mecánica y mantenimiento automotor. Dirección y teléfono referenciados en búsqueda pública de mapas. Verificar el dato antes de utilizarlo.",
     "direccion": "Río Limay 705, San Patricio del Chañar, Neuquén, Argentina",
     "telefonos": [
       {
@@ -939,14 +939,14 @@ window.CHANAR_CONTACTOS = [
       }
     ],
     "fuente": "https://www.google.com/maps/search/?api=1&query=Iriarte%20Service%20del%20Automotor%2C%20San%20Patricio%20del%20Cha%C3%B1ar%2C%20Neuqu%C3%A9n%2C%20Argentina",
-    "fuenteNombre": "Ficha pública de ubicación · Mapas",
+    "fuenteNombre": "Búsqueda en mapas · referencia no oficial",
     "fuenteTipo": "mapa"
   },
   {
     "id": "mecanica-lp",
     "nombre": "Mecánica LP",
     "categoria": "Comercios y servicios",
-    "descripcion": "Taller de reparación automotor y mecanizado. Dirección y teléfono referenciados en ficha pública de mapas.",
+    "descripcion": "Taller de reparación automotor y mecanizado. Dirección y teléfono referenciados en búsqueda pública de mapas. Verificar el dato antes de utilizarlo.",
     "direccion": "Río Limay, Manzana G, Lote 24, San Patricio del Chañar, Neuquén, Argentina",
     "telefonos": [
       {
@@ -955,14 +955,14 @@ window.CHANAR_CONTACTOS = [
       }
     ],
     "fuente": "https://www.google.com/maps/search/?api=1&query=Mec%C3%A1nica%20LP%2C%20San%20Patricio%20del%20Cha%C3%B1ar%2C%20Neuqu%C3%A9n%2C%20Argentina",
-    "fuenteNombre": "Ficha pública de ubicación · Mapas",
+    "fuenteNombre": "Búsqueda en mapas · referencia no oficial",
     "fuenteTipo": "mapa"
   },
   {
     "id": "mecanica-omar",
     "nombre": "Mecánica Omar",
     "categoria": "Comercios y servicios",
-    "descripcion": "Taller de reparación automotor local. Dirección y teléfono referenciados en ficha pública de mapas.",
+    "descripcion": "Taller de reparación automotor local. Dirección y teléfono referenciados en búsqueda pública de mapas. Verificar el dato antes de utilizarlo.",
     "direccion": "Avenida Lago Espejo, San Patricio del Chañar, Neuquén, Argentina",
     "telefonos": [
       {
@@ -971,14 +971,14 @@ window.CHANAR_CONTACTOS = [
       }
     ],
     "fuente": "https://www.google.com/maps/search/?api=1&query=Mec%C3%A1nica%20Omar%2C%20San%20Patricio%20del%20Cha%C3%B1ar%2C%20Neuqu%C3%A9n%2C%20Argentina",
-    "fuenteNombre": "Ficha pública de ubicación · Mapas",
+    "fuenteNombre": "Búsqueda en mapas · referencia no oficial",
     "fuenteTipo": "mapa"
   },
   {
     "id": "flavia-estilista",
     "nombre": "Flavia Martínez Estilista",
     "categoria": "Comercios y servicios",
-    "descripcion": "Servicio local de peluquería y estilismo. Teléfono referenciado en ficha pública de mapas; confirmar dirección al consultar.",
+    "descripcion": "Servicio local de peluquería y estilismo. Teléfono referenciado en búsqueda pública de mapas; confirmar dirección al consultar. Verificar el dato antes de utilizarlo.",
     "direccion": "San Patricio del Chañar, Neuquén, Argentina",
     "telefonos": [
       {
@@ -987,14 +987,14 @@ window.CHANAR_CONTACTOS = [
       }
     ],
     "fuente": "https://www.google.com/maps/search/?api=1&query=Flavia%20Mart%C3%ADnez%20Estilista%2C%20San%20Patricio%20del%20Cha%C3%B1ar%2C%20Neuqu%C3%A9n%2C%20Argentina",
-    "fuenteNombre": "Ficha pública de ubicación · Mapas",
+    "fuenteNombre": "Búsqueda en mapas · referencia no oficial",
     "fuenteTipo": "mapa"
   },
   {
     "id": "barba-negra",
     "nombre": "Barbería Barba Negra",
     "categoria": "Comercios y servicios",
-    "descripcion": "Barbería local. Ubicación y teléfono referenciados en ficha pública de mapas.",
+    "descripcion": "Barbería local. Ubicación y teléfono referenciados en búsqueda pública de mapas. Verificar el dato antes de utilizarlo.",
     "direccion": "Calquín Oeste, San Patricio del Chañar, Neuquén, Argentina",
     "telefonos": [
       {
@@ -1003,14 +1003,14 @@ window.CHANAR_CONTACTOS = [
       }
     ],
     "fuente": "https://www.google.com/maps/search/?api=1&query=Barber%C3%ADa%20Barba%20Negra%2C%20San%20Patricio%20del%20Cha%C3%B1ar%2C%20Neuqu%C3%A9n%2C%20Argentina",
-    "fuenteNombre": "Ficha pública de ubicación · Mapas",
+    "fuenteNombre": "Búsqueda en mapas · referencia no oficial",
     "fuenteTipo": "mapa"
   },
   {
     "id": "el-punto-grafica",
     "nombre": "El Punto Gráfica",
     "categoria": "Comercios y servicios",
-    "descripcion": "Servicio local de gráfica e impresión. Dirección y teléfono referenciados en ficha pública de mapas.",
+    "descripcion": "Servicio local de gráfica e impresión. Dirección y teléfono referenciados en búsqueda pública de mapas. Verificar el dato antes de utilizarlo.",
     "direccion": "Complejo El Chocón 800, San Patricio del Chañar, Neuquén, Argentina",
     "telefonos": [
       {
@@ -1019,14 +1019,14 @@ window.CHANAR_CONTACTOS = [
       }
     ],
     "fuente": "https://www.google.com/maps/search/?api=1&query=El%20Punto%20Gr%C3%A1fica%2C%20San%20Patricio%20del%20Cha%C3%B1ar%2C%20Neuqu%C3%A9n%2C%20Argentina",
-    "fuenteNombre": "Ficha pública de ubicación · Mapas",
+    "fuenteNombre": "Búsqueda en mapas · referencia no oficial",
     "fuenteTipo": "mapa"
   },
   {
     "id": "peluqueria-roxy",
     "nombre": "Peluquería Roxy · Estilista y asesora de imagen",
     "categoria": "Comercios y servicios",
-    "descripcion": "Servicio local de peluquería y asesoría de imagen. Ubicación y teléfono referenciados en ficha pública de mapas.",
+    "descripcion": "Servicio local de peluquería y asesoría de imagen. Ubicación y teléfono referenciados en búsqueda pública de mapas. Verificar el dato antes de utilizarlo.",
     "direccion": "Lago Moquehue, San Patricio del Chañar, Neuquén, Argentina",
     "telefonos": [
       {
@@ -1035,14 +1035,14 @@ window.CHANAR_CONTACTOS = [
       }
     ],
     "fuente": "https://www.google.com/maps/search/?api=1&query=Peluquer%C3%ADa%20Roxy%20%C2%B7%20Estilista%20y%20asesora%20de%20imagen%2C%20San%20Patricio%20del%20Cha%C3%B1ar%2C%20Neuqu%C3%A9n%2C%20Argentina",
-    "fuenteNombre": "Ficha pública de ubicación · Mapas",
+    "fuenteNombre": "Búsqueda en mapas · referencia no oficial",
     "fuenteTipo": "mapa"
   },
   {
     "id": "peluqueria-ginahu",
     "nombre": "Peluquería GINAHU",
     "categoria": "Comercios y servicios",
-    "descripcion": "Peluquería local. Ubicación y teléfono referenciados en ficha pública de mapas.",
+    "descripcion": "Peluquería local. Ubicación y teléfono referenciados en búsqueda pública de mapas. Verificar el dato antes de utilizarlo.",
     "direccion": "Quili Malal, San Patricio del Chañar, Neuquén, Argentina",
     "telefonos": [
       {
@@ -1051,14 +1051,14 @@ window.CHANAR_CONTACTOS = [
       }
     ],
     "fuente": "https://www.google.com/maps/search/?api=1&query=Peluquer%C3%ADa%20GINAHU%2C%20San%20Patricio%20del%20Cha%C3%B1ar%2C%20Neuqu%C3%A9n%2C%20Argentina",
-    "fuenteNombre": "Ficha pública de ubicación · Mapas",
+    "fuenteNombre": "Búsqueda en mapas · referencia no oficial",
     "fuenteTipo": "mapa"
   },
   {
     "id": "consultorios-durbano",
     "nombre": "Consultorios Durbano",
     "categoria": "Salud y cuidados",
-    "descripcion": "Centro de consultorios de atención privada. Dirección y teléfono referenciados en ficha pública de mapas; confirmar especialidades y turnos.",
+    "descripcion": "Centro de consultorios de atención privada. Dirección y teléfono referenciados en búsqueda pública de mapas; confirmar especialidades y turnos. Verificar el dato antes de utilizarlo.",
     "direccion": "Osvaldo Minaglia 320, San Patricio del Chañar, Neuquén, Argentina",
     "telefonos": [
       {
@@ -1067,14 +1067,14 @@ window.CHANAR_CONTACTOS = [
       }
     ],
     "fuente": "https://www.google.com/maps/search/?api=1&query=Consultorios%20Durbano%2C%20San%20Patricio%20del%20Cha%C3%B1ar%2C%20Neuqu%C3%A9n%2C%20Argentina",
-    "fuenteNombre": "Ficha pública de ubicación · Mapas",
+    "fuenteNombre": "Búsqueda en mapas · referencia no oficial",
     "fuenteTipo": "mapa"
   },
   {
     "id": "odontologia-espinoza",
     "nombre": "Consultorio Odontológico · Dra. Susana Espinoza",
     "categoria": "Salud y cuidados",
-    "descripcion": "Consultorio odontológico local. Dirección y teléfono referenciados en ficha pública de mapas.",
+    "descripcion": "Consultorio odontológico local. Dirección y teléfono referenciados en búsqueda pública de mapas. Verificar el dato antes de utilizarlo.",
     "direccion": "Amancay 11, San Patricio del Chañar, Neuquén, Argentina",
     "telefonos": [
       {
@@ -1083,14 +1083,14 @@ window.CHANAR_CONTACTOS = [
       }
     ],
     "fuente": "https://www.google.com/maps/search/?api=1&query=Consultorio%20Odontol%C3%B3gico%20%C2%B7%20Dra.%20Susana%20Espinoza%2C%20San%20Patricio%20del%20Cha%C3%B1ar%2C%20Neuqu%C3%A9n%2C%20Argentina",
-    "fuenteNombre": "Ficha pública de ubicación · Mapas",
+    "fuenteNombre": "Búsqueda en mapas · referencia no oficial",
     "fuenteTipo": "mapa"
   },
   {
     "id": "corralon-pitty-6",
     "nombre": "Corralón Pitty 6",
     "categoria": "Comercios y servicios",
-    "descripcion": "Punto comercial de materiales y suministros para construcción. Teléfono referenciado en ficha pública de mapas; confirmar dirección exacta.",
+    "descripcion": "Punto comercial de materiales y suministros para construcción. Teléfono referenciado en búsqueda pública de mapas; confirmar dirección exacta. Verificar el dato antes de utilizarlo.",
     "direccion": "San Patricio del Chañar, Neuquén, Argentina",
     "telefonos": [
       {
@@ -1099,14 +1099,14 @@ window.CHANAR_CONTACTOS = [
       }
     ],
     "fuente": "https://www.google.com/maps/search/?api=1&query=Corral%C3%B3n%20Pitty%206%2C%20San%20Patricio%20del%20Cha%C3%B1ar%2C%20Neuqu%C3%A9n%2C%20Argentina",
-    "fuenteNombre": "Ficha pública de ubicación · Mapas",
+    "fuenteNombre": "Búsqueda en mapas · referencia no oficial",
     "fuenteTipo": "mapa"
   },
   {
     "id": "super-jazmin-5",
     "nombre": "Supermercado Jazmín 5",
     "categoria": "Comercios y servicios",
-    "descripcion": "Comercio de cercanía para compras cotidianas. Teléfono referenciado en ficha pública de mapas; confirmar dirección exacta.",
+    "descripcion": "Comercio de cercanía para compras cotidianas. Teléfono referenciado en búsqueda pública de mapas; confirmar dirección exacta. Verificar el dato antes de utilizarlo.",
     "direccion": "San Patricio del Chañar, Neuquén, Argentina",
     "telefonos": [
       {
@@ -1115,14 +1115,14 @@ window.CHANAR_CONTACTOS = [
       }
     ],
     "fuente": "https://www.google.com/maps/search/?api=1&query=Supermercado%20Jazm%C3%ADn%205%2C%20San%20Patricio%20del%20Cha%C3%B1ar%2C%20Neuqu%C3%A9n%2C%20Argentina",
-    "fuenteNombre": "Ficha pública de ubicación · Mapas",
+    "fuenteNombre": "Búsqueda en mapas · referencia no oficial",
     "fuenteTipo": "mapa"
   },
   {
     "id": "mini-shopping",
     "nombre": "Mini Shopping Center",
     "categoria": "Comercios y servicios",
-    "descripcion": "Comercio de cercanía y supermercado. Dirección y teléfono referenciados en ficha pública de mapas.",
+    "descripcion": "Comercio de cercanía y supermercado. Dirección y teléfono referenciados en búsqueda pública de mapas. Verificar el dato antes de utilizarlo.",
     "direccion": "Pilmayquén 241, San Patricio del Chañar, Neuquén, Argentina",
     "telefonos": [
       {
@@ -1131,7 +1131,7 @@ window.CHANAR_CONTACTOS = [
       }
     ],
     "fuente": "https://www.google.com/maps/search/?api=1&query=Mini%20Shopping%20Center%2C%20San%20Patricio%20del%20Cha%C3%B1ar%2C%20Neuqu%C3%A9n%2C%20Argentina",
-    "fuenteNombre": "Ficha pública de ubicación · Mapas",
+    "fuenteNombre": "Búsqueda en mapas · referencia no oficial",
     "fuenteTipo": "mapa"
   }
 ];
