@@ -34,8 +34,8 @@ La capa estética no modifica la estructura de las fichas ni el contenido de `da
 - No se deben compartir datos personales o sensibles sin verificar previamente al destinatario.
 
 ## Contenido
-- 90 fichas locales organizadas en nueve temas ciudadanos.
-- 74 fichas incluyen al menos un teléfono publicado como referencia.
+- 96 fichas locales organizadas en nueve temas ciudadanos.
+- 79 fichas incluyen al menos un teléfono publicado como referencia.
 - Los teléfonos son referencias documentales y no se presentan como líneas activas ni confirmadas mediante llamada.
 - Las fichas pueden incluir teléfonos, correo, dirección, ubicación aproximada y enlace a la fuente, según la información disponible.
 - El directorio distingue sitios oficiales, agendas o directorios institucionales y referencias en mapas.
@@ -118,7 +118,7 @@ La revisión integral se desarrolla en una rama separada a partir del commit 790
 - **Lectura:** se mantienen letra grande, modo noche, alto contraste, filtros por tema, búsquedas rápidas, paginación e impresión A4.
 - **Actualización sin conexión:** el identificador de caché pasa a chanar-a-mano-shell-v13 para que el navegador pueda instalar el conjunto nuevo de archivos.
 
-El corte actual contiene **90 fichas**, de las cuales **74 publican al menos un teléfono** (80 números en total). En las dos ampliaciones documentadas se incorporaron 15 fichas: 11 procedentes de un directorio externo y cuatro de referencias públicas de ubicación; 14 de esas fichas incluyen un teléfono y una aporta solo una dirección de referencia. Estos 14 teléfonos nuevos siguen clasificados como referencias secundarias pendientes de confirmación directa. La revisión integral sí incluye cambios en `datos.js`; no se modificaron ni se deben presentar esos contactos como confirmados. Se retiró la fotografía municipal de los metadatos de vista previa mientras no exista autorización específica de reutilización.
+El corte actual contiene **96 fichas**, de las cuales **79 publican al menos un teléfono** (85 números en total). En las dos ampliaciones documentadas se incorporaron 15 fichas: 11 procedentes de un directorio externo y cuatro de referencias públicas de ubicación; 14 de esas fichas incluyen un teléfono y una aporta solo una dirección de referencia. Estos 14 teléfonos nuevos siguen clasificados como referencias secundarias pendientes de confirmación directa. La revisión integral sí incluye cambios en `datos.js`; no se modificaron ni se deben presentar esos contactos como confirmados. Se retiró la fotografía municipal de los metadatos de vista previa mientras no exista autorización específica de reutilización.
 
 
 ## Filtros más precisos
@@ -140,3 +140,8 @@ Además de buscar por palabra, categoría, teléfono y favoritos, ahora se puede
 ## Cuadrícula de consulta
 
 La portada del directorio presenta hasta 18 fichas por página. La cuadrícula adapta la cantidad de columnas al ancho disponible: tres en pantallas amplias, dos en pantallas medianas y una en celulares. La lectura fácil fuerza una columna y amplía tipografía y teléfonos. La versión de caché local se identifica como `chanar-a-mano-shell-v13`.
+
+
+## Ampliación del directorio (19 de noviembre de 2026)
+
+Se incorporaron seis fichas locales nuevas: LT Electricidad, Tornería Zúñiga, Saurus Restaurante, Restaurante Malma, Malma · Aldea de Terruño by Haiku y Servicio Técnico Joaco. Cinco incluyen teléfonos publicados en fichas públicas de ubicación y una aporta ubicación sin teléfono. Todas se clasifican como referencias secundarias pendientes de confirmación directa; no se presentan como líneas activas ni como datos oficiales.
