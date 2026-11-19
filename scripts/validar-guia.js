@@ -12,7 +12,6 @@ const read = (file) => fs.readFileSync(path.join(root, file), "utf8");
 for (const file of ["index.html", "styles.css", "datos.js", "app.js"]) {
   if (!fs.existsSync(path.join(root, file))) fail("Falta el archivo obligatorio: " + file);
 }
-
 if (process.exitCode) process.exit(1);
 
 const html = read("index.html");
@@ -30,15 +29,15 @@ const duplicates = ids.filter((id, index) => ids.indexOf(id) !== index);
 if (duplicates.length) fail("Hay IDs HTML duplicados: " + [...new Set(duplicates)].join(", "));
 
 for (const [, asset] of html.matchAll(/(?:src|href)=["']([^"']+\.(?:js|css))["']/g)) {
-  if (/^(?:https?:)?\/\//i.test(asset)) continue;
+  if (asset.startsWith("http://") || asset.startsWith("https://") || asset.startsWith("//")) continue;
   const localPath = asset.split(/[?#]/)[0];
   if (!fs.existsSync(path.join(root, localPath))) fail("El HTML referencia un archivo inexistente: " + asset);
 }
 
-if (/\b(?:tel|mailto):/i.test(html + app + dataSource)) {
+if (/(^|[^a-z])(tel|mailto):/i.test(html + app + dataSource)) {
   fail("Se detectó un enlace tel: o mailto:; los contactos deben permanecer como texto.");
 }
-if (/javascript:/i.test(html + app + dataSource + css)) {
+if ((html + app + dataSource + css).toLowerCase().includes("javascript:")) {
   fail("Se detectó un protocolo javascript: no permitido.");
 }
 
@@ -61,11 +60,15 @@ if (start < 0) {
       if (!item.id || !item.nombre || !item.categoria) fail(label + ": faltan id, nombre o categoría.");
       if (seen.has(item.id)) fail("ID de ficha duplicado: " + item.id);
       seen.add(item.id);
-      if (!item.fuente || !/^https?:\/\//i.test(item.fuente)) fail(label + ": fuente ausente o URL no segura.");
+      if (!item.fuente || !(item.fuente.startsWith("https://") || item.fuente.startsWith("http://"))) {
+        fail(label + ": fuente ausente o URL no segura.");
+      }
       if (!allowedSourceTypes.has(item.fuenteTipo)) fail(label + ": fuenteTipo ausente o no reconocido.");
       if (item.telefonos && !Array.isArray(item.telefonos)) fail(label + ": telefonos debe ser una lista.");
     }
     console.log("Fichas verificadas:", contacts.length);
+  } else {
+    fail("CHANAR_CONTACTOS debe ser una lista.");
   }
 }
 
