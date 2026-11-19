@@ -28,12 +28,16 @@ Historias, personas y territorio.
 
 ## Contenido y funciones
 - Fichas de instituciones, organizaciones y servicios.
-- Buscador que ignora diferencias entre mayúsculas, minúsculas y tildes.
+- Buscador que ignora diferencias entre mayúsculas, minúsculas y tildes, y admite accesos rápidos a temas frecuentes.
+- Accesos directos para Hospital, Escuelas, Municipalidad y Trabajo.
+- Controles para agrandar o reducir el texto de las fichas sin modificar los datos ni guardar preferencias.
 - Búsqueda por nombre, categoría, descripción, teléfono y correo.
 - Seis temas visibles con cantidad de fichas por categoría.
 - Orden alfabético de los resultados.
 - Teléfonos y correos como texto seleccionable, sin enlaces de llamada ni de envío de mensajes.
-- Fuente y tipo de procedencia identificados en cada ficha.
+- Fuente, tipo de procedencia y nombre de la entidad que publicó el dato identificados en cada ficha.
+- Guía breve de uso en tres pasos, pensada para personas con poca experiencia digital.
+- Estado visible de los accesos rápidos y avisos de resultados.
 - Compartir la guía mediante las opciones disponibles en el dispositivo o copiar el enlace.
 - Copiar el alias de colaboración sin abrir aplicaciones de pago.
 - Impresión A4 de los resultados visibles, en una columna, con fuentes, fecha de consulta y alias voluntario.
