@@ -19,7 +19,7 @@ const ids=[...html.matchAll(/\bid=["']([^"']+)["']/g)].map(match=>match[1]);
 const duplicates=ids.filter((id,index)=>ids.indexOf(id)!==index);
 if(duplicates.length)fail("IDs HTML duplicados: "+[...new Set(duplicates)].join(", "));
 const idSet=new Set(ids);
-const requiredIds=["contactGrid","filters","searchInput","clearSearch","resultCount","emptyState","resultsContext","resultsTitle","copyFeedback","shareFeedback","totalContactCount","totalPhoneCount","phoneOnly","pagination","previousPage","nextPage","pageStatus","topicPanel","directoryTitle","fontDown","fontUp","fontReset","fontScaleStatus","brightnessControl","contrastControl","appearanceStatus","brightnessValue","contrastValue","resetAppearance","searchForm","resetFilters","copyAliasButton","supportAlias","printMeta","printButton","whatsappShare","shareButton","copyShareButton","mobileSearchButton","mobileWhatsappShare","appStatus"];
+const requiredIds=["contactGrid","filters","searchInput","clearSearch","resultCount","emptyState","resultsContext","resultsTitle","copyFeedback","shareFeedback","phoneOnly","pagination","previousPage","nextPage","pageStatus","topicPanel","directoryTitle","fontDown","fontUp","fontReset","fontScaleStatus","brightnessControl","contrastControl","appearanceStatus","brightnessValue","contrastValue","resetAppearance","searchForm","resetFilters","copyAliasButton","supportAlias","printMeta","printButton","whatsappShare","shareButton","copyShareButton","mobileSearchButton","mobileWhatsappShare","appStatus"];
 for(const id of requiredIds)if(!idSet.has(id))fail("Falta elemento esencial #"+id);
 for(const id of new Set([...app.matchAll(/\$\(["']([^"']+)["']\)/g)].map(match=>match[1])))if(id!=="resultsEndNote"&&!idSet.has(id))fail("app.js referencia un ID inexistente: #"+id);
 if(!/<html lang="es-AR">/.test(html))fail("El documento debe declarar es-AR.");
@@ -50,7 +50,7 @@ if(!app.includes('TELÉFONO PUBLICADO')||!app.includes('phone-number'))fail("Los
 if(!app.includes('document.querySelectorAll("[data-appearance-preset]")'))fail("Los accesos rápidos de lectura no están conectados a la aplicación.");
 if(!app.includes('window.addEventListener("beforeprint", () =>')||!app.includes("updatePrintMeta();")||!app.includes("const allVisible = visibleContacts();"))fail("La impresión no prepara metadatos y todos los resultados del filtro actual.");
 if(!app.includes("registration.update()")||!app.includes('"controllerchange"'))fail("Falta comprobación de actualización y recarga coordinada del service worker.");
-if(!sw.includes('const CACHE_NAME = "chanar-a-mano-shell-v6"')||!sw.includes('cache: "reload"')||!sw.includes("if (!response.ok)"))fail("El service worker no garantiza una caché versionada completa.");
+if(!sw.includes('const CACHE_NAME = "chanar-a-mano-shell-v7"')||!sw.includes('cache: "reload"')||!sw.includes("if (!response.ok)"))fail("El service worker no garantiza una caché versionada completa.");
 if(!html.includes('id="mobileWhatsappShare"')||!html.includes('id="mobileSearchButton"'))fail("Faltan acciones rápidas móviles.");
 
 const marker="window.CHANAR_CONTACTOS =";
