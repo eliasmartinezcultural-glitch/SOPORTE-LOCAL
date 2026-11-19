@@ -27,12 +27,12 @@
     { label: "Ver todo", key: "Todos", keys: [], terms: [] },
     { label: "Municipio", key: "Municipio", keys: ["Organismos públicos"], terms: ["municipalidad", "organismo", "gobierno", "publico", "publica"] },
     { label: "Comunidad y cultura", key: "Comunidad", keys: ["Comunidad", "Cultura y comunidad"], terms: ["parroquia", "religion", "culto", "organizacion", "cultura", "biblioteca", "centro cultural", "plaza", "balneario"] },
-    { label: "Trabajo y producción", key: "Trabajo", keys: ["Trabajo y producción", "Turismo y producción"], terms: ["empleo", "produccion", "productores", "rural", "renatre", "agro", "bodega", "establecimiento"] },
+    { label: "Trabajo y producción", key: "Trabajo", keys: ["Trabajo y producción"], terms: ["empleo", "produccion", "productores", "rural", "renatre", "agro", "bodega", "establecimiento"] },
     { label: "Educación", key: "Educación", keys: ["Educación", "Educación y cuidados"], terms: ["escuela", "colegio", "educacion", "formacion", "estudio", "jardin", "cdi", "infantil"] },
     { label: "Salud y cuidados", key: "Salud", keys: ["Salud y cuidados"], terms: ["hospital", "salud", "ninez", "cuidados", "farmacia", "veterinaria", "odontologia", "consultorio"] },
     { label: "Servicios públicos", key: "Servicios", keys: ["Servicios públicos"], terms: ["epen", "energia", "electricidad", "servicios"] },
     { label: "Deportes y recreación", key: "Deportes", keys: ["Deportes y recreación"], terms: ["deporte", "deportes", "club", "polideportivo", "estadio", "recreacion"] },
-    { label: "Turismo y gastronomía", key: "Turismo", keys: ["Turismo y gastronomía", "Turismo y alojamiento"], terms: ["turismo", "gastronomia", "restaurante", "comer", "alojamiento", "hotel", "visitas", "hosteria", "hospedaje"] },
+    { label: "Turismo y gastronomía", key: "Turismo", keys: ["Turismo y gastronomía", "Turismo y alojamiento", "Turismo y producción"], terms: ["turismo", "gastronomia", "restaurante", "comer", "alojamiento", "hotel", "visitas", "hosteria", "hospedaje"] },
     { label: "Comercios y servicios", key: "Comercios", keys: ["Comercios y servicios"], terms: ["comercio", "comercios", "panaderia", "ferreteria", "corralon", "negocio", "taller", "peluqueria", "gomeria"] }
   ];
 
@@ -95,16 +95,16 @@
   }
 
   const synonymGroups = [
-    ["hospital", "salud", "medico", "medica", "centro medico", "atencion medica"],
-    ["escuela", "educacion", "colegio", "jardin", "formacion"],
-    ["municipalidad", "municipio", "municipal"],
-    ["deporte", "deportes", "recreacion", "club"],
-    ["cultura", "biblioteca", "centro cultural"],
-    ["comercio", "comercios", "negocio", "local"],
-    ["turismo", "alojamiento", "hotel", "hospedaje", "hosteria", "gastronomia", "restaurante", "bodega", "visitas"],
+    ["hospital", "hospitales", "salud", "medico", "medica", "centro medico", "atencion medica"],
+    ["escuela", "escuelas", "educacion", "colegio", "colegios", "jardin", "jardines", "formacion"],
+    ["municipalidad", "municipalidades", "municipio", "municipios", "municipal"],
+    ["deporte", "deportes", "recreacion", "club", "clubes"],
+    ["cultura", "biblioteca", "bibliotecas", "centro cultural", "centros culturales"],
+    ["comercio", "comercios", "negocio", "negocios", "local"],
+    ["turismo", "alojamiento", "alojamientos", "hotel", "hoteles", "hospedaje", "hosteria", "gastronomia", "restaurante", "restaurantes", "bodega", "bodegas", "visitas"],
     ["trabajo", "empleo", "produccion", "productores", "agro"],
     ["energia", "electricidad", "luz", "epen"],
-    ["farmacia", "veterinaria", "odontologia", "consultorio"]
+    ["farmacia", "farmacias", "veterinaria", "veterinarias", "odontologia", "consultorio", "consultorios"]
   ];
 
   const stopWords = new Set(["de", "del", "la", "el", "los", "las", "y", "en", "para", "por", "un", "una"]);
