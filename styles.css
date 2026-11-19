@@ -635,3 +635,85 @@ a:focus-visible,button:focus-visible,input:focus-visible{outline:3px solid #8b4e
 
 
 @media print{.site-header{display:none!important}}
+
+
+/* Identidad visual y acciones comunitarias · CHÁÑAR A MANO */
+:root{
+  --paper:#f5f4ec;
+  --surface:#fffefa;
+  --ink:#25372d;
+  --green:#294b38;
+  --green-2:#456b50;
+  --clay:#9a6247;
+  --line:#d9dfd3;
+}
+.site-header{padding-top:15px;padding-bottom:15px}
+.brand-mark{background:linear-gradient(145deg,#294b38,#58785a);box-shadow:0 5px 14px rgba(41,75,56,.13)}
+.welcome{position:relative;isolation:isolate;padding-top:30px;padding-bottom:27px}
+.welcome:before{content:"";position:absolute;z-index:-1;inset:0 -20px;border-radius:0 0 28px 28px;background:radial-gradient(ellipse at 88% 15%,rgba(215,224,199,.5),transparent 42%),linear-gradient(120deg,rgba(255,254,250,.72),rgba(245,244,236,.15))}
+.welcome .eyebrow{letter-spacing:.16em}
+.welcome h1{max-width:790px;letter-spacing:-.05em}
+.welcome-copy{max-width:680px}
+.button-whatsapp{background:#24784a;color:#fff;border-color:#24784a;box-shadow:0 3px 9px rgba(36,120,74,.12)}
+.button-whatsapp:hover{background:#1e653e;border-color:#1e653e}
+.button-whatsapp span{font-size:17px;font-weight:900}
+.header-actions{gap:9px}
+.notice{box-shadow:0 3px 12px rgba(42,68,48,.035)}
+.search-form{box-shadow:0 5px 18px rgba(42,68,48,.045)}
+.filter-button{box-shadow:0 2px 6px rgba(42,68,48,.025)}
+.filter-button[aria-pressed=true]{box-shadow:0 4px 12px rgba(41,75,56,.16)}
+.contact-card{box-shadow:0 3px 12px rgba(42,68,48,.035);transition:transform .16s ease,box-shadow .16s ease}
+.contact-card:hover{transform:translateY(-2px);box-shadow:0 8px 22px rgba(42,68,48,.075)}
+.support-mini.support-card{
+  position:relative;overflow:hidden;display:block;width:min(calc(100% - 48px),992px);
+  margin:8px auto 28px;padding:25px 27px 21px;
+  border:1px solid #d9c8a7;border-radius:18px;
+  background:radial-gradient(ellipse at 100% 0%,rgba(224,208,169,.45),transparent 42%),linear-gradient(130deg,#f2ead9 0%,#f8f3e8 52%,#edf0e5 100%);
+  box-shadow:0 8px 24px rgba(85,70,42,.065)
+}
+.support-topline{display:flex;align-items:center;gap:9px;color:#795a32;font-size:10px;font-weight:900;letter-spacing:.13em}
+.support-mark{width:30px;height:30px;display:grid;place-items:center;border-radius:10px;background:#e5d6b8;color:#805d32;font-size:16px}
+.support-copy{max-width:720px;margin-top:13px}
+.support-copy h2{margin:0;color:#304b3a;font-family:Georgia,serif;font-size:clamp(25px,3.8vw,34px);line-height:1.12;letter-spacing:-.025em}
+.support-copy p{max-width:710px;margin:9px 0 0;color:#536052;font-size:15px;line-height:1.6}
+.support-payment{max-width:700px;margin-top:18px;padding:15px 16px;display:flex;align-items:center;justify-content:space-between;gap:16px;background:rgba(255,255,255,.82);border:1px solid #dfd3bd;border-radius:13px}
+.support-alias{min-width:0;display:flex;flex-direction:column;gap:3px}
+.support-alias>span{color:#82643c;font-size:10px;font-weight:900;letter-spacing:.11em}
+.support-alias strong{color:#294b38;font-size:clamp(23px,4vw,30px);line-height:1.2;letter-spacing:.01em;overflow-wrap:anywhere}
+.support-alias small{color:#626b5f;font-size:12px;line-height:1.4}
+.support-payment .button-copy{min-width:145px;min-height:48px;background:#294b38;border-color:#294b38;color:white}
+.support-payment .button-copy:hover{background:#203d2d}
+.support-card .support-feedback{min-height:1.4em;margin:7px 0 0;color:#294b38;font-size:13px}
+.support-clarity{max-width:760px;margin:5px 0 0;color:#596456;font-size:12px;line-height:1.5}
+.support-signature{margin:13px 0 0;color:#765a35;font-family:Georgia,serif;font-size:14px;font-style:italic}
+.footer-credit{font-size:13px;line-height:1.5}
+.footer-tagline{margin:3px 0 8px;color:#657064;font-family:Georgia,serif;font-size:12px;font-style:italic}
+.footer-disclaimer{max-width:850px}
+.site-footer{border-top:1px solid #d8dfd4}
+@media(max-width:560px){
+  .site-header{align-items:center}
+  .header-actions{gap:6px}
+  .header-actions .button{min-height:42px;padding:8px 10px}
+  .button-whatsapp{font-size:12px!important}
+  .welcome{padding-top:22px;padding-bottom:18px}
+  .welcome:before{inset:0 -14px;border-radius:0 0 20px 20px}
+  .support-mini.support-card{width:calc(100% - 28px);margin:4px auto 20px;padding:19px 15px 17px;border-radius:15px}
+  .support-copy{margin-top:10px}
+  .support-copy h2{font-size:27px}
+  .support-copy p{font-size:14px}
+  .support-payment{display:grid;grid-template-columns:1fr;gap:12px;padding:13px}
+  .support-payment .button-copy{width:100%;min-height:50px}
+  .support-alias strong{font-size:26px}
+  .support-signature{font-size:13px}
+}
+@media(max-width:360px){
+  .header-actions .button-outline{display:none}
+  .button-whatsapp{padding-inline:9px!important}
+}
+@media(hover:none){
+  .contact-card:hover{transform:none;box-shadow:0 3px 12px rgba(42,68,48,.035)}
+}
+@media print{
+  .support-mini.support-card{display:none!important}
+  .footer-tagline{margin-bottom:2mm}
+}
