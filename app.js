@@ -51,6 +51,25 @@
   search.addEventListener("input", render);
   clear.addEventListener("click", () => { search.value = ""; search.focus(); render(); });
   document.getElementById("resetFilters").addEventListener("click", () => { activeCategory = "Todos"; search.value = ""; render(); });
+  document.getElementById("copyAliasButton").addEventListener("click", async () => {
+    const alias = document.getElementById("supportAlias").textContent.trim();
+    const feedback = document.getElementById("copyFeedback");
+    try {
+      if (navigator.clipboard && window.isSecureContext) {
+        await navigator.clipboard.writeText(alias);
+        feedback.textContent = "Alias copiado. Gracias por acompañar este proyecto.";
+      } else {
+        const helper = document.createElement("textarea");
+        helper.value = alias; helper.setAttribute("readonly", "");
+        helper.style.position = "absolute"; helper.style.left = "-9999px";
+        document.body.appendChild(helper); helper.select();
+        const copied = document.execCommand("copy"); helper.remove();
+        feedback.textContent = copied ? "Alias copiado. Gracias por acompañar este proyecto." : "Podés copiar el alias: " + alias;
+      }
+    } catch (error) {
+      feedback.textContent = "Podés copiar manualmente el alias: " + alias;
+    }
+  });
   document.getElementById("printButton").addEventListener("click", () => window.print());
   document.getElementById("shareButton").addEventListener("click", async () => {
     const shareData = {title:"Chañar a Mano",text:"Guía local de instituciones y servicios de San Patricio del Chañar",url:location.href};
