@@ -893,5 +893,245 @@ window.CHANAR_CONTACTOS = [
     "fuente": "https://www.google.com/maps/search/?api=1&query=La%20An%C3%B3nima%20%C2%B7%20Sucursal%20357%2C%20San%20Patricio%20del%20Cha%C3%B1ar%2C%20Neuqu%C3%A9n%2C%20Argentina",
     "fuenteNombre": "Ficha pública de ubicación · Mapas",
     "fuenteTipo": "mapa"
+  },
+  {
+    "id": "gomeria-omar",
+    "nombre": "Gomería Omar",
+    "categoria": "Comercios y servicios",
+    "descripcion": "Gomería y servicio de neumáticos local. Dirección y teléfono referenciados en ficha pública de mapas.",
+    "direccion": "Chos Malal y Michay, San Patricio del Chañar, Neuquén, Argentina",
+    "telefonos": [
+      {
+        "uso": "Teléfono publicado en ficha de ubicación",
+        "numero": "0299 574-2015"
+      }
+    ],
+    "fuente": "https://www.google.com/maps/search/?api=1&query=Gomer%C3%ADa%20Omar%2C%20San%20Patricio%20del%20Cha%C3%B1ar%2C%20Neuqu%C3%A9n%2C%20Argentina",
+    "fuenteNombre": "Ficha pública de ubicación · Mapas",
+    "fuenteTipo": "mapa"
+  },
+  {
+    "id": "mecanica-matias",
+    "nombre": "Mecánica Matías",
+    "categoria": "Comercios y servicios",
+    "descripcion": "Taller mecánico local. Dirección y teléfono referenciados en ficha pública de mapas.",
+    "direccion": "Lago Lacar, Manzana G2, Lote 19, San Patricio del Chañar, Neuquén, Argentina",
+    "telefonos": [
+      {
+        "uso": "Teléfono publicado en ficha de ubicación",
+        "numero": "0299 467-4182"
+      }
+    ],
+    "fuente": "https://www.google.com/maps/search/?api=1&query=Mec%C3%A1nica%20Mat%C3%ADas%2C%20San%20Patricio%20del%20Cha%C3%B1ar%2C%20Neuqu%C3%A9n%2C%20Argentina",
+    "fuenteNombre": "Ficha pública de ubicación · Mapas",
+    "fuenteTipo": "mapa"
+  },
+  {
+    "id": "iriarte-service",
+    "nombre": "Iriarte Service del Automotor",
+    "categoria": "Comercios y servicios",
+    "descripcion": "Servicio local de mecánica y mantenimiento automotor. Dirección y teléfono referenciados en ficha pública de mapas.",
+    "direccion": "Río Limay 705, San Patricio del Chañar, Neuquén, Argentina",
+    "telefonos": [
+      {
+        "uso": "Teléfono publicado en ficha de ubicación",
+        "numero": "0299 557-8413"
+      }
+    ],
+    "fuente": "https://www.google.com/maps/search/?api=1&query=Iriarte%20Service%20del%20Automotor%2C%20San%20Patricio%20del%20Cha%C3%B1ar%2C%20Neuqu%C3%A9n%2C%20Argentina",
+    "fuenteNombre": "Ficha pública de ubicación · Mapas",
+    "fuenteTipo": "mapa"
+  },
+  {
+    "id": "mecanica-lp",
+    "nombre": "Mecánica LP",
+    "categoria": "Comercios y servicios",
+    "descripcion": "Taller de reparación automotor y mecanizado. Dirección y teléfono referenciados en ficha pública de mapas.",
+    "direccion": "Río Limay, Manzana G, Lote 24, San Patricio del Chañar, Neuquén, Argentina",
+    "telefonos": [
+      {
+        "uso": "Teléfono publicado en ficha de ubicación",
+        "numero": "0299 409-7080"
+      }
+    ],
+    "fuente": "https://www.google.com/maps/search/?api=1&query=Mec%C3%A1nica%20LP%2C%20San%20Patricio%20del%20Cha%C3%B1ar%2C%20Neuqu%C3%A9n%2C%20Argentina",
+    "fuenteNombre": "Ficha pública de ubicación · Mapas",
+    "fuenteTipo": "mapa"
+  },
+  {
+    "id": "mecanica-omar",
+    "nombre": "Mecánica Omar",
+    "categoria": "Comercios y servicios",
+    "descripcion": "Taller de reparación automotor local. Dirección y teléfono referenciados en ficha pública de mapas.",
+    "direccion": "Avenida Lago Espejo, San Patricio del Chañar, Neuquén, Argentina",
+    "telefonos": [
+      {
+        "uso": "Teléfono publicado en ficha de ubicación",
+        "numero": "0299 557-4679"
+      }
+    ],
+    "fuente": "https://www.google.com/maps/search/?api=1&query=Mec%C3%A1nica%20Omar%2C%20San%20Patricio%20del%20Cha%C3%B1ar%2C%20Neuqu%C3%A9n%2C%20Argentina",
+    "fuenteNombre": "Ficha pública de ubicación · Mapas",
+    "fuenteTipo": "mapa"
+  },
+  {
+    "id": "flavia-estilista",
+    "nombre": "Flavia Martínez Estilista",
+    "categoria": "Comercios y servicios",
+    "descripcion": "Servicio local de peluquería y estilismo. Teléfono referenciado en ficha pública de mapas; confirmar dirección al consultar.",
+    "direccion": "San Patricio del Chañar, Neuquén, Argentina",
+    "telefonos": [
+      {
+        "uso": "Teléfono publicado en ficha de ubicación",
+        "numero": "0299 454-8419"
+      }
+    ],
+    "fuente": "https://www.google.com/maps/search/?api=1&query=Flavia%20Mart%C3%ADnez%20Estilista%2C%20San%20Patricio%20del%20Cha%C3%B1ar%2C%20Neuqu%C3%A9n%2C%20Argentina",
+    "fuenteNombre": "Ficha pública de ubicación · Mapas",
+    "fuenteTipo": "mapa"
+  },
+  {
+    "id": "barba-negra",
+    "nombre": "Barbería Barba Negra",
+    "categoria": "Comercios y servicios",
+    "descripcion": "Barbería local. Ubicación y teléfono referenciados en ficha pública de mapas.",
+    "direccion": "Calquín Oeste, San Patricio del Chañar, Neuquén, Argentina",
+    "telefonos": [
+      {
+        "uso": "Teléfono publicado en ficha de ubicación",
+        "numero": "0299 528-3392"
+      }
+    ],
+    "fuente": "https://www.google.com/maps/search/?api=1&query=Barber%C3%ADa%20Barba%20Negra%2C%20San%20Patricio%20del%20Cha%C3%B1ar%2C%20Neuqu%C3%A9n%2C%20Argentina",
+    "fuenteNombre": "Ficha pública de ubicación · Mapas",
+    "fuenteTipo": "mapa"
+  },
+  {
+    "id": "el-punto-grafica",
+    "nombre": "El Punto Gráfica",
+    "categoria": "Comercios y servicios",
+    "descripcion": "Servicio local de gráfica e impresión. Dirección y teléfono referenciados en ficha pública de mapas.",
+    "direccion": "Complejo El Chocón 800, San Patricio del Chañar, Neuquén, Argentina",
+    "telefonos": [
+      {
+        "uso": "Teléfono publicado en ficha de ubicación",
+        "numero": "0299 595-4445"
+      }
+    ],
+    "fuente": "https://www.google.com/maps/search/?api=1&query=El%20Punto%20Gr%C3%A1fica%2C%20San%20Patricio%20del%20Cha%C3%B1ar%2C%20Neuqu%C3%A9n%2C%20Argentina",
+    "fuenteNombre": "Ficha pública de ubicación · Mapas",
+    "fuenteTipo": "mapa"
+  },
+  {
+    "id": "peluqueria-roxy",
+    "nombre": "Peluquería Roxy · Estilista y asesora de imagen",
+    "categoria": "Comercios y servicios",
+    "descripcion": "Servicio local de peluquería y asesoría de imagen. Ubicación y teléfono referenciados en ficha pública de mapas.",
+    "direccion": "Lago Moquehue, San Patricio del Chañar, Neuquén, Argentina",
+    "telefonos": [
+      {
+        "uso": "Teléfono publicado en ficha de ubicación",
+        "numero": "0299 547-4209"
+      }
+    ],
+    "fuente": "https://www.google.com/maps/search/?api=1&query=Peluquer%C3%ADa%20Roxy%20%C2%B7%20Estilista%20y%20asesora%20de%20imagen%2C%20San%20Patricio%20del%20Cha%C3%B1ar%2C%20Neuqu%C3%A9n%2C%20Argentina",
+    "fuenteNombre": "Ficha pública de ubicación · Mapas",
+    "fuenteTipo": "mapa"
+  },
+  {
+    "id": "peluqueria-ginahu",
+    "nombre": "Peluquería GINAHU",
+    "categoria": "Comercios y servicios",
+    "descripcion": "Peluquería local. Ubicación y teléfono referenciados en ficha pública de mapas.",
+    "direccion": "Quili Malal, San Patricio del Chañar, Neuquén, Argentina",
+    "telefonos": [
+      {
+        "uso": "Teléfono publicado en ficha de ubicación",
+        "numero": "0299 590-6021"
+      }
+    ],
+    "fuente": "https://www.google.com/maps/search/?api=1&query=Peluquer%C3%ADa%20GINAHU%2C%20San%20Patricio%20del%20Cha%C3%B1ar%2C%20Neuqu%C3%A9n%2C%20Argentina",
+    "fuenteNombre": "Ficha pública de ubicación · Mapas",
+    "fuenteTipo": "mapa"
+  },
+  {
+    "id": "consultorios-durbano",
+    "nombre": "Consultorios Durbano",
+    "categoria": "Salud y cuidados",
+    "descripcion": "Centro de consultorios de atención privada. Dirección y teléfono referenciados en ficha pública de mapas; confirmar especialidades y turnos.",
+    "direccion": "Osvaldo Minaglia 320, San Patricio del Chañar, Neuquén, Argentina",
+    "telefonos": [
+      {
+        "uso": "Teléfono publicado en ficha de ubicación",
+        "numero": "0299 472-4375"
+      }
+    ],
+    "fuente": "https://www.google.com/maps/search/?api=1&query=Consultorios%20Durbano%2C%20San%20Patricio%20del%20Cha%C3%B1ar%2C%20Neuqu%C3%A9n%2C%20Argentina",
+    "fuenteNombre": "Ficha pública de ubicación · Mapas",
+    "fuenteTipo": "mapa"
+  },
+  {
+    "id": "odontologia-espinoza",
+    "nombre": "Consultorio Odontológico · Dra. Susana Espinoza",
+    "categoria": "Salud y cuidados",
+    "descripcion": "Consultorio odontológico local. Dirección y teléfono referenciados en ficha pública de mapas.",
+    "direccion": "Amancay 11, San Patricio del Chañar, Neuquén, Argentina",
+    "telefonos": [
+      {
+        "uso": "Teléfono publicado en ficha de ubicación",
+        "numero": "0299 454-0120"
+      }
+    ],
+    "fuente": "https://www.google.com/maps/search/?api=1&query=Consultorio%20Odontol%C3%B3gico%20%C2%B7%20Dra.%20Susana%20Espinoza%2C%20San%20Patricio%20del%20Cha%C3%B1ar%2C%20Neuqu%C3%A9n%2C%20Argentina",
+    "fuenteNombre": "Ficha pública de ubicación · Mapas",
+    "fuenteTipo": "mapa"
+  },
+  {
+    "id": "corralon-pitty-6",
+    "nombre": "Corralón Pitty 6",
+    "categoria": "Comercios y servicios",
+    "descripcion": "Punto comercial de materiales y suministros para construcción. Teléfono referenciado en ficha pública de mapas; confirmar dirección exacta.",
+    "direccion": "San Patricio del Chañar, Neuquén, Argentina",
+    "telefonos": [
+      {
+        "uso": "Teléfono publicado en ficha de ubicación",
+        "numero": "0299 528-6727"
+      }
+    ],
+    "fuente": "https://www.google.com/maps/search/?api=1&query=Corral%C3%B3n%20Pitty%206%2C%20San%20Patricio%20del%20Cha%C3%B1ar%2C%20Neuqu%C3%A9n%2C%20Argentina",
+    "fuenteNombre": "Ficha pública de ubicación · Mapas",
+    "fuenteTipo": "mapa"
+  },
+  {
+    "id": "super-jazmin-5",
+    "nombre": "Supermercado Jazmín 5",
+    "categoria": "Comercios y servicios",
+    "descripcion": "Comercio de cercanía para compras cotidianas. Teléfono referenciado en ficha pública de mapas; confirmar dirección exacta.",
+    "direccion": "San Patricio del Chañar, Neuquén, Argentina",
+    "telefonos": [
+      {
+        "uso": "Teléfono publicado en ficha de ubicación",
+        "numero": "0299 657-0555"
+      }
+    ],
+    "fuente": "https://www.google.com/maps/search/?api=1&query=Supermercado%20Jazm%C3%ADn%205%2C%20San%20Patricio%20del%20Cha%C3%B1ar%2C%20Neuqu%C3%A9n%2C%20Argentina",
+    "fuenteNombre": "Ficha pública de ubicación · Mapas",
+    "fuenteTipo": "mapa"
+  },
+  {
+    "id": "mini-shopping",
+    "nombre": "Mini Shopping Center",
+    "categoria": "Comercios y servicios",
+    "descripcion": "Comercio de cercanía y supermercado. Dirección y teléfono referenciados en ficha pública de mapas.",
+    "direccion": "Pilmayquén 241, San Patricio del Chañar, Neuquén, Argentina",
+    "telefonos": [
+      {
+        "uso": "Teléfono publicado en ficha de ubicación",
+        "numero": "0299 512-6687"
+      }
+    ],
+    "fuente": "https://www.google.com/maps/search/?api=1&query=Mini%20Shopping%20Center%2C%20San%20Patricio%20del%20Cha%C3%B1ar%2C%20Neuqu%C3%A9n%2C%20Argentina",
+    "fuenteNombre": "Ficha pública de ubicación · Mapas",
+    "fuenteTipo": "mapa"
   }
 ];
