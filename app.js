@@ -63,7 +63,7 @@
 
   let activeCategory = "Todos";
   let currentPage = 1;
-  const pageSize = 12;
+  const pageSize = 18;
   let fontScale = 1;
   const phoneOnly = $("phoneOnly");
   const addressOnly = $("addressOnly");
