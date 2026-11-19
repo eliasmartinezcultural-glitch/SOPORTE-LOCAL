@@ -90,7 +90,7 @@
     const phoneText = (contact.telefonos || []).flatMap(phone => [phone.numero, phone.uso]);
     return normalize([
       contact.nombre, contact.categoria, contact.descripcion, contact.correo,
-      contact.direccion, ...phoneText
+      contact.direccion, (contact.telefonos || []).length ? "teléfono teléfonos contacto" : "", ...phoneText
     ].join(" ")) + " " + normalize(phoneText.join(" ")).replace(/[^0-9]/g, "");
   }
 
