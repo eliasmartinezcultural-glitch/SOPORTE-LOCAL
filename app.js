@@ -432,7 +432,6 @@
     empty.querySelector("p").textContent = "Volvé a cargar la página más tarde.";
     $("searchForm").hidden = true;
     filters.hidden = true;
-    document.querySelector(".quick-search").hidden = true;
     document.querySelector(".reading-tools").hidden = true;
   } else {
     renderFilters();
