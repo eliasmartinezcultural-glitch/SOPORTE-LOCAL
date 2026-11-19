@@ -19,7 +19,7 @@ La página prioriza la consulta sencilla: los accesos de letra grande, modo noch
 
 
 ## Identidad visual y experiencia de lectura
-La presentación utiliza una paleta cálida inspirada en papel, vegetación y tonos de tierra, con acentos diferenciados para reconocer visualmente los temas. La hoja de estilos fue consolidada en una sola base para evitar capas acumuladas y reglas contradictorias. Las fichas mantienen una jerarquía clara: categoría, nombre, descripción, datos disponibles y procedencia desplegable. La impresión A4 usa una columna, oculta controles y decoración, conserva las fuentes y prepara todos los resultados del filtro actual, no solo la página visible.
+La presentación utiliza una paleta cálida inspirada en papel, vegetación y tonos de tierra, con acentos diferenciados para reconocer visualmente los temas. La hoja de estilos fue consolidada en una sola base para evitar capas acumuladas y reglas contradictorias. Las fichas mantienen una jerarquía clara: categoría, nombre, descripción, datos disponibles y procedencia desplegable. La impresión A4 usa una columna, oculta controles y decoración, conserva las fuentes y prepara todos los resultados del filtro actual, no solo la página visible. También se puede descargar la selección completa en CSV para abrirla en una planilla: incluye datos publicados, estado documental y enlace de procedencia, sin exportar solamente la página visible.
 
 La capa estética no modifica la estructura de las fichas ni el contenido de `datos.js`. Los efectos de movimiento se limitan a dispositivos que admiten interacción por puntero y respetan la preferencia de movimiento reducido.
 
@@ -53,7 +53,7 @@ Consultar, imprimir y compartir la guía es gratuito. El cartel de colaboración
 - `index.html`: estructura sencilla de la guía.
 - `styles.css`: diseño adaptable, lectura accesible e impresión.
 - `datos.js`: fichas y procedencia de los datos.
-- `app.js`: búsqueda, temas, paginación, tamaño de letra, compartir y herramientas de impresión.
+- `app.js`: búsqueda, temas, paginación, tamaño de letra, compartir, impresión y exportación CSV de resultados.
 
 ## Control de publicación final
 
