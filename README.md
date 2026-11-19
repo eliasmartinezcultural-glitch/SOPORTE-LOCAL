@@ -15,11 +15,11 @@ Reúne información pública de instituciones, servicios, organizaciones, espaci
 La página está pensada para celulares, lectura sencilla, controles grandes y personas con poca experiencia digital. La bienvenida identifica claramente la creación de Ocarina Producciones y presenta una fotografía del Balneario Municipal publicada en la sección Nuestra Ciudad del sitio de la Municipalidad. La atribución está visible junto a la imagen; la autorización específica de reutilización debe confirmarse con el titular antes de considerar cerrada la cuestión de derechos. Incluye un panel de ajustes con tamaño de letra ampliable hasta el 200%, brillo, contraste y tres modos de color (natural, alto contraste y nocturno), además de impresión y guardado como PDF. La búsqueda se realiza sobre los datos incluidos en la página, sin registro ni envío de la consulta. Los ajustes visuales se guardan localmente en el dispositivo. El encabezado ofrece acceso directo para compartir por WhatsApp; también se conserva el menú de compartir del dispositivo y la opción de copiar el enlace.
 
 
-La página ahora prioriza el buscador al entrar: los temas se despliegan solo si la persona quiere explorar por categoría, la procedencia completa de cada ficha se abre bajo demanda y los ajustes de pantalla quedan después del directorio para no retrasar la consulta.
+La página prioriza la consulta sencilla: los accesos de letra grande, modo noche y alto contraste están visibles antes del buscador; los ajustes avanzados quedan agrupados en un panel desplegable. Los temas se abren solo si la persona quiere explorar por categoría y la procedencia completa de cada ficha se consulta bajo demanda.
 
 
 ## Identidad visual y experiencia de lectura
-La presentación utiliza una paleta cálida inspirada en papel, vegetación y tonos de tierra, con acentos diferenciados para reconocer visualmente los temas. Las fichas tienen una jerarquía clara: categoría, nombre, descripción, datos disponibles y procedencia desplegable. Se reforzaron los espacios, bordes, sombras suaves y estados de interacción sin convertir la guía en una interfaz recargada. La portada identifica la autoría de Ocarina Producciones y conserva una referencia visual local. Los modos nocturno y de alto contraste contemplan los nuevos detalles; la impresión elimina adornos que dificulten la lectura en papel.
+La presentación utiliza una paleta cálida inspirada en papel, vegetación y tonos de tierra, con acentos diferenciados para reconocer visualmente los temas. La hoja de estilos fue consolidada en una sola base para evitar capas acumuladas y reglas contradictorias. Las fichas mantienen una jerarquía clara: categoría, nombre, descripción, datos disponibles y procedencia desplegable. La impresión A4 usa una columna, oculta controles y decoración, conserva las fuentes y prepara todos los resultados del filtro actual, no solo la página visible.
 
 La capa estética no modifica la estructura de las fichas ni el contenido de `datos.js`. Los efectos de movimiento se limitan a dispositivos que admiten interacción por puntero y respetan la preferencia de movimiento reducido.
 
@@ -90,3 +90,10 @@ El procedimiento para guardar, revisar, publicar y recuperar cambios está docum
 La rama de trabajo incorpora controles automáticos reforzados, mensajes de recuperación ante errores de interfaz, accesos móviles de gran tamaño, compartir por WhatsApp con alternativa de copia, manifiesto web y caché local de archivos esenciales para consultas posteriores sin conexión. La primera visita requiere internet; los enlaces externos y la foto municipal también dependen de conexión.
 
 Consultar `PUBLICACION.md` antes de publicar. La validación automática no certifica que los contactos estén activos ni que el diseño haya sido probado en dispositivos físicos.
+
+
+## Actualización y caché
+
+La caché local del service worker utiliza la versión `chanar-a-mano-shell-v6`. La instalación guarda los archivos esenciales como conjunto y no activa una versión incompleta. Cuando una actualización toma el control de una pestaña ya abierta, se recarga el documento para no mezclar recursos de versiones distintas. Esto no publica cambios por sí solo: la web pública depende de la rama y carpeta configuradas en GitHub Pages.
+
+La versión de trabajo actual está en `agenda-local-2026-11-19`. No debe confundirse con la rama pública ni con la rama congelada. Ver [PUBLICACION.md](PUBLICACION.md) antes de integrar cambios.
