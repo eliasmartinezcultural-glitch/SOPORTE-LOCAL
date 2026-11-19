@@ -126,3 +126,8 @@ Los ajustes detallados siguen disponibles y se guardan localmente en el disposit
 La impresión se prepara de forma independiente de la paginación de pantalla: al imprimir se incluyen **todos los resultados del filtro o búsqueda actual**, no solamente las 12 fichas de la página visible. La salida A4 usa una columna para facilitar lectura, mantiene la procedencia de cada ficha, evita fondos decorativos y oculta controles que no sirven en papel. Al cerrar la vista de impresión, la guía vuelve a la página y filtros que la persona estaba usando.
 
 La vista previa debe comprobarse en Chrome/Edge y en impresoras reales o guardado PDF, porque márgenes, saltos y escalado final también dependen del navegador y de la configuración elegida por quien imprime.
+
+
+### Ubicación de accesibilidad y actualización de caché
+
+Los tres accesos rápidos de lectura quedan ahora visibles antes del buscador y del directorio, sin tener que recorrer las fichas ni abrir un panel. Los controles avanzados permanecen agrupados en un desplegable inmediatamente debajo. La caché de recursos esenciales se incrementó a v5 para solicitar nuevamente los archivos de esta revisión en la próxima activación del service worker.
