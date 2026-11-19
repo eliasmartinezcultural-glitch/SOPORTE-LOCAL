@@ -68,3 +68,42 @@ Antes de publicar una corrección:
 6. No considerar una dirección de mapa como prueba de teléfono, horario o funcionamiento.
 
 La validación automática comprueba que cada contacto tenga una clasificación documental; no realiza llamadas ni certifica que una línea esté activa.
+
+
+## Refuerzo técnico y experiencia multidispositivo
+
+La versión de trabajo incorpora un manifiesto web y un service worker con caché local de la estructura esencial. La primera visita requiere conexión. Después de que el navegador haya guardado los archivos, puede ser posible abrir la guía sin conexión; las fuentes, mapas y fotografías externas seguirán necesitando internet. El almacenamiento depende del navegador y del espacio disponible, por lo que no debe prometerse disponibilidad offline absoluta.
+
+El service worker:
+- almacena únicamente archivos locales esenciales;
+- intenta actualizar la página principal desde la red y utiliza la copia guardada si no hay conexión;
+- no intercepta envíos ni solicitudes de otros dominios;
+- elimina cachés antiguas de esta aplicación al activar una versión nueva;
+- no almacena ni envía datos personales de visitantes.
+
+El manifiesto permite que navegadores compatibles ofrezcan agregar la guía a la pantalla de inicio. La disponibilidad de instalación depende del navegador y del dispositivo.
+
+## Compartir por WhatsApp
+
+- El mensaje se genera con una presentación breve y el enlace actual, sin parámetros de búsqueda ni filtros personales.
+- El botón WhatsApp abre el destino de compartir; no envía mensajes automáticamente.
+- Se ofrece copia del mensaje como alternativa.
+- En celulares se agrega una barra inferior con acceso rápido al buscador y a WhatsApp.
+- La vista previa social utiliza la fotografía publicada por la Municipalidad y conserva su atribución dentro de la página. La visualización final de la miniatura depende de WhatsApp y de la disponibilidad del servidor de imagen.
+
+## Controles automáticos reforzados
+
+La validación ahora revisa:
+- existencia de recursos esenciales y manifiesto;
+- sintaxis de JavaScript y service worker;
+- IDs HTML repetidos, IDs esenciales y selectores utilizados por la aplicación;
+- orden de carga de datos y aplicación;
+- HTTPS en fuentes de fichas;
+- categorías incluidas en los filtros;
+- formato de teléfonos y correos;
+- IDs de fichas repetidos y teléfonos duplicados (estos últimos se informan como advertencia, no se borran automáticamente);
+- enlaces externos con protección noopener;
+- rutas relativas del manifiesto, iconos, modo offline y acciones móviles;
+- ausencia de enlaces tel:, mailto: y javascript:.
+
+Estos controles reducen errores técnicos, pero no reemplazan pruebas visuales en celulares reales, verificación de teléfonos ni autorización de fotografías.
