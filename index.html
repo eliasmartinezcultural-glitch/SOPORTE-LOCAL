@@ -3,104 +3,153 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#f4f0e7">
-  <meta name="description" content="Chañar a Mano: agenda comunitaria y guía de recursos de San Patricio del Chañar.">
-  <title>Chañar a Mano — Guía local de San Patricio del Chañar</title>
+  <meta name="theme-color" content="#f7f6f0">
+  <meta name="description" content="Guía comunitaria gratuita de San Patricio del Chañar. Información de instituciones, salud, educación, trabajo y comunidad con fuentes para consultar.">
+  <meta name="color-scheme" content="light">
+  <title>Chañar a Mano | Guía comunitaria de San Patricio del Chañar</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <a class="skip-link" href="#contenido">Saltar al contenido</a>
+  <a class="skip-link" href="#contenido">Ir directamente a la guía</a>
+
   <header class="site-header">
-    <a class="brand" href="#" aria-label="Chañar a Mano, inicio">
-      <span class="brand-mark" aria-hidden="true">cm</span>
-      <span><strong>CHÁÑAR A MANO</strong><small>Guía comunitaria de San Patricio del Chañar</small></span>
+    <a class="brand" href="#inicio" aria-label="Chañar a Mano, ir al inicio">
+      <span class="brand-mark" aria-hidden="true">Ch</span>
+      <span class="brand-text">
+        <strong>CHÁÑAR A MANO</strong>
+        <small>Guía comunitaria · San Patricio del Chañar</small>
+      </span>
     </a>
-    <button class="button button-outline" id="shareButton" type="button">Compartir guía</button>
+    <div class="header-actions">
+      <button class="button button-outline" id="shareButton" type="button">
+        <span aria-hidden="true">↗</span> Compartir
+      </button>
+    </div>
   </header>
 
   <main id="contenido">
-    <section class="hero simple-hero">
-      <div class="hero-copy">
-        <p class="eyebrow">SAN PATRICIO DEL CHAÑAR · NEUQUÉN</p>
-        <h1>Encontrá información <em>útil.</em></h1>
-        <p class="hero-lead">Una guía sencilla de instituciones, escuelas, salud y organizaciones de nuestra localidad.</p>
-        <a class="hero-link" href="#directorio">Ver la guía <span aria-hidden="true">↓</span></a>
+    <section class="welcome" id="inicio" aria-labelledby="welcomeTitle">
+      <p class="eyebrow">SAN PATRICIO DEL CHAÑAR · NEUQUÉN</p>
+      <h1 id="welcomeTitle">La información local,<br><span>más cerca.</span></h1>
+      <p class="welcome-copy">Una guía gratuita para encontrar instituciones, salud, escuelas, trabajo y organizaciones de nuestra comunidad.</p>
+      <a class="button button-primary welcome-button" href="#directorio">Consultar la guía <span aria-hidden="true">↓</span></a>
+      <div class="welcome-note" aria-label="Características de la guía">
+        <span><b aria-hidden="true">✓</b> Gratis para consultar</span>
+        <span><b aria-hidden="true">✓</b> Sin registrarse</span>
+        <span><b aria-hidden="true">✓</b> También para imprimir</span>
       </div>
     </section>
 
-    <section class="responsible-use simple-notice" aria-labelledby="responsibleTitle">
-      <div class="responsible-mark" aria-hidden="true">!</div>
+    <section class="notice" aria-labelledby="noticeTitle">
+      <span class="notice-icon" aria-hidden="true">i</span>
       <div>
-        <h2 id="responsibleTitle">Un dato importante</h2>
-        <p>Los teléfonos y correos son referencias tomadas de las fuentes indicadas. Pueden cambiar. Revisá la fuente antes de usarlos. Esta guía no llama, no envía mensajes y no es un servicio de emergencias.</p>
+        <h2 id="noticeTitle">Antes de usar un dato</h2>
+        <p>Los teléfonos y correos son referencias tomadas de las fuentes que indicamos. Pueden cambiar. Revisá siempre la fuente y confirmá que el dato corresponda al área que buscás. Esta guía no realiza llamadas, mensajes ni trámites y no es un servicio de emergencias.</p>
       </div>
     </section>
 
     <section class="directory-section" id="directorio" aria-labelledby="directoryTitle">
       <div class="print-heading" aria-hidden="true">
         <strong>CHÁÑAR A MANO</strong>
-        <span>Agenda comunitaria · San Patricio del Chañar, Neuquén</span>
-        <small id="printMeta">Guía de contactos · Ocarina Producciones</small>
+        <span>Guía comunitaria · San Patricio del Chañar, Neuquén</span>
+        <small id="printMeta">Consulta de la guía · Ocarina Producciones</small>
       </div>
+
       <div class="section-heading">
-        <div><p class="eyebrow">GUÍA DE CONSULTA</p><h2 id="directoryTitle">¿Qué necesitás encontrar?</h2><p class="section-intro">Escribí una palabra o elegí un tema. No hace falta completar todo.</p></div>
-        <span class="result-count" id="resultCount" aria-live="polite"></span>
+        <div>
+          <p class="eyebrow">GUÍA DE CONSULTA</p>
+          <h2 id="directoryTitle">¿Qué necesitás encontrar?</h2>
+          <p class="section-intro">Podés escribir una palabra o tocar uno de los temas. No hace falta completar formularios.</p>
+        </div>
+        <p class="result-count" id="resultCount" aria-live="polite" aria-atomic="true"></p>
       </div>
-      <div class="search-wrap">
-        <span aria-hidden="true">⌕</span>
-        <label class="sr-only" for="searchInput">Escribí qué estás buscando</label>
-        <input id="searchInput" type="search" placeholder="Ejemplo: hospital o escuela" autocomplete="off">
-        <button id="clearSearch" type="button" aria-label="Borrar búsqueda" hidden>×</button>
+
+      <form class="search-form" id="searchForm" role="search" novalidate>
+        <label class="sr-only" for="searchInput">Buscar en la guía</label>
+        <span class="search-icon" aria-hidden="true">⌕</span>
+        <input id="searchInput" type="search" placeholder="Por ejemplo: hospital, escuela…" autocomplete="off" enterkeyhint="search">
+        <button id="clearSearch" class="clear-search" type="button" aria-label="Borrar lo escrito" hidden>×</button>
+      </form>
+      <p class="search-hint">También podés buscar por nombre, tema, teléfono o correo.</p>
+
+      <div class="filter-heading">
+        <h3>Elegí un tema</h3>
+        <button id="showAllButton" class="text-button" type="button">Ver todo</button>
       </div>
-      <p class="filter-help">O elegí un tema:</p>
-      <nav class="filters" id="filters" aria-label="Elegir un tema"></nav>
-      <div class="contact-grid" id="contactGrid"></div>
+      <nav class="filters" id="filters" aria-label="Temas de la guía"></nav>
+
+      <div class="results-heading">
+        <h3 id="resultsTitle">Información disponible</h3>
+        <span id="resultsContext">Todos los temas</span>
+      </div>
+      <div class="contact-grid" id="contactGrid" aria-live="polite" aria-label="Resultados de la guía"></div>
+
       <div class="empty-state" id="emptyState" hidden>
-        <span aria-hidden="true">⌕</span><strong>No encontramos ese contacto.</strong>
-        <p>Probá con otra palabra o elegí “Ver todo”.</p>
-        <button class="button button-soft" id="resetFilters" type="button">Ver todos</button>
+        <span class="empty-icon" aria-hidden="true">⌕</span>
+        <h3>No encontramos ese dato.</h3>
+        <p>Probá con una palabra más corta o volvé a ver todos los temas.</p>
+        <button class="button button-secondary" id="resetFilters" type="button">Mostrar toda la guía</button>
       </div>
+      <p class="directory-footnote">Cada ficha muestra de dónde se obtuvo la información. Abrir una fuente te lleva al sitio que publicó el dato.</p>
     </section>
 
-    <section class="contribute-simple" aria-labelledby="supportTitle">
-      <div class="support-intro">
-        <p class="support-kicker">COLABORACIÓN VOLUNTARIA</p>
-        <h2 id="supportTitle">Si esta guía te resulta útil, podés ayudar a sostenerla.</h2>
-        <p>CHÁÑAR A MANO es gratuita. Reunir información, ordenar las fuentes, revisar datos y mantener esta guía clara para celulares y para imprimir lleva tiempo de trabajo.</p>
+    <section class="contribute-section" aria-labelledby="supportTitle">
+      <div class="support-heading">
+        <p class="support-kicker">UNA AYUDA VOLUNTARIA</p>
+        <h2 id="supportTitle">¿Te resultó útil esta guía?</h2>
+        <p>Si querés y podés, tu colaboración ayuda a sostener el trabajo independiente que hay detrás de CHÁÑAR A MANO.</p>
       </div>
-      <div class="support-explain">
-        <strong>¿Para qué sirve tu aporte?</strong>
-        <p>Para acompañar el trabajo independiente de búsqueda, organización, actualización y mantenimiento de esta guía comunitaria, realizado por Ocarina Producciones.</p>
+      <div class="support-details">
+        <h3>¿Qué trabajo ayuda a sostener?</h3>
+        <p>Buscar información pública, ordenar los datos, revisar sus fuentes, preparar las fichas y mantener la guía sencilla para consultar e imprimir. Es un trabajo de Ocarina Producciones.</p>
       </div>
-      <div class="support-alias simple-alias">
+      <div class="alias-card">
         <div class="alias-copy">
-          <small>ALIAS PARA COLABORAR</small>
+          <span>ALIAS PARA COLABORAR</span>
           <strong id="supportAlias">ocarina.guitarra</strong>
-          <span>Titular de la cuenta: Elías Martínez</span>
+          <small>Titular de la cuenta: Elías Martínez</small>
         </div>
-        <button class="button button-cream" id="copyAliasButton" type="button">Copiar alias</button>
+        <button class="button button-copy" id="copyAliasButton" type="button">Copiar alias</button>
       </div>
       <p class="support-feedback" id="copyFeedback" role="status" aria-live="polite"></p>
-      <p class="support-promise">Es completamente voluntario. No necesitás pagar, registrarte ni dejar tus datos para consultar, imprimir o compartir la guía. El aporte se realiza a nombre de Elías Martínez; no es un pago por un servicio ni una contribución a una institución pública.</p>
-    </section>
-    <section class="print-support" aria-label="Colaboración voluntaria">
-      <strong>¿Querés ayudar a sostener esta guía gratuita?</strong>
-      <span>Colaboración voluntaria para el trabajo independiente de Ocarina Producciones.</span>
-      <b>Alias: ocarina.guitarra</b>
-      <span>Titular: Elías Martínez · No es obligatorio.</span>
+      <p class="support-promise">Colaborar es completamente opcional. La consulta, la impresión y el uso de la guía son gratuitos. No necesitás pagar, registrarte ni dejar tus datos. El aporte se realiza a nombre de Elías Martínez, no a una institución pública y no es el pago por un servicio.</p>
     </section>
 
-    <section class="print-panel">
-      <div><h2>También podés imprimir esta guía</h2><p>Se imprimirán los resultados que estás viendo, con letras claras y las fuentes de cada ficha.</p></div>
-      <button class="button button-dark" id="printButton" type="button">Imprimir / Guardar PDF</button>
+    <section class="print-panel" aria-labelledby="printTitle">
+      <div class="print-symbol" aria-hidden="true">▤</div>
+      <div class="print-copy">
+        <h2 id="printTitle">¿Preferís tenerla en papel?</h2>
+        <p>Podés imprimir los resultados que estás viendo o guardarlos como PDF. La versión impresa usa una columna, letras claras y muestra las fuentes.</p>
+      </div>
+      <button class="button button-primary" id="printButton" type="button">Imprimir / Guardar PDF</button>
     </section>
+    <p class="share-feedback" id="shareFeedback" role="status" aria-live="polite"></p>
   </main>
 
   <footer class="site-footer">
-    <div class="footer-main"><div class="footer-brand"><strong>CHÁÑAR A MANO</strong><span>Agenda comunitaria creada por Ocarina Producciones</span></div><p>San Patricio del Chañar · Neuquén</p></div>
-    <div class="footer-bottom"><span>Agenda comunitaria de acceso libre.</span><span>Creada por Ocarina Producciones · Historias, personas y territorio.</span></div>
-    <p class="footer-small">Guía independiente y gratuita, creada por Ocarina Producciones. No representa oficialmente a las instituciones ni reemplaza sus canales de atención. Los datos pueden cambiar; consultá siempre la fuente. No es un servicio de emergencias.</p>
+    <div class="footer-main">
+      <div>
+        <strong>CHÁÑAR A MANO</strong>
+        <span>Guía comunitaria independiente y gratuita.</span>
+      </div>
+      <p>San Patricio del Chañar · Neuquén</p>
+    </div>
+    <div class="footer-rule"></div>
+    <p class="footer-credit">Creada por <strong>Ocarina Producciones</strong> · Historias, personas y territorio.</p>
+    <p class="footer-disclaimer">Esta guía no representa oficialmente a las instituciones. Los datos pueden cambiar y deben verificarse en sus fuentes. No reemplaza la atención oficial, profesional o presencial ni es un servicio de emergencias.</p>
   </footer>
+
+  <section class="print-support" aria-label="Colaboración voluntaria">
+    <strong>¿Querés ayudar a sostener esta guía gratuita?</strong>
+    <span>Colaboración voluntaria para el trabajo independiente de Ocarina Producciones.</span>
+    <b>Alias: ocarina.guitarra</b>
+    <span>Titular: Elías Martínez · No es obligatorio.</span>
+  </section>
+
+  <noscript>
+    <div class="noscript-message">Para usar el buscador y los temas de esta guía necesitás habilitar JavaScript en tu navegador.</div>
+  </noscript>
+
   <script src="datos.js"></script>
   <script src="app.js"></script>
 </body>
