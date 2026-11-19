@@ -168,3 +168,8 @@ Cada ficha del directorio ahora tiene un contorno más definido, fondo propio y 
 ## Identidad visual y créditos · 19 de noviembre de 2026
 
 La interfaz incorpora una paleta diferenciada por rubro para que las fichas se reconozcan rápidamente: instituciones, comunidad, producción, educación, salud, servicios, deportes, cultura, turismo y comercios. Los colores se aplican con fondos suaves, bordes y etiquetas, manteniendo contraste reforzado en modo nocturno, alto contraste e impresión. Se unificó el crédito visible de cabecera, bienvenida, pie de página, impresión, exportaciones y tarjeta compartida con la fórmula: **Un desarrollo de Universo Ocarina - Elías Martínez**. La caché PWA se actualizó a v19. No se alteraron datos, filtros ni acciones del directorio.
+
+
+## Interfaz simple y lectura fácil · 19 de noviembre de 2026
+
+La portada y el buscador se compactaron para que la consulta empiece rápidamente. Se redujeron textos repetidos, se dejó visible el acceso recomendado de letra grande y se conservaron los ajustes avanzados dentro de su panel. Las fichas, categorías, filtros, favoritos, fuentes, exportaciones y acciones siguen disponibles. La salida A4 usa una columna, tipografía más legible, menos decoración y conserva procedencias y advertencias. Caché PWA v20. No se modificaron datos ni lógica de la aplicación.
