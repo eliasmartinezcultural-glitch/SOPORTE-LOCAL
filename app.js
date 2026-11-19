@@ -90,16 +90,16 @@
     const phoneText = (contact.telefonos || []).flatMap(phone => [phone.numero, phone.uso]);
     return normalize([
       contact.nombre, contact.categoria, contact.descripcion, contact.correo,
-      contact.fuenteNombre, contact.fuenteTipo, contact.direccion, ...phoneText
+      contact.direccion, ...phoneText
     ].join(" ")) + " " + normalize(phoneText.join(" ")).replace(/[^0-9]/g, "");
   }
 
   const synonymMap = {
-    hospital: ["hospital", "salud", "centro de salud"],
-    hospitales: ["hospital", "salud", "centro de salud"],
-    salud: ["salud", "hospital"],
-    medico: ["medico", "salud"],
-    medica: ["medica", "salud"],
+    hospital: ["hospital"],
+    hospitales: ["hospital"],
+    salud: ["salud"],
+    medico: ["medico"],
+    medica: ["medica"],
     escuela: ["escuela", "educacion"],
     escuelas: ["escuela", "educacion"],
     colegio: ["colegio", "educacion"],
@@ -131,8 +131,8 @@
     gastronomia: ["gastronomia", "restaurante"],
     restaurante: ["restaurante", "gastronomia"],
     restaurantes: ["restaurante", "gastronomia"],
-    bodega: ["bodega", "turismo"],
-    bodegas: ["bodega", "turismo"],
+    bodega: ["bodega"],
+    bodegas: ["bodega"],
     trabajo: ["trabajo", "empleo"],
     empleo: ["empleo", "trabajo"],
     produccion: ["produccion", "productores"],
