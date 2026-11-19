@@ -153,3 +153,8 @@ En modo de letra grande, el directorio conserva dos columnas en pantallas median
 ## Experiencia móvil reforzada · noviembre de 2026
 
 La interfaz móvil incorpora una barra fija inferior con acceso al buscador y a compartir, respetando el área segura de los teléfonos. Se simplifica el encabezado, se reorganizan los filtros en dos columnas y se amplían las áreas táctiles. Las fichas muestran los teléfonos en un bloque propio y legible, y en pantallas muy angostas los datos secundarios se apilan para evitar textos comprimidos. Los ajustes de lectura se presentan en una columna para facilitar su uso. La paleta refuerza los tonos vegetales y tierra; los accesos móviles también se adaptan al modo nocturno y al alto contraste. Estas reglas no alteran el contenido ni la clasificación documental de las fichas.
+
+
+## Dirección de arte visual · noviembre de 2026
+
+Se incorporó una capa de presentación CSS editorial con identidad cromática vegetal y tierra, fondos atmosféricos suaves, superficies y tarjetas con profundidad moderada, jerarquía tipográfica, detalles ornamentales no interactivos y estados visuales de botones y filtros. Se añadieron variantes de color para modo nocturno y alto contraste. No se modificaron HTML, JavaScript, datos, estructura de fichas, filtros ni acciones. La caché del shell se actualiza a v17 para entregar la hoja de estilos renovada.
