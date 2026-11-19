@@ -1,7 +1,7 @@
 /* CHÁÑAR A MANO · Datos públicos reunidos para consulta.
    fuenteTipo diferencia sitios oficiales de agendas/directorios institucionales.
    estadoContacto identifica el respaldo documental, no certifica que una línea siga activa.
-   Las fichas de directorios externos se muestran como referencias secundarias pendientes de confirmación.
+   Las fichas de directorios externos y mapas se muestran como referencias secundarias pendientes de confirmación.
    La presencia de una ficha no implica aval de la institución. */
 window.CHANAR_CONTACTOS = [
   {
@@ -1376,5 +1376,73 @@ window.CHANAR_CONTACTOS = [
     "fuente": "https://www.guiavacamuerta.com/buscador/?q=SAN",
     "fuenteNombre": "Guía Vaca Muerta · directorio externo",
     "fuenteTipo": "secundaria"
+  },
+  {
+    "id": "bpn-sucursal-chanar",
+    "nombre": "Banco Provincia del Neuquén · Sucursal local",
+    "categoria": "Organismos públicos",
+    "descripcion": "Sucursal bancaria de la localidad. El teléfono y la dirección proceden de una ficha pública de ubicación; confirmar horarios, servicios y disponibilidad antes de concurrir.",
+    "direccion": "Avenida Pilmayquén 150, San Patricio del Chañar, Neuquén, Argentina",
+    "telefonos": [
+      {
+        "uso": "Teléfono de ficha de ubicación · verificar",
+        "numero": "0299 485-5040"
+      }
+    ],
+    "fuente": "https://www.google.com/maps/search/?api=1&query=Banco%20Provincia%20del%20Neuqu%C3%A9n%20San%20Patricio%20del%20Cha%C3%B1ar%20Neuqu%C3%A9n%20Argentina",
+    "fuenteNombre": "Ficha pública de ubicación · referencia no oficial",
+    "fuenteTipo": "mapa",
+    "estadoContacto": "referencia-secundaria"
+  },
+  {
+    "id": "juzgado-paz-local",
+    "nombre": "Juzgado de Paz",
+    "categoria": "Organismos públicos",
+    "descripcion": "Dependencia judicial local. La dirección también figura en el Boletín Oficial de Neuquén de diciembre de 2025; el teléfono procede de una ficha pública de ubicación y debe confirmarse. Consultar requisitos y horario antes de ir.",
+    "direccion": "Pasaje El Arco 435, San Patricio del Chañar, Neuquén, Argentina",
+    "telefonos": [
+      {
+        "uso": "Teléfono de ficha de ubicación · verificar",
+        "numero": "0299 485-5029"
+      }
+    ],
+    "fuente": "https://www.google.com/maps/search/?api=1&query=Juzgado%20de%20Paz%20San%20Patricio%20del%20Cha%C3%B1ar%20Neuqu%C3%A9n%20Argentina",
+    "fuenteNombre": "Ficha pública de ubicación · referencia no oficial",
+    "fuenteTipo": "mapa",
+    "estadoContacto": "referencia-secundaria"
+  },
+  {
+    "id": "correo-argentino-sucursal",
+    "nombre": "Correo Argentino · Sucursal local",
+    "categoria": "Servicios públicos",
+    "descripcion": "Sucursal postal de la localidad. El teléfono y la ubicación proceden de una ficha pública de ubicación; confirmar servicios, horarios y vigencia antes de acercarse.",
+    "direccion": "Villa Pehuenia 201, San Patricio del Chañar, Neuquén, Argentina",
+    "telefonos": [
+      {
+        "uso": "Teléfono de ficha de ubicación · verificar",
+        "numero": "0299 485-5273"
+      }
+    ],
+    "fuente": "https://www.google.com/maps/search/?api=1&query=Correo%20Argentino%20Sucursal%20San%20Patricio%20del%20Cha%C3%B1ar%20Neuqu%C3%A9n%20Argentina",
+    "fuenteNombre": "Ficha pública de ubicación · referencia no oficial",
+    "fuenteTipo": "mapa",
+    "estadoContacto": "referencia-secundaria"
+  },
+  {
+    "id": "issn-delegacion-local",
+    "nombre": "ISSN · Delegación San Patricio del Chañar",
+    "categoria": "Organismos públicos",
+    "descripcion": "Delegación local del Instituto de Seguridad Social del Neuquén, para consultas administrativas de afiliados. El teléfono y la ubicación proceden de una ficha pública de ubicación; confirmar vigencia y horarios antes de ir.",
+    "direccion": "Pudú Pudú, San Patricio del Chañar, Neuquén, Argentina",
+    "telefonos": [
+      {
+        "uso": "Teléfono de ficha de ubicación · verificar",
+        "numero": "0299 485-5133"
+      }
+    ],
+    "fuente": "https://www.google.com/maps/search/?api=1&query=ISSN%20Delegaci%C3%B3n%20San%20Patricio%20del%20Cha%C3%B1ar%20Neuqu%C3%A9n%20Argentina",
+    "fuenteNombre": "Ficha pública de ubicación · referencia no oficial",
+    "fuenteTipo": "mapa",
+    "estadoContacto": "referencia-secundaria"
   }
 ];
