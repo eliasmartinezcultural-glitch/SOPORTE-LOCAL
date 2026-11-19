@@ -130,4 +130,39 @@ La vista previa debe comprobarse en Chrome/Edge y en impresoras reales o guardad
 
 ### Ubicación de accesibilidad y actualización de caché
 
-Los tres accesos rápidos de lectura quedan ahora visibles antes del buscador y del directorio, sin tener que recorrer las fichas ni abrir un panel. Los controles avanzados permanecen agrupados en un desplegable inmediatamente debajo. La caché de recursos esenciales se incrementó a v5 para solicitar nuevamente los archivos de esta revisión en la próxima activación del service worker.
+Los tres accesos rápidos de lectura quedan ahora visibles antes del buscador y del directorio, sin tener que recorrer las fichas ni abrir un panel. Los controles avanzados permanecen agrupados en un desplegable inmediatamente debajo. La caché de recursos esenciales se incrementó a v6 para solicitar nuevamente los archivos de esta revisión en la próxima activación del service worker.
+
+
+## Reparación estructural · 19 de noviembre de 2026
+
+Se consolidó la hoja de estilos en una única base coherente. Se eliminaron las capas acumuladas de reglas repetidas que producían diferencias entre pantallas y podían hacer que un ajuste nuevo quedara anulado por otro bloque posterior.
+
+La estructura consolidada cubre:
+- escritorio, tablet y celulares pequeños;
+- controles de lectura grandes, modo nocturno y alto contraste;
+- tamaños de letra ampliables hasta el 200%;
+- controles táctiles con áreas amplias;
+- impresión A4 en una columna, con fichas que procuran no dividirse entre páginas;
+- eliminación de controles y decoración innecesaria en papel;
+- preservación de procedencias y advertencias en la salida impresa.
+
+La impresión se prepara también cuando se utiliza Ctrl+P o el menú del navegador: se actualizan los metadatos y se imprimen todos los resultados del filtro actual, no solamente la página visible. Al terminar, se restaura la consulta y paginación que estaban en pantalla.
+
+## Actualización visible de la aplicación
+
+El service worker ahora instala una versión completa de los archivos esenciales antes de activarse. Si falla la descarga de un recurso, no activa una caché parcial. La caché se incrementó a v6.
+
+Cuando un service worker actualizado toma el control de una pestaña que ya estaba abierta, la aplicación recarga el documento para evitar que queden mezclados el HTML/CSS/JavaScript de versiones diferentes. Además, solicita una comprobación de actualización al registrar el service worker.
+
+**Importante:** estos mecanismos actualizan la copia local del navegador cuando la nueva versión ya fue publicada desde la rama configurada en GitHub Pages. No publican una rama de trabajo por sí solos. Mientras el Pull Request siga sin integrar y Pages publique desde `main`, la web pública seguirá mostrando `main`.
+
+## Estado de publicación
+
+La versión reparada queda en la rama de trabajo. Antes de considerarla pública:
+1. ejecutar y aprobar el workflow de validación;
+2. comprobar el diff y confirmar que los datos editoriales no cambiaron;
+3. revisar la vista previa real en celular y escritorio;
+4. probar impresión/guardar PDF A4;
+5. verificar en Settings → Pages cuál es la rama y carpeta efectivas;
+6. integrar el Pull Request solamente después de esa revisión;
+7. abrir la URL publicada en una ventana privada y confirmar el nuevo contenido y la nueva versión de caché.
