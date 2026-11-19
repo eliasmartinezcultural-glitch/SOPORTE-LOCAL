@@ -406,11 +406,39 @@
   });
   window.addEventListener("beforeprint", updatePrintMeta);
 
+  function guideUrl() {
+    const url = new URL(window.location.href);
+    url.search = "";
+    url.hash = "";
+    return url.href;
+  }
+
+  function whatsappMessage() {
+    return "Te comparto CHÁÑAR A MANO: una guía comunitaria gratuita de San Patricio del Chañar. Reúne referencias de instituciones, salud, educación, servicios y comercios. Es independiente; revisá siempre la fuente y la vigencia de cada dato. " + guideUrl();
+  }
+
+  const whatsappShare = $("whatsappShare");
+  if (whatsappShare) {
+    whatsappShare.href = "https://wa.me/?text=" + encodeURIComponent(whatsappMessage());
+  }
+
+  const copyLinkButton = $("copyLinkButton");
+  if (copyLinkButton) {
+    copyLinkButton.addEventListener("click", async () => {
+      try {
+        await copyText(guideUrl());
+        shareFeedback.textContent = "Enlace copiado. Ya podés pegarlo en WhatsApp o donde quieras.";
+      } catch (_) {
+        shareFeedback.textContent = "No se pudo copiar automáticamente. Copiá el enlace desde la barra del navegador.";
+      }
+    });
+  }
+
   $("shareButton").addEventListener("click", async () => {
     const shareData = {
-      title: "Chañar a Mano",
+      title: "CHÁÑAR A MANO",
       text: "Guía comunitaria gratuita de San Patricio del Chañar.",
-      url: window.location.href
+      url: guideUrl()
     };
     shareFeedback.textContent = "";
     try {
@@ -418,12 +446,12 @@
         await navigator.share(shareData);
         shareFeedback.textContent = "Gracias por compartir la guía.";
       } else {
-        await copyText(window.location.href);
+        await copyText(guideUrl());
         shareFeedback.textContent = "Enlace copiado. Ya podés compartir la guía.";
       }
     } catch (error) {
       if (error && error.name === "AbortError") return;
-      shareFeedback.textContent = "No se pudo compartir automáticamente. Podés copiar el enlace desde la barra del navegador.";
+      shareFeedback.textContent = "No se pudo abrir el menú para compartir. Podés usar el botón de WhatsApp o copiar el enlace.";
     }
   });
 
