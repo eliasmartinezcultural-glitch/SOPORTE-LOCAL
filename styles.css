@@ -967,3 +967,48 @@ button,a,input{-webkit-tap-highlight-color:rgba(55,91,62,.12)}
  *,*::before,*::after{transition-duration:.01ms!important;animation-duration:.01ms!important;animation-iteration-count:1!important}
 }
 @media print{body{background:#fff;font-size:11pt}.welcome:before{background:#fff}.contact-card{box-shadow:none;break-inside:avoid}}
+
+
+/* CIERRE DE ACCESIBILIDAD Y AJUSTES FINALES */
+.sr-only{
+  position:absolute!important;width:1px!important;height:1px!important;padding:0!important;
+  margin:-1px!important;overflow:hidden!important;clip:rect(0,0,0,0)!important;
+  white-space:nowrap!important;border:0!important
+}
+.search-hint{margin:8px 3px 20px;color:#5d6b5f;font-size:12px;line-height:1.5}
+#directorio,#inicio{scroll-margin-top:14px}
+button:disabled{cursor:not-allowed}
+@media(max-width:700px){
+  .search-hint{margin:7px 2px 17px;font-size:12px}
+  .data-row{display:flex;flex-direction:column;align-items:flex-start;gap:3px}
+  .data-value{max-width:100%;text-align:left}
+  .data-email{overflow-wrap:anywhere}
+  .card-source{min-height:46px}
+}
+@media(max-width:370px){
+  .site-header{align-items:flex-start}
+  .brand-text{max-width:148px}
+  .header-actions{flex:0 0 auto}
+  .header-actions .button{font-size:12px}
+  .welcome h1{overflow-wrap:anywhere}
+}
+body[data-theme=night] .creation-credit,
+body[data-theme=night] .creation-credit strong,
+body[data-theme=night] .creation-credit span,
+body[data-theme=night] .welcome-promise,
+body[data-theme=night] .welcome-photo figcaption,
+body[data-theme=night] .welcome-photo figcaption a,
+body[data-theme=night] .search-hint{color:#d5e0d2}
+body[data-theme=high] .creation-credit,
+body[data-theme=high] .creation-credit strong,
+body[data-theme=high] .creation-credit span,
+body[data-theme=high] .welcome-promise,
+body[data-theme=high] .welcome-photo figcaption,
+body[data-theme=high] .welcome-photo figcaption a,
+body[data-theme=high] .search-hint{color:#000!important}
+@media print{
+  .search-hint{display:none!important}
+  .contact-card{break-inside:avoid;box-shadow:none!important}
+  .data-row{display:flex;flex-direction:row;justify-content:space-between}
+  .data-value{max-width:68%;text-align:right}
+}
