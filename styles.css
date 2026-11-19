@@ -410,3 +410,36 @@ button{touch-action:manipulation}
   .how-to,.quick-search,.reading-tools,.welcome-secondary,.results-end-note{display:none!important}
   .contact-card{transform:none!important;box-shadow:none!important}
 }
+
+
+/* Identidad cromática ampliada: colores por familias, contraste y lectura */
+:root{--paper:#f7f5ed;--paper-deep:#eeeadc;--surface:#fffefa;--ink:#26352f;--green:#284d3b;--green-2:#477653;--clay:#a75c3e;--line:#d9dfd4;--reading-scale:1}
+body{background:radial-gradient(ellipse at 8% 5%,rgba(244,204,125,.20),transparent 28rem),radial-gradient(ellipse at 95% 18%,rgba(174,210,195,.22),transparent 30rem),var(--paper)}
+.brand-mark{background:linear-gradient(145deg,#315b43 0%,#527f62 58%,#bd8053 100%);box-shadow:0 5px 14px rgba(40,77,59,.16)}
+.welcome{position:relative;isolation:isolate;overflow:hidden;border-bottom:0}
+.welcome:before{content:"";position:absolute;z-index:-1;inset:0 0 0 46%;background:radial-gradient(circle at 70% 30%,rgba(239,196,100,.25),transparent 35%),radial-gradient(circle at 35% 78%,rgba(139,185,157,.22),transparent 42%);pointer-events:none}
+.welcome h1 span{background:linear-gradient(90deg,#a85d3e,#c38b3e 58%,#557d5b);background-clip:text;-webkit-background-clip:text;color:transparent}
+.eyebrow{color:#a45e3c}
+.notice{background:linear-gradient(110deg,#e9f1e8,#f1f3e8 70%,#f7eddb);border-color:#d3e0d0;border-left-color:#4f8058}
+.how-to{background:linear-gradient(120deg,#f1e8d9,#e9f0e6 48%,#e8eef3);border-color:#d9e1d8}
+.how-step:nth-child(1)>span{background:#b96f43}.how-step:nth-child(2)>span{background:#527e65}.how-step:nth-child(3)>span{background:#6687a2}
+.quick-chip{background:linear-gradient(145deg,#fffefa,#f7f5ee);border-color:#d9d9c9}
+.quick-chip:nth-child(4n+1){--chip:#b66a43}.quick-chip:nth-child(4n+2){--chip:#4e8062}.quick-chip:nth-child(4n+3){--chip:#6685a0}.quick-chip:nth-child(4n){--chip:#9874a5}
+.quick-chip:hover,.quick-chip[aria-pressed=true]{border-color:var(--chip);background:color-mix(in srgb,var(--chip) 10%,white)}
+.filter-button{border-color:#d8dfd4;box-shadow:0 2px 5px rgba(30,55,38,.025)}
+.filter-button[aria-pressed=true]{background:linear-gradient(135deg,#2d5840,#527d5b);border-color:#2d5840;box-shadow:0 4px 12px rgba(45,88,64,.16)}
+.contact-card{position:relative;overflow:hidden;border-color:#e1e3d9;background:linear-gradient(160deg,#fffefa 0%,#fffefa 78%,#faf8f0 100%)}
+.contact-card:before{content:"";position:absolute;left:0;top:0;bottom:0;width:5px;background:var(--card-tone,#65836a)}
+.tone-card-municipal{--card-tone:#63866b}.tone-card-community{--card-tone:#bd8050}.tone-card-work{--card-tone:#c28a3c}.tone-card-education{--card-tone:#6f8eae}.tone-card-health{--card-tone:#b86f7d}.tone-card-services{--card-tone:#4e9a9b}.tone-card-sport{--card-tone:#b46e3e}.tone-card-culture{--card-tone:#9577a8}.tone-card-tourism{--card-tone:#4e8b78}.tone-card-commerce{--card-tone:#b18a4b}
+.tone-municipal{--tag-bg:#e4eee4;--tag-ink:#355f40}.tone-community{--tag-bg:#f4e8dd;--tag-ink:#8b5438}.tone-work{--tag-bg:#f5ecd6;--tag-ink:#826126}.tone-education{--tag-bg:#e4edf6;--tag-ink:#426486}.tone-health{--tag-bg:#f4e5e9;--tag-ink:#914f62}.tone-services{--tag-bg:#dff0ef;--tag-ink:#286b6b}.tone-sport{--tag-bg:#f5e8dd;--tag-ink:#92512f}.tone-culture{--tag-bg:#eee7f4;--tag-ink:#715487}.tone-tourism{--tag-bg:#e1f0e9;--tag-ink:#326b55}.tone-commerce{--tag-bg:#f3eedc;--tag-ink:#78602e}
+.category-label{background:var(--tag-bg,#edf1e9);color:var(--tag-ink,#3c5b43)}
+.source-type{padding:3px 6px;border-radius:5px;background:#f1f0e9}
+.source-note{background:#f4f2e9}.card-source{color:#315d46}
+.contribute-section{background:linear-gradient(120deg,#f5ead6,#f0e9d9 48%,#e9efe5);border-color:#e0d0b3;border-left-color:#bd8241}
+.print-panel{background:linear-gradient(110deg,#e4efe5,#e5edf2);border-color:#d4e0d8}
+.site-footer{background:linear-gradient(110deg,#e8ede5,#e9e8df 55%,#eee7df)}
+@media(min-width:801px){.filters{grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}.filter-button{min-height:52px;flex-direction:row;justify-content:space-between;padding:10px 13px}}
+@media(max-width:800px){.filters{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:560px){.filters{grid-template-columns:repeat(2,minmax(0,1fr))}.contact-card:before{width:4px}}
+@media(prefers-contrast:more){.category-label,.source-type,.quick-chip{border:1px solid currentColor}.contact-card{border:2px solid #66736a}}
+@media print{body{background:#fff!important}.contact-card:before{display:none!important}.category-label{border:.5pt solid #777!important}}
