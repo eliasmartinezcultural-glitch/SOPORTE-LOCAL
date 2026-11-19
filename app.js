@@ -63,7 +63,7 @@
       return { label: "Directorio institucional", note: "Dato publicado por una entidad o directorio institucional." };
     }
     if (contact.fuenteTipo === "mapa") {
-      return { label: "Ficha de ubicación", note: "Datos de una ficha pública de mapas; verificá dirección y vigencia antes de concurrir." };
+      return { label: "Referencia en mapas", note: "El enlace abre una búsqueda por nombre en mapas; no confirma por sí solo teléfono, horario ni vigencia del establecimiento." };
     }
     if (contact.fuenteTipo === "oficial") {
       return { label: "Sitio oficial", note: "Dato publicado en un sitio oficial." };
@@ -111,12 +111,15 @@
   function card(contact) {
     const phones = (contact.telefonos || []).map(phone => `
       <div class="data-row">
-        <span class="data-label">${escapeHtml(phone.uso || "Teléfono")}</span>
+        <span class="data-label">${escapeHtml(contact.fuenteTipo === "mapa" ? "Teléfono referenciado · verificar" : (phone.uso || "Teléfono"))}</span>
         <span class="data-value" aria-label="Número publicado como referencia">${escapeHtml(phone.numero)}</span>
       </div>`).join("");
 
     const address = contact.direccion ? `
       <div class="data-row"><span class="data-label">Ubicación</span><span class="data-value data-address">${escapeHtml(contact.direccion)}</span></div>` : "";
+
+    const mapUrl = contact.direccion ? "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent(contact.direccion) : "";
+    const mapLink = mapUrl ? `<a class="map-location-link" href="${escapeHtml(mapUrl)}" target="_blank" rel="noopener noreferrer">Ver ubicación aproximada en mapas ↗</a>` : "";
 
     const email = contact.correo ? `
       <div class="data-row">
@@ -129,7 +132,7 @@
     const sourceName = contact.fuenteNombre ? `<span class="source-publisher">${escapeHtml(contact.fuenteNombre)}</span>` : "";
     const sourceLink = sourceUrl
       ? `<a class="card-source" href="${escapeHtml(sourceUrl)}" target="_blank" rel="noopener noreferrer" aria-label="Consultar fuente: ${escapeHtml(contact.fuenteNombre || source.label)}">
-          <span>${contact.fuenteTipo === "mapa" ? "Ver ficha de ubicación" : "Ver dónde se publicó"}</span><span aria-hidden="true">↗</span>
+          <span>${contact.fuenteTipo === "mapa" ? "Buscar referencia en mapas" : "Ver dónde se publicó"}</span><span aria-hidden="true">↗</span>
         </a>`
       : `<span class="card-source-unavailable">Fuente web no disponible en esta ficha.</span>`;
 
@@ -142,6 +145,7 @@
         <h4>${escapeHtml(contact.nombre)}</h4>
         <p class="contact-description">${escapeHtml(contact.descripcion)}</p>
         ${phones || address || email ? `<div class="data-list">${phones}${address}${email}</div>` : `<p class="no-contact-data">No se encontró un teléfono público para esta ficha. Consultá su fuente.</p>`}
+        ${mapLink}
         <div class="source-block"><p class="source-note">${escapeHtml(source.note)} Los datos pueden cambiar.</p>${sourceName}${sourceLink}</div>
       </article>`;
   }
