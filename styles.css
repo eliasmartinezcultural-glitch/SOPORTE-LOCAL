@@ -583,3 +583,48 @@ body{background:radial-gradient(ellipse at 8% 5%,rgba(244,204,125,.20),transpare
 @media print{
   .print-action,.support-mini,.share-feedback{display:none!important}
 }
+
+
+/* Accesibilidad final: escala de lectura, foco y salida impresa */
+:root{--reading-scale:1}
+body{font-size:calc(16px * var(--reading-scale,1))}
+.welcome-copy{font-size:calc(17px * var(--reading-scale,1))}
+.notice h2{font-size:calc(15px * var(--reading-scale,1))}
+.notice p{font-size:calc(13px * var(--reading-scale,1))}
+.section-intro{font-size:calc(14px * var(--reading-scale,1))}
+.search-form input{font-size:calc(19px * var(--reading-scale,1))}
+.filter-button{font-size:calc(14px * var(--reading-scale,1))}
+.filter-count{font-size:calc(12px * var(--reading-scale,1))}
+.contact-card h4{font-size:calc(19px * var(--reading-scale,1))}
+.contact-description,.data-value{font-size:calc(14px * var(--reading-scale,1))}
+.data-label{font-size:calc(12px * var(--reading-scale,1))}
+.source-note{font-size:calc(11px * var(--reading-scale,1))}
+.card-source{font-size:calc(13px * var(--reading-scale,1))}
+.directory-footnote{font-size:calc(12px * var(--reading-scale,1))}
+.button,.page-button{font-size:calc(14px * var(--reading-scale,1))}
+.filter-button,.page-button,.reading-actions button,.button{touch-action:manipulation}
+a:focus-visible,button:focus-visible,input:focus-visible{outline:3px solid #8b4e35;outline-offset:3px}
+@media print{
+  .support-mini,.print-action,.share-feedback,.reading-tools{display:none!important}
+  .print-support{display:flex!important}
+  .contact-card{transform:none!important}
+}
+@media(max-width:560px){
+  .welcome-copy{font-size:calc(15px * var(--reading-scale,1))}
+  .notice p{font-size:calc(12px * var(--reading-scale,1))}
+  .section-intro{font-size:calc(13px * var(--reading-scale,1))}
+  .search-form input{font-size:calc(17px * var(--reading-scale,1))}
+  .filter-button{font-size:calc(13px * var(--reading-scale,1))}
+  .contact-description,.data-value{font-size:calc(14px * var(--reading-scale,1))}
+  .data-label{font-size:calc(12px * var(--reading-scale,1))}
+}
+@media(max-width:340px){
+  .brand small{max-width:125px}
+  .site-header{gap:5px}
+  .header-actions .button{min-width:0;padding-inline:7px}
+  .filter-button{padding-inline:8px;overflow-wrap:anywhere}
+}
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{transition:none!important;animation:none!important}
+}
