@@ -4,7 +4,10 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#f7f6f0">
-  <meta name="description" content="Guía comunitaria gratuita de San Patricio del Chañar. Buscá instituciones, salud, educación, servicios y comercios.">
+  <meta name="description" content="Guía comunitaria gratuita e independiente de San Patricio del Chañar. Buscá instituciones, salud, educación, servicios, comercios y espacios de la comunidad.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Chañar a Mano | Guía comunitaria">
+  <meta property="og:description" content="Información útil de San Patricio del Chañar, reunida en una guía sencilla, gratuita y para compartir.">
   <meta name="color-scheme" content="light">
   <title>Chañar a Mano | Guía comunitaria</title>
   <link rel="stylesheet" href="styles.css">
@@ -109,9 +112,10 @@
       <form class="search-form" id="searchForm" role="search" novalidate>
         <label class="sr-only" for="searchInput">Buscar en la guía</label>
         <span class="search-icon" aria-hidden="true">⌕</span>
-        <input id="searchInput" type="search" placeholder="Ej.: hospital, escuela, farmacia…" autocomplete="off" enterkeyhint="search">
+        <input id="searchInput" type="search" placeholder="Ej.: hospital, escuela, farmacia…" autocomplete="off" enterkeyhint="search" aria-describedby="searchHelp">
         <button id="clearSearch" class="clear-search" type="button" aria-label="Borrar búsqueda" hidden>×</button>
       </form>
+      <p class="search-hint" id="searchHelp">La búsqueda se realiza dentro de esta guía. No necesitás registrarte ni enviar tus datos.</p>
 
       <div class="filter-heading">
         <h3>Temas</h3>
@@ -123,7 +127,7 @@
         <h3 id="resultsTitle">Información disponible</h3>
         <span id="resultsContext">Todos los temas</span>
       </div>
-      <div class="contact-grid" id="contactGrid" aria-live="polite" aria-label="Fichas encontradas"></div>
+      <div class="contact-grid" id="contactGrid" aria-live="off" aria-label="Fichas encontradas"></div>
       <nav class="pagination" id="pagination" aria-label="Páginas de resultados" hidden>
         <button class="page-button" id="previousPage" type="button" disabled>← Anterior</button>
         <span class="page-status" id="pageStatus" aria-live="polite">Página 1</span>
