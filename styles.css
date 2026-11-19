@@ -479,7 +479,12 @@ body[data-theme=high] .address-filter,body[data-theme=high] .clear-all-filters{b
 .print-controls label{display:grid;gap:6px;color:#304b3a;font-size:14px;font-weight:800}
 .print-controls select{min-height:48px;min-width:min(100%,290px);padding:10px 38px 10px 12px;border:1px solid #b8c9b4;border-radius:9px;background:#fff;color:#26372e;font:inherit}
 .print-controls .print-action{min-height:50px}
-.print-help{margin:0 0 22px;color:#5a675d;font-size:13px;line-height:1.5}
+.print-help{margin:0 0 8px;color:#5a675d;font-size:13px;line-height:1.5}
+.export-action{min-height:50px}
+.export-feedback{margin:0 0 22px;color:#5a675d;font-size:12px;line-height:1.5}
+body[data-theme=night] .export-feedback{color:#d4dfd1}
+body[data-theme=high] .export-feedback{color:#000}
+@media(max-width:760px){.print-controls .export-action{width:100%;min-height:52px}}
 .share-kit{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(230px,.8fr);gap:20px;align-items:center;margin:22px 0;padding:22px;border:1px solid #d5dfd1;border-radius:18px;background:linear-gradient(135deg,#fffefa,#edf2e9);box-shadow:0 8px 28px rgba(39,61,43,.06)}
 .share-kit-copy .eyebrow{margin-bottom:7px}
 .share-kit-copy h3{margin:0;color:#304b3a;font:700 clamp(22px,3vw,29px)/1.15 Georgia,serif}
@@ -523,7 +528,7 @@ body[data-theme=high] .share-kit-copy blockquote{background:#fff!important;color
  .print-cover-facts strong{font:700 9pt Arial,sans-serif;color:#304b3a!important}
  .print-cover-facts span{font:7pt Arial,sans-serif;color:#4f5e52!important}
  .print-cover-note{margin:2mm 0 0!important;padding-top:2mm;border-top:.5pt solid #d1d8ce;font:7pt/1.35 Arial,sans-serif;color:#4c554d!important}
- .print-controls,.print-help,.share-kit,.share-invitation{display:none!important}
+ .print-controls,.print-help,.export-feedback,.share-kit,.share-invitation{display:none!important}
  .print-support{display:flex!important;flex-direction:column;gap:1mm!important;margin:4mm 0 0!important;padding:2.5mm 3mm!important;background:#f5f7f1!important;border:1px solid #cbd7c8!important;color:#222!important;break-inside:avoid!important}
  .print-support strong{font:700 8pt Arial,sans-serif!important;color:#304b3a!important}
  .print-support span{font:7pt Arial,sans-serif!important;color:#333!important}
