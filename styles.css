@@ -345,3 +345,68 @@ button{touch-action:manipulation}
   a{color:#111!important;text-decoration:underline!important}
   a[href]:after{content:none!important}
 }
+
+
+/* CHÁÑAR A MANO · Segunda capa de experiencia y lectura */
+:root{--reading-scale:1}
+.welcome-secondary{display:inline-flex;align-items:center;min-height:48px;margin-left:12px;padding:10px 13px;color:var(--green);font-size:14px;font-weight:700;text-underline-offset:4px}
+.how-to{width:min(calc(100% - 48px),992px);margin:22px auto 26px;padding:20px 22px;background:#f0f1e9;border:1px solid #dfe4d8;border-radius:14px}
+.how-to-heading .eyebrow{margin-bottom:5px}
+.how-to-heading h2{margin:0;color:var(--green);font-size:clamp(21px,3vw,27px);line-height:1.2;letter-spacing:-.02em}
+.how-to-steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:16px}
+.how-step{display:flex;align-items:flex-start;gap:11px;min-width:0;padding:12px;background:rgba(255,255,255,.68);border:1px solid #e1e5dc;border-radius:10px}
+.how-step>span{width:29px;height:29px;flex:0 0 29px;display:grid;place-items:center;border-radius:50%;background:var(--green);color:#fff;font-weight:800}
+.how-step strong{display:block;color:var(--green);font-size:14px;line-height:1.3}
+.how-step p{margin:4px 0 0;color:#5a665b;font-size:12px;line-height:1.45}
+.quick-search{display:flex;align-items:center;flex-wrap:wrap;gap:8px;margin:2px 0 15px}
+.quick-search-title{color:#566457;font-size:12px;font-weight:700}
+.quick-search-list{display:flex;flex-wrap:wrap;gap:7px}
+.quick-chip{min-height:36px;padding:7px 12px;border:1px solid #d3ddcf;border-radius:999px;background:#fffefa;color:#34533b;font-size:12px;font-weight:700;cursor:pointer}
+.quick-chip:hover,.quick-chip[aria-pressed=true]{border-color:var(--green);background:#e7eee4}
+.quick-chip[aria-pressed=true]{box-shadow:inset 0 0 0 1px var(--green)}
+.reading-tools{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:0 0 21px;padding:8px 11px;border:1px solid #e0e4dc;border-radius:9px;background:rgba(255,255,255,.45)}
+.reading-tools>span{color:#59675b;font-size:12px}
+.reading-actions{display:flex;gap:6px}
+.reading-actions button{min-width:42px;min-height:38px;padding:5px 9px;border:1px solid #cbd6c8;border-radius:8px;background:#fffefa;color:var(--green);font-weight:800;cursor:pointer}
+.reading-actions button:disabled{opacity:.4;cursor:not-allowed}
+.contact-card{font-size:calc(1rem * var(--reading-scale));box-shadow:0 2px 7px rgba(37,55,43,.035);transition:border-color .18s,box-shadow .18s,transform .18s}
+.contact-card:hover{border-color:#bdcbbb;box-shadow:0 7px 18px rgba(37,55,43,.07);transform:translateY(-1px)}
+.contact-card h4{font-size:calc(19px * var(--reading-scale))}
+.contact-description,.data-value{font-size:calc(14px * var(--reading-scale))}
+.data-label{font-size:calc(12px * var(--reading-scale))}
+.source-block{margin-top:auto}
+.source-note{margin-top:11px}
+.source-publisher{display:block;margin:7px 0 0;color:#6a7569;font-size:11px;line-height:1.4}
+.card-source{margin-top:5px}
+.results-end-note{margin:15px 0 0;padding:10px 12px;border-radius:8px;background:#f0f2ec;color:#5d6a5e;font-size:12px;text-align:center}
+.quick-chip:focus-visible,.reading-actions button:focus-visible{outline:3px solid var(--focus);outline-offset:2px}
+@media(max-width:800px){
+  .how-to-steps{grid-template-columns:1fr;gap:8px}
+  .how-step{padding:10px 12px}
+}
+@media(max-width:560px){
+  .welcome-secondary{display:flex;justify-content:center;margin:7px 0 0;width:100%;min-height:42px}
+  .how-to{width:calc(100% - 28px);margin:15px auto 20px;padding:15px 13px}
+  .how-to-heading h2{font-size:21px}
+  .how-to-steps{margin-top:11px}
+  .how-step{gap:9px}
+  .how-step strong{font-size:13px}
+  .how-step p{font-size:11px}
+  .quick-search{display:block;margin:0 0 13px}
+  .quick-search-title{display:block;margin-bottom:7px}
+  .quick-search-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}
+  .quick-chip{min-height:42px;border-radius:9px;text-align:left}
+  .reading-tools{margin-bottom:17px;padding:7px 9px}
+  .reading-tools>span{font-size:11px}
+  .reading-actions button{min-width:43px;min-height:40px}
+  .results-end-note{font-size:11px}
+}
+@media(max-width:360px){
+  .brand small{max-width:150px}
+  .header-actions .button{padding:8px;font-size:11px}
+  .quick-chip{padding:7px 9px;font-size:11px}
+}
+@media print{
+  .how-to,.quick-search,.reading-tools,.welcome-secondary,.results-end-note{display:none!important}
+  .contact-card{transform:none!important;box-shadow:none!important}
+}
