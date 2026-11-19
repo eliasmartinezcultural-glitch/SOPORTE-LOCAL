@@ -70,7 +70,24 @@
       feedback.textContent = "Podés copiar manualmente el alias: " + alias;
     }
   });
-  document.getElementById("printButton").addEventListener("click", () => window.print());
+  function updatePrintMeta() {
+    const visibleCount = contacts.filter(c => {
+      const term = search.value.trim().toLocaleLowerCase("es-AR");
+      const matchesCategory = activeCategory === "Todos" || c.categoria === activeCategory;
+      const haystack = [c.nombre,c.categoria,c.descripcion,...(c.telefonos || []).map(p => p.numero),c.correo].join(" ").toLocaleLowerCase("es-AR");
+      return matchesCategory && haystack.includes(term);
+    }).length;
+    const parts = [visibleCount + (visibleCount === 1 ? " ficha" : " fichas")];
+    if (activeCategory !== "Todos") parts.push("Categoría: " + activeCategory);
+    if (search.value.trim()) parts.push('Búsqueda: "' + search.value.trim() + '"');
+    parts.push(new Intl.DateTimeFormat("es-AR", {dateStyle:"long"}).format(new Date()));
+    document.getElementById("printMeta").textContent = parts.join(" · ") + " · Ocarina Producciones";
+  }
+  document.getElementById("printButton").addEventListener("click", () => {
+    updatePrintMeta();
+    window.print();
+  });
+  window.addEventListener("beforeprint", updatePrintMeta);
   document.getElementById("shareButton").addEventListener("click", async () => {
     const shareData = {title:"Chañar a Mano",text:"Guía local de instituciones y servicios de San Patricio del Chañar",url:location.href};
     try {
