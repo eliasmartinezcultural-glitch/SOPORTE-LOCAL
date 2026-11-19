@@ -266,19 +266,19 @@
 
   function card(contact) {
     const phones = (contact.telefonos || []).map(phone => `
-      <div class="data-row">
+      <div class="data-row data-row-phone">
         <span class="data-label">${escapeHtml(contact.fuenteTipo === "mapa" ? "Teléfono referenciado · verificar" : (phone.uso || "Teléfono"))}</span>
         <span class="data-value" aria-label="Número publicado como referencia">${escapeHtml(phone.numero)}</span>
       </div>`).join("");
 
     const address = contact.direccion ? `
-      <div class="data-row"><span class="data-label">Ubicación</span><span class="data-value data-address">${escapeHtml(contact.direccion)}</span></div>` : "";
+      <div class="data-row data-row-address"><span class="data-label">Ubicación</span><span class="data-value data-address">${escapeHtml(contact.direccion)}</span></div>` : "";
 
     const mapUrl = contact.direccion ? "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent(contact.direccion) : "";
     const mapLink = mapUrl ? `<a class="map-location-link" href="${escapeHtml(mapUrl)}" target="_blank" rel="noopener noreferrer">Ver ubicación aproximada en mapas ↗</a>` : "";
 
     const email = contact.correo ? `
-      <div class="data-row">
+      <div class="data-row data-row-email">
         <span class="data-label">Correo publicado</span>
         <span class="data-value data-email">${escapeHtml(contact.correo)}</span>
       </div>` : "";
@@ -293,10 +293,10 @@
       : `<span class="card-source-unavailable">Fuente web no disponible en esta ficha.</span>`;
 
     return `
-      <article class="contact-card tone-card-${escapeHtml(categoryTone(contact.categoria))}">
+      <article class="contact-card tone-card-${escapeHtml(categoryTone(contact.categoria))} status-${escapeHtml(contact.estadoContacto || "sin-contacto")}">
         <div class="card-heading">
           <span class="category-label tone-${escapeHtml(categoryTone(contact.categoria))}">${escapeHtml(categoryLabel(contact.categoria))}</span>
-          <span class="source-type">${escapeHtml(source.label)}</span>
+          <span class="source-type source-type-${escapeHtml(contact.fuenteTipo || "sin-fuente")}">${escapeHtml(source.label)}</span>
         </div>
         <h4>${escapeHtml(contact.nombre)}</h4>
         <p class="contact-description">${escapeHtml(contact.descripcion)}</p>
