@@ -113,3 +113,19 @@ Se incorporaron **11 fichas nuevas** a la agenda principal. Diez incluyen un tel
 - Las diez fichas con teléfono recién incorporadas requieren confirmación directa.
 
 El conteo refleja datos cargados en la agenda, no una certificación de vigencia. La revisión documental anterior de las 75 fichas permanece como registro histórico del primer corte.
+
+
+### Segunda ampliación · instituciones y servicios cotidianos
+
+Se agregaron cuatro fichas más a partir de referencias públicas de ubicación:
+
+| Ficha | Teléfono publicado | Ubicación de referencia | Procedencia |
+|---|---|---|---|
+| Banco Provincia del Neuquén · Sucursal local | 0299 485-5040 | Avenida Pilmayquén 150 | Ficha pública de ubicación |
+| Juzgado de Paz | 0299 485-5029 | Pasaje El Arco 435 | Ficha pública de ubicación; la dirección también figura en Boletín Oficial provincial de diciembre de 2025 |
+| Correo Argentino · Sucursal local | 0299 485-5273 | Villa Pehuenia 201 | Ficha pública de ubicación |
+| ISSN · Delegación local | 0299 485-5133 | Calle Pudú Pudú | Ficha pública de ubicación |
+
+Fuente de las fichas de ubicación: Google Maps, búsqueda por nombre y localidad. Son referencias secundarias: los teléfonos y horarios deben confirmarse con cada entidad. Para el Juzgado de Paz, la dirección también aparece en el Boletín Oficial de Neuquén del 5 de diciembre de 2025: https://infoleg.neuquen.gov.ar/Boletines/boletin_4518.pdf
+
+**Nuevo total de la agenda:** 90 fichas, de las cuales 74 publican al menos un teléfono. Los 14 teléfonos incorporados en las dos ampliaciones más recientes siguen pendientes de confirmación directa.
