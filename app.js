@@ -343,7 +343,87 @@
   $("fontDown").addEventListener("click", () => applyFontScale(fontScale - 0.1));
   $("fontUp").addEventListener("click", () => applyFontScale(fontScale + 0.1));
   $("fontReset").addEventListener("click", () => applyFontScale(1));
-  applyFontScale(1);
+
+  const brightnessControl = $("brightnessControl");
+  const contrastControl = $("contrastControl");
+  const appearanceStatus = $("appearanceStatus");
+  const appearanceDefaults = { brightness: 100, contrast: 100, theme: "natural", font: 1 };
+
+  function saveAppearance() {
+    try {
+      localStorage.setItem("chanar-a-mano-appearance", JSON.stringify({
+        brightness: Number(brightnessControl.value),
+        contrast: Number(contrastControl.value),
+        theme: document.body.dataset.theme || "natural",
+        font: fontScale
+      }));
+      if (appearanceStatus) appearanceStatus.textContent = "Ajustes guardados en este dispositivo.";
+    } catch (_) {
+      if (appearanceStatus) appearanceStatus.textContent = "Los ajustes funcionan mientras esta página esté abierta.";
+    }
+  }
+
+  function applyBrightness(value, announce = true) {
+    const amount = Math.max(80, Math.min(120, Number(value) || 100));
+    brightnessControl.value = String(amount);
+    document.documentElement.style.setProperty("--visual-brightness", String(amount / 100));
+    $("brightnessValue").textContent = amount + "%";
+    if (announce) saveAppearance();
+  }
+
+  function applyContrast(value, announce = true) {
+    const amount = Math.max(80, Math.min(140, Number(value) || 100));
+    contrastControl.value = String(amount);
+    document.documentElement.style.setProperty("--visual-contrast", String(amount / 100));
+    $("contrastValue").textContent = amount + "%";
+    if (announce) saveAppearance();
+  }
+
+  function applyTheme(theme, announce = true) {
+    const safeTheme = ["natural", "high", "night"].includes(theme) ? theme : "natural";
+    document.body.dataset.theme = safeTheme;
+    document.querySelectorAll("[data-theme-choice]").forEach(button => {
+      button.setAttribute("aria-pressed", String(button.dataset.themeChoice === safeTheme));
+    });
+    if (announce) saveAppearance();
+  }
+
+  document.querySelectorAll("[data-theme-choice]").forEach(button => {
+    button.addEventListener("click", () => applyTheme(button.dataset.themeChoice));
+  });
+  brightnessControl.addEventListener("input", () => applyBrightness(brightnessControl.value));
+  contrastControl.addEventListener("input", () => applyContrast(contrastControl.value));
+
+  function resetAppearance() {
+    applyBrightness(appearanceDefaults.brightness, false);
+    applyContrast(appearanceDefaults.contrast, false);
+    applyTheme(appearanceDefaults.theme, false);
+    applyFontScale(appearanceDefaults.font);
+    saveAppearance();
+    if (appearanceStatus) appearanceStatus.textContent = "Se restablecieron los ajustes.";
+  }
+
+  $("resetAppearance").addEventListener("click", resetAppearance);
+
+  try {
+    const saved = JSON.parse(localStorage.getItem("chanar-a-mano-appearance") || "null");
+    if (saved && typeof saved === "object") {
+      applyBrightness(saved.brightness, false);
+      applyContrast(saved.contrast, false);
+      applyTheme(saved.theme, false);
+      if (Number.isFinite(Number(saved.font))) applyFontScale(Number(saved.font));
+    } else {
+      applyBrightness(100, false);
+      applyContrast(100, false);
+      applyTheme("natural", false);
+      applyFontScale(1);
+    }
+  } catch (_) {
+    applyBrightness(100, false);
+    applyContrast(100, false);
+    applyTheme("natural", false);
+    applyFontScale(1);
+  }
   $("searchForm").addEventListener("submit", event => event.preventDefault());
   clear.addEventListener("click", () => {
     search.value = "";
