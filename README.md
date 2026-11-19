@@ -1,7 +1,8 @@
 # CHÁÑAR A MANO
 
 **Guía comunitaria independiente y gratuita de San Patricio del Chañar, Neuquén.**  
-Creada por **Ocarina Producciones** · Historias, personas y territorio.
+Idea, diseño y desarrollo: **Ocarina Producciones** · Creada por Elías Martínez.  
+*Historias, personas y territorio.*
 
 ## Para qué sirve
 Reúne información pública de instituciones, servicios, organizaciones, espacios, comercios y actividades de la localidad. Busca que cualquier persona pueda encontrar una referencia útil sin registrarse ni completar formularios.
@@ -11,7 +12,7 @@ Reúne información pública de instituciones, servicios, organizaciones, espaci
 2. O elegí uno de los temas.
 3. Abrí la fuente de la ficha para revisar el dato antes de usarlo.
 
-La página está pensada para celulares, lectura sencilla, controles grandes y personas con poca experiencia digital. Incluye ajuste de tamaño de letra, impresión y guardado como PDF.
+La página está pensada para celulares, lectura sencilla, controles grandes y personas con poca experiencia digital. Incluye ajuste de tamaño de letra, impresión y guardado como PDF. El encabezado ofrece acceso directo para compartir por WhatsApp; también se conserva el menú de compartir del dispositivo y la opción de copiar el enlace.
 
 ## Criterios de información y seguridad
 - La guía no es oficial y no representa a las instituciones.
@@ -31,12 +32,13 @@ La página está pensada para celulares, lectura sencilla, controles grandes y p
 - El directorio distingue sitios oficiales, agendas o directorios institucionales y referencias en mapas.
 
 ## Colaboración voluntaria
-Consultar, imprimir y compartir la guía es gratuito. Quien quiera y pueda colaborar puede hacerlo de forma voluntaria:
+Consultar, imprimir y compartir la guía es gratuito. El cartel de colaboración aparece separado del contenido de consulta y aclara que el aporte es personal, voluntario y no obligatorio. Quien quiera y pueda colaborar puede hacerlo:
 
 - Alias: `ocarina.guitarra`
 - Titular: Elías Martínez
 - El aporte se realiza a una persona y no a una institución pública.
-- No es obligatorio ni condiciona el acceso.
+- No es obligatorio, no es una suscripción ni condiciona el acceso.
+- La guía no cobra por consultar, imprimir ni compartir.
 
 ## Archivos
 - `index.html`: estructura sencilla de la guía.
