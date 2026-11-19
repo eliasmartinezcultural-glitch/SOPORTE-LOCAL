@@ -112,16 +112,19 @@
       <form class="search-form" id="searchForm" role="search" novalidate>
         <label class="sr-only" for="searchInput">Buscar en la guía</label>
         <span class="search-icon" aria-hidden="true">⌕</span>
-        <input id="searchInput" type="search" placeholder="Ej.: hospital, escuela, farmacia…" autocomplete="off" enterkeyhint="search" aria-describedby="searchHelp">
+        <input id="searchInput" type="search" placeholder="Ej.: hospital, agua, escuela, farmacia…" autocomplete="off" enterkeyhint="search" aria-describedby="searchHelp">
         <button id="clearSearch" class="clear-search" type="button" aria-label="Borrar búsqueda" hidden>×</button>
       </form>
-      <p class="search-hint" id="searchHelp">La búsqueda se realiza dentro de esta guía. No necesitás registrarte ni enviar tus datos.</p>
+      <p class="search-hint" id="searchHelp">Probá con palabras cotidianas, nombres, direcciones o números. La búsqueda se hace en esta guía, sin enviar tus datos.</p>
 
-      <div class="filter-heading">
-        <h3>Temas</h3>
-        <button id="showAllButton" class="text-button" type="button">Ver todo</button>
-      </div>
-      <nav class="filters" id="filters" aria-label="Filtrar por tema"></nav>
+      <details class="topic-panel" id="topicPanel">
+        <summary>
+          <span class="topic-summary-title">Explorar por tema</span>
+          <span class="topic-summary-help">Si preferís, elegí una categoría</span>
+          <span class="topic-chevron" aria-hidden="true">⌄</span>
+        </summary>
+        <nav class="filters" id="filters" aria-label="Filtrar por tema"></nav>
+      </details>
 
       <div class="results-heading">
         <h3 id="resultsTitle">Información disponible</h3>
