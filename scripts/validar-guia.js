@@ -48,14 +48,14 @@ if(!css.includes(".data-row-phone .data-value")||!css.includes("font-size:clamp(
 if(!app.includes('classList.toggle("easy-reading", fontScale >= 1.25)')||!app.includes('chanar-a-mano-appearance-v2'))fail("Falta persistencia de preferencias de lectura fácil.");
 if(!app.includes('TELÉFONO PUBLICADO')||!app.includes('phone-number'))fail("Los números telefónicos no tienen una presentación destacada.");
 if(!app.includes('document.querySelectorAll("[data-appearance-preset]")'))fail("Los accesos rápidos de lectura no están conectados a la aplicación.");
-if(!app.includes('window.addEventListener("beforeprint", () =>')||!app.includes("updatePrintMeta();")||!app.includes("const allVisible = visibleContacts();"))fail("La impresión no prepara metadatos y todos los resultados del filtro actual.");
+if(!app.includes('window.addEventListener("beforeprint", () =>')||!app.includes("updatePrintMeta();")||!app.includes('scope === "all" ? contacts.slice()'))fail("La impresión no prepara metadatos y permite elegir el alcance.");
 if(!app.includes("registration.update()")||!app.includes('"controllerchange"'))fail("Falta comprobación de actualización y recarga coordinada del service worker.");
-if(!sw.includes('const CACHE_NAME = "chanar-a-mano-shell-v9"')||!sw.includes('cache: "reload"')||!sw.includes("if (!response.ok)"))fail("El service worker no garantiza una caché versionada completa.");
+if(!sw.includes('const CACHE_NAME = "chanar-a-mano-shell-v10"')||!sw.includes('cache: "reload"')||!sw.includes("if (!response.ok)"))fail("El service worker no garantiza una caché versionada completa.");
 if(!html.includes('id="mobileWhatsappShare"')||!html.includes('id="mobileSearchButton"'))fail("Faltan acciones rápidas móviles.");
 for(const id of ["favoritesToggle","favoritesCount","clearFavorites"])if(!idSet.has(id))fail("Falta control de lugares guardados: #"+id);
 for(const id of ["printScope","printHeadingTitle","printHeadingIntro","printCoverCount","shareKitWhatsapp","shareCardButton","shareKitCopyButton","shareMessagePreview","printUrl"])if(!idSet.has(id))fail("Falta control de impresión/difusión: #"+id);
 if(!idSet.has("directoryIntro"))fail("Falta la introducción adaptable a impresión.");
-if(!app.includes("createShareCardFile")||!app.includes("navigator.canShare({ files: [file] })")||!app.includes("chanar-a-mano-compartir.png"))fail("La tarjeta gráfica no tiene un flujo de exportación y uso compartido.");
+if(!app.includes("createShareCardFile")||!app.includes("navigator.canShare({files:[file]})")||!app.includes("chanar-a-mano-compartir.png"))fail("La tarjeta gráfica no tiene un flujo de exportación y uso compartido.");
 if(!app.includes('scope === "all" ? contacts.slice()')||!app.includes("Resultados seleccionados"))fail("La impresión no distingue resultados filtrados y guía completa.");
 if(!html.includes("revisá la fuente de cada ficha"))fail("Falta un mensaje de difusión con criterio de verificación.");
 if(!css.includes(".print-cover")||!css.includes(".share-kit")||!css.includes("@page{size:A4 portrait;margin:13mm 14mm 16mm}"))fail("Falta la capa editorial de impresión y difusión.");
