@@ -83,3 +83,10 @@ El procedimiento para guardar, revisar, publicar y recuperar cambios está docum
 - Registro Civil de Neuquén: https://registrocivil.neuquen.gob.ar/oficinas/
 - CAME, entidades asociadas: https://www.redcame.org.ar/entidades-asociadas/78/asociadas
 - Diócesis de Neuquén: https://www.diocesisneuquen.org.ar/
+
+
+## Resiliencia y uso desde celulares
+
+La rama de trabajo incorpora controles automáticos reforzados, mensajes de recuperación ante errores de interfaz, accesos móviles de gran tamaño, compartir por WhatsApp con alternativa de copia, manifiesto web y caché local de archivos esenciales para consultas posteriores sin conexión. La primera visita requiere internet; los enlaces externos y la foto municipal también dependen de conexión.
+
+Consultar `PUBLICACION.md` antes de publicar. La validación automática no certifica que los contactos estén activos ni que el diseño haya sido probado en dispositivos físicos.
