@@ -94,7 +94,7 @@ Consultar `PUBLICACION.md` antes de publicar. La validación automática no cert
 
 ## Actualización y caché
 
-La caché local del service worker utiliza la versión `chanar-a-mano-shell-v9`. La instalación guarda los archivos esenciales como conjunto y no activa una versión incompleta. Cuando una actualización toma el control de una pestaña ya abierta, se recarga el documento para no mezclar recursos de versiones distintas. Esto no publica cambios por sí solo: la web pública depende de la rama y carpeta configuradas en GitHub Pages.
+La caché local del service worker utiliza la versión `chanar-a-mano-shell-v10`. La instalación guarda los archivos esenciales como conjunto y no activa una versión incompleta. Cuando una actualización toma el control de una pestaña ya abierta, se recarga el documento para no mezclar recursos de versiones distintas. Esto no publica cambios por sí solo: la web pública depende de la rama y carpeta configuradas en GitHub Pages.
 
 La revisión integral se desarrolla en una rama separada a partir del commit 7901235; no se modifica la rama congelada. No debe confundirse con la rama pública ni con la rama congelada. Ver [PUBLICACION.md](PUBLICACION.md) antes de integrar cambios.
 
@@ -116,7 +116,7 @@ La revisión integral se desarrolla en una rama separada a partir del commit 790
 - **Ayuda de uso:** explica en tres pasos cómo buscar, leer y revisar la procedencia.
 - **Privacidad:** la guía no transmite búsquedas ni favoritos a un servidor. Borrar los datos del navegador también borra la lista local.
 - **Lectura:** se mantienen letra grande, modo noche, alto contraste, filtros por tema, búsquedas rápidas, paginación e impresión A4.
-- **Actualización sin conexión:** el identificador de caché pasa a chanar-a-mano-shell-v8 para que el navegador pueda instalar el conjunto nuevo de archivos.
+- **Actualización sin conexión:** el identificador de caché pasa a chanar-a-mano-shell-v10 para que el navegador pueda instalar el conjunto nuevo de archivos.
 
 La revisión no cambia datos.js: conserva las 90 fichas y sus advertencias documentales. No se agregan teléfonos ni se los declara confirmados. Se retiró la fotografía municipal de los metadatos de vista previa mientras no exista autorización específica de reutilización.
 
@@ -124,3 +124,14 @@ La revisión no cambia datos.js: conserva las 90 fichas y sus advertencias docum
 ## Filtros más precisos
 
 Además de buscar por palabra, categoría, teléfono y favoritos, ahora se puede limitar la lista a fichas que publican una dirección. El botón “Quitar todos los filtros” vuelve a la vista completa sin borrar favoritos guardados. La búsqueda también considera el nombre de la fuente y el estado documental, para facilitar el hallazgo de fichas por su procedencia.
+
+
+## Impresión editorial y difusión por WhatsApp
+
+- La impresión permite elegir entre los resultados filtrados y el directorio completo.
+- La salida A4 incorpora encabezado editorial, título de la selección, fecha, cantidad de fichas, indicaciones de lectura, aviso de vigencia y créditos de Ocarina Producciones.
+- Los controles, filtros, favoritos y botones de pantalla se excluyen del papel.
+- El bloque de procedencia se despliega en la impresión para conservar las fuentes consultadas.
+- El mensaje de WhatsApp se acortó y explica que la guía es gratuita, no requiere registro y que los datos deben revisarse en su fuente.
+- La tarjeta gráfica se genera localmente como PNG 1200 × 630. En celulares que admiten compartir archivos se abre el menú nativo; en otros dispositivos se descarga para adjuntarla manualmente. La tarjeta no incluye datos de contacto ni estadísticas no verificadas.
+- La caché del service worker pasa a v10.
