@@ -1,5 +1,5 @@
 "use strict";
-const CACHE_NAME = "chanar-a-mano-shell-v4";
+const CACHE_NAME = "chanar-a-mano-shell-v5";
 const CORE_FILES = ["./","./index.html","./styles.css","./datos.js","./app.js","./manifest.webmanifest","./marca-chanar.svg"];
 self.addEventListener("install", event => {
   event.waitUntil((async () => {
