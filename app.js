@@ -462,7 +462,6 @@
     render();
     search.focus();
   });
-  $("showAllButton").addEventListener("click", resetGuide);
   $("resetFilters").addEventListener("click", () => {
     resetGuide();
     search.focus();
