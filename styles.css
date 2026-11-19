@@ -183,7 +183,7 @@ a{color:var(--green)}
 .support-feedback,.share-feedback{min-height:1.4em;margin:7px 0 0;color:var(--muted);font-size:12px}
 .support-clarity,.support-signature{margin:8px 0 0;color:#6b624e;font-size:11px}
 .support-signature{font-weight:700}
-.site-footer{padding:23px max(24px,calc((100% - 992px)/2));background:#e9ece3;border-top:1px solid var(--line);color:var(--muted)}
+.site-footer{padding:23px 24px;background:#e9ece3;border-top:1px solid var(--line);color:var(--muted)}
 .footer-main{display:flex;align-items:center;justify-content:space-between;gap:15px;flex-wrap:wrap}
 .footer-main strong,.footer-main span{display:block}
 .footer-main strong{color:var(--green);font-size:14px;letter-spacing:.08em}
