@@ -80,7 +80,7 @@
     const parts = [visibleCount + (visibleCount === 1 ? " ficha" : " fichas")];
     if (activeCategory !== "Todos") parts.push("Categoría: " + activeCategory);
     if (search.value.trim()) parts.push('Búsqueda: "' + search.value.trim() + '"');
-    parts.push(new Intl.DateTimeFormat("es-AR", {dateStyle:"long"}).format(new Date()));
+    parts.push("Consulta del " + new Intl.DateTimeFormat("es-AR", {dateStyle:"long"}).format(new Date()));
     document.getElementById("printMeta").textContent = parts.join(" · ") + " · Ocarina Producciones";
   }
   document.getElementById("printButton").addEventListener("click", () => {
