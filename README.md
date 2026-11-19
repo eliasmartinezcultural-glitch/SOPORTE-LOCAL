@@ -65,6 +65,11 @@ Antes de anunciar la guía como versión estable, completar estas comprobaciones
 
 La revisión del código no sustituye estas pruebas en navegadores y dispositivos reales. La guía debe seguir mostrando que los datos son referencias sujetas a cambios.
 
+
+## Publicación y mantenimiento
+
+El procedimiento para guardar, revisar, publicar y recuperar cambios está documentado en [PUBLICACION.md](PUBLICACION.md). La validación automática se ejecuta al subir cambios y al abrir Pull Requests hacia `main`.
+
 ## Fuentes de referencia
 - Municipalidad de San Patricio del Chañar: https://sanpatricio.gob.ar/
 - RENATRE, Delegación Neuquén: https://www.renatre.org.ar/delegaciones/neuquen/
