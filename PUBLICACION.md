@@ -228,3 +228,10 @@ Se reforzó el contorno de cada tarjeta del directorio, con fondo individual y m
 ## Identidad visual y créditos · 19 de noviembre de 2026
 
 Se aplicó una identidad cromática diferenciada a las tarjetas según su rubro, con colores suaves y repetidos en el borde, la etiqueta de categoría y los bloques de datos. Se reforzó la lectura de cabecera, buscador, filtros, avisos, resultados, herramientas y pie de página. La paleta se adapta a modo nocturno, alto contraste y papel. El crédito se unificó en cabecera superior derecha, bienvenida, pie, impresión, exportaciones y tarjeta compartida: **Un desarrollo de Universo Ocarina - Elías Martínez**. Caché PWA v19. Sin cambios en los datos ni en la lógica de búsqueda, filtros, guardados o acciones.
+
+
+## Interfaz compacta y versión simple para imprimir · 19 de noviembre de 2026
+
+La simplificación se aplica a la presentación, no a la lógica: se conservan búsqueda, categorías, filtros, favoritos, paginación, fuentes, compartir y exportar. La portada ocupa menos espacio, el buscador queda como acción principal y los controles avanzados permanecen disponibles sin dominar la pantalla. En A4 se prioriza una sola columna, tipografía legible, teléfonos destacados, advertencias y procedencias; se quitan controles, adornos y elementos de pantalla. Caché del shell v20.
+
+La validación automática comprueba la presencia de la capa de interfaz simple y la regla A4. La salida debe revisarse también en la vista previa del navegador y en un teléfono real; el validador no sustituye esas pruebas.
