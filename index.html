@@ -36,7 +36,7 @@
       <a class="welcome-secondary" href="#como-usar">Cómo usar esta guía</a>
       <div class="welcome-note" aria-label="Características de la guía">
         <span class="directory-total"><b id="totalContactCount">75</b> fichas locales</span>
-        <span class="directory-phone-total"><b id="totalPhoneCount">60</b> con teléfono publicado</span>
+        <span class="directory-phone-total"><b id="totalPhoneCount">60</b> con teléfono referenciado</span>
         <span><b aria-hidden="true">✓</b> Gratis para consultar</span>
         <span><b aria-hidden="true">✓</b> Sin registrarse</span>
         <span><b aria-hidden="true">✓</b> También para imprimir</span>
@@ -87,16 +87,22 @@
       <div class="quick-search" aria-label="Búsquedas rápidas">
         <span class="quick-search-title">Para encontrar rápido</span>
         <div class="quick-search-list">
-          <button class="quick-chip" type="button" data-query="hospital">Salud</button>
-          <button class="quick-chip" type="button" data-query="escuela">Escuelas</button>
-          <button class="quick-chip" type="button" data-query="gastronomia">Comer y salir</button>
-          <button class="quick-chip" type="button" data-query="alojamiento">Dónde dormir</button>
-          <button class="quick-chip" type="button" data-query="comercios">Comercios</button>
-          <button class="quick-chip" type="button" data-query="deportes">Deportes</button>
-          <button class="quick-chip" type="button" data-query="cultura">Cultura</button>
-          <button class="quick-chip" type="button" data-query="servicios">Servicios</button>
+          <button class="quick-chip" type="button" data-category="Salud">Salud</button>
+          <button class="quick-chip" type="button" data-category="Educación">Escuelas y formación</button>
+          <button class="quick-chip" type="button" data-category="Turismo">Comer y salir</button>
+          <button class="quick-chip" type="button" data-category="Municipio">Municipio</button>
+          <button class="quick-chip" type="button" data-category="Comercios">Comercios</button>
+          <button class="quick-chip" type="button" data-category="Deportes">Deportes</button>
+          <button class="quick-chip" type="button" data-category="Comunidad">Cultura y comunidad</button>
+          <button class="quick-chip" type="button" data-category="Servicios">Servicios públicos</button>
         </div>
       </div>
+
+      <label class="phone-only-toggle" for="phoneOnly">
+        <input id="phoneOnly" type="checkbox">
+        <span class="phone-toggle-box" aria-hidden="true"></span>
+        <span>Mostrar solamente fichas con teléfono</span>
+      </label>
 
       <div class="reading-tools" aria-label="Ajustes de lectura">
         <span>¿La letra se ve pequeña?</span>
