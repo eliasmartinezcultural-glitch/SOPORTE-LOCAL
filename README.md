@@ -24,6 +24,8 @@ Historias, personas y territorio.
 - Enlaces telefónicos y de correo desde dispositivos compatibles.
 - Fuentes visibles en cada ficha.
 - Compartir la agenda e imprimir/guardar la consulta como PDF.
+- Diseño adaptable con prioridad de uso en celulares.
+- Impresión A4 optimizada: fichas sin cortes, teléfonos legibles, fuentes y fecha de consulta.
 - Cartel de colaboración voluntaria con botón para copiar el alias.
 
 ## Criterios editoriales
@@ -45,7 +47,7 @@ Historias, personas y territorio.
 
 ## Archivos
 - `index.html`: estructura de la agenda y cartel de colaboración.
-- `styles.css`: identidad visual adaptable e impresión.
+- `styles.css`: identidad visual adaptable, accesibilidad, rendimiento e impresión A4.
 - `datos.js`: datos separados de la interfaz, con tipo de fuente.
 - `app.js`: búsqueda, filtros, enlaces, compartir, copiar alias e imprimir.
 
