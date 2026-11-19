@@ -2,29 +2,343 @@
    fuenteTipo diferencia sitios oficiales de agendas/directorios institucionales.
    La presencia de una ficha no implica aval de la institución. */
 window.CHANAR_CONTACTOS = [
-{id:"municipio-general",nombre:"Municipalidad · Contacto general",categoria:"Organismos públicos",descripcion:"Canal general de contacto municipal.",telefonos:[{uso:"Contacto general",numero:"+54 299 408-4225"}],fuente:"https://sanpatricio.gob.ar/sec-administracion",fuenteNombre:"Municipalidad de San Patricio del Chañar",fuenteTipo:"oficial"},
-{id:"municipio-mesa",nombre:"Municipalidad · Mesa de entrada y turnos",categoria:"Organismos públicos",descripcion:"Consultas administrativas y turnos.",telefonos:[{uso:"Mesa de entrada / turnos",numero:"299 420-2609"}],fuente:"https://sanpatricio.gob.ar/sec-administracion",fuenteNombre:"Municipalidad de San Patricio del Chañar",fuenteTipo:"oficial"},
-{id:"municipio-recaudaciones",nombre:"Municipalidad · Recaudaciones",categoria:"Organismos públicos",descripcion:"Consultas sobre recaudaciones municipales.",telefonos:[{uso:"Recaudaciones",numero:"299 576-8856"}],correo:"recaudaciones@sanpatricio.gob.ar",fuente:"https://sanpatricio.gob.ar/sec-administracion",fuenteNombre:"Municipalidad de San Patricio del Chañar",fuenteTipo:"oficial"},
-{id:"municipio-compras",nombre:"Municipalidad · Compras",categoria:"Organismos públicos",descripcion:"Área de compras municipal.",telefonos:[{uso:"Compras",numero:"299 421-4821"}],correo:"compras@sanpatricio.gob.ar",fuente:"https://sanpatricio.gob.ar/sec-administracion",fuenteNombre:"Municipalidad de San Patricio del Chañar",fuenteTipo:"oficial"},
-{id:"religion-culto",nombre:"Dirección de Religión y Culto",categoria:"Comunidad",descripcion:"Área municipal de atención a entidades religiosas y de culto.",telefonos:[{uso:"Teléfono publicado",numero:"299 438-6493"}],correo:"religionyculto@sanpatricio.gob.ar",fuente:"https://sanpatricio.gob.ar/religion",fuenteNombre:"Municipalidad de San Patricio del Chañar",fuenteTipo:"oficial"},
-{id:"seguridad",nombre:"Seguridad Ciudadana",categoria:"Organismos públicos",descripcion:"Contactos municipales del área de Seguridad Ciudadana.",telefonos:[{uso:"Administración",numero:"299 458-4229"},{uso:"Denuncias",numero:"299 631-8081"},{uso:"Zoonosis",numero:"299 631-3103"}],fuente:"https://sanpatricio.gob.ar/sec-ciudadana",fuenteNombre:"Municipalidad de San Patricio del Chañar",fuenteTipo:"oficial"},
-{id:"infraestructura",nombre:"Secretaría de Coordinación e Infraestructura",categoria:"Organismos públicos",descripcion:"Área municipal de coordinación e infraestructura.",telefonos:[{uso:"Contacto publicado",numero:"299 626-2687"}],correo:"sec.oysp@sanpatricio.gob.ar",fuente:"https://sanpatricio.gob.ar/sec-cordinacion",fuenteNombre:"Municipalidad de San Patricio del Chañar",fuenteTipo:"oficial"},
-{id:"desarrollo-economico",nombre:"Secretaría de Desarrollo Económico",categoria:"Trabajo y producción",descripcion:"Orientación y consultas vinculadas al desarrollo económico local.",telefonos:[{uso:"Contacto publicado",numero:"299 576-3634"}],correo:"desarrollo.economico@sanpatricio.gob.ar",fuente:"https://sanpatricio.gob.ar/desarrollo-economico",fuenteNombre:"Municipalidad de San Patricio del Chañar",fuenteTipo:"oficial"},
-{id:"juzgado-faltas",nombre:"Juzgado de Faltas",categoria:"Organismos públicos",descripcion:"Consultas y presentaciones ante el Juzgado de Faltas municipal.",telefonos:[{uso:"Contacto publicado",numero:"299 672-9991"}],correo:"descargos.juzgadodefaltas@sanpatricio.gob.ar",fuente:"https://sanpatricio.gob.ar/faltas",fuenteNombre:"Municipalidad de San Patricio del Chañar",fuenteTipo:"oficial"},
-{id:"renatre-ber",nombre:"RENATRE · Boca de Entrega y Recepción local",categoria:"Trabajo y producción",descripcion:"Punto local de atención del Registro Nacional de Trabajadores Rurales y Empleadores.",telefonos:[{uso:"Contacto local",numero:"0299 485-5120"},{uso:"Contacto alternativo publicado",numero:"0299 513-0238"}],fuente:"https://www.renatre.org.ar/delegaciones/neuquen/",fuenteNombre:"RENATRE · Delegación Neuquén",fuenteTipo:"oficial"},
-{id:"hospital",nombre:"Hospital de Área San Patricio del Chañar",categoria:"Salud y cuidados",descripcion:"Referencia de contacto del hospital local. Ante una emergencia, utilizá los canales oficiales de emergencia.",telefonos:[{uso:"Teléfono publicado",numero:"0299 485-5084"}],fuente:"https://copronaf.neuquen.gob.ar/agenda-de-recursos/",fuenteNombre:"Agenda de Recursos · Co.Pro.NAF Neuquén",fuenteTipo:"agenda"},
-{id:"cpem31",nombre:"C.P.E.M. N.º 31",categoria:"Educación",descripcion:"Establecimiento educativo de nivel medio.",telefonos:[{uso:"Teléfono publicado",numero:"0299 485-5095"}],fuente:"https://copronaf.neuquen.gob.ar/agenda-de-recursos/",fuenteNombre:"Agenda de Recursos · Co.Pro.NAF Neuquén",fuenteTipo:"agenda"},
-{id:"escuela-especial19",nombre:"Escuela Especial N.º 19",categoria:"Educación",descripcion:"Establecimiento de educación especial.",telefonos:[{uso:"Teléfono publicado",numero:"0299 485-5162"}],fuente:"https://copronaf.neuquen.gob.ar/agenda-de-recursos/",fuenteNombre:"Agenda de Recursos · Co.Pro.NAF Neuquén",fuenteTipo:"agenda"},
-{id:"escuela191",nombre:"Escuela Primaria N.º 191",categoria:"Educación",descripcion:"Establecimiento de educación primaria. Número publicado en la agenda provincial.",telefonos:[{uso:"Teléfono publicado",numero:"0299 485-5150"}],fuente:"https://copronaf.neuquen.gob.ar/agenda-de-recursos/",fuenteNombre:"Agenda de Recursos · Co.Pro.NAF Neuquén",fuenteTipo:"agenda"},
-{id:"escuela273",nombre:"Escuela Primaria N.º 273",categoria:"Educación",descripcion:"Establecimiento de educación primaria. Número publicado en la agenda provincial.",telefonos:[{uso:"Teléfono publicado",numero:"0299 485-5066"}],fuente:"https://copronaf.neuquen.gob.ar/agenda-de-recursos/",fuenteNombre:"Agenda de Recursos · Co.Pro.NAF Neuquén",fuenteTipo:"agenda"},
-{id:"cfp2",nombre:"Centro de Formación Profesional Agropecuario N.º 2",categoria:"Educación",descripcion:"Formación profesional vinculada al ámbito agropecuario.",telefonos:[{uso:"Teléfono publicado en agenda provincial",numero:"0299 485-5103"}],fuente:"https://copronaf.neuquen.gob.ar/agenda-de-recursos/",fuenteNombre:"Agenda de Recursos · Co.Pro.NAF Neuquén",fuenteTipo:"agenda"},
-{id:"cepa56",nombre:"C.E.P.A. N.º 56",categoria:"Educación",descripcion:"Centro educativo para personas adultas. Confirmá la línea antes de concurrir.",telefonos:[{uso:"Teléfono publicado",numero:"0299 485-5307"}],fuente:"https://copronaf.neuquen.gob.ar/agenda-de-recursos/",fuenteNombre:"Agenda de Recursos · Co.Pro.NAF Neuquén",fuenteTipo:"agenda"},
-{id:"area-ninez",nombre:"Área de Niñez y Adolescencia",categoria:"Salud y cuidados",descripcion:"Recurso local identificado en la Agenda de Recursos provincial para niñez y adolescencia.",telefonos:[{uso:"Teléfonos publicados",numero:"0299 485-5367 / 5372"}],fuente:"https://copronaf.neuquen.gob.ar/agenda-de-recursos/",fuenteNombre:"Agenda de Recursos · Co.Pro.NAF Neuquén",fuenteTipo:"agenda"},
-{id:"registro-civil",nombre:"Registro Civil · Oficina local",categoria:"Organismos públicos",descripcion:"Atención con turno previo según el directorio provincial. La sede tuvo cambios temporarios: confirmá la dirección antes de ir.",telefonos:[{uso:"Oficina local",numero:"0299 485-5098"}],correo:"ofdigital.sanpatricio@gmail.com",fuente:"https://registrocivil.neuquen.gob.ar/oficinas/",fuenteNombre:"Dirección Provincial de Registro Civil",fuenteTipo:"oficial"},
-{id:"parroquia",nombre:"Parroquia San Patricio",categoria:"Comunidad",descripcion:"Contacto parroquial publicado por la Diócesis de Neuquén.",telefonos:[{uso:"Teléfono publicado",numero:"0299 485-5074"}],correo:"pquiasanpatricionqn@gmail.com",fuente:"https://www.diocesisneuquen.org.ar/",fuenteNombre:"Diócesis de Neuquén",fuenteTipo:"institucional"}
-,
-{id:"camara-productores",nombre:"Cámara de Productores Agropecuarios",categoria:"Trabajo y producción",descripcion:"Entidad de representación de productores agropecuarios locales. El contacto figura en el directorio de entidades asociadas de CAME.",telefonos:[{uso:"Teléfono publicado",numero:"299 485-5080"}],correo:"federicosacheri@gmail.com",fuente:"https://www.redcame.org.ar/entidades-asociadas/78/asociadas",fuenteNombre:"CAME · Entidades asociadas",fuenteTipo:"institucional"},
-{
+  {
+    "id": "municipio-general",
+    "nombre": "Municipalidad · Contacto general",
+    "categoria": "Organismos públicos",
+    "descripcion": "Canal general de contacto municipal.",
+    "telefonos": [
+      {
+        "uso": "Contacto general",
+        "numero": "+54 299 408-4225"
+      }
+    ],
+    "fuente": "https://sanpatricio.gob.ar/sec-administracion",
+    "fuenteNombre": "Municipalidad de San Patricio del Chañar",
+    "fuenteTipo": "oficial"
+  },
+  {
+    "id": "municipio-mesa",
+    "nombre": "Municipalidad · Mesa de entrada y turnos",
+    "categoria": "Organismos públicos",
+    "descripcion": "Consultas administrativas y turnos.",
+    "telefonos": [
+      {
+        "uso": "Mesa de entrada / turnos",
+        "numero": "299 420-2609"
+      }
+    ],
+    "fuente": "https://sanpatricio.gob.ar/sec-administracion",
+    "fuenteNombre": "Municipalidad de San Patricio del Chañar",
+    "fuenteTipo": "oficial"
+  },
+  {
+    "id": "municipio-recaudaciones",
+    "nombre": "Municipalidad · Recaudaciones",
+    "categoria": "Organismos públicos",
+    "descripcion": "Consultas sobre recaudaciones municipales.",
+    "telefonos": [
+      {
+        "uso": "Recaudaciones",
+        "numero": "299 576-8856"
+      }
+    ],
+    "correo": "recaudaciones@sanpatricio.gob.ar",
+    "fuente": "https://sanpatricio.gob.ar/sec-administracion",
+    "fuenteNombre": "Municipalidad de San Patricio del Chañar",
+    "fuenteTipo": "oficial"
+  },
+  {
+    "id": "municipio-compras",
+    "nombre": "Municipalidad · Compras",
+    "categoria": "Organismos públicos",
+    "descripcion": "Área de compras municipal.",
+    "telefonos": [
+      {
+        "uso": "Compras",
+        "numero": "299 421-4821"
+      }
+    ],
+    "correo": "compras@sanpatricio.gob.ar",
+    "fuente": "https://sanpatricio.gob.ar/sec-administracion",
+    "fuenteNombre": "Municipalidad de San Patricio del Chañar",
+    "fuenteTipo": "oficial"
+  },
+  {
+    "id": "religion-culto",
+    "nombre": "Dirección de Religión y Culto",
+    "categoria": "Comunidad",
+    "descripcion": "Área municipal de atención a entidades religiosas y de culto.",
+    "telefonos": [
+      {
+        "uso": "Teléfono publicado",
+        "numero": "299 438-6493"
+      }
+    ],
+    "correo": "religionyculto@sanpatricio.gob.ar",
+    "fuente": "https://sanpatricio.gob.ar/religion",
+    "fuenteNombre": "Municipalidad de San Patricio del Chañar",
+    "fuenteTipo": "oficial"
+  },
+  {
+    "id": "seguridad",
+    "nombre": "Seguridad Ciudadana",
+    "categoria": "Organismos públicos",
+    "descripcion": "Contactos municipales del área de Seguridad Ciudadana.",
+    "telefonos": [
+      {
+        "uso": "Administración",
+        "numero": "299 458-4229"
+      },
+      {
+        "uso": "Denuncias",
+        "numero": "299 631-8081"
+      },
+      {
+        "uso": "Zoonosis",
+        "numero": "299 631-3103"
+      }
+    ],
+    "fuente": "https://sanpatricio.gob.ar/sec-ciudadana",
+    "fuenteNombre": "Municipalidad de San Patricio del Chañar",
+    "fuenteTipo": "oficial"
+  },
+  {
+    "id": "infraestructura",
+    "nombre": "Secretaría de Coordinación e Infraestructura",
+    "categoria": "Organismos públicos",
+    "descripcion": "Área municipal de coordinación e infraestructura.",
+    "telefonos": [
+      {
+        "uso": "Contacto publicado",
+        "numero": "299 626-2687"
+      }
+    ],
+    "correo": "sec.oysp@sanpatricio.gob.ar",
+    "fuente": "https://sanpatricio.gob.ar/sec-cordinacion",
+    "fuenteNombre": "Municipalidad de San Patricio del Chañar",
+    "fuenteTipo": "oficial"
+  },
+  {
+    "id": "desarrollo-economico",
+    "nombre": "Secretaría de Desarrollo Económico",
+    "categoria": "Trabajo y producción",
+    "descripcion": "Orientación y consultas vinculadas al desarrollo económico local.",
+    "telefonos": [
+      {
+        "uso": "Contacto publicado",
+        "numero": "299 576-3634"
+      }
+    ],
+    "correo": "desarrollo.economico@sanpatricio.gob.ar",
+    "fuente": "https://sanpatricio.gob.ar/desarrollo-economico",
+    "fuenteNombre": "Municipalidad de San Patricio del Chañar",
+    "fuenteTipo": "oficial"
+  },
+  {
+    "id": "juzgado-faltas",
+    "nombre": "Juzgado de Faltas",
+    "categoria": "Organismos públicos",
+    "descripcion": "Consultas y presentaciones ante el Juzgado de Faltas municipal.",
+    "telefonos": [
+      {
+        "uso": "Contacto publicado",
+        "numero": "299 672-9991"
+      }
+    ],
+    "correo": "descargos.juzgadodefaltas@sanpatricio.gob.ar",
+    "fuente": "https://sanpatricio.gob.ar/faltas",
+    "fuenteNombre": "Municipalidad de San Patricio del Chañar",
+    "fuenteTipo": "oficial"
+  },
+  {
+    "id": "renatre-ber",
+    "nombre": "RENATRE · Boca de Entrega y Recepción local",
+    "categoria": "Trabajo y producción",
+    "descripcion": "Punto local de atención del Registro Nacional de Trabajadores Rurales y Empleadores.",
+    "telefonos": [
+      {
+        "uso": "Contacto local",
+        "numero": "0299 485-5120"
+      },
+      {
+        "uso": "Contacto alternativo publicado",
+        "numero": "0299 513-0238"
+      }
+    ],
+    "fuente": "https://www.renatre.org.ar/delegaciones/neuquen/",
+    "fuenteNombre": "RENATRE · Delegación Neuquén",
+    "fuenteTipo": "oficial"
+  },
+  {
+    "id": "hospital",
+    "nombre": "Hospital de Área San Patricio del Chañar",
+    "categoria": "Salud y cuidados",
+    "descripcion": "Referencia de contacto del hospital local. Ante una emergencia, utilizá los canales oficiales de emergencia.",
+    "telefonos": [
+      {
+        "uso": "Teléfono publicado",
+        "numero": "0299 485-5084"
+      }
+    ],
+    "fuente": "https://copronaf.neuquen.gob.ar/agenda-de-recursos/",
+    "fuenteNombre": "Agenda de Recursos · Co.Pro.NAF Neuquén",
+    "fuenteTipo": "agenda"
+  },
+  {
+    "id": "cpem31",
+    "nombre": "C.P.E.M. N.º 31",
+    "categoria": "Educación",
+    "descripcion": "Establecimiento educativo de nivel medio.",
+    "telefonos": [
+      {
+        "uso": "Teléfono publicado",
+        "numero": "0299 485-5095"
+      }
+    ],
+    "fuente": "https://copronaf.neuquen.gob.ar/agenda-de-recursos/",
+    "fuenteNombre": "Agenda de Recursos · Co.Pro.NAF Neuquén",
+    "fuenteTipo": "agenda"
+  },
+  {
+    "id": "escuela-especial19",
+    "nombre": "Escuela Especial N.º 19",
+    "categoria": "Educación",
+    "descripcion": "Establecimiento de educación especial.",
+    "telefonos": [
+      {
+        "uso": "Teléfono publicado",
+        "numero": "0299 485-5162"
+      }
+    ],
+    "fuente": "https://copronaf.neuquen.gob.ar/agenda-de-recursos/",
+    "fuenteNombre": "Agenda de Recursos · Co.Pro.NAF Neuquén",
+    "fuenteTipo": "agenda"
+  },
+  {
+    "id": "escuela191",
+    "nombre": "Escuela Primaria N.º 191",
+    "categoria": "Educación",
+    "descripcion": "Establecimiento de educación primaria. Número publicado en la agenda provincial.",
+    "telefonos": [
+      {
+        "uso": "Teléfono publicado",
+        "numero": "0299 485-5150"
+      }
+    ],
+    "fuente": "https://copronaf.neuquen.gob.ar/agenda-de-recursos/",
+    "fuenteNombre": "Agenda de Recursos · Co.Pro.NAF Neuquén",
+    "fuenteTipo": "agenda"
+  },
+  {
+    "id": "escuela273",
+    "nombre": "Escuela Primaria N.º 273",
+    "categoria": "Educación",
+    "descripcion": "Establecimiento de educación primaria. Número publicado en la agenda provincial.",
+    "telefonos": [
+      {
+        "uso": "Teléfono publicado",
+        "numero": "0299 485-5066"
+      }
+    ],
+    "fuente": "https://copronaf.neuquen.gob.ar/agenda-de-recursos/",
+    "fuenteNombre": "Agenda de Recursos · Co.Pro.NAF Neuquén",
+    "fuenteTipo": "agenda"
+  },
+  {
+    "id": "cfp2",
+    "nombre": "Centro de Formación Profesional Agropecuario N.º 2",
+    "categoria": "Educación",
+    "descripcion": "Formación profesional vinculada al ámbito agropecuario.",
+    "telefonos": [
+      {
+        "uso": "Teléfono publicado en agenda provincial",
+        "numero": "0299 485-5103"
+      }
+    ],
+    "fuente": "https://copronaf.neuquen.gob.ar/agenda-de-recursos/",
+    "fuenteNombre": "Agenda de Recursos · Co.Pro.NAF Neuquén",
+    "fuenteTipo": "agenda"
+  },
+  {
+    "id": "cepa56",
+    "nombre": "C.E.P.A. N.º 56",
+    "categoria": "Educación",
+    "descripcion": "Centro educativo para personas adultas. Confirmá la línea antes de concurrir.",
+    "telefonos": [
+      {
+        "uso": "Teléfono publicado",
+        "numero": "0299 485-5307"
+      }
+    ],
+    "fuente": "https://copronaf.neuquen.gob.ar/agenda-de-recursos/",
+    "fuenteNombre": "Agenda de Recursos · Co.Pro.NAF Neuquén",
+    "fuenteTipo": "agenda"
+  },
+  {
+    "id": "area-ninez",
+    "nombre": "Área de Niñez y Adolescencia",
+    "categoria": "Salud y cuidados",
+    "descripcion": "Recurso local identificado en la Agenda de Recursos provincial para niñez y adolescencia.",
+    "telefonos": [
+      {
+        "uso": "Teléfonos publicados",
+        "numero": "0299 485-5367 / 5372"
+      }
+    ],
+    "fuente": "https://copronaf.neuquen.gob.ar/agenda-de-recursos/",
+    "fuenteNombre": "Agenda de Recursos · Co.Pro.NAF Neuquén",
+    "fuenteTipo": "agenda"
+  },
+  {
+    "id": "registro-civil",
+    "nombre": "Registro Civil · Oficina local",
+    "categoria": "Organismos públicos",
+    "descripcion": "Atención con turno previo según el directorio provincial. La sede tuvo cambios temporarios: confirmá la dirección antes de ir.",
+    "telefonos": [
+      {
+        "uso": "Oficina local",
+        "numero": "0299 485-5098"
+      }
+    ],
+    "correo": "ofdigital.sanpatricio@gmail.com",
+    "fuente": "https://registrocivil.neuquen.gob.ar/oficinas/",
+    "fuenteNombre": "Dirección Provincial de Registro Civil",
+    "fuenteTipo": "oficial"
+  },
+  {
+    "id": "parroquia",
+    "nombre": "Parroquia San Patricio",
+    "categoria": "Comunidad",
+    "descripcion": "Contacto parroquial publicado por la Diócesis de Neuquén.",
+    "telefonos": [
+      {
+        "uso": "Teléfono publicado",
+        "numero": "0299 485-5074"
+      }
+    ],
+    "correo": "pquiasanpatricionqn@gmail.com",
+    "fuente": "https://www.diocesisneuquen.org.ar/",
+    "fuenteNombre": "Diócesis de Neuquén",
+    "fuenteTipo": "institucional"
+  },
+  {
+    "id": "camara-productores",
+    "nombre": "Cámara de Productores Agropecuarios",
+    "categoria": "Trabajo y producción",
+    "descripcion": "Entidad de representación de productores agropecuarios locales. El contacto figura en el directorio de entidades asociadas de CAME.",
+    "telefonos": [
+      {
+        "uso": "Teléfono publicado",
+        "numero": "299 485-5080"
+      }
+    ],
+    "correo": "federicosacheri@gmail.com",
+    "fuente": "https://www.redcame.org.ar/entidades-asociadas/78/asociadas",
+    "fuenteNombre": "CAME · Entidades asociadas",
+    "fuenteTipo": "institucional"
+  },
+  {
     "id": "escuela-342",
     "nombre": "Escuela Primaria N.º 342",
     "categoria": "Educación",
@@ -247,41 +561,67 @@ window.CHANAR_CONTACTOS = [
     "id": "ruca-laf",
     "nombre": "Hospedaje Ruca-Laf",
     "categoria": "Turismo y alojamiento",
-    "descripcion": "Hospedaje local. Dirección publicada en el portal turístico municipal; no se encontró teléfono en esa ficha.",
+    "descripcion": "Hospedaje local. Dirección publicada en el portal turístico municipal.",
     "telefonos": [],
     "fuente": "https://sanpatricio.gob.ar/dormir",
     "fuenteNombre": "Municipalidad · Dónde dormir",
-    "fuenteTipo": "oficial"
+    "fuenteTipo": "oficial",
+    "direccion": "Araucaria 665, San Patricio del Chañar, Neuquén, Argentina"
   },
   {
     "id": "bodega-schroeder",
     "nombre": "Bodega Familia Schroeder",
     "categoria": "Turismo y producción",
     "descripcion": "Bodega con propuesta de visitas y gastronomía, identificada en el portal turístico municipal.",
-    "telefonos": [],
-    "fuente": "https://sanpatricio.gob.ar/quehacer",
-    "fuenteNombre": "Municipalidad · Qué hacer",
-    "fuenteTipo": "oficial"
+    "telefonos": [
+      {
+        "uso": "Contacto de bodega y turismo",
+        "numero": "0299 454-8920"
+      }
+    ],
+    "fuente": "https://familiaschroeder.com/arg/bodega/",
+    "fuenteNombre": "Bodega Familia Schroeder · Sitio oficial",
+    "fuenteTipo": "oficial",
+    "direccion": "Calle 7 Norte, San Patricio del Chañar, Neuquén, Argentina",
+    "correo": "turismo@familiaschroeder.com"
   },
   {
     "id": "bodega-malma",
     "nombre": "Bodega Malma",
     "categoria": "Turismo y producción",
     "descripcion": "Bodega y propuesta de visitas guiadas identificada en el portal turístico municipal.",
-    "telefonos": [],
-    "fuente": "https://sanpatricio.gob.ar/quehacer",
-    "fuenteNombre": "Municipalidad · Qué hacer",
-    "fuenteTipo": "oficial"
+    "telefonos": [
+      {
+        "uso": "Visitas guiadas",
+        "numero": "0299 536-2700"
+      },
+      {
+        "uso": "Restaurante",
+        "numero": "0299 409-3654"
+      }
+    ],
+    "fuente": "https://www.bodegamalma.com/es/",
+    "fuenteNombre": "Bodega Malma · Sitio oficial",
+    "fuenteTipo": "oficial",
+    "direccion": "Ruta Provincial 7 y Calle 15, San Patricio del Chañar, Neuquén, Argentina",
+    "correo": "visitas@bodegamalma.com"
   },
   {
     "id": "bodega-fin-mundo",
     "nombre": "Bodega del Fin del Mundo",
     "categoria": "Turismo y producción",
     "descripcion": "Bodega de la localidad identificada en el portal turístico municipal.",
-    "telefonos": [],
-    "fuente": "https://sanpatricio.gob.ar/quehacer",
-    "fuenteNombre": "Municipalidad · Qué hacer",
-    "fuenteTipo": "oficial"
+    "telefonos": [
+      {
+        "uso": "Contacto de turismo publicado",
+        "numero": "0299 580-9085"
+      }
+    ],
+    "fuente": "https://turismo.neuquen.gob.ar/alojamientos/bodega-del-fin-del-mundo/",
+    "fuenteNombre": "Turismo Neuquén",
+    "fuenteTipo": "oficial",
+    "direccion": "Ruta Provincial 8, Km 9, Chacra 77, San Patricio del Chañar, Neuquén, Argentina",
+    "correo": "turismo@bdfm.com.ar"
   },
   {
     "id": "bodega-secreto",
@@ -289,19 +629,22 @@ window.CHANAR_CONTACTOS = [
     "categoria": "Turismo y producción",
     "descripcion": "Bodega de la localidad identificada en el portal turístico municipal.",
     "telefonos": [],
-    "fuente": "https://sanpatricio.gob.ar/quehacer",
-    "fuenteNombre": "Municipalidad · Qué hacer",
-    "fuenteTipo": "oficial"
+    "fuente": "https://www.secretopatagonico.com/contacto",
+    "fuenteNombre": "Bodega Secreto Patagónico · Sitio oficial",
+    "fuenteTipo": "oficial",
+    "direccion": "Picada 4,5, San Patricio del Chañar, Neuquén, Argentina",
+    "correo": "ventas@secretopatagonico.com"
   },
   {
     "id": "bodega-patritri",
-    "nombre": "Bodega Patritri",
+    "nombre": "Bodega Patritti",
     "categoria": "Turismo y producción",
     "descripcion": "Bodega de la localidad identificada en el portal turístico municipal.",
     "telefonos": [],
-    "fuente": "https://sanpatricio.gob.ar/quehacer",
-    "fuenteNombre": "Municipalidad · Qué hacer",
-    "fuenteTipo": "oficial"
+    "fuente": "https://bodegapatritti.com/bodega-patritti-contacto/",
+    "fuenteNombre": "Bodega Patritti · Sitio oficial",
+    "fuenteTipo": "oficial",
+    "direccion": "Picada 1 Norte, Km 4,5, San Patricio del Chañar, Neuquén, Argentina"
   },
   {
     "id": "establecimiento-san-juan",
@@ -311,7 +654,8 @@ window.CHANAR_CONTACTOS = [
     "telefonos": [],
     "fuente": "https://sanpatricio.gob.ar/quehacer",
     "fuenteNombre": "Municipalidad · Qué hacer",
-    "fuenteTipo": "oficial"
+    "fuenteTipo": "oficial",
+    "direccion": "Picada N.º 8, San Patricio del Chañar, Neuquén, Argentina"
   },
   {
     "id": "haw",
@@ -336,7 +680,8 @@ window.CHANAR_CONTACTOS = [
     "telefonos": [],
     "fuente": "https://sanpatricio.gob.ar/quehacer",
     "fuenteNombre": "Municipalidad · Qué hacer",
-    "fuenteTipo": "oficial"
+    "fuenteTipo": "oficial",
+    "direccion": "Sector de Ruta Provincial 7 y Ruta Provincial 8, San Patricio del Chañar, Neuquén, Argentina"
   },
   {
     "id": "balneario",
@@ -344,9 +689,10 @@ window.CHANAR_CONTACTOS = [
     "categoria": "Cultura y comunidad",
     "descripcion": "Espacio recreativo municipal junto al río Neuquén. Servicios y funcionamiento pueden variar según temporada.",
     "telefonos": [],
-    "fuente": "https://sanpatricio.gob.ar/nuestra",
-    "fuenteNombre": "Municipalidad · Nuestra ciudad",
-    "fuenteTipo": "oficial"
+    "fuente": "https://ambiente.neuquen.gov.ar/wp-content/uploads/2023/07/11619-E2-AM-IN-001-0_DGP-Infraestructura-y-Loteos.pdf",
+    "fuenteNombre": "Gobierno de Neuquén · Informe ambiental",
+    "fuenteTipo": "oficial",
+    "direccion": "A unos 3 km de Ruta Provincial 7; acceso por calle 5, sector Villa La Angostura Sur, San Patricio del Chañar, Neuquén, Argentina"
   },
   {
     "id": "plaza-infancias",
@@ -356,7 +702,8 @@ window.CHANAR_CONTACTOS = [
     "telefonos": [],
     "fuente": "https://sanpatricio.gob.ar/nuestra",
     "fuenteNombre": "Municipalidad · Nuestra ciudad",
-    "fuenteTipo": "oficial"
+    "fuenteTipo": "oficial",
+    "direccion": "Entre Complejo Chocón y Avenida Roberto Gasparri Sur, San Patricio del Chañar, Neuquén, Argentina"
   },
   {
     "id": "centro-cultural",
@@ -366,7 +713,8 @@ window.CHANAR_CONTACTOS = [
     "telefonos": [],
     "fuente": "https://sanpatricio.gob.ar/nuestra",
     "fuenteNombre": "Municipalidad · Nuestra ciudad",
-    "fuenteTipo": "oficial"
+    "fuenteTipo": "oficial",
+    "direccion": "Avenida Ingeniero Roberto Gasparri Norte, San Patricio del Chañar, Neuquén, Argentina"
   },
   {
     "id": "estadio-municipal",
@@ -376,7 +724,8 @@ window.CHANAR_CONTACTOS = [
     "telefonos": [],
     "fuente": "https://sanpatricio.gob.ar/nuestra",
     "fuenteNombre": "Municipalidad · Nuestra ciudad",
-    "fuenteTipo": "oficial"
+    "fuenteTipo": "oficial",
+    "direccion": "Avenida Gasparri Norte, San Patricio del Chañar, Neuquén, Argentina"
   },
   {
     "id": "polideportivo",
