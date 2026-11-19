@@ -1258,3 +1258,31 @@ body[data-theme=high] .data-row-phone .data-value,body[data-theme=high] .data-ro
  .contact-card{background:#fff!important;border:0!important;border-bottom:1px solid #ddd!important}
  .contact-card::before,.contact-card::after,.welcome::before,.welcome::after{display:none!important}
 }
+
+
+/* Separación inequívoca de cada ficha: cada tarjeta se percibe como una unidad. */
+.contact-grid{gap:16px}
+.contact-card{
+  border:2px solid #c4d1c0;
+  border-radius:15px;
+  background:linear-gradient(155deg,#fffefa 0%,#f8faf5 100%);
+  box-shadow:0 5px 16px rgba(38,62,43,.09),0 1px 2px rgba(38,62,43,.06);
+}
+.contact-card + .contact-card{isolation:isolate}
+.contact-card .card-heading{padding-bottom:8px;border-bottom:1px solid #e1e8dd}
+.contact-card h4{margin-top:11px}
+body[data-theme=night] .contact-card{
+  border:2px solid #71866d;
+  background:linear-gradient(155deg,#304333 0%,#27392c 100%);
+  box-shadow:0 5px 17px rgba(0,0,0,.2);
+}
+body[data-theme=night] .contact-card .card-heading{border-bottom-color:#536b52}
+body[data-theme=high] .contact-card{
+  border:3px solid #000!important;
+  background:#fff!important;
+  box-shadow:none!important;
+}
+@media print{
+  .contact-grid{gap:8px}
+  .contact-card{border:1px solid #999!important;box-shadow:none!important}
+}
