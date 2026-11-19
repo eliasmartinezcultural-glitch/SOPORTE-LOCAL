@@ -169,7 +169,30 @@
     centro: ["centro", "centros", "cultural"],
     centros: ["centro", "centros", "cultural"],
     cultural: ["cultural", "cultura", "centro"],
-    culturales: ["cultural", "cultura", "centro"]
+    culturales: ["cultural", "cultura", "centro"],
+    municipal: ["municipal", "municipalidad", "municipio"],
+    municipal: ["municipal", "municipalidad", "municipio"],
+    policia: ["policia", "seguridad"],
+    policial: ["policial", "policia", "seguridad"],
+    comisaria: ["comisaria", "seguridad"],
+    bombero: ["bombero", "bomberos", "cuartel"],
+    bomberos: ["bombero", "bomberos", "cuartel"],
+    registro: ["registro", "civil"],
+    dni: ["dni", "registro", "civil"],
+    documento: ["documento", "dni", "registro"],
+    turno: ["turno", "turnos"],
+    turnos: ["turno", "turnos"],
+    tramite: ["tramite", "tramites"],
+    tramites: ["tramite", "tramites"],
+    recaudacion: ["recaudacion", "recaudaciones"],
+    recaudaciones: ["recaudacion", "recaudaciones"],
+    basura: ["basura", "residuos", "recoleccion"],
+    residuos: ["residuos", "basura", "recoleccion"],
+    colectivo: ["colectivo", "transporte"],
+    transporte: ["transporte", "colectivo"],
+    agua: ["agua"],
+    discapacidad: ["discapacidad", "inclusion"],
+    inclusion: ["inclusion", "discapacidad"]
   };
 
   function matchingTerms(term) {
@@ -332,10 +355,10 @@
   });
 
   function applyFontScale(next) {
-    fontScale = Math.max(1, Math.min(1.5, Math.round(next * 100) / 100));
+    fontScale = Math.max(1, Math.min(2, Math.round(next * 100) / 100));
     document.documentElement.style.setProperty("--reading-scale", String(fontScale));
     $("fontDown").disabled = fontScale <= 1;
-    $("fontUp").disabled = fontScale >= 1.5;
+    $("fontUp").disabled = fontScale >= 2;
     $("fontReset").setAttribute("aria-label", "Tamaño de texto actual: " + Math.round(fontScale * 100) + " por ciento. Restablecer");
     const fontStatus = $("fontScaleStatus");
     if (fontStatus) fontStatus.textContent = Math.round(fontScale * 100) + "%";
@@ -447,8 +470,12 @@
 
   async function copyText(value) {
     if (navigator.clipboard && window.isSecureContext) {
-      await navigator.clipboard.writeText(value);
-      return true;
+      try {
+        await navigator.clipboard.writeText(value);
+        return true;
+      } catch (_) {
+        /* Si el portapapeles moderno no está disponible, se intenta el método alternativo. */
+      }
     }
     const helper = document.createElement("textarea");
     helper.value = value;
@@ -530,7 +557,8 @@
     empty.querySelector("p").textContent = "Volvé a cargar la página más tarde.";
     $("searchForm").hidden = true;
     filters.hidden = true;
-    document.querySelector(".reading-tools").hidden = true;
+    const readingTools = document.querySelector(".reading-tools");
+    if (readingTools) readingTools.hidden = true;
   } else {
     renderFilters();
     render();
