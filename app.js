@@ -11,7 +11,7 @@
     "supportAlias","printMeta","printButton","whatsappShare","shareButton",
     "copyShareButton","mobileSearchButton","mobileWhatsappShare","appStatus",
     "favoritesToggle","favoritesCount","clearFavorites","addressOnly","clearAllFilters",
-    "printScope","printHeadingTitle","printHeadingIntro","printCoverCount","shareKitWhatsapp","shareCardButton","shareKitCopyButton","shareMessagePreview","printUrl", "directoryIntro"
+    "printScope","printHeadingTitle","printHeadingIntro","printCoverCount","shareKitWhatsapp","shareCardButton","shareKitCopyButton","shareMessagePreview","printUrl", "directoryIntro","exportResultsButton","exportFeedback"
   ];
   const missingIds = requiredIds.filter(id => !$(id));
   if (missingIds.length) {
@@ -445,6 +445,10 @@
     currentPage = Math.min(currentPage, pageCount);
     const start = (currentPage - 1) * pageSize;
     const pageItems = visible.slice(start, start + pageSize);
+    $("exportResultsButton").disabled = visible.length === 0;
+    $("exportResultsButton").textContent = visible.length
+      ? "Descargar listado · " + visible.length
+      : "Sin resultados para descargar";
     grid.innerHTML = pageItems.map(card).join("");
     count.textContent = visible.length + (visible.length === 1 ? " resultado" : " resultados")
       + (visible.length > pageSize ? " · mostrando " + (start + 1) + "–" + Math.min(start + pageSize, visible.length) : "");
@@ -831,6 +835,58 @@
   $("printScope").addEventListener("change", () => {
     $("printButton").textContent = $("printScope").value === "all" ? "Imprimir la guía completa" : "Imprimir los resultados";
   });
+
+  // Exporta todos los resultados actuales, no solo las tarjetas de la página visible.
+  // El prefijo BOM facilita la lectura de tildes y eñes en planillas de uso habitual.
+  function csvCell(value) {
+    let text = String(value ?? "").replace(/\r\n?/g, "\n");
+    // Evita que una planilla interprete texto importado como fórmula ejecutable.
+    if (/^\s*[=+@-]/.test(text)) text = "'" + text;
+    return '"' + text.replace(/"/g, '""') + '"';
+  }
+
+  function downloadCurrentResultsCsv() {
+    const rows = visibleContacts();
+    const feedback = $("exportFeedback");
+    if (!rows.length) {
+      feedback.textContent = "No hay resultados para descargar. Probá quitar algún filtro.";
+      return;
+    }
+    const columns = [
+      ["Nombre", contact => contact.nombre],
+      ["Tema", contact => categoryLabel(contact.categoria)],
+      ["Descripción", contact => contact.descripcion],
+      ["Teléfonos publicados", contact => (contact.telefonos || []).map(phone => phone.numero).join(" | ")],
+      ["Uso indicado del teléfono", contact => (contact.telefonos || []).map(phone => phone.uso || "").join(" | ")],
+      ["Estado documental del contacto", contact => {
+        const status = contactStatusInfo(contact);
+        return status ? status[0] + ". " + status[1] : "Sin contacto publicado";
+      }],
+      ["Dirección publicada", contact => contact.direccion || ""],
+      ["Correo publicado", contact => contact.correo || ""],
+      ["Fuente", contact => contact.fuenteNombre || ""],
+      ["Tipo de fuente", contact => sourceInfo(contact).label],
+      ["Enlace de la fuente", contact => safeSource(contact.fuente)]
+    ];
+    const lines = [
+      columns.map(([heading]) => csvCell(heading)).join(","),
+      ...rows.map(contact => columns.map(([, value]) => csvCell(value(contact))).join(","))
+    ];
+    const blob = new Blob(["\uFEFF" + lines.join("\r\n")], { type: "text/csv;charset=utf-8;" });
+    const objectUrl = URL.createObjectURL(blob);
+    const link = document.createElement("a");
+    const now = new Date();
+    const date = [now.getFullYear(), String(now.getMonth() + 1).padStart(2, "0"), String(now.getDate()).padStart(2, "0")].join("-");
+    link.href = objectUrl;
+    link.download = "chanar-a-mano-resultados-" + date + ".csv";
+    document.body.appendChild(link);
+    link.click();
+    link.remove();
+    window.setTimeout(() => URL.revokeObjectURL(objectUrl), 1500);
+    feedback.textContent = "Se preparó un archivo con " + rows.length + (rows.length === 1 ? " ficha." : " fichas.") + " Incluye procedencia y advertencias documentales.";
+  }
+
+  $("exportResultsButton").addEventListener("click", downloadCurrentResultsCsv);
   window.addEventListener("beforeprint", () => {
     updatePrintMeta();
     preparePrint();
