@@ -10,3 +10,79 @@
 @media(max-width:850px){.community-support{grid-template-columns:1fr .72fr}.support-copy{padding:34px 29px}.community-support h2{font-size:37px}}
 @media(max-width:600px){.community-support{margin:0 17px 40px;grid-template-columns:1fr}.support-copy{padding:29px 22px}.community-support h2{font-size:38px}.support-copy>p:not(.eyebrow){font-size:11px}.support-alias{align-items:flex-start;flex-direction:column}.support-alias .button{width:100%}.support-art{min-height:260px}.support-card-note{top:22px;left:calc(50% - 90px);width:180px;height:210px}.support-sun{width:90px;height:90px;top:18px;right:15%}.support-hill-a{height:140px;bottom:18px}.support-hill-b{height:130px;bottom:-35px}}
 @media print{.community-support{display:none!important}}
+
+
+/* Experiencia multidispositivo: prioridad táctil y lectura clara */
+html{scroll-padding-top:12px}
+button,a,input{ -webkit-tap-highlight-color:transparent }
+button:focus-visible,a:focus-visible,input:focus-visible{outline:3px solid #b9874e;outline-offset:3px}
+.search-wrap input{min-width:0}
+.filter-button{min-height:44px;padding:10px 15px;font-size:11px}
+.phone-link{display:inline-flex;align-items:center;justify-content:center;min-height:40px;padding:4px 2px}
+.card-source{min-height:32px;display:inline-flex;align-items:center}
+.button{min-height:44px}
+.contact-card{min-width:0}
+.contact-card h3,.contact-description,.card-source,.phone-link{overflow-wrap:anywhere}
+@media(max-width:600px){
+  .topline{height:auto;min-height:30px;gap:8px;letter-spacing:.08em}
+  .site-header{gap:10px}
+  .site-header .button{min-height:44px;padding:10px 12px;font-size:11px}
+  .brand{min-width:0;gap:9px}
+  .brand>span:last-child{min-width:0}
+  .hero h1{font-size:clamp(48px,13vw,60px)}
+  .section-heading{align-items:flex-start;flex-direction:column;gap:8px}
+  .result-count{padding:0;font-size:11px}
+  .search-wrap{height:56px;padding:0 13px}
+  .search-wrap input{font-size:16px}
+  .filters{display:flex;flex-wrap:nowrap;overflow-x:auto;overscroll-behavior-x:contain;padding:2px 2px 9px;margin-right:-17px;scrollbar-width:thin}
+  .filter-button{flex:0 0 auto;white-space:nowrap}
+  .contact-card{padding:18px}
+  .phone-row{align-items:flex-start}
+  .phone-link{font-size:14px}
+  .support-alias strong{font-size:24px}
+}
+@media(min-width:601px) and (max-width:900px){
+  .contact-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .directory-section,.trust-strip,.editorial-note,.community-support,.print-panel{margin-left:22px;margin-right:22px}
+}
+.print-heading{display:none}
+
+/* Impresión editorial: documento limpio, legible y coherente con la agenda */
+@page{size:A4;margin:14mm 13mm 16mm}
+@media print{
+  *{-webkit-print-color-adjust:exact!important;print-color-adjust:exact!important}
+  html,body{background:#fff!important;color:#202820!important;font-family:Arial,sans-serif!important;font-size:10pt;line-height:1.35}
+  body{margin:0}
+  .topline,.site-header .button,.hero,.trust-strip,.search-wrap,.filters,.editorial-note,.community-support,.print-panel,.site-footer{display:none!important}
+  .site-header{max-width:none;padding:0 0 8mm;border-bottom:1.5pt solid #304b3a}
+  .brand-mark{display:none}
+  .brand strong{font-size:15pt;letter-spacing:.12em;color:#304b3a}
+  .brand small{font-size:8pt;color:#59665a}
+  main{display:block}
+  .directory-section{max-width:none;margin:0;padding:7mm 0 0}
+  .print-heading{display:flex;flex-direction:column;gap:2mm;margin:0 0 6mm;padding:0 0 4mm;border-bottom:1pt solid #c8cfc4}
+  .print-heading strong{font:700 19pt Georgia,serif;letter-spacing:.04em;color:#304b3a}
+  .print-heading span{font-size:9pt;color:#48554a}
+  .print-heading small{font-size:8pt;color:#667064}
+  .section-heading{display:block;margin:0 0 5mm}
+  .section-heading .eyebrow{font-size:7pt;margin:0 0 2mm}
+  .section-heading h2{font:700 16pt Georgia,serif;color:#304b3a}
+  .section-intro{font-size:8pt;color:#4f5b50;margin:2mm 0 0}
+  .result-count{display:none}
+  .contact-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:4mm;align-items:stretch}
+  .contact-card{display:flex!important;min-width:0;min-height:0;padding:4mm;border:0.7pt solid #cbd1c7;border-radius:2mm;background:#fff;box-shadow:none;break-inside:avoid;page-break-inside:avoid}
+  .card-top{gap:2mm}
+  .category-label{font-size:6.5pt;letter-spacing:.08em}
+  .status{font-size:6pt;padding:1mm 2mm;background:#eef1e9!important;color:#405541!important}
+  .contact-card h3{font:700 11pt/1.15 Georgia,serif;color:#26372e;margin:3mm 0 1.5mm}
+  .contact-description{font-size:8pt;line-height:1.35;color:#465247;margin:0 0 2mm}
+  .phone-list{gap:1mm}
+  .phone-row{padding-top:1.5mm;border-top:.5pt solid #e1e5dd;gap:2mm}
+  .phone-purpose{font-size:7pt;color:#5e685e}
+  .phone-link{font-size:9pt;min-height:0;padding:0;color:#1d3023!important;text-decoration:none;font-weight:700;white-space:normal}
+  .card-source{display:block;min-height:0;margin-top:2mm;font-size:7pt;line-height:1.25;color:#405541!important;overflow-wrap:anywhere}
+  a[href]:after{content:none!important}
+  .empty-state:not([hidden]){display:block!important;padding:12mm;border:1pt dashed #aab4a6;text-align:center}
+  .empty-state strong{font-size:12pt}
+  .empty-state p{font-size:9pt}
+}
