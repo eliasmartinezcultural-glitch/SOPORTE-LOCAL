@@ -1,27 +1,39 @@
 # CHÁÑAR A MANO
 
-**Guía local de instituciones, servicios y organizaciones de San Patricio del Chañar, Neuquén.**  
-Un proyecto editorial independiente de **Ocarina Producciones**.
+**Agenda comunitaria y guía de recursos de San Patricio del Chañar, Neuquén.**  
+Creada por **Ocarina Producciones**.
 
-## Propósito
-Reunir y ordenar información pública útil para la vida cotidiana de la localidad. La página ofrece una consulta gratuita y la estructura visual presenta una futura edición ampliada en PDF, pensada para descargar, guardar e imprimir.
+## Sentido del proyecto
+Chañar a Mano es una agenda comunitaria independiente, abierta y de acceso libre. Reúne información pública de instituciones, servicios, organizaciones y espacios de la localidad para facilitar el encuentro, la consulta y la circulación de información útil.
 
-## Contenido actual
-- 21 fichas con teléfonos y/o correos publicados.
-- Categorías: organismos públicos, comunidad, trabajo y producción, salud y cuidados, educación.
-- Búsqueda por palabras y filtros por tema.
+No es una publicación oficial ni un servicio pago. La consulta, el uso y el compartir la agenda no dependen de realizar aportes.
+
+## Colaboración voluntaria
+La agenda incluye un mecanismo de colaboración voluntaria para quienes deseen ayudar a sostener su continuidad:
+- Alias: `ocarina.guitarra`
+- Titular: Elías Martínez
+- La colaboración es voluntaria y nunca condiciona el acceso a la agenda.
+
+## Créditos
+**Agenda comunitaria creada por Ocarina Producciones.**  
+Historias, personas y territorio.
+
+## Contenido y funciones
+- Fichas de instituciones, organizaciones y servicios.
+- Categorías y buscador.
 - Enlaces telefónicos y de correo desde dispositivos compatibles.
-- Fuente visible en cada ficha.
-- Compartir la página e imprimir/guardar la consulta como PDF.
+- Fuentes visibles en cada ficha.
+- Compartir la agenda e imprimir/guardar la consulta como PDF.
+- Cartel de colaboración voluntaria con botón para copiar el alias.
 
-## Criterio editorial y de verificación
+## Criterios editoriales
 - Se priorizan fuentes oficiales y directorios institucionales.
-- Las fichas distinguen entre **sitio oficial**, **fuente institucional** y **agenda provincial**.
-- Una ficha con fuente de agenda provincial no equivale a una confirmación directa y reciente de la institución.
+- Las fichas distinguen entre sitio oficial, fuente institucional y agenda provincial.
+- Una ficha de agenda provincial no equivale a confirmación directa y reciente de la institución.
 - No se publican teléfonos personales atribuidos a organismos.
 - No se inventan domicilios, horarios ni canales de atención.
-- Los datos deben revisarse antes de cada edición descargable o impresa.
-- La guía es independiente y no representa oficialmente a los organismos mencionados.
+- La información puede cambiar; se reciben avisos y correcciones comunitarias.
+- La agenda facilita el acceso a información publicada y no reemplaza los canales oficiales.
 
 ## Fuentes principales
 - Municipalidad de San Patricio del Chañar: https://sanpatricio.gob.ar/
@@ -31,18 +43,12 @@ Reunir y ordenar información pública útil para la vida cotidiana de la locali
 - CAME, entidades asociadas: https://www.redcame.org.ar/entidades-asociadas/78/asociadas
 - Diócesis de Neuquén: https://www.diocesisneuquen.org.ar/
 
-## Estructura
-- `index.html`: página, presentación y cartel de la edición ampliada.
-- `styles.css`: identidad visual responsive y reglas de impresión.
+## Archivos
+- `index.html`: estructura de la agenda y cartel de colaboración.
+- `styles.css`: identidad visual adaptable e impresión.
 - `datos.js`: datos separados de la interfaz, con tipo de fuente.
-- `app.js`: búsqueda, filtros, enlaces de contacto, compartir e imprimir.
+- `app.js`: búsqueda, filtros, enlaces, compartir, copiar alias e imprimir.
 
-## Publicación
-Sitio estático preparado para GitHub Pages desde la rama principal y la carpeta raíz.
-
-## Edición ampliada
-El cartel comercial informa un **precio previsto de lanzamiento de ARS $2.500**. La edición PDF todavía está en preparación; no debe ofrecerse como descargable ni cobrarse hasta que el archivo final esté terminado, revisado y alojado.
-
-## Marca
-**CHÁÑAR A MANO** · Información útil, cerca tuyo.  
-**Ocarina Producciones** · Historias, personas y territorio.
+## Identidad
+**CHÁÑAR A MANO** · La comunidad, conectada.  
+**Agenda comunitaria creada por Ocarina Producciones.**
