@@ -43,7 +43,10 @@ if(!sw.includes("skipWaiting")||!sw.includes("clients.claim")||!sw.includes('req
 if(!app.includes("navigator.serviceWorker.register")||!app.includes("window.isSecureContext"))fail("Falta registro seguro del service worker.");
 if(!css.includes("@media(max-width:760px)")||!css.includes("@media(max-width:560px)")||!css.includes("env(safe-area-inset-bottom)")||!css.includes(".mobile-action-bar"))fail("Falta adaptación móvil multidispositivo.");
 if(!css.includes("@page{size:A4 portrait")||!css.includes("@media print")||!css.includes("break-inside:avoid"))fail("Falta una hoja de impresión A4 con control de saltos.");
-for(const preset of ["readable","night","contrast"])if(!html.includes('data-appearance-preset="'+preset+'"'))fail("Falta acceso rápido de lectura: "+preset+".");
+for(const preset of ["elderly","night","contrast"])if(!html.includes('data-appearance-preset="'+preset+'"'))fail("Falta acceso rápido de lectura: "+preset+".");
+if(!css.includes(".data-row-phone .data-value")||!css.includes("font-size:clamp(27px")||!css.includes("body.easy-reading .contact-grid{grid-template-columns:1fr}"))fail("Falta jerarquía de teléfonos grandes y fichas de lectura fácil.");
+if(!app.includes('classList.toggle("easy-reading", fontScale >= 1.25)')||!app.includes('chanar-a-mano-appearance-v2'))fail("Falta persistencia de preferencias de lectura fácil.");
+if(!app.includes('TELÉFONO PUBLICADO')||!app.includes('phone-number'))fail("Los números telefónicos no tienen una presentación destacada.");
 if(!app.includes('document.querySelectorAll("[data-appearance-preset]")'))fail("Los accesos rápidos de lectura no están conectados a la aplicación.");
 if(!app.includes('window.addEventListener("beforeprint", () =>')||!app.includes("updatePrintMeta();")||!app.includes("const allVisible = visibleContacts();"))fail("La impresión no prepara metadatos y todos los resultados del filtro actual.");
 if(!app.includes("registration.update()")||!app.includes('"controllerchange"'))fail("Falta comprobación de actualización y recarga coordinada del service worker.");
