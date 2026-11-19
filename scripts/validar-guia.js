@@ -52,6 +52,11 @@ if(!app.includes('window.addEventListener("beforeprint", () =>')||!app.includes(
 if(!app.includes("registration.update()")||!app.includes('"controllerchange"'))fail("Falta comprobación de actualización y recarga coordinada del service worker.");
 if(!sw.includes('const CACHE_NAME = "chanar-a-mano-shell-v7"')||!sw.includes('cache: "reload"')||!sw.includes("if (!response.ok)"))fail("El service worker no garantiza una caché versionada completa.");
 if(!html.includes('id="mobileWhatsappShare"')||!html.includes('id="mobileSearchButton"'))fail("Faltan acciones rápidas móviles.");
+for(const id of ["favoritesToggle","favoritesCount","clearFavorites"])if(!idSet.has(id))fail("Falta control de lugares guardados: #"+id);
+if(!app.includes("chanar-a-mano-favorites-v1")||!app.includes("data-favorite-id")||!app.includes("showFavoritesOnly"))fail("Los favoritos locales no están conectados.");
+if(!app.includes("data-copy-contact-id")||!app.includes("Ficha copiada."))fail("Falta la copia de fichas públicas.");
+if(!html.includes("La lista queda solamente en este dispositivo"))fail("Falta el aviso de privacidad de favoritos.");
+if(!sw.includes('const CACHE_NAME = "chanar-a-mano-shell-v8"'))fail("La caché no fue incrementada para esta versión.");
 
 const marker="window.CHANAR_CONTACTOS =";
 const start=dataSource.indexOf(marker);
