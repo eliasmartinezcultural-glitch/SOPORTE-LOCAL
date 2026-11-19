@@ -27,7 +27,7 @@
 
   const categoryMap = [
     { label: "Todos los temas", key: "Todos", keys: [], terms: [] },
-    { label: "Municipio", key: "Municipio", keys: ["Organismos públicos"], terms: ["municipalidad", "organismo", "gobierno", "publico", "publica"] },
+    { label: "Instituciones públicas", key: "Municipio", keys: ["Organismos públicos"], terms: ["municipalidad", "organismo", "gobierno", "publico", "publica"] },
     { label: "Comunidad y cultura", key: "Comunidad", keys: ["Comunidad", "Cultura y comunidad"], terms: ["parroquia", "religion", "culto", "organizacion", "cultura", "biblioteca", "centro cultural", "plaza", "balneario"] },
     { label: "Trabajo y producción", key: "Trabajo", keys: ["Trabajo y producción"], terms: ["empleo", "produccion", "productores", "rural", "renatre", "agro", "bodega", "establecimiento"] },
     { label: "Educación", key: "Educación", keys: ["Educación", "Educación y cuidados"], terms: ["escuela", "colegio", "educacion", "formacion", "estudio", "jardin", "cdi", "infantil"] },
@@ -238,7 +238,27 @@
     barbero: ["barbero", "barberia", "peluqueria"],
     ninos: ["ninos", "ninez", "infantil", "escuela"],
     infancia: ["infancia", "ninez", "infantil", "desarrollo infantil"],
-    guarderia: ["guarderia", "desarrollo infantil", "jardin", "infantil"]
+    guarderia: ["guarderia", "desarrollo infantil", "jardin", "infantil"],
+    concejo: ["concejo", "deliberante"],
+    deliberante: ["deliberante", "concejo"],
+    licencia: ["licencia", "conducir", "carnet"],
+    licencias: ["licencia", "conducir", "carnet"],
+    carnet: ["carnet", "licencia", "conducir"],
+    conducir: ["conducir", "licencia", "carnet"],
+    contralor: ["contralor", "licencia", "conducir"],
+    comisaria: ["comisaria", "policia", "seguridad"],
+    radio: ["radio", "emisora", "frecuencia"],
+    emisora: ["emisora", "radio"],
+    lavanderia: ["lavanderia", "limpieza"],
+    refrigeracion: ["refrigeracion", "refrigerador", "aire"],
+    seguros: ["seguros", "seguro", "aseguradora"],
+    seguro: ["seguro", "seguros", "aseguradora"],
+    distribuidora: ["distribuidora", "distribucion", "proveedor"],
+    distribucion: ["distribucion", "distribuidora"],
+    parador: ["parador", "comer", "gastronomia"],
+    campo: ["campo", "rural", "turismo"],
+    servicio: ["servicio", "servicios", "comercio"],
+    servicios: ["servicio", "servicios", "comercio"]
   };
 
   function matchingTerms(term) {
