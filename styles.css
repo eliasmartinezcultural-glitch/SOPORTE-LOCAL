@@ -483,3 +483,10 @@ body{padding-bottom:0!important}
   .empty-state:not([hidden]){display:block!important;padding:8mm!important;text-align:center!important}
   a[href]:after{content:none}
 }
+
+@media print{
+  .contact-card:before{display:none!important}
+  .contact-card{orphans:3;widows:3}
+  .simple-notice{color:#111!important}
+  .simple-notice .responsible-mark{background:#e7e7e2!important;color:#111!important}
+}
