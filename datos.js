@@ -24,8 +24,7 @@ window.CHANAR_CONTACTOS = [
 {id:"parroquia",nombre:"Parroquia San Patricio",categoria:"Comunidad",descripcion:"Contacto parroquial publicado por la Diócesis de Neuquén.",telefonos:[{uso:"Teléfono publicado",numero:"0299 485-5074"}],correo:"pquiasanpatricionqn@gmail.com",fuente:"https://www.diocesisneuquen.org.ar/",fuenteNombre:"Diócesis de Neuquén",fuenteTipo:"institucional"}
 ,
 {id:"camara-productores",nombre:"Cámara de Productores Agropecuarios",categoria:"Trabajo y producción",descripcion:"Entidad de representación de productores agropecuarios locales. El contacto figura en el directorio de entidades asociadas de CAME.",telefonos:[{uso:"Teléfono publicado",numero:"299 485-5080"}],correo:"federicosacheri@gmail.com",fuente:"https://www.redcame.org.ar/entidades-asociadas/78/asociadas",fuenteNombre:"CAME · Entidades asociadas",fuenteTipo:"institucional"},
-[
-  {
+{
     "id": "escuela-342",
     "nombre": "Escuela Primaria N.º 342",
     "categoria": "Educación",
@@ -546,5 +545,4 @@ window.CHANAR_CONTACTOS = [
     "fuenteNombre": "Ficha pública de ubicación · Mapas",
     "fuenteTipo": "mapa"
   }
-]
 ];
