@@ -33,10 +33,20 @@
       <h1 id="welcomeTitle">La información local,<br><span>más cerca.</span></h1>
       <p class="welcome-copy">Una guía gratuita para encontrar instituciones, salud, escuelas, trabajo y organizaciones de nuestra comunidad.</p>
       <a class="button button-primary welcome-button" href="#directorio">Consultar la guía <span aria-hidden="true">↓</span></a>
+      <a class="welcome-secondary" href="#como-usar">Cómo usar esta guía</a>
       <div class="welcome-note" aria-label="Características de la guía">
         <span><b aria-hidden="true">✓</b> Gratis para consultar</span>
         <span><b aria-hidden="true">✓</b> Sin registrarse</span>
         <span><b aria-hidden="true">✓</b> También para imprimir</span>
+      </div>
+    </section>
+
+    <section class="how-to" id="como-usar" aria-label="Cómo usar la guía">
+      <div class="how-to-heading"><p class="eyebrow">EN TRES PASOS</p><h2>Encontrar lo que buscás es sencillo.</h2></div>
+      <div class="how-to-steps">
+        <div class="how-step"><span>1</span><div><strong>Escribí o elegí un tema</strong><p>Podés usar palabras simples, como hospital o escuela.</p></div></div>
+        <div class="how-step"><span>2</span><div><strong>Leé la ficha</strong><p>Revisá el dato y para qué área aparece publicado.</p></div></div>
+        <div class="how-step"><span>3</span><div><strong>Revisá la fuente</strong><p>Consultá el sitio de origen para confirmar la información.</p></div></div>
       </div>
     </section>
 
@@ -67,10 +77,29 @@
       <form class="search-form" id="searchForm" role="search" novalidate>
         <label class="sr-only" for="searchInput">Buscar en la guía</label>
         <span class="search-icon" aria-hidden="true">⌕</span>
-        <input id="searchInput" type="search" placeholder="Por ejemplo: hospital, escuela…" autocomplete="off" enterkeyhint="search">
+        <input id="searchInput" type="search" placeholder="Por ejemplo: hospital, escuela…" autocomplete="off" enterkeyhint="search" aria-describedby="searchHint">
         <button id="clearSearch" class="clear-search" type="button" aria-label="Borrar lo escrito" hidden>×</button>
       </form>
-      <p class="search-hint">También podés buscar por nombre, tema, teléfono o correo.</p>
+      <p class="search-hint" id="searchHint">Escribí una palabra o elegí un acceso rápido. También podés buscar por nombre, tema, teléfono o correo.</p>
+
+      <div class="quick-search" aria-label="Búsquedas rápidas">
+        <span class="quick-search-title">Para encontrar rápido</span>
+        <div class="quick-search-list">
+          <button class="quick-chip" type="button" data-query="hospital">Hospital</button>
+          <button class="quick-chip" type="button" data-query="escuela">Escuelas</button>
+          <button class="quick-chip" type="button" data-query="municipalidad">Municipalidad</button>
+          <button class="quick-chip" type="button" data-query="trabajo">Trabajo</button>
+        </div>
+      </div>
+
+      <div class="reading-tools" aria-label="Ajustes de lectura">
+        <span>¿La letra se ve pequeña?</span>
+        <div class="reading-actions">
+          <button type="button" id="fontDown" aria-label="Achicar el texto">A−</button>
+          <button type="button" id="fontReset" aria-label="Restablecer el tamaño del texto">A</button>
+          <button type="button" id="fontUp" aria-label="Agrandar el texto">A+</button>
+        </div>
+      </div>
 
       <div class="filter-heading">
         <h3>Elegí un tema</h3>
@@ -83,6 +112,7 @@
         <span id="resultsContext">Todos los temas</span>
       </div>
       <div class="contact-grid" id="contactGrid" aria-live="polite" aria-label="Resultados de la guía"></div>
+      <p class="results-end-note" id="resultsEndNote">Estás viendo toda la información disponible para esta búsqueda.</p>
 
       <div class="empty-state" id="emptyState" hidden>
         <span class="empty-icon" aria-hidden="true">⌕</span>
