@@ -793,6 +793,8 @@
     }
     const selection = scope === "all" ? "Guía completa" : (selected.length ? selected.join(" · ") : "Todos los temas");
     $("printHeadingTitle").textContent = scope === "all" ? "Directorio comunitario completo" : "Resultados seleccionados";
+    $("directoryTitle").textContent = scope === "all" ? "Directorio comunitario de San Patricio del Chañar" : "Resultados de la selección";
+    $("directoryIntro").textContent = "Información pública de referencia. Consultá la fuente indicada en cada ficha.";
     $("printHeadingIntro").textContent = scope === "all"
       ? "Directorio de instituciones, salud, educación, servicios, comercios y comunidad."
       : "Selección de fichas según la búsqueda y los filtros elegidos en pantalla.";
@@ -817,6 +819,8 @@
   function restoreAfterPrint() {
     if (!printPrepared) return;
     printPrepared = false;
+    $("directoryTitle").textContent = "¿Qué estás buscando?";
+    $("directoryIntro").textContent = "Buscá el lugar o servicio que necesitás. Los teléfonos y direcciones se muestran bien grandes.";
     render();
   }
 
