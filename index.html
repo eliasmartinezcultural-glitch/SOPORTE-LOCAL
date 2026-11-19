@@ -28,6 +28,44 @@
     </div>
   </header>
 
+  <details class="appearance-panel" id="appearancePanel">
+    <summary><span class="appearance-icon" aria-hidden="true">◐</span><span><strong>Ajustes de lectura y pantalla</strong><small>Letra · brillo · contraste · colores</small></span><span class="appearance-chevron" aria-hidden="true">⌄</span></summary>
+    <div class="appearance-content">
+      <div class="appearance-grid">
+        <section class="appearance-control" aria-labelledby="fontControlTitle">
+          <h2 id="fontControlTitle">Tamaño de letra</h2>
+          <p>Elegí un tamaño cómodo para leer.</p>
+          <div class="reading-actions">
+            <button type="button" id="fontDown" aria-label="Achicar texto">A−</button>
+            <button type="button" id="fontReset" aria-label="Restablecer texto">A</button>
+            <output id="fontScaleStatus" aria-live="polite">100%</output>
+            <button type="button" id="fontUp" aria-label="Agrandar texto">A+</button>
+          </div>
+        </section>
+        <section class="appearance-control">
+          <label for="brightnessControl">Brillo de la página <output id="brightnessValue">100%</output></label>
+          <p>Aclará u oscurecé la presentación.</p>
+          <input id="brightnessControl" type="range" min="80" max="120" step="5" value="100">
+        </section>
+        <section class="appearance-control">
+          <label for="contrastControl">Contraste <output id="contrastValue">100%</output></label>
+          <p>Marcá más o menos la diferencia entre elementos.</p>
+          <input id="contrastControl" type="range" min="80" max="140" step="5" value="100">
+        </section>
+        <section class="appearance-control appearance-themes">
+          <h2>Colores de pantalla</h2>
+          <p>Elegí la combinación que te resulte más cómoda.</p>
+          <div class="theme-options" role="group" aria-label="Modo de color">
+            <button type="button" data-theme-choice="natural" aria-pressed="true"><span class="theme-swatch theme-natural"></span>Natural</button>
+            <button type="button" data-theme-choice="high" aria-pressed="false"><span class="theme-swatch theme-high"></span>Alto contraste</button>
+            <button type="button" data-theme-choice="night" aria-pressed="false"><span class="theme-swatch theme-night"></span>Nocturno</button>
+          </div>
+        </section>
+      </div>
+      <div class="appearance-bottom"><span id="appearanceStatus" role="status" aria-live="polite">Los ajustes se guardan en este dispositivo.</span><button type="button" id="resetAppearance">Restablecer ajustes</button></div>
+    </div>
+  </details>
+
   <main id="contenido">
     <section class="welcome" id="inicio" aria-labelledby="welcomeTitle">
       <p class="eyebrow">SAN PATRICIO DEL CHAÑAR · NEUQUÉN</p>
@@ -64,16 +102,6 @@
         <input id="searchInput" type="search" placeholder="Ej.: hospital, escuela, farmacia…" autocomplete="off" enterkeyhint="search">
         <button id="clearSearch" class="clear-search" type="button" aria-label="Borrar búsqueda" hidden>×</button>
       </form>
-
-      <div class="reading-tools" aria-label="Tamaño del texto">
-        <span>Tamaño de letra</span>
-        <div class="reading-actions">
-          <button type="button" id="fontDown" aria-label="Achicar texto">A−</button>
-          <button type="button" id="fontReset" aria-label="Restablecer texto">A</button>
-          <output id="fontScaleStatus" aria-live="polite">100%</output>
-          <button type="button" id="fontUp" aria-label="Agrandar texto">A+</button>
-        </div>
-      </div>
 
       <div class="filter-heading">
         <h3>Temas</h3>
