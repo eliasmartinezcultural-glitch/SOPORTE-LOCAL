@@ -21,7 +21,10 @@
       </span>
     </a>
     <div class="header-actions">
-      <button class="button button-outline" id="shareButton" type="button">Compartir</button>
+      <a class="button button-whatsapp" id="whatsappShare" href="#" target="_blank" rel="noopener noreferrer" aria-label="Compartir Chañar a Mano por WhatsApp">
+        <span aria-hidden="true">↗</span> WhatsApp
+      </a>
+      <button class="button button-outline" id="shareButton" type="button">Más opciones</button>
     </div>
   </header>
 
@@ -99,14 +102,23 @@
       <button class="button button-primary print-action" id="printButton" type="button">Imprimir o guardar como PDF</button>
     </section>
 
-    <section class="support-mini" aria-label="Colaboración voluntaria">
-      <div>
-        <strong>¿Querés ayudar a sostener la guía?</strong>
-        <p>La colaboración es voluntaria. Consultar y compartir siempre es gratis.</p>
-        <span>Alias: <b id="supportAlias">ocarina.guitarra</b> · Titular: Elías Martínez</span>
+    <section class="support-mini support-card" aria-labelledby="supportTitle">
+      <div class="support-topline"><span class="support-mark" aria-hidden="true">♥</span><span>APORTE VOLUNTARIO · NUNCA OBLIGATORIO</span></div>
+      <div class="support-copy">
+        <h2 id="supportTitle">Una guía abierta se construye entre todos.</h2>
+        <p>Si esta guía te resulta útil y querés colaborar con su continuidad, podés hacerlo. Consultar, imprimir y compartir CHÁÑAR A MANO siempre es gratis.</p>
       </div>
-      <button class="button button-copy" id="copyAliasButton" type="button">Copiar alias</button>
+      <div class="support-payment">
+        <div class="support-alias">
+          <span>ALIAS PARA COLABORAR</span>
+          <strong id="supportAlias">ocarina.guitarra</strong>
+          <small>Titular: Elías Martínez · Aporte personal y voluntario.</small>
+        </div>
+        <button class="button button-copy" id="copyAliasButton" type="button">Copiar alias</button>
+      </div>
       <p class="support-feedback" id="copyFeedback" role="status" aria-live="polite"></p>
+      <p class="support-clarity">No es un pago, una suscripción ni una condición para usar la guía. El aporte no se realiza a una institución pública.</p>
+      <p class="support-signature">Gracias por ayudar a mantener este recurso comunitario disponible.</p>
     </section>
     <p class="share-feedback" id="shareFeedback" role="status" aria-live="polite"></p>
   </main>
@@ -116,13 +128,14 @@
       <div><strong>CHÁÑAR A MANO</strong><span>Guía comunitaria independiente y gratuita.</span></div>
       <p>San Patricio del Chañar · Neuquén</p>
     </div>
-    <p class="footer-credit">Creada por <strong>Ocarina Producciones</strong> · Historias, personas y territorio.</p>
+    <p class="footer-credit">Idea, diseño y desarrollo: <strong>Ocarina Producciones</strong> · Creada por Elías Martínez.</p>
+    <p class="footer-tagline">Historias, personas y territorio.</p>
     <p class="footer-disclaimer">Esta guía no representa oficialmente a las instituciones. Los datos pueden cambiar y deben verificarse en sus fuentes. No reemplaza la atención oficial, profesional o presencial.</p>
   </footer>
 
   <section class="print-support" aria-label="Colaboración voluntaria">
-    <strong>Colaboración voluntaria para sostener esta guía gratuita.</strong>
-    <span>Alias: ocarina.guitarra · Titular: Elías Martínez · No es obligatorio.</span>
+    <strong>CHÁÑAR A MANO · Guía comunitaria gratuita</strong>
+    <span>Creada por Ocarina Producciones · Colaboración voluntaria: ocarina.guitarra · Titular: Elías Martínez.</span>
   </section>
 
   <noscript><div class="noscript-message">Para buscar y filtrar la guía necesitás habilitar JavaScript.</div></noscript>
