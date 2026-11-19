@@ -87,6 +87,7 @@ Historias, personas y territorio.
 - El directorio reúne 75 fichas, de las cuales 60 incluyen al menos un teléfono referenciado entre instituciones, servicios públicos, educación, salud, cultura, deporte, producción, turismo, gastronomía y comercios.
 - Los teléfonos y correos se presentan como referencias tomadas de las fuentes identificadas. En fichas basadas en búsquedas de mapas, el número requiere confirmación adicional.
 - Las fichas sin teléfono muestran ubicación o referencia de origen, sin inventar canales de contacto.
+- De las 60 fichas con teléfono, 22 corresponden a referencias obtenidas mediante búsquedas en mapas y requieren verificación directa antes de considerarse confirmadas.
 - Se diferencia la fuente institucional de las fichas públicas de ubicación en mapas.
 - Los datos comerciales y las ubicaciones deben confirmarse antes de concurrir; las fichas de mapas no sustituyen la confirmación del establecimiento.
 - Las categorías usan una paleta cromática diferenciada, manteniendo contraste, legibilidad y diseño apto para impresión.
