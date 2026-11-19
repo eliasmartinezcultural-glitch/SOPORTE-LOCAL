@@ -14,6 +14,9 @@
   const copyFeedback = $("copyFeedback");
   const shareFeedback = $("shareFeedback");
 
+  const totalContactCount = $("totalContactCount");
+  if (totalContactCount) totalContactCount.textContent = String(contacts.length);
+
   let activeCategory = "Todos";
   let fontScale = 1;
 
