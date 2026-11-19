@@ -171,7 +171,6 @@
     cultural: ["cultural", "cultura", "centro"],
     culturales: ["cultural", "cultura", "centro"],
     municipal: ["municipal", "municipalidad", "municipio"],
-    municipal: ["municipal", "municipalidad", "municipio"],
     policia: ["policia", "seguridad"],
     policial: ["policial", "policia", "seguridad"],
     comisaria: ["comisaria", "seguridad"],
