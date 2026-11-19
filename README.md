@@ -94,7 +94,7 @@ Consultar `PUBLICACION.md` antes de publicar. La validación automática no cert
 
 ## Actualización y caché
 
-La caché local del service worker utiliza la versión `chanar-a-mano-shell-v8`. La instalación guarda los archivos esenciales como conjunto y no activa una versión incompleta. Cuando una actualización toma el control de una pestaña ya abierta, se recarga el documento para no mezclar recursos de versiones distintas. Esto no publica cambios por sí solo: la web pública depende de la rama y carpeta configuradas en GitHub Pages.
+La caché local del service worker utiliza la versión `chanar-a-mano-shell-v9`. La instalación guarda los archivos esenciales como conjunto y no activa una versión incompleta. Cuando una actualización toma el control de una pestaña ya abierta, se recarga el documento para no mezclar recursos de versiones distintas. Esto no publica cambios por sí solo: la web pública depende de la rama y carpeta configuradas en GitHub Pages.
 
 La revisión integral se desarrolla en una rama separada a partir del commit 7901235; no se modifica la rama congelada. No debe confundirse con la rama pública ni con la rama congelada. Ver [PUBLICACION.md](PUBLICACION.md) antes de integrar cambios.
 
@@ -119,3 +119,8 @@ La revisión integral se desarrolla en una rama separada a partir del commit 790
 - **Actualización sin conexión:** el identificador de caché pasa a chanar-a-mano-shell-v8 para que el navegador pueda instalar el conjunto nuevo de archivos.
 
 La revisión no cambia datos.js: conserva las 90 fichas y sus advertencias documentales. No se agregan teléfonos ni se los declara confirmados. Se retiró la fotografía municipal de los metadatos de vista previa mientras no exista autorización específica de reutilización.
+
+
+## Filtros más precisos
+
+Además de buscar por palabra, categoría, teléfono y favoritos, ahora se puede limitar la lista a fichas que publican una dirección. El botón “Quitar todos los filtros” vuelve a la vista completa sin borrar favoritos guardados. La búsqueda también considera el nombre de la fuente y el estado documental, para facilitar el hallazgo de fichas por su procedencia.
