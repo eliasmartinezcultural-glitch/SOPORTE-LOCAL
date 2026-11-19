@@ -19,6 +19,10 @@ La publicación prevista es GitHub Pages desde `main` y la carpeta raíz `/(root
 7. Si la web no refleja el commit, revisar Settings → Pages, Actions y la caché del navegador antes de seguir modificando código.
 8. No modificar la rama congelada `base-estable-2026-11-19`.
 
+## Compartir búsquedas y accesibilidad
+
+Los enlaces de búsqueda pueden conservar la palabra consultada, el tema y los filtros de teléfono o dirección mediante parámetros de URL. Los favoritos no se comparten: permanecen en el almacenamiento local de cada dispositivo. El acceso rápido con la tecla `/` enfoca el buscador cuando la persona no está escribiendo en otro control. La hoja de estilos respeta `prefers-reduced-motion` para reducir desplazamientos y transiciones si el sistema operativo así lo solicita.
+
 ## Exportación de resultados
 
 La descarga genera un CSV local con todas las fichas que coinciden con la búsqueda y los filtros activos, aunque estén distribuidas en varias páginas. Incluye nombre, tema, descripción, teléfonos publicados, uso indicado, estado documental, dirección, correo, fuente y enlace de procedencia. También se puede copiar el conjunto como texto para pegarlo en una nota o mensaje. Ninguna acción consulta servicios externos ni transmite la selección. El CSV agrega una marca BOM para facilitar la lectura de caracteres españoles en planillas y neutraliza valores que podrían interpretarse como fórmulas.
