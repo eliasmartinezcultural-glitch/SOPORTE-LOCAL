@@ -18,7 +18,7 @@
     const alert = document.createElement("p");
     alert.className = "app-status app-status-error";
     alert.setAttribute("role", "alert");
-    alert.textContent = "La guía encontró un problema al iniciar. Recargá la página; si continúa, avisá a Ocarina Producciones.";
+    alert.textContent = "La guía encontró un problema al iniciar. Recargá la página; si continúa, avisá a Universo Ocarina - Elías Martínez.";
     document.body.prepend(alert);
     console.error("Chañar a Mano: faltan elementos esenciales:", missingIds);
     return;
@@ -577,7 +577,7 @@
         "Fuente: " + (contact.fuenteNombre || "Fuente indicada"),
         contact.fuente || "",
         "Dato de referencia: puede cambiar. Revisá la fuente antes de usarlo.",
-        "Chañar a Mano · Ocarina Producciones"
+        "Chañar a Mano · Universo Ocarina - Elías Martínez"
       ].filter(Boolean);
       try {
         await copyText(lines.join("\n"));
@@ -829,7 +829,7 @@
       : "Selección de fichas según la búsqueda y los filtros elegidos en pantalla.";
     $("printCoverCount").textContent = String(total);
     $("printMeta").textContent = total + (total === 1 ? " ficha" : " fichas")
-      + " · " + date + " · " + selection + " · Ocarina Producciones";
+      + " · " + date + " · " + selection + " · Universo Ocarina - Elías Martínez";
     $("printUrl").textContent = guideUrl();
   }
 
@@ -944,7 +944,7 @@
       ...blocks,
       "",
       "AVISO: los teléfonos y direcciones son referencias documentales; pueden cambiar y no se garantiza que las líneas estén activas. Revisá la fuente de cada ficha. Guía independiente, no es un servicio de emergencias.",
-      "Ocarina Producciones · Historias, personas y territorio."
+      "Universo Ocarina - Elías Martínez"
     ].join("\n\n");
     try {
       await copyText(content);
@@ -1052,7 +1052,7 @@
         <rect x="242" y="500" width="170" height="48" rx="24" fill="#fffefa" stroke="#cbd7c8"/><text x="327" y="531" text-anchor="middle">SIN REGISTRO</text>
         <rect x="426" y="500" width="230" height="48" rx="24" fill="#fffefa" stroke="#cbd7c8"/><text x="541" y="531" text-anchor="middle">PARA COMPARTIR</text>
       </g>
-      <text x="76" y="592" font-family="Arial,sans-serif" font-size="17" fill="#526257">Ocarina Producciones · Historias, personas y territorio.</text>
+      <text x="76" y="592" font-family="Arial,sans-serif" font-size="17" fill="#526257">Universo Ocarina - Elías Martínez</text>
     </svg>`;
     const svgBlob = new Blob([svg], { type: "image/svg+xml;charset=utf-8" });
     const objectUrl = URL.createObjectURL(svgBlob);
