@@ -53,11 +53,17 @@ if(!app.includes("registration.update()")||!app.includes('"controllerchange"'))f
 if(!sw.includes('const CACHE_NAME = "chanar-a-mano-shell-v9"')||!sw.includes('cache: "reload"')||!sw.includes("if (!response.ok)"))fail("El service worker no garantiza una caché versionada completa.");
 if(!html.includes('id="mobileWhatsappShare"')||!html.includes('id="mobileSearchButton"'))fail("Faltan acciones rápidas móviles.");
 for(const id of ["favoritesToggle","favoritesCount","clearFavorites"])if(!idSet.has(id))fail("Falta control de lugares guardados: #"+id);
+for(const id of ["printScope","printHeadingTitle","printHeadingIntro","printCoverCount","shareKitWhatsapp","shareCardButton","shareKitCopyButton","shareMessagePreview","printUrl"])if(!idSet.has(id))fail("Falta control de impresión/difusión: #"+id);
+if(!app.includes("createShareCardFile")||!app.includes("navigator.canShare({ files: [file] })")||!app.includes("chanar-a-mano-compartir.png"))fail("La tarjeta gráfica no tiene un flujo de exportación y uso compartido.");
+if(!app.includes('scope === "all" ? contacts.slice()')||!app.includes("Resultados seleccionados"))fail("La impresión no distingue resultados filtrados y guía completa.");
+if(!html.includes("revisá la fuente de cada ficha"))fail("Falta un mensaje de difusión con criterio de verificación.");
+if(!css.includes(".print-cover")||!css.includes(".share-kit")||!css.includes("@page{size:A4 portrait;margin:13mm 14mm 16mm}"))fail("Falta la capa editorial de impresión y difusión.");
+if(!sw.includes('const CACHE_NAME = "chanar-a-mano-shell-v10"'))fail("La caché PWA no fue actualizada a v10.");
 if(!app.includes("chanar-a-mano-favorites-v1")||!app.includes("data-favorite-id")||!app.includes("showFavoritesOnly"))fail("Los favoritos locales no están conectados.");
 if(!app.includes("data-copy-contact-id")||!app.includes("Ficha copiada."))fail("Falta la copia de fichas públicas.");
 if(!html.includes("La lista queda solamente en este dispositivo"))fail("Falta el aviso de privacidad de favoritos.");
 if(!idSet.has("addressOnly")||!idSet.has("clearAllFilters")||!app.includes("matchesAddress"))fail("Falta el filtro de direcciones o el restablecimiento integral.");
-if(!sw.includes('const CACHE_NAME = "chanar-a-mano-shell-v9"'))fail("La caché no fue incrementada para esta versión.");
+if(!sw.includes('const CACHE_NAME = "chanar-a-mano-shell-v10"'))fail("La caché no fue incrementada para esta versión.");
 
 const marker="window.CHANAR_CONTACTOS =";
 const start=dataSource.indexOf(marker);
