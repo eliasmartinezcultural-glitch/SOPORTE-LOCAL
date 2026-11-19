@@ -292,3 +292,46 @@ body{background:linear-gradient(180deg,#f7f5ed 0%,#f1f3e9 42%,#f7f5ed 100%);colo
 }
 @media(min-width:601px){.mobile-dock{display:none!important}}
 @media print{.mobile-dock{display:none!important}}
+
+
+/* CHÁÑAR A MANO · Política visual de consulta responsable */
+.responsible-use{
+  max-width:1048px;margin:0 auto 34px;padding:22px 25px;
+  display:grid;grid-template-columns:42px minmax(0,1fr);gap:15px;
+  background:#e8ede4;border:1px solid #d5dfd1;border-left:5px solid #536c54;
+  border-radius:14px;color:var(--ink)
+}
+.responsible-mark{
+  width:36px;height:36px;border-radius:50%;display:grid;place-items:center;
+  background:#d4dfd0;color:#304b3a;font:700 20px Georgia,serif
+}
+.responsible-use .eyebrow{margin-bottom:7px}
+.responsible-use h2{margin:0;color:#304b3a;font:600 25px/1.12 Georgia,serif}
+.responsible-use p:not(.eyebrow){max-width:800px;margin:9px 0 0;color:#536257;font-size:12px;line-height:1.65}
+.responsible-use .responsible-strong{font-weight:700;color:#344b39}
+.responsible-use .responsible-emergency{padding-top:9px;border-top:1px solid #cbd7c7;font-size:11px}
+.contact-value{
+  display:inline-block;max-width:62%;padding:7px 0;color:#304b3a;
+  font-size:12px;font-weight:700;text-align:right;overflow-wrap:anywhere;
+  user-select:text;-webkit-user-select:text;cursor:text
+}
+.contact-email{font-size:11px}
+.contact-caution{
+  margin:11px 0 0;padding:9px 10px;border-radius:8px;
+  background:#f1f0e8;color:#6a705f;font-size:10px;line-height:1.5
+}
+.card-source{font-weight:600}
+@media(max-width:600px){
+  .responsible-use{margin:0 14px 25px;padding:17px 15px;grid-template-columns:30px minmax(0,1fr);gap:10px;border-radius:15px}
+  .responsible-mark{width:29px;height:29px;font-size:17px}
+  .responsible-use h2{font-size:22px}
+  .responsible-use p:not(.eyebrow){font-size:11px;line-height:1.6}
+  .contact-row{gap:7px}
+  .contact-value{max-width:66%;font-size:12px;line-height:1.4}
+  .contact-email{font-size:10px}
+  .contact-caution{font-size:10px;line-height:1.5}
+}
+@media print{
+  .responsible-use{break-inside:avoid;background:#eef1eb!important;border:1px solid #aeb9a8!important}
+  .contact-caution{background:#f3f1e9!important}
+}
