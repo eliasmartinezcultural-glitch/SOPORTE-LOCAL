@@ -39,9 +39,9 @@ La validación no comprueba que un teléfono siga vigente, que una institución 
 ## Recuperación
 
 - La rama congelada `base-estable-2026-11-19` se conserva como referencia.
-- Si una mejora rompe el sitio, revertir el Pull Request problemático o restaurar el último commit estable de `main`.
+- Si una mejora rompe el sitio, revertir el commit problemático o restaurar el último commit estable de `main`.
 - No borrar ni reescribir la rama congelada para resolver errores.
-- Registrar cada publicación con su commit y enlace al Pull Request.
+- Registrar cada publicación con su SHA y enlace al commit.
 
 ## Estado inicial de esta configuración
 
@@ -149,18 +149,17 @@ El service worker ahora instala una versión completa de los archivos esenciales
 
 Cuando un service worker actualizado toma el control de una pestaña que ya estaba abierta, la aplicación recarga el documento para evitar que queden mezclados el HTML/CSS/JavaScript de versiones diferentes. Además, solicita una comprobación de actualización al registrar el service worker.
 
-**Importante:** estos mecanismos actualizan la copia local del navegador cuando la nueva versión ya fue publicada desde la rama configurada en GitHub Pages. No publican una rama de trabajo por sí solos. Mientras el Pull Request siga sin integrar y Pages publique desde `main`, la web pública seguirá mostrando `main`.
+**Importante:** estos mecanismos actualizan la copia local del navegador cuando la nueva versión ya fue publicada desde la fuente configurada en GitHub Pages. No publican cambios por sí solos. El proyecto mantiene una única rama activa: `main`.
 
 ## Estado de publicación
 
-La versión reparada queda en la rama de trabajo. Antes de considerarla pública:
-1. ejecutar y aprobar el workflow de validación;
-2. comprobar el diff y confirmar que los datos editoriales no cambiaron;
+Los cambios se guardan directamente en `main`. Antes de considerar una mejora como terminada:
+1. ejecutar y aprobar el workflow de validación correspondiente al último SHA;
+2. revisar los archivos modificados y confirmar que los datos editoriales no cambiaron si no formaban parte de la tarea;
 3. revisar la vista previa real en celular y escritorio;
-4. probar impresión/guardar PDF A4;
+4. probar impresión/guardar PDF A4 y la descarga CSV;
 5. verificar en Settings → Pages cuál es la rama y carpeta efectivas;
-6. integrar el Pull Request solamente después de esa revisión;
-7. abrir la URL publicada en una ventana privada y confirmar el nuevo contenido y la nueva versión de caché.
+6. abrir la URL publicada en una ventana privada y confirmar el nuevo contenido y la nueva versión de caché.
 
 
 ## Vista fácil prioritaria para personas mayores
