@@ -112,3 +112,17 @@ Estos controles reducen errores técnicos, pero no reemplazan pruebas visuales e
 ### Regla de actualización de la caché
 
 Cada vez que se modifiquen archivos esenciales (`index.html`, `styles.css`, `datos.js`, `app.js`, el manifiesto o el icono), aumentar el número de versión de `CACHE_NAME` en `sw.js`. Así el navegador instala una caché nueva y elimina la anterior al activar la actualización. No reutilizar el mismo nombre de caché después de cambiar esos archivos.
+
+
+## Lectura accesible e impresión A4 reforzada
+
+La interfaz ofrece tres accesos rápidos:
+- **Letra grande:** amplía el texto y refuerza el contraste sin cambiar el contenido.
+- **Modo noche:** utiliza una paleta oscura para consultar con menos luz.
+- **Alto contraste:** presenta texto y controles con diferencias más marcadas.
+
+Los ajustes detallados siguen disponibles y se guardan localmente en el dispositivo. No se envían datos de preferencias al proyecto.
+
+La impresión se prepara de forma independiente de la paginación de pantalla: al imprimir se incluyen **todos los resultados del filtro o búsqueda actual**, no solamente las 12 fichas de la página visible. La salida A4 usa una columna para facilitar lectura, mantiene la procedencia de cada ficha, evita fondos decorativos y oculta controles que no sirven en papel. Al cerrar la vista de impresión, la guía vuelve a la página y filtros que la persona estaba usando.
+
+La vista previa debe comprobarse en Chrome/Edge y en impresoras reales o guardado PDF, porque márgenes, saltos y escalado final también dependen del navegador y de la configuración elegida por quien imprime.
