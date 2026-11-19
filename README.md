@@ -12,7 +12,7 @@ Reúne información pública de instituciones, servicios, organizaciones, espaci
 2. O elegí uno de los temas.
 3. Abrí la fuente de la ficha para revisar el dato antes de usarlo.
 
-La página prioriza a personas mayores y a quienes tienen poca experiencia digital: acceso directo a letra grande, botones táctiles amplios, fichas en una sola columna y teléfonos destacados en números grandes. La portada evita imágenes decorativas que retrasen la consulta. Incluye modo noche, alto contraste, ajustes de lectura y salida de impresión A4. La búsqueda se realiza sobre los datos incluidos en la página, sin registro ni envío de la consulta. Los ajustes visuales se guardan localmente en el dispositivo. El encabezado ofrece acceso directo para compartir por WhatsApp; también se conserva el menú de compartir del dispositivo y la opción de copiar el enlace.
+La página prioriza a personas mayores y a quienes tienen poca experiencia digital: acceso directo a letra grande, botones táctiles amplios, una cuadrícula de tres columnas en pantallas grandes, dos en pantallas medianas y una sola en celulares, con teléfonos destacados y una opción de lectura fácil en columna única. La primera página presenta hasta 18 fichas sin reducir los textos a tamaños ilegibles. La portada evita imágenes decorativas que retrasen la consulta. Incluye modo noche, alto contraste, ajustes de lectura y salida de impresión A4. La búsqueda se realiza sobre los datos incluidos en la página, sin registro ni envío de la consulta. Los ajustes visuales se guardan localmente en el dispositivo. El encabezado ofrece acceso directo para compartir por WhatsApp; también se conserva el menú de compartir del dispositivo y la opción de copiar el enlace.
 
 
 La página prioriza la consulta sencilla: los accesos de letra grande, modo noche y alto contraste están visibles antes del buscador; los ajustes avanzados quedan agrupados en un panel desplegable. Los temas se abren solo si la persona quiere explorar por categoría y la procedencia completa de cada ficha se consulta bajo demanda.
@@ -94,7 +94,7 @@ Consultar `PUBLICACION.md` antes de publicar. La validación automática no cert
 
 ## Actualización y caché
 
-La caché local del service worker utiliza la versión `chanar-a-mano-shell-v10`. La instalación guarda los archivos esenciales como conjunto y no activa una versión incompleta. Cuando una actualización toma el control de una pestaña ya abierta, se recarga el documento para no mezclar recursos de versiones distintas. Esto no publica cambios por sí solo: la web pública depende de la rama y carpeta configuradas en GitHub Pages.
+La caché local del service worker utiliza la versión `chanar-a-mano-shell-v13`. La instalación guarda los archivos esenciales como conjunto y no activa una versión incompleta. Cuando una actualización toma el control de una pestaña ya abierta, se recarga el documento para no mezclar recursos de versiones distintas. Esto no publica cambios por sí solo: la web pública depende de la rama y carpeta configuradas en GitHub Pages.
 
 La revisión integral se desarrolla en una rama separada a partir del commit 7901235; no se modifica la rama congelada. No debe confundirse con la rama pública ni con la rama congelada. Ver [PUBLICACION.md](PUBLICACION.md) antes de integrar cambios.
 
@@ -116,7 +116,7 @@ La revisión integral se desarrolla en una rama separada a partir del commit 790
 - **Ayuda de uso:** explica en tres pasos cómo buscar, leer y revisar la procedencia.
 - **Privacidad:** la guía no transmite búsquedas ni favoritos a un servidor. Borrar los datos del navegador también borra la lista local.
 - **Lectura:** se mantienen letra grande, modo noche, alto contraste, filtros por tema, búsquedas rápidas, paginación e impresión A4.
-- **Actualización sin conexión:** el identificador de caché pasa a chanar-a-mano-shell-v10 para que el navegador pueda instalar el conjunto nuevo de archivos.
+- **Actualización sin conexión:** el identificador de caché pasa a chanar-a-mano-shell-v13 para que el navegador pueda instalar el conjunto nuevo de archivos.
 
 El corte actual contiene **90 fichas**, de las cuales **74 publican al menos un teléfono** (80 números en total). En las dos ampliaciones documentadas se incorporaron 15 fichas: 11 procedentes de un directorio externo y cuatro de referencias públicas de ubicación; 14 de esas fichas incluyen un teléfono y una aporta solo una dirección de referencia. Estos 14 teléfonos nuevos siguen clasificados como referencias secundarias pendientes de confirmación directa. La revisión integral sí incluye cambios en `datos.js`; no se modificaron ni se deben presentar esos contactos como confirmados. Se retiró la fotografía municipal de los metadatos de vista previa mientras no exista autorización específica de reutilización.
 
@@ -135,3 +135,8 @@ Además de buscar por palabra, categoría, teléfono y favoritos, ahora se puede
 - El mensaje de WhatsApp se acortó y explica que la guía es gratuita, no requiere registro y que los datos deben revisarse en su fuente.
 - La tarjeta gráfica se genera localmente como PNG 1200 × 630. En celulares que admiten compartir archivos se abre el menú nativo; en otros dispositivos se descarga para adjuntarla manualmente. La tarjeta no incluye datos de contacto ni estadísticas no verificadas.
 - La caché del service worker pasa a v10.
+
+
+## Cuadrícula de consulta
+
+La portada del directorio presenta hasta 18 fichas por página. La cuadrícula adapta la cantidad de columnas al ancho disponible: tres en pantallas amplias, dos en pantallas medianas y una en celulares. La lectura fácil fuerza una columna y amplía tipografía y teléfonos. La versión de caché local se identifica como `chanar-a-mano-shell-v13`.
