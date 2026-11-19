@@ -46,6 +46,22 @@ Consultar, imprimir y compartir la guía es gratuito. El cartel de colaboración
 - `datos.js`: fichas y procedencia de los datos.
 - `app.js`: búsqueda, temas, paginación, tamaño de letra, compartir y herramientas de impresión.
 
+## Control de publicación final
+
+Antes de anunciar la guía como versión estable, completar estas comprobaciones en el sitio publicado:
+
+- Abrirla en pantallas de 320, 390 y 680 píxeles y en una computadora.
+- Probar búsquedas con y sin acentos, sinónimos y números parciales de teléfono.
+- Recorrer los nueve temas y todas las páginas de resultados.
+- Probar letra ampliada, brillo, contraste y los tres modos de color.
+- Imprimir o guardar en PDF y revisar el resultado en papel A4.
+- Probar compartir por WhatsApp, el menú del dispositivo y copiar el alias.
+- Abrir varias fuentes oficiales y referencias en mapas para confirmar que los enlaces sigan funcionando.
+- Verificar directamente los 22 teléfonos cuya procedencia es una referencia en mapas antes de presentarlos como confirmados.
+- Confirmar la autorización de reutilización de la fotografía de portada o reemplazarla por una imagen propia/autorizada.
+
+La revisión del código no sustituye estas pruebas en navegadores y dispositivos reales. La guía debe seguir mostrando que los datos son referencias sujetas a cambios.
+
 ## Fuentes de referencia
 - Municipalidad de San Patricio del Chañar: https://sanpatricio.gob.ar/
 - RENATRE, Delegación Neuquén: https://www.renatre.org.ar/delegaciones/neuquen/
