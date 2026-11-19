@@ -57,7 +57,7 @@ if(!app.includes("chanar-a-mano-favorites-v1")||!app.includes("data-favorite-id"
 if(!app.includes("data-copy-contact-id")||!app.includes("Ficha copiada."))fail("Falta la copia de fichas públicas.");
 if(!html.includes("La lista queda solamente en este dispositivo"))fail("Falta el aviso de privacidad de favoritos.");
 if(!idSet.has("addressOnly")||!idSet.has("clearAllFilters")||!app.includes("matchesAddress"))fail("Falta el filtro de direcciones o el restablecimiento integral.");
-if(!sw.includes('const CACHE_NAME = "chanar-a-mano-shell-v8"'))fail("La caché no fue incrementada para esta versión.");
+if(!sw.includes('const CACHE_NAME = "chanar-a-mano-shell-v9"'))fail("La caché no fue incrementada para esta versión.");
 
 const marker="window.CHANAR_CONTACTOS =";
 const start=dataSource.indexOf(marker);
