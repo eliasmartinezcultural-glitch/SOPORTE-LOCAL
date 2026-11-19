@@ -129,3 +129,18 @@ Se agregaron cuatro fichas más a partir de referencias públicas de ubicación:
 Fuente de las fichas de ubicación: Google Maps, búsqueda por nombre y localidad. Son referencias secundarias: los teléfonos y horarios deben confirmarse con cada entidad. Para el Juzgado de Paz, la dirección también aparece en el Boletín Oficial de Neuquén del 5 de diciembre de 2025: https://infoleg.neuquen.gov.ar/Boletines/boletin_4518.pdf
 
 **Nuevo total de la agenda:** 90 fichas, de las cuales 74 publican al menos un teléfono. Los 14 teléfonos incorporados en las dos ampliaciones más recientes siguen pendientes de confirmación directa.
+
+
+## Corte consolidado de datos · revisión integral
+
+El estado de la base `datos.js` en esta rama es:
+
+- **90 fichas** en total.
+- **74 fichas** con uno o más teléfonos publicados.
+- **80 números telefónicos** distribuidos en esas fichas.
+- **15 fichas incorporadas** respecto del corte inicial de 75: once procedentes del directorio externo Guía Vaca Muerta y cuatro de referencias públicas de ubicación.
+- **14 teléfonos nuevos**: diez asociados a las fichas del directorio externo y cuatro a las fichas de ubicación. Todos permanecen como referencias secundarias pendientes de confirmación directa.
+- Una ficha nueva (H2O System) aporta una dirección de referencia, sin teléfono publicado.
+- La base contiene **31 fichas cuyo tipo de fuente es mapa**; 26 de ellas publican teléfono. Las restantes son referencias de ubicación sin teléfono.
+
+Los recuentos describen lo cargado en el archivo y no certifican vigencia, titularidad ni atención de las líneas. Los enlaces de búsqueda de mapas o directorios son referencias para localizar la publicación; no sustituyen una ficha oficial individual ni una confirmación directa. Mantener las advertencias visibles hasta completar esa verificación.
