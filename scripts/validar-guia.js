@@ -41,7 +41,13 @@ if(manifest){
 }
 if(!sw.includes("skipWaiting")||!sw.includes("clients.claim")||!sw.includes('request.mode === "navigate"'))fail("Service worker sin ciclo de actualización/fallback.");
 if(!app.includes("navigator.serviceWorker.register")||!app.includes("window.isSecureContext"))fail("Falta registro seguro del service worker.");
-if(!css.includes("@media(max-width:650px)")||!css.includes("env(safe-area-inset-bottom)")||!css.includes(".mobile-action-bar"))fail("Falta adaptación móvil.");
+if(!css.includes("@media(max-width:760px)")||!css.includes("@media(max-width:560px)")||!css.includes("env(safe-area-inset-bottom)")||!css.includes(".mobile-action-bar"))fail("Falta adaptación móvil multidispositivo.");
+if(!css.includes("@page{size:A4 portrait")||!css.includes("@media print")||!css.includes("break-inside:avoid"))fail("Falta una hoja de impresión A4 con control de saltos.");
+for(const preset of ["readable","night","contrast"])if(!html.includes('data-appearance-preset="'+preset+'"'))fail("Falta acceso rápido de lectura: "+preset+".");
+if(!app.includes('document.querySelectorAll("[data-appearance-preset]")'))fail("Los accesos rápidos de lectura no están conectados a la aplicación.");
+if(!app.includes('window.addEventListener("beforeprint", () =>')||!app.includes("updatePrintMeta();")||!app.includes("const allVisible = visibleContacts();"))fail("La impresión no prepara metadatos y todos los resultados del filtro actual.");
+if(!app.includes("registration.update()")||!app.includes('"controllerchange"'))fail("Falta comprobación de actualización y recarga coordinada del service worker.");
+if(!sw.includes('const CACHE_NAME = "chanar-a-mano-shell-v6"')||!sw.includes('cache: "reload"')||!sw.includes("if (!response.ok)"))fail("El service worker no garantiza una caché versionada completa.");
 if(!html.includes('id="mobileWhatsappShare"')||!html.includes('id="mobileSearchButton"'))fail("Faltan acciones rápidas móviles.");
 
 const marker="window.CHANAR_CONTACTOS =";
