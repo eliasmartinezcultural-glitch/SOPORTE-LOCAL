@@ -15,6 +15,7 @@
   const shareFeedback = $("shareFeedback");
 
   let activeCategory = "Todos";
+  let fontScale = 1;
 
   const categoryMap = [
     { label: "Ver todo", key: "Todos", terms: [] },
@@ -48,7 +49,10 @@
     if (contact.fuenteTipo === "institucional") {
       return { label: "Directorio institucional", note: "Dato publicado por una entidad o directorio institucional." };
     }
-    return { label: "Sitio oficial", note: "Fuente institucional indicada en esta ficha." };
+    if (contact.fuenteTipo === "oficial") {
+      return { label: "Sitio oficial", note: "Dato publicado en un sitio oficial." };
+    }
+    return { label: "Fuente indicada", note: "Procedencia declarada en esta ficha; revisá el sitio de origen." };
   }
 
   function safeSource(value) {
@@ -70,8 +74,8 @@
     const aliases = categoryMap.find(item => item.key === contact.categoria)?.terms || [];
     return normalize([
       contact.nombre, contact.categoria, contact.descripcion, contact.correo,
-      ...phoneText, ...aliases
-    ].join(" "));
+      contact.fuenteNombre, contact.fuenteTipo, ...phoneText, ...aliases
+    ].join(" ")) + " " + normalize([contact.nombre, contact.categoria, contact.descripcion, contact.correo, ...phoneText].join(" ")).replace(/[^0-9]/g, "");
   }
 
   function visibleContacts() {
@@ -98,9 +102,10 @@
 
     const source = sourceInfo(contact);
     const sourceUrl = safeSource(contact.fuente);
+    const sourceName = contact.fuenteNombre ? `<span class="source-publisher">${escapeHtml(contact.fuenteNombre)}</span>` : "";
     const sourceLink = sourceUrl
-      ? `<a class="card-source" href="${escapeHtml(sourceUrl)}" target="_blank" rel="noopener noreferrer">
-          <span>Consultar fuente</span><span aria-hidden="true">↗</span>
+      ? `<a class="card-source" href="${escapeHtml(sourceUrl)}" target="_blank" rel="noopener noreferrer" aria-label="Consultar fuente: ${escapeHtml(contact.fuenteNombre || source.label)}">
+          <span>Ver dónde se publicó</span><span aria-hidden="true">↗</span>
         </a>`
       : `<span class="card-source-unavailable">Fuente web no disponible en esta ficha.</span>`;
 
@@ -113,8 +118,7 @@
         <h4>${escapeHtml(contact.nombre)}</h4>
         <p class="contact-description">${escapeHtml(contact.descripcion)}</p>
         ${phones || email ? `<div class="data-list">${phones}${email}</div>` : `<p class="no-contact-data">Esta ficha no contiene un teléfono o correo publicado.</p>`}
-        <p class="source-note">${escapeHtml(source.note)} Los datos pueden cambiar.</p>
-        ${sourceLink}
+        <div class="source-block"><p class="source-note">${escapeHtml(source.note)} Los datos pueden cambiar.</p>${sourceName}${sourceLink}</div>
       </article>`;
   }
 
@@ -134,11 +138,16 @@
     const visible = visibleContacts();
     grid.innerHTML = visible.map(card).join("");
     count.textContent = visible.length + (visible.length === 1 ? " resultado" : " resultados");
+    const endNote = $("resultsEndNote");
+    if (endNote) endNote.hidden = visible.length === 0;
     resultsContext.textContent = activeCategory === "Todos" ? "Todos los temas" : categoryLabel(activeCategory);
     resultsTitle.textContent = search.value.trim() ? "Resultados de tu búsqueda" : "Información disponible";
     empty.hidden = visible.length !== 0;
     grid.hidden = visible.length === 0;
     clear.hidden = !search.value;
+    document.querySelectorAll(".quick-chip").forEach(button => {
+      button.setAttribute("aria-pressed", String(normalize(search.value) === normalize(button.dataset.query)));
+    });
     filters.querySelectorAll("button[data-category]").forEach(button => {
       button.setAttribute("aria-pressed", String(button.dataset.category === activeCategory));
     });
@@ -159,6 +168,26 @@
   });
 
   search.addEventListener("input", render);
+  document.querySelectorAll(".quick-chip").forEach(button => {
+    button.addEventListener("click", () => {
+      activeCategory = "Todos";
+      search.value = button.dataset.query || "";
+      render();
+      $("resultsTitle").scrollIntoView({ behavior: "smooth", block: "start" });
+    });
+  });
+
+  function applyFontScale(next) {
+    fontScale = Math.max(1, Math.min(1.25, Math.round(next * 100) / 100));
+    document.documentElement.style.setProperty("--reading-scale", String(fontScale));
+    $("fontDown").disabled = fontScale <= 1;
+    $("fontUp").disabled = fontScale >= 1.25;
+    $("fontReset").setAttribute("aria-label", "Tamaño de texto actual: " + Math.round(fontScale * 100) + " por ciento. Restablecer");
+  }
+  $("fontDown").addEventListener("click", () => applyFontScale(fontScale - 0.05));
+  $("fontUp").addEventListener("click", () => applyFontScale(fontScale + 0.05));
+  $("fontReset").addEventListener("click", () => applyFontScale(1));
+  applyFontScale(1);
   $("searchForm").addEventListener("submit", event => event.preventDefault());
   clear.addEventListener("click", () => {
     search.value = "";
@@ -247,6 +276,8 @@
     empty.querySelector("p").textContent = "Volvé a cargar la página más tarde.";
     $("searchForm").hidden = true;
     filters.hidden = true;
+    document.querySelector(".quick-search").hidden = true;
+    document.querySelector(".reading-tools").hidden = true;
   } else {
     renderFilters();
     render();
