@@ -208,3 +208,8 @@ La tarjeta PNG se genera a 1200 × 630 píxeles, no contiene teléfonos instituc
 
 
 **Corrección de cuadrícula:** el modo de letra grande ya no fuerza una única columna en escritorio. Conserva dos columnas para mantener legibilidad y se reduce a una sola en pantallas angostas de celular.
+
+
+## Experiencia móvil reforzada · 19 de noviembre de 2026
+
+Se amplió la adaptación para teléfonos: barra inferior fija con buscador y compartir, respeto por las áreas seguras del dispositivo, encabezado simplificado, accesos de lectura en columna, filtros temáticos en dos columnas, botones táctiles amplios y datos telefónicos en un bloque de lectura independiente. En equipos angostos se apilan los datos secundarios para evitar compresión. La paleta mantiene coherencia en modo natural, nocturno y alto contraste. La caché del shell se incrementa a v16. La validación comprueba la presencia de estos refuerzos de interfaz; las pruebas visuales en dispositivos físicos siguen siendo necesarias.
