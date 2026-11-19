@@ -1,0 +1,14 @@
+{
+  "id": "./",
+  "name": "Chañar a Mano · Agenda comunitaria",
+  "short_name": "Chañar a Mano",
+  "description": "Agenda ciudadana gratuita de San Patricio del Chañar, Neuquén.",
+  "lang": "es-AR",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f5f2e8",
+  "theme_color": "#315640",
+  "categories": ["lifestyle", "utilities", "travel"],
+  "icons": [{"src":"marca-chanar.svg","sizes":"any","type":"image/svg+xml","purpose":"any"}]
+}
