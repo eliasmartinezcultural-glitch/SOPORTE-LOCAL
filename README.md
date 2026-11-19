@@ -82,7 +82,7 @@ Historias, personas y territorio.
 
 ## Ampliación del directorio y criterios de procedencia
 
-- El directorio reúne 60 fichas entre instituciones, servicios públicos, educación, salud, cultura, deporte, producción, turismo, gastronomía y comercios.
+- El directorio reúne 75 fichas, de las cuales 60 incluyen al menos un teléfono publicado entre instituciones, servicios públicos, educación, salud, cultura, deporte, producción, turismo, gastronomía y comercios.
 - Los teléfonos y correos se publican solo cuando aparecen en una fuente consultada.
 - Las fichas sin teléfono muestran ubicación o referencia de origen, sin inventar canales de contacto.
 - Se diferencia la fuente institucional de las fichas públicas de ubicación en mapas.
