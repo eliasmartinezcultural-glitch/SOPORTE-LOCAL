@@ -60,7 +60,7 @@ if(!app.includes("createShareCardFile")||!app.includes("navigator.canShare({file
 if(!app.includes('scope === "all" ? contacts.slice()')||!app.includes("Resultados seleccionados"))fail("La impresión no distingue resultados filtrados y guía completa.");
 if(!html.includes("revisá la fuente de cada ficha"))fail("Falta un mensaje de difusión con criterio de verificación.");
 if(!css.includes(".print-cover")||!css.includes(".share-kit")||!css.includes("@page{size:A4 portrait;margin:13mm 14mm 16mm}"))fail("Falta la capa editorial de impresión y difusión.");
-if(!sw.includes('const CACHE_NAME = "chanar-a-mano-shell-v11"'))fail("La caché PWA no fue actualizada a v10.");
+if(!sw.includes('const CACHE_NAME = "chanar-a-mano-shell-v11"'))fail("La caché PWA no fue actualizada a v11.");
 if(!app.includes("chanar-a-mano-favorites-v1")||!app.includes("data-favorite-id")||!app.includes("showFavoritesOnly"))fail("Los favoritos locales no están conectados.");
 if(!app.includes("data-copy-contact-id")||!app.includes("Ficha copiada."))fail("Falta la copia de fichas públicas.");
 if(!html.includes("La lista queda solamente en este dispositivo"))fail("Falta el aviso de privacidad de favoritos.");
