@@ -66,7 +66,7 @@ Antes de anunciar la guía como versión estable, completar estas comprobaciones
 - Imprimir o guardar en PDF y revisar el resultado en papel A4.
 - Probar compartir por WhatsApp, el menú del dispositivo y copiar el alias.
 - Abrir varias fuentes oficiales y referencias en mapas para confirmar que los enlaces sigan funcionando.
-- Verificar directamente los 22 teléfonos cuya procedencia es una referencia en mapas antes de presentarlos como confirmados.
+- Verificar directamente los 26 teléfonos cuya procedencia es una referencia en mapas antes de presentarlos como confirmados.
 - Confirmar la autorización de reutilización de la fotografía de portada o reemplazarla por una imagen propia/autorizada.
 
 La revisión del código no sustituye estas pruebas en navegadores y dispositivos reales. La guía debe seguir mostrando que los datos son referencias sujetas a cambios.
@@ -118,7 +118,7 @@ La revisión integral se desarrolla en una rama separada a partir del commit 790
 - **Lectura:** se mantienen letra grande, modo noche, alto contraste, filtros por tema, búsquedas rápidas, paginación e impresión A4.
 - **Actualización sin conexión:** el identificador de caché pasa a chanar-a-mano-shell-v10 para que el navegador pueda instalar el conjunto nuevo de archivos.
 
-La revisión no cambia datos.js: conserva las 90 fichas y sus advertencias documentales. No se agregan teléfonos ni se los declara confirmados. Se retiró la fotografía municipal de los metadatos de vista previa mientras no exista autorización específica de reutilización.
+El corte actual contiene **90 fichas**, de las cuales **74 publican al menos un teléfono** (80 números en total). En las dos ampliaciones documentadas se incorporaron 15 fichas: 11 procedentes de un directorio externo y cuatro de referencias públicas de ubicación; 14 de esas fichas incluyen un teléfono y una aporta solo una dirección de referencia. Estos 14 teléfonos nuevos siguen clasificados como referencias secundarias pendientes de confirmación directa. La revisión integral sí incluye cambios en `datos.js`; no se modificaron ni se deben presentar esos contactos como confirmados. Se retiró la fotografía municipal de los metadatos de vista previa mientras no exista autorización específica de reutilización.
 
 
 ## Filtros más precisos
