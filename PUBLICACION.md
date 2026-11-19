@@ -218,3 +218,8 @@ Se amplió la adaptación para teléfonos: barra inferior fija con buscador y co
 ## Segunda pasada visual · 19 de noviembre de 2026
 
 Capa de diseño CSS exclusivamente: identidad editorial vegetal/terracota, fondos y superficies, tarjetas con acentos y profundidad, botones, filtros, jerarquía tipográfica, ornamentación ambiental, y coherencia visual para modo natural, nocturno, alto contraste e impresión. Sin cambios en la estructura funcional, HTML, JavaScript ni contenido de fichas. Shell PWA actualizado a v17.
+
+
+## Separación visual de fichas · 19 de noviembre de 2026
+
+Se reforzó el contorno de cada tarjeta del directorio, con fondo individual y mayor espacio entre fichas para evitar que una se confunda con la de al lado. El encabezado de cada tarjeta tiene una división propia. Los estilos contemplan modo natural, nocturno, alto contraste e impresión. No se modificaron datos ni comportamiento. Caché del shell actualizada a v18.
