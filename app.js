@@ -87,24 +87,40 @@
   }
 
   function searchText(contact) {
-    const phoneText = (contact.telefonos || [])
-      .flatMap(phone => [phone.numero, phone.uso]);
-    const aliases = categoryMap.find(item => item.keys.includes(contact.categoria))?.terms || [];
+    const phoneText = (contact.telefonos || []).flatMap(phone => [phone.numero, phone.uso]);
     return normalize([
       contact.nombre, contact.categoria, contact.descripcion, contact.correo,
-      contact.fuenteNombre, contact.fuenteTipo, contact.direccion, ...phoneText, ...aliases
-    ].join(" ")) + " " + normalize([contact.nombre, contact.categoria, contact.descripcion, contact.correo, ...phoneText].join(" ")).replace(/[^0-9]/g, "");
+      contact.fuenteNombre, contact.fuenteTipo, contact.direccion, ...phoneText
+    ].join(" ")) + " " + normalize(phoneText.join(" ")).replace(/[^0-9]/g, "");
   }
 
+  const synonymGroups = [
+    ["hospital", "salud", "medico", "medica", "centro medico", "atencion medica"],
+    ["escuela", "educacion", "colegio", "jardin", "formacion"],
+    ["municipalidad", "municipio", "municipal"],
+    ["deporte", "deportes", "recreacion", "club"],
+    ["cultura", "biblioteca", "centro cultural"],
+    ["comercio", "comercios", "negocio", "local"],
+    ["turismo", "alojamiento", "hotel", "hospedaje", "hosteria", "gastronomia", "restaurante", "bodega", "visitas"],
+    ["trabajo", "empleo", "produccion", "productores", "agro"],
+    ["energia", "electricidad", "luz", "epen"],
+    ["farmacia", "veterinaria", "odontologia", "consultorio"]
+  ];
+
+  const stopWords = new Set(["de", "del", "la", "el", "los", "las", "y", "en", "para", "por", "un", "una"]);
+
+  function matchingTerms(term) {
+    return synonymGroups.find(group => group.includes(term)) || [term];
+  }
   function visibleContacts() {
-    const terms = normalize(search.value).split(" ").filter(Boolean);
+    const terms = normalize(search.value).split(" ").filter(term => term && !stopWords.has(term));
     return contacts.filter(contact => {
       const selectedGroup = categoryMap.find(item => item.key === activeCategory);
       const matchesCategory = activeCategory === "Todos" || Boolean(selectedGroup?.keys.includes(contact.categoria));
       const hasPhone = (contact.telefonos || []).length > 0;
       const matchesPhone = !phoneOnly?.checked || hasPhone;
       const text = searchText(contact);
-      return matchesCategory && matchesPhone && terms.every(term => text.includes(term));
+      return matchesCategory && matchesPhone && terms.every(term => matchingTerms(term).some(candidate => text.includes(candidate)));
     }).sort((a, b) => String(a.nombre || "").localeCompare(String(b.nombre || ""), "es-AR"));
   }
 
@@ -168,10 +184,17 @@
     count.textContent = visible.length + (visible.length === 1 ? " resultado" : " resultados");
     const endNote = $("resultsEndNote");
     if (endNote) endNote.hidden = visible.length === 0;
-    resultsContext.textContent = activeCategory === "Todos" ? "Todos los temas" : categoryLabel(activeCategory);
+    resultsContext.textContent = (activeCategory === "Todos" ? "Todos los temas" : categoryMap.find(item => item.key === activeCategory)?.label || activeCategory) + (phoneOnly?.checked ? " · Solo con teléfono" : "");
     resultsTitle.textContent = search.value.trim() ? "Resultados de tu búsqueda" : "Información disponible";
     empty.hidden = visible.length !== 0;
     grid.hidden = visible.length === 0;
+    if (visible.length === 0 && phoneOnly?.checked) {
+      empty.querySelector("h3").textContent = "No hay fichas con teléfono en esta selección.";
+      empty.querySelector("p").textContent = "Probá quitar ese filtro o elegir otro tema.";
+    } else if (visible.length === 0) {
+      empty.querySelector("h3").textContent = "No encontramos ese dato.";
+      empty.querySelector("p").textContent = "Probá con una palabra más corta o volvé a ver todos los temas.";
+    }
     clear.hidden = !search.value;
     document.querySelectorAll(".quick-chip").forEach(button => {
       const isCategory = button.dataset.category && button.dataset.category === activeCategory;
