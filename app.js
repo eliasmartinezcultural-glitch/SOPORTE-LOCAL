@@ -4,8 +4,7 @@
   const $ = (id) => document.getElementById(id);
   const requiredIds = [
     "contactGrid","filters","searchInput","clearSearch","resultCount","emptyState",
-    "resultsContext","resultsTitle","copyFeedback","shareFeedback","totalContactCount",
-    "totalPhoneCount","phoneOnly","pagination","previousPage","nextPage","pageStatus",
+    "resultsContext","resultsTitle","copyFeedback","shareFeedback","phoneOnly","pagination","previousPage","nextPage","pageStatus",
     "topicPanel","directoryTitle","fontDown","fontUp","fontReset","fontScaleStatus",
     "brightnessControl","contrastControl","appearanceStatus","brightnessValue",
     "contrastValue","resetAppearance","searchForm","resetFilters","copyAliasButton",
