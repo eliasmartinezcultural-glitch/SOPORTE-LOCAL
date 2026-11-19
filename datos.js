@@ -3,7 +3,8 @@
    estadoContacto identifica el respaldo documental, no certifica que una línea siga activa.
    Las fichas de directorios externos y mapas se muestran como referencias secundarias pendientes de confirmación.
    La presencia de una ficha no implica aval de la institución. */
-window.CHANAR_CONTACTOS = [
+window.CHANAR_CONTACTOS =
+[
   {
     "id": "municipio-general",
     "nombre": "Municipalidad · Contacto general",
@@ -1444,8 +1445,7 @@ window.CHANAR_CONTACTOS = [
     "fuenteNombre": "Ficha pública de ubicación · referencia no oficial",
     "fuenteTipo": "mapa",
     "estadoContacto": "referencia-secundaria"
-  }
-,
+  },
   {
     "id": "lt-electricidad",
     "nombre": "LT Electricidad",
@@ -1539,7 +1539,6 @@ window.CHANAR_CONTACTOS = [
     "direccion": "Calle 139, San Patricio del Chañar, Neuquén, Argentina",
     "fuente": "https://www.google.com/maps/search/?api=1&query=Servicio%20t%C3%A9cnico%20Joaco%2C%20San%20Patricio%20del%20Cha%C3%B1ar%2C%20Neuqu%C3%A9n%2C%20Argentina",
     "fuenteNombre": "Ficha pública de ubicación · referencia no oficial",
-    "fuenteTipo": "mapa",
-    "estadoContacto": "referencia-secundaria"
+    "fuenteTipo": "mapa"
   }
 ];
