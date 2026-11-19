@@ -12,7 +12,7 @@ Reúne información pública de instituciones, servicios, organizaciones, espaci
 2. O elegí uno de los temas.
 3. Abrí la fuente de la ficha para revisar el dato antes de usarlo.
 
-La página está pensada para celulares, lectura sencilla, controles grandes y personas con poca experiencia digital. La bienvenida identifica claramente la creación de Ocarina Producciones y presenta una fotografía del Balneario Municipal publicada en la sección Nuestra Ciudad del sitio de la Municipalidad. La atribución está visible junto a la imagen; la autorización específica de reutilización debe confirmarse con el titular antes de considerar cerrada la cuestión de derechos. Incluye un panel de ajustes con tamaño de letra ampliable hasta el 200%, brillo, contraste y tres modos de color (natural, alto contraste y nocturno), además de impresión y guardado como PDF. La búsqueda se realiza sobre los datos incluidos en la página, sin registro ni envío de la consulta. Los ajustes visuales se guardan localmente en el dispositivo. El encabezado ofrece acceso directo para compartir por WhatsApp; también se conserva el menú de compartir del dispositivo y la opción de copiar el enlace.
+La página prioriza a personas mayores y a quienes tienen poca experiencia digital: acceso directo a letra grande, botones táctiles amplios, fichas en una sola columna y teléfonos destacados en números grandes. La portada evita imágenes decorativas que retrasen la consulta. Incluye modo noche, alto contraste, ajustes de lectura y salida de impresión A4. La búsqueda se realiza sobre los datos incluidos en la página, sin registro ni envío de la consulta. Los ajustes visuales se guardan localmente en el dispositivo. El encabezado ofrece acceso directo para compartir por WhatsApp; también se conserva el menú de compartir del dispositivo y la opción de copiar el enlace.
 
 
 La página prioriza la consulta sencilla: los accesos de letra grande, modo noche y alto contraste están visibles antes del buscador; los ajustes avanzados quedan agrupados en un panel desplegable. Los temas se abren solo si la persona quiere explorar por categoría y la procedencia completa de cada ficha se consulta bajo demanda.
@@ -34,9 +34,9 @@ La capa estética no modifica la estructura de las fichas ni el contenido de `da
 - No se deben compartir datos personales o sensibles sin verificar previamente al destinatario.
 
 ## Contenido
-- 75 fichas locales organizadas en nueve temas ciudadanos.
-- 60 fichas incluyen al menos un teléfono publicado como referencia.
-- De esos 60 teléfonos, 22 proceden de referencias en mapas y requieren verificación directa antes de considerarse confirmados.
+- 90 fichas locales organizadas en nueve temas ciudadanos.
+- 74 fichas incluyen al menos un teléfono publicado como referencia.
+- Los teléfonos son referencias documentales y no se presentan como líneas activas ni confirmadas mediante llamada.
 - Las fichas pueden incluir teléfonos, correo, dirección, ubicación aproximada y enlace a la fuente, según la información disponible.
 - El directorio distingue sitios oficiales, agendas o directorios institucionales y referencias en mapas.
 
@@ -94,6 +94,16 @@ Consultar `PUBLICACION.md` antes de publicar. La validación automática no cert
 
 ## Actualización y caché
 
-La caché local del service worker utiliza la versión `chanar-a-mano-shell-v6`. La instalación guarda los archivos esenciales como conjunto y no activa una versión incompleta. Cuando una actualización toma el control de una pestaña ya abierta, se recarga el documento para no mezclar recursos de versiones distintas. Esto no publica cambios por sí solo: la web pública depende de la rama y carpeta configuradas en GitHub Pages.
+La caché local del service worker utiliza la versión `chanar-a-mano-shell-v7`. La instalación guarda los archivos esenciales como conjunto y no activa una versión incompleta. Cuando una actualización toma el control de una pestaña ya abierta, se recarga el documento para no mezclar recursos de versiones distintas. Esto no publica cambios por sí solo: la web pública depende de la rama y carpeta configuradas en GitHub Pages.
 
 La versión de trabajo actual está en `agenda-local-2026-11-19`. No debe confundirse con la rama pública ni con la rama congelada. Ver [PUBLICACION.md](PUBLICACION.md) antes de integrar cambios.
+
+
+## Diseño centrado en personas mayores
+
+- La primera visita activa una base de lectura ampliada y conserva la preferencia en el dispositivo.
+- Un acceso visible permite activar la vista fácil: letra 150%, contraste reforzado, tarjetas de una sola columna y teléfonos destacados en tipografía de gran tamaño.
+- Los números se muestran como texto claro y seleccionable; no se convierten en llamadas automáticas.
+- Los botones principales y filtros tienen áreas táctiles amplias y rótulos explícitos.
+- El modo noche y el alto contraste mantienen la jerarquía de teléfonos, direcciones y advertencias.
+- La impresión A4 mantiene los teléfonos en un tamaño destacado y evita dividir bloques de datos entre páginas.
