@@ -693,7 +693,7 @@ button:focus-visible,a:focus-visible,summary:focus-visible,input:focus-visible,s
  .data-row-phone .data-value{font-size:19px}
  .card-action{min-height:42px;font-size:12px}
 }
-body.easy-reading .contact-grid{grid-template-columns:1fr!important}
+body.easy-reading .contact-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important}
 body.easy-reading .contact-card{padding:19px!important}
 body.easy-reading .contact-card h4{font-size:28px!important}
 body.easy-reading .contact-description{font-size:17px!important}
@@ -705,3 +705,6 @@ body.easy-reading .data-value,body.easy-reading .data-row-phone .data-value{font
  html{scroll-behavior:auto!important}
  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
 }
+
+/* La lectura ampliada conserva una cuadrícula en escritorio; solo colapsa en móviles angostos. */
+@media(max-width:560px){body.easy-reading .contact-grid{grid-template-columns:1fr!important}}
