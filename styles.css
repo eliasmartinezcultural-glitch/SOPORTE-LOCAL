@@ -1028,6 +1028,7 @@ body[data-theme=high] .search-hint{color:#000!important}
   overflow:hidden;
 }
 .topic-panel>summary{
+  position:relative;
   min-height:62px;
   padding:10px 16px;
   display:flex;
