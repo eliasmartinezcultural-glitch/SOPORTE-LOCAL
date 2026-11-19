@@ -451,3 +451,18 @@ body{background:radial-gradient(ellipse at 8% 5%,rgba(244,204,125,.20),transpare
 .directory-phone-total{padding:5px 11px;border:1px solid #c7ded1;border-radius:999px;background:linear-gradient(110deg,#e0f0e5,#e5eff0);color:#315e49;font-size:12px;font-weight:800}
 .directory-phone-total b{width:25px;height:25px;background:#4c8061;color:#fff;font-size:12px;border-radius:8px}
 @media(max-width:560px){.directory-phone-total{width:max-content;max-width:100%;padding:5px 9px}}
+
+/* Navegación ciudadana simplificada y lectura reforzada */
+.phone-only-toggle{display:flex;align-items:center;gap:11px;width:max-content;max-width:100%;min-height:48px;margin:0 0 19px;padding:9px 13px;border:1px solid #c9d8ca;border-radius:11px;background:linear-gradient(110deg,#e9f2e8,#f1f3e9);color:#31553c;font-size:14px;font-weight:700;cursor:pointer}
+.phone-only-toggle input{position:absolute;width:1px;height:1px;opacity:0}
+.phone-toggle-box{width:23px;height:23px;flex:0 0 23px;border:2px solid #65816a;border-radius:6px;background:#fff;display:grid;place-items:center}
+.phone-only-toggle input:checked+.phone-toggle-box{background:#315f43;border-color:#315f43}
+.phone-only-toggle input:checked+.phone-toggle-box:after{content:"✓";color:#fff;font-size:16px;font-weight:900;line-height:1}
+.phone-only-toggle input:focus-visible+.phone-toggle-box{outline:3px solid #a85f43;outline-offset:3px}
+.map-location-link{display:inline-flex;align-self:flex-start;min-height:38px;align-items:center;margin-top:8px;padding:7px 10px;border:1px solid #d7e0d6;border-radius:8px;background:#f0f5ef;color:#315d46;font-size:12px;font-weight:800;text-decoration:none}
+.map-location-link:hover{background:#e4efe3;border-color:#91ad94}
+.source-type{color:#4e5d51;font-size:11px}
+.source-note{border-left:3px solid #bd985e}
+.data-value{font-variant-numeric:tabular-nums}
+@media(max-width:560px){.phone-only-toggle{width:100%;font-size:13px;margin-bottom:16px}.map-location-link{min-height:42px;width:100%;justify-content:center}}
+@media print{.phone-only-toggle,.map-location-link{display:none!important}}
