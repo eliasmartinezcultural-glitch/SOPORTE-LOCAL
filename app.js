@@ -11,7 +11,7 @@
     "supportAlias","printMeta","printButton","whatsappShare","shareButton",
     "copyShareButton","mobileSearchButton","mobileWhatsappShare","appStatus",
     "favoritesToggle","favoritesCount","clearFavorites","addressOnly","clearAllFilters",
-    "printScope","printHeadingTitle","printHeadingIntro","printCoverCount","shareKitWhatsapp","shareCardButton","shareKitCopyButton","shareMessagePreview","printUrl", "directoryIntro","exportResultsButton","exportFeedback"
+    "printScope","printHeadingTitle","printHeadingIntro","printCoverCount","shareKitWhatsapp","shareCardButton","shareKitCopyButton","shareMessagePreview","printUrl", "directoryIntro","exportResultsButton","exportFeedback","copyResultsButton"
   ];
   const missingIds = requiredIds.filter(id => !$(id));
   if (missingIds.length) {
@@ -449,6 +449,10 @@
     $("exportResultsButton").textContent = visible.length
       ? "Descargar listado · " + visible.length
       : "Sin resultados para descargar";
+    $("copyResultsButton").disabled = visible.length === 0;
+    $("copyResultsButton").textContent = visible.length
+      ? "Copiar resultados · " + visible.length
+      : "Sin resultados para copiar";
     grid.innerHTML = pageItems.map(card).join("");
     count.textContent = visible.length + (visible.length === 1 ? " resultado" : " resultados")
       + (visible.length > pageSize ? " · mostrando " + (start + 1) + "–" + Math.min(start + pageSize, visible.length) : "");
@@ -887,6 +891,49 @@
   }
 
   $("exportResultsButton").addEventListener("click", downloadCurrentResultsCsv);
+
+  async function copyCurrentResults() {
+    const rows = visibleContacts();
+    const feedback = $("exportFeedback");
+    if (!rows.length) {
+      feedback.textContent = "No hay resultados para copiar. Probá quitar algún filtro.";
+      return;
+    }
+    const date = new Intl.DateTimeFormat("es-AR", { dateStyle: "long" }).format(new Date());
+    const blocks = rows.map((contact, index) => {
+      const status = contactStatusInfo(contact);
+      const details = [
+        (index + 1) + ". " + contact.nombre,
+        "Tema: " + categoryLabel(contact.categoria),
+        contact.descripcion ? "Descripción: " + contact.descripcion : "",
+        ...(contact.telefonos || []).map(phone => "Teléfono publicado: " + phone.numero + (phone.uso ? " · " + phone.uso : "")),
+        contact.direccion ? "Dirección publicada: " + contact.direccion : "",
+        contact.correo ? "Correo publicado: " + contact.correo : "",
+        status ? "Respaldo documental: " + status[0] + ". " + status[1] : "Sin contacto publicado en esta ficha.",
+        "Fuente: " + (contact.fuenteNombre || "Fuente indicada"),
+        safeSource(contact.fuente)
+      ];
+      return details.filter(Boolean).join("\n");
+    });
+    const content = [
+      "CHÁÑAR A MANO · Selección de resultados",
+      "San Patricio del Chañar, Neuquén · " + date,
+      rows.length + (rows.length === 1 ? " ficha" : " fichas"),
+      "",
+      ...blocks,
+      "",
+      "AVISO: los teléfonos y direcciones son referencias documentales; pueden cambiar y no se garantiza que las líneas estén activas. Revisá la fuente de cada ficha. Guía independiente, no es un servicio de emergencias.",
+      "Ocarina Producciones · Historias, personas y territorio."
+    ].join("\n\n");
+    try {
+      await copyText(content);
+      feedback.textContent = "Se copiaron " + rows.length + (rows.length === 1 ? " ficha." : " fichas.") + " Podés pegar el listado en una nota o mensaje.";
+    } catch (_) {
+      feedback.textContent = "No se pudo copiar automáticamente. Probá descargar el CSV o seleccionar las fichas manualmente.";
+    }
+  }
+
+  $("copyResultsButton").addEventListener("click", copyCurrentResults);
   window.addEventListener("beforeprint", () => {
     updatePrintMeta();
     preparePrint();
