@@ -2654,3 +2654,28 @@ body[data-theme=high] .footer-tagline{color:#000!important}
   .data-row{border-color:#ccc!important}
   .support-mini.support-card{border:1px solid #aaa!important}
 }
+
+
+/* Transparencia editorial de los datos de contacto */
+.contact-verification {
+  margin: 0.75rem 0 0;
+  padding: 0.65rem 0.75rem;
+  border-left: 3px solid var(--accent, #a66b50);
+  border-radius: 0 0.55rem 0.55rem 0;
+  background: rgba(166, 107, 80, 0.075);
+  color: var(--text-muted, #625d55);
+  font-size: 0.82rem;
+  line-height: 1.45;
+}
+.contact-verification strong {
+  color: var(--text, #35312c);
+  font-weight: 700;
+}
+@media print {
+  .contact-verification {
+    background: transparent;
+    border: 1px solid #999;
+    border-left: 3px solid #555;
+    color: #222;
+  }
+}
