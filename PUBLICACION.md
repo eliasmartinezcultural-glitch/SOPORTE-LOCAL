@@ -198,3 +198,12 @@ La caché del shell se incrementa a v8 cuando se actualizan HTML, CSS o JavaScri
 ## Filtro de direcciones
 
 El filtro “Mostrar solo lugares con dirección” se combina con la búsqueda, la categoría, el filtro de teléfono y los favoritos. “Quitar todos los filtros” restablece la consulta actual sin eliminar los favoritos almacenados. La impresión conserva el conjunto resultante y registra los filtros aplicados.
+
+
+## Impresión A4 y difusión por WhatsApp
+
+Antes de imprimir, se puede seleccionar “Solo los resultados que estoy viendo” o “La guía completa”. La primera opción respeta búsqueda, categoría, teléfono, dirección y favoritos; la segunda incluye todas las fichas ordenadas alfabéticamente. La impresión incorpora una portada editorial breve, fecha, cantidad de fichas, advertencia de vigencia, fuentes y créditos. Revisar siempre la vista previa del navegador y elegir papel A4.
+
+La difusión ofrece un mensaje corto con el enlace y una tarjeta gráfica generada en el propio dispositivo. En móviles compatibles, el menú nativo permite elegir WhatsApp y adjuntar el PNG. En equipos sin esa capacidad, la imagen se descarga y el mensaje se copia para adjuntarlos manualmente. El botón de WhatsApp solo prepara el texto y enlace; no envía mensajes sin intervención de la persona.
+
+La tarjeta PNG se genera a 1200 × 630 píxeles, no contiene teléfonos institucionales, estadísticas ni afirmaciones de vigencia. El mensaje acompaña el enlace y recuerda revisar la fuente de cada ficha.
