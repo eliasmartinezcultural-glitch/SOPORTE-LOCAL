@@ -66,7 +66,7 @@ if (start < 0) {
       if (!allowedSourceTypes.has(item.fuenteTipo)) fail(label + ": fuenteTipo ausente o no reconocido.");
       if (item.telefonos && !Array.isArray(item.telefonos)) fail(label + ": telefonos debe ser una lista.");
       const hasPublicContact = (item.telefonos || []).length > 0 || Boolean(item.correo);
-      const allowedContactStates = new Set(["publicado-fuente-oficial", "publicado-agenda-provincial", "publicado-directorio-institucional", "referencia-secundaria", "dato-duplicado-pendiente"]);
+      const allowedContactStates = new Set(["publicado-fuente-oficial", "publicado-agenda-provincial", "publicado-directorio-institucional", "referencia-secundaria", "dato-duplicado-pendiente", "conflicto-entre-fuentes"]);
       if (hasPublicContact && !allowedContactStates.has(item.estadoContacto)) fail(label + ": falta un estado de respaldo del contacto válido.");
       if (!hasPublicContact && item.estadoContacto) fail(label + ": no debe declarar estado de contacto si no publica teléfono ni correo.");
     }
