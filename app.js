@@ -10,7 +10,8 @@
     "contrastValue","resetAppearance","searchForm","resetFilters","copyAliasButton",
     "supportAlias","printMeta","printButton","whatsappShare","shareButton",
     "copyShareButton","mobileSearchButton","mobileWhatsappShare","appStatus",
-    "favoritesToggle","favoritesCount","clearFavorites","addressOnly","clearAllFilters"
+    "favoritesToggle","favoritesCount","clearFavorites","addressOnly","clearAllFilters",
+    "printScope","printHeadingTitle","printHeadingIntro","printCoverCount","shareKitWhatsapp","shareCardButton","shareKitCopyButton","shareMessagePreview","printUrl"
   ];
   const missingIds = requiredIds.filter(id => !$(id));
   if (missingIds.length) {
@@ -780,27 +781,37 @@
     }
   });
 
-  function updatePrintMeta(total = visibleContacts().length) {
+  function updatePrintMeta(total = visibleContacts().length, scope = $("printScope").value) {
     const date = new Intl.DateTimeFormat("es-AR", { dateStyle: "long" }).format(new Date());
     const selected = [];
-    if (activeCategory !== "Todos") selected.push(activeCategory);
-    if (search.value.trim()) selected.push("Búsqueda: " + search.value.trim());
-    if (phoneOnly?.checked) selected.push("solo fichas con teléfono");
-    if (addressOnly?.checked) selected.push("solo fichas con dirección");
-    const selection = selected.length ? " · " + selected.join(" · ") : " · Todos los temas";
+    if (scope !== "all") {
+      if (activeCategory !== "Todos") selected.push(activeCategory);
+      if (search.value.trim()) selected.push("Búsqueda: " + search.value.trim());
+      if (phoneOnly?.checked) selected.push("solo fichas con teléfono");
+      if (addressOnly?.checked) selected.push("solo fichas con dirección");
+      if (showFavoritesOnly) selected.push("solo lugares guardados");
+    }
+    const selection = scope === "all" ? "Guía completa" : (selected.length ? selected.join(" · ") : "Todos los temas");
+    $("printHeadingTitle").textContent = scope === "all" ? "Directorio comunitario completo" : "Resultados seleccionados";
+    $("printHeadingIntro").textContent = scope === "all"
+      ? "Directorio de instituciones, salud, educación, servicios, comercios y comunidad."
+      : "Selección de fichas según la búsqueda y los filtros elegidos en pantalla.";
+    $("printCoverCount").textContent = String(total);
     $("printMeta").textContent = total + (total === 1 ? " ficha" : " fichas")
-      + " · " + date + selection + " · Ocarina Producciones";
+      + " · " + date + " · " + selection + " · Ocarina Producciones";
+    $("printUrl").textContent = guideUrl();
   }
 
   let printPrepared = false;
   function preparePrint() {
     if (printPrepared) return;
-    const allVisible = visibleContacts();
+    const scope = $("printScope").value;
+    const allVisible = scope === "all" ? contacts.slice().sort((a,b) => String(a.nombre).localeCompare(String(b.nombre),"es-AR")) : visibleContacts();
     printPrepared = true;
     grid.innerHTML = allVisible.map(card).join("");
     grid.hidden = allVisible.length === 0;
     $("pagination").hidden = true;
-    updatePrintMeta(allVisible.length);
+    updatePrintMeta(allVisible.length, scope);
   }
 
   function restoreAfterPrint() {
@@ -812,6 +823,9 @@
   $("printButton").addEventListener("click", () => {
     updatePrintMeta();
     window.print();
+  });
+  $("printScope").addEventListener("change", () => {
+    $("printButton").textContent = $("printScope").value === "all" ? "Imprimir la guía completa" : "Imprimir los resultados";
   });
   window.addEventListener("beforeprint", () => {
     updatePrintMeta();
@@ -827,7 +841,7 @@
   }
 
   function whatsappMessage() {
-    return "Te comparto Chañar a Mano, una agenda comunitaria gratuita de San Patricio del Chañar, creada por Ocarina Producciones. Reúne teléfonos y datos útiles para consultar y compartir: " + guideUrl();
+    return "Te comparto CHÁÑAR A MANO: una guía comunitaria gratuita de San Patricio del Chañar. Reúne datos útiles para consultar, imprimir y compartir. No requiere registro. Los datos pueden cambiar; revisá la fuente de cada ficha.\n\n" + guideUrl();
   }
 
   function whatsappUrl() {
@@ -838,6 +852,8 @@
   const mobileWhatsappShare = $("mobileWhatsappShare");
   if (whatsappShare) whatsappShare.href = whatsappUrl();
   if (mobileWhatsappShare) mobileWhatsappShare.href = whatsappUrl();
+  $("shareKitWhatsapp").href = whatsappUrl();
+  $("shareMessagePreview").textContent = whatsappMessage().replace("\n\n" + guideUrl(), "").trim();
 
   $("copyShareButton").addEventListener("click", async () => {
     try {
@@ -847,6 +863,81 @@
       shareFeedback.textContent = "No se pudo copiar automáticamente. Usá el botón de WhatsApp.";
     }
   });
+  $("shareKitCopyButton").addEventListener("click", async () => {
+    try {
+      await copyText(whatsappMessage());
+      shareFeedback.textContent = "Mensaje y enlace copiados. Abrí WhatsApp, elegí a quién enviarlo y pegá el texto.";
+    } catch (_) {
+      shareFeedback.textContent = "No se pudo copiar automáticamente. Podés usar el botón de WhatsApp.";
+    }
+  });
+
+  async function createShareCardFile() {
+    const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+      <defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f7f5eb"/><stop offset="1" stop-color="#e8eee3"/></linearGradient><linearGradient id="hill" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#789078"/><stop offset="1" stop-color="#34553f"/></linearGradient></defs>
+      <rect width="1200" height="630" fill="url(#bg)"/><rect width="18" height="630" fill="#9b6547"/>
+      <circle cx="1040" cy="90" r="180" fill="#e4d8b8" opacity=".55"/>
+      <path d="M700 450 C820 300 930 370 1040 290 C1110 240 1160 260 1200 220 L1200 630 L650 630Z" fill="#d2ddca"/>
+      <path d="M660 520 C810 400 900 470 1030 380 C1110 325 1160 360 1200 320 L1200 630 L600 630Z" fill="url(#hill)"/>
+      <path d="M700 610 C820 540 900 550 1000 500 C1090 455 1140 470 1200 430" fill="none" stroke="#f3e9d0" stroke-width="14" stroke-linecap="round"/>
+      <g fill="#34553f"><path d="M930 360l-34 80h68z"/><path d="M930 330l-26 58h52z"/><rect x="925" y="430" width="10" height="32"/><path d="M1080 300l-30 72h60z"/><path d="M1080 275l-23 53h46z"/><rect x="1075" y="370" width="10" height="30"/></g>
+      <rect x="72" y="72" width="84" height="84" rx="22" fill="#304b3a"/><text x="114" y="129" text-anchor="middle" font-family="Georgia,serif" font-size="42" font-weight="bold" fill="#fff">Ch</text>
+      <text x="190" y="105" font-family="Arial,sans-serif" font-size="19" font-weight="bold" letter-spacing="4" fill="#965b40">SAN PATRICIO DEL CHAÑAR · NEUQUÉN</text>
+      <text x="72" y="265" font-family="Georgia,serif" font-size="78" font-weight="bold" fill="#304b3a">CHÁÑAR A MANO</text>
+      <text x="76" y="330" font-family="Arial,sans-serif" font-size="33" fill="#965b40" font-weight="bold">Nuestro Chañar, más a mano.</text>
+      <text x="76" y="400" font-family="Arial,sans-serif" font-size="25" fill="#26372e">Una guía comunitaria gratuita para encontrar</text>
+      <text x="76" y="440" font-family="Arial,sans-serif" font-size="25" fill="#26372e">instituciones, salud, educación, servicios y comercios.</text>
+      <g font-family="Arial,sans-serif" font-size="20" font-weight="bold" fill="#304b3a">
+        <rect x="76" y="500" width="152" height="48" rx="24" fill="#fffefa" stroke="#cbd7c8"/><text x="152" y="531" text-anchor="middle">GRATUITA</text>
+        <rect x="242" y="500" width="170" height="48" rx="24" fill="#fffefa" stroke="#cbd7c8"/><text x="327" y="531" text-anchor="middle">SIN REGISTRO</text>
+        <rect x="426" y="500" width="230" height="48" rx="24" fill="#fffefa" stroke="#cbd7c8"/><text x="541" y="531" text-anchor="middle">PARA COMPARTIR</text>
+      </g>
+      <text x="76" y="592" font-family="Arial,sans-serif" font-size="17" fill="#526257">Ocarina Producciones · Historias, personas y territorio.</text>
+    </svg>`;
+    const svgBlob = new Blob([svg], { type: "image/svg+xml;charset=utf-8" });
+    const objectUrl = URL.createObjectURL(svgBlob);
+    try {
+      const picture = new Image();
+      picture.src = objectUrl;
+      await new Promise((resolve, reject) => {
+        picture.onload = resolve;
+        picture.onerror = () => reject(new Error("No se pudo preparar la tarjeta gráfica."));
+      });
+      const canvas = document.createElement("canvas");
+      canvas.width = 1200; canvas.height = 630;
+      const context = canvas.getContext("2d");
+      if (!context) throw new Error("No se pudo preparar la imagen.");
+      context.fillStyle = "#f7f5eb"; context.fillRect(0,0,1200,630);
+      context.drawImage(picture,0,0,1200,630);
+      const png = await new Promise(resolve => canvas.toBlob(resolve,"image/png"));
+      if (!png) throw new Error("No se pudo exportar la tarjeta.");
+      return new File([png],"chanar-a-mano-compartir.png",{type:"image/png"});
+    } finally { URL.revokeObjectURL(objectUrl); }
+  }
+
+  $("shareCardButton").addEventListener("click", async () => {
+    const button = $("shareCardButton");
+    button.disabled = true; button.textContent = "Preparando tarjeta…";
+    try {
+      const file = await createShareCardFile();
+      if (navigator.share && navigator.canShare && navigator.canShare({files:[file]})) {
+        await navigator.share({files:[file],title:"CHÁÑAR A MANO",text:whatsappMessage()});
+        shareFeedback.textContent = "Tarjeta lista para compartir. Elegí WhatsApp en el menú del teléfono.";
+      } else {
+        const downloadUrl = URL.createObjectURL(file);
+        const link = document.createElement("a");
+        link.href = downloadUrl; link.download = file.name;
+        document.body.appendChild(link); link.click(); link.remove();
+        URL.revokeObjectURL(downloadUrl);
+        try { await copyText(whatsappMessage()); } catch (_) {}
+        shareFeedback.textContent = "La tarjeta se descargó y el mensaje quedó preparado. En WhatsApp, adjuntá la imagen y pegá el enlace.";
+      }
+    } catch (error) {
+      if (error && error.name === "AbortError") shareFeedback.textContent = "No se compartió la tarjeta. Podés intentarlo cuando quieras.";
+      else shareFeedback.textContent = "No se pudo generar la tarjeta en este equipo. Usá el mensaje de WhatsApp.";
+    } finally { button.disabled = false; button.textContent = "Compartir tarjeta gráfica"; }
+  });
+
 
   async function shareGuide() {
     const shareData = {
