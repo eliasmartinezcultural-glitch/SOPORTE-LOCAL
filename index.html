@@ -43,39 +43,15 @@
       </div>
     </section>
 
-    <section class="how-to" id="como-usar" aria-label="Cómo usar la guía">
-      <div class="how-to-heading"><p class="eyebrow">EN TRES PASOS</p><h2>Encontrar lo que buscás es sencillo.</h2></div>
-      <div class="how-to-steps">
-        <div class="how-step"><span>1</span><div><strong>Escribí o elegí un tema</strong><p>Podés usar palabras simples, como hospital o escuela.</p></div></div>
-        <div class="how-step"><span>2</span><div><strong>Leé la ficha</strong><p>Revisá el dato y para qué área aparece publicado.</p></div></div>
-        <div class="how-step"><span>3</span><div><strong>Revisá la fuente</strong><p>Consultá el sitio de origen para confirmar la información.</p></div></div>
-      </div>
-    </section>
-
-    <section class="notice" aria-labelledby="noticeTitle">
+<section class="notice" aria-labelledby="noticeTitle">
       <span class="notice-icon" aria-hidden="true">i</span>
       <div>
         <h2 id="noticeTitle">Antes de usar un dato</h2>
-        <p>Los teléfonos y correos son referencias tomadas de las fuentes que indicamos. Pueden cambiar. Revisá siempre la fuente y confirmá que el dato corresponda al área que buscás. Esta guía no realiza llamadas, mensajes ni trámites y no es un servicio de emergencias.</p>
+        <p>Los datos pueden cambiar. Cada ficha indica de dónde salió la información: revisá esa fuente antes de usar un teléfono o concurrir a un lugar. Esta guía no realiza llamadas, mensajes ni trámites y no es un servicio de emergencias.</p>
       </div>
     </section>
 
-    <aside class="source-legend" aria-labelledby="sourceLegendTitle">
-      <div class="source-legend-heading">
-        <span class="source-legend-symbol" aria-hidden="true">✓</span>
-        <div>
-          <h2 id="sourceLegendTitle">Cómo leer las fuentes</h2>
-          <p>No todas las referencias tienen el mismo nivel de confirmación.</p>
-        </div>
-      </div>
-      <div class="source-legend-items">
-        <div><span class="legend-dot legend-official"></span><span><strong>Sitio oficial</strong><small>Información publicada por la institución.</small></span></div>
-        <div><span class="legend-dot legend-directory"></span><span><strong>Directorio o agenda</strong><small>Referencia institucional; conviene confirmar vigencia.</small></span></div>
-        <div><span class="legend-dot legend-maps"></span><span><strong>Referencia en mapas</strong><small>Búsqueda por nombre; teléfono y actividad requieren verificación.</small></span></div>
-      </div>
-    </aside>
-
-    <section class="directory-section" id="directorio" aria-labelledby="directoryTitle">
+<section class="directory-section" id="directorio" aria-labelledby="directoryTitle">
       <div class="print-heading" aria-hidden="true">
         <strong>CHÁÑAR A MANO</strong>
         <span>Guía comunitaria · San Patricio del Chañar, Neuquén</span>
@@ -139,6 +115,11 @@
         <span id="resultsContext">Todos los temas</span>
       </div>
       <div class="contact-grid" id="contactGrid" aria-live="polite" aria-label="Resultados de la guía"></div>
+      <nav class="pagination" id="pagination" aria-label="Páginas de resultados" hidden>
+        <button class="page-button" id="previousPage" type="button" disabled>← Anterior</button>
+        <span class="page-status" id="pageStatus" aria-live="polite">Página 1</span>
+        <button class="page-button" id="nextPage" type="button">Siguiente →</button>
+      </nav>
       <p class="results-end-note" id="resultsEndNote">Estás viendo toda la información disponible para esta búsqueda.</p>
 
       <div class="empty-state" id="emptyState" hidden>
@@ -147,7 +128,7 @@
         <p>Probá con una palabra más corta o volvé a ver todos los temas.</p>
         <button class="button button-secondary" id="resetFilters" type="button">Mostrar toda la guía</button>
       </div>
-      <p class="directory-footnote">Cada ficha muestra de dónde se obtuvo la información. Abrir una fuente te lleva al sitio que publicó el dato.</p>
+      <p class="directory-footnote">Cada ficha indica su fuente. “Referencia en mapas” no significa que el teléfono o el horario estén confirmados.</p>
     </section>
 
     <section class="contribute-section" aria-labelledby="supportTitle">
