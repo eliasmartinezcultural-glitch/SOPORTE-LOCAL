@@ -173,3 +173,8 @@ La interfaz incorpora una paleta diferenciada por rubro para que las fichas se r
 ## Interfaz simple y lectura fácil · 19 de noviembre de 2026
 
 La portada y el buscador se compactaron para que la consulta empiece rápidamente. Se redujeron textos repetidos, se dejó visible el acceso recomendado de letra grande y se conservaron los ajustes avanzados dentro de su panel. Las fichas, categorías, filtros, favoritos, fuentes, exportaciones y acciones siguen disponibles. La salida A4 usa una columna, tipografía más legible, menos decoración y conserva procedencias y advertencias. Caché PWA v20. No se modificaron datos ni lógica de la aplicación.
+
+
+## Versión final de consulta y difusión · 19 de noviembre de 2026
+
+Se cerró la capa visual con una jerarquía más directa, paleta diferenciada por rubro, tarjetas de lectura clara, accesos reducidos y diseño adaptado a teléfonos. Se incorporó una imagen social de 1200 × 630 y metadatos canónicos/Open Graph/Twitter para presentar el enlace al compartir. El mensaje de WhatsApp es breve, cordial y enlaza directamente al inicio. La imagen de vista previa es vectorial; su visualización depende del soporte del servicio que recibe el enlace. Caché PWA v21. La lógica y los registros editoriales se conservaron.
