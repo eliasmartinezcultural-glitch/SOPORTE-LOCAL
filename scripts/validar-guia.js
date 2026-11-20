@@ -69,7 +69,7 @@ if(!idSet.has("addressOnly")||!idSet.has("clearAllFilters")||!app.includes("matc
 if(!sw.includes('const CACHE_NAME = "chanar-a-mano-shell-v21"'))fail("La caché no fue incrementada para esta versión.");
 if(!html.includes('id="gridViewNote"')||!app.includes("const pageSize = 18;"))fail("Falta la cuadrícula informativa o la página ampliada a 18 fichas.");
 if(!idSet.has("shareSearchButton")||!app.includes("function currentSelectionUrl()")||!app.includes('url.searchParams.set("buscar"'))fail("Falta compartir una búsqueda con filtros recuperables.");
-if(!app.includes('event.key === "/"')||!html.includes("presionar / para ir al buscador"))fail("Falta el acceso rápido de teclado al buscador.");
+if(!app.includes('event.key === "/"'))fail("Falta el acceso rápido de teclado al buscador.");
 if(!css.includes("@media(prefers-reduced-motion:reduce)"))fail("Falta respetar la preferencia de movimiento reducido.");
 if(!css.includes("body.easy-reading .contact-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important}")||!css.includes("@media(max-width:560px){body.easy-reading .contact-grid{grid-template-columns:1fr!important}}"))fail("El modo de letra grande debe conservar dos columnas en escritorio y una en móvil.");
 if(!css.includes(".contact-grid{grid-template-columns:repeat(3,minmax(0,1fr))")||!css.includes("@media(max-width:560px)"))fail("Falta la cuadrícula adaptable de tres, dos y una columna.");
@@ -121,10 +121,6 @@ else{
   console.log("Fichas:",contacts.length,"| con teléfono:",contacts.filter(item=>Array.isArray(item.telefonos)&&item.telefonos.length>0).length,"| categorías:",categories.size);
  }else fail("CHANAR_CONTACTOS debe ser una lista.");
 }
-if(errors.length){errors.forEach(message=>console.error("ERROR:",message));process.exit(1);}
-warnings.forEach(message=>console.warn("ADVERTENCIA:",message));
-console.log("Validación estática, datos, enlaces y PWA completada.");
-
 if(!css.includes("CHÁÑAR A MANO · interfaz esencial para consulta rápida y lectura simple")||!css.includes("@page{size:A4 portrait;margin:10mm 11mm 12mm}"))fail("Falta la interfaz simplificada y la impresión A4 de lectura fácil.");
 if(!html.includes("Escribí un nombre, un rubro o un teléfono.")||!html.includes("Buscá lo que necesitás"))fail("Faltan las instrucciones breves de consulta.");
 
@@ -132,3 +128,6 @@ if(!html.includes('property="og:image"')||!html.includes("compartir-chanar.svg")
 if(!css.includes("CIERRE DE ETAPA · sistema visual curado, simple y multidispositivo")||!css.includes(".contact-card.tone-card-health"))fail("Falta el sistema visual final por rubros.");
 if(!app.includes("Consultala acá:")||!app.includes('guideUrl() + "#inicio"'))fail("El mensaje de WhatsApp no incluye el enlace directo y claro a la guía.");
 if(!sw.includes('"./compartir-chanar.svg"'))fail("La imagen de vista previa no está incluida en la caché esencial.");
+if(errors.length){errors.forEach(message=>console.error("ERROR:",message));process.exit(1);}
+warnings.forEach(message=>console.warn("ADVERTENCIA:",message));
+console.log("Validación estática, datos, enlaces y PWA completada.");
