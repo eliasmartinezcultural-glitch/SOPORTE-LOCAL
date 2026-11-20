@@ -1,14 +1,15 @@
 "use strict";
 
 /* Cada versión de la estructura local debe cambiar este identificador. */
-const CACHE_NAME = "chanar-a-mano-shell-v20";
+const CACHE_NAME = "chanar-a-mano-shell-v21";
 const CORE_FILES = [
   "./index.html",
   "./styles.css",
   "./datos.js",
   "./app.js",
   "./manifest.webmanifest",
-  "./marca-chanar.svg"
+  "./marca-chanar.svg",
+  "./compartir-chanar.svg"
 ];
 
 self.addEventListener("install", event => {
