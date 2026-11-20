@@ -978,7 +978,7 @@
   }
 
   function whatsappMessage() {
-    return "Te comparto CHÁÑAR A MANO: una guía comunitaria gratuita de San Patricio del Chañar. Reúne datos útiles para consultar, imprimir y compartir. No requiere registro. Los datos pueden cambiar; revisá la fuente de cada ficha.\n\n" + guideUrl();
+    return "🌿 Te comparto CHÁÑAR A MANO.\\nUna guía comunitaria gratuita de San Patricio del Chañar para encontrar teléfonos, direcciones, instituciones, salud, escuelas, servicios y comercios.\\nEs gratis y no requiere registro. Los datos pueden cambiar: revisá la fuente de cada ficha.\\n\\nConsultala acá:\\n" + guideUrl() + "#inicio";
   }
 
   function whatsappUrl() {
