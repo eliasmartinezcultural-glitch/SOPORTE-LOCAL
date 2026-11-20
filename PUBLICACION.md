@@ -235,3 +235,14 @@ Se aplicó una identidad cromática diferenciada a las tarjetas según su rubro,
 La simplificación se aplica a la presentación, no a la lógica: se conservan búsqueda, categorías, filtros, favoritos, paginación, fuentes, compartir y exportar. La portada ocupa menos espacio, el buscador queda como acción principal y los controles avanzados permanecen disponibles sin dominar la pantalla. En A4 se prioriza una sola columna, tipografía legible, teléfonos destacados, advertencias y procedencias; se quitan controles, adornos y elementos de pantalla. Caché del shell v20.
 
 La validación automática comprueba la presencia de la capa de interfaz simple y la regla A4. La salida debe revisarse también en la vista previa del navegador y en un teléfono real; el validador no sustituye esas pruebas.
+
+
+## Cierre visual y difusión · versión estable de etapa
+
+La revisión final aplica una jerarquía visual simple, colores por rubro con contraste legible, tarjetas separadas, controles reducidos y prioridad móvil. La portada conduce al buscador; la lectura ampliada queda como acceso recomendado y los ajustes avanzados siguen disponibles. La impresión A4 mantiene una columna, procedencias y advertencias.
+
+El enlace público tiene URL canónica, metadatos Open Graph/Twitter y una tarjeta social vectorial `compartir-chanar.svg`. El mensaje de WhatsApp identifica la guía, explica brevemente su utilidad y agrega un enlace directo al inicio. La imagen generada por la función de compartir tarjeta continúa disponible como PNG desde el navegador. Los servicios de mensajería deciden si muestran la miniatura del enlace y pueden demorar en actualizarla.
+
+La validación automática comprueba la existencia de metadatos, imagen social, mensaje, caché y estilos. No certifica cómo cada plataforma representa la vista previa ni sustituye las pruebas en celulares y vista previa A4.
+
+Al cerrar la revisión se crea la referencia congelada `version-final-2026-11-19` desde el commit final. Esa referencia es un punto de restauración por convención; no equivale a una regla técnica de protección de ramas. La rama `base-estable-2026-11-19` permanece sin cambios.
